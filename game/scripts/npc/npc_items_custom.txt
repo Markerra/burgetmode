@@ -1,0 +1,146 @@
+"DOTAAbilities"
+{
+
+
+	"item_tpscroll"						"ITEM_REMOVE"
+
+
+	"item_mega_nuggets"
+	{
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/item_mega_nuggets"
+		"AbilityTextureName"			"item_mega_nuggets"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		// Item Info
+		//-------------------------------------------------
+		"ItemCost"						"0"
+		"ItemQuality"					"epic"
+
+	}
+
+	"item_maxim_polyphemus"
+	{
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/maxim/item_maxim_polyphemus"
+		"AbilityTextureName"			"custom/maxim_polyphemus"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ItemSellable" 					"0"
+		"ItemPurchasable" 				"0"
+		"ItemKillable" 					"0"
+		"ItemBaseLevel" 				"1"
+		"MaxUpgradeLevel" 				"3" 
+
+		"AbilityValues"
+		{
+			"duration"					"10 20 30"	// длительность модификатора
+			"damage_amp"				"2 3 4"		// множитель урона
+		}
+	}
+
+	"item_maxim_abaddon"
+	{
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/maxim/item_maxim_abaddon"
+		"AbilityTextureName"			"custom/maxim_abaddon"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ItemSellable" 					"0"
+		"ItemPurchasable" 				"0"
+		"ItemKillable" 					"0"
+		"ItemBaseLevel" 				"1"
+		"MaxUpgradeLevel" 				"3" 
+
+		"AbilityValues"
+		{
+			"duration"					"10 20 30"		// длительность модификатора
+			"fear_duration"				"0.3 0.6 0.8"	// длительность страха
+			"fear_chance"				"10 15 17"		// шанс страха
+			"dmg_bonus"					"50 100 150"	// бонус к урону
+			"ms_bonus"					"25 50 75"		// бонус к скорости передвижения
+			"exp_dmg"					"300 400 600"	// урон от взрыва при 50% хп
+			"exp_radius"				"650"			// радиус взрыв при 50% хп
+		}
+	}
+
+	"item_maxim_thewafer"
+	{
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/maxim/item_maxim_thewafer"
+		"AbilityTextureName"			"custom/maxim_thewafer"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ItemSellable" 					"0"
+		"ItemPurchasable" 				"0"
+		"ItemKillable" 					"0"
+		"ItemBaseLevel" 				"1"
+		"MaxUpgradeLevel" 				"3" 
+
+		"AbilityValues"
+		{
+			"duration"					"10 20 30"		// длительность модификатора
+			"dmg_res"					"30 45 50"		// уменьшения входящего урона
+		}
+	}
+
+	"item_maxim_relevation"
+	{
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/maxim/item_maxim_relevation"
+		"AbilityTextureName"			"custom/maxim_relevation"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ItemSellable" 					"0"
+		"ItemPurchasable" 				"0"
+		"ItemKillable" 					"0"
+		"ItemBaseLevel" 				"1"
+		"MaxUpgradeLevel" 				"3" 
+
+		"AbilityValues"
+		{
+			"duration"					"10 20 30"		// длительность модификатора
+			"new_bat"					"1.1 0.9 0.8"	// базовый интервал атак
+		}
+	}
+
+	"item_maxim_godhead"
+	{
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/maxim/item_maxim_godhead"
+		"AbilityTextureName"			"custom/maxim_godhead"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ItemSellable" 					"0"
+		"ItemPurchasable" 				"0"
+		"ItemKillable" 					"0"
+		"ItemBaseLevel" 				"1"
+		"MaxUpgradeLevel" 				"3" 
+
+		"AbilityValues"
+		{
+			"duration"					"10 20 30"		// длительность модификатора
+		}
+	}
+
+	"item_maxim_photo"
+	{
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/maxim/item_maxim_photo"
+		"AbilityTextureName"			"custom/maxim_photo"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"ItemSellable" 					"0"
+		"ItemPurchasable" 				"0"
+		"ItemKillable" 					"0"
+		"ItemInitialCharges"			"0"
+		"AllowedInBackpack"				"0"
+		"ItemDisplayCharges" 			"1"
+		"ItemIsNeutralDrop"				"1"
+
+		"AbilityValues"
+		{
+			"duration"					"10 20 30"		// длительность модификатора
+		}
+	}
+}

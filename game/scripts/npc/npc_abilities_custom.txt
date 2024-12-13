@@ -1,0 +1,858 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+	
+	"ursa_copy"
+	{
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"abilities/ursa_copy"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilityValues"
+		{
+			"duration"			"5 10 15 20"
+			"damage_per_stack"	"5 10 15 20"
+		}
+	}
+
+
+	//-------------------------------------------------
+	//seva
+	//-------------------------------------------------
+
+	//=================================================================================================================
+	// Seva: Сила Жира
+	//=================================================================================================================
+	"seva_big"
+	{
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"abilities/seva/seva_big"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"MaxLevel"				"1"
+		"AbilityTextureName"	"seva_big"
+		"AbilityCooldown"		"0.0001"
+		"Innate"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+
+		"AbilityValues"
+		{
+			"hp_per_stack"	"10"	// хп за каждый стак
+			"time_stack"	"10"	// интервал получения стаков
+		}
+	}
+
+	//=================================================================================================================
+	// Seva: Мистери Бокс
+	//=================================================================================================================
+	"seva_box"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/seva/seva_box"
+		"AbilityTextureName"			"seva_box"
+		"MaxLevel" 						"4"
+		"AbilityCooldown"				"70 60 50 40"
+		"AbilityManaCost"				"250 200 150 100"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		"AbilityValues"
+		{
+			"c1"		"60 55 30 10"	// шанс золота
+			"c2"		"20 25 35 45"	// шанс	силы
+			"c3"		"5 15 20 25"	// шанс уровня
+			"c4"		"3 6 8 10"		// шанс мега-нагетса
+			"c5"		"1 3 5 6"		// шанс 7 уровней
+			"c6"		"0.5 1 2 4"		// шанс ультра-картошки
+		}
+	}
+
+	//=================================================================================================================
+	// Seva: Трейдер
+	//=================================================================================================================
+	"seva_trader"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/seva/seva_trader"
+		"AbilityTextureName"			"seva_trader"
+		"MaxLevel" 						"4"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityValues"
+		{
+			"time_stack"		"10 8 4 2"	// интервал получения золота
+			"gold_per_stack"	"2"	// получаемое золото
+		}
+	}
+
+	//=================================================================================================================
+	// Seva: Головной Телефон 
+	//=================================================================================================================
+	"seva_phone"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/seva/seva_phone"
+		"AbilityCooldown"				"80 70 60 50"
+		"AbilityManaCost"				"250 200 175 150"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"MaxLevel" 						"4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityTextureName"			"seva_phone"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityValues"
+		{
+			"pure_damage"
+			{
+				"value"			"50 75 100 150"	// чистый урон каждую секунду
+				"special_bonus_unique_seva_phone_damage"	"+50"	// талант
+			}
+			"mute_duration"		"0.2 0.4 0.8 1"	// длительность заглушения
+			"duration"
+			{
+				"value"			"3 4 5 6"		// длительность облака
+				"special_bonus_unique_seva_phone_duration"	"+1"	// талант
+			}
+			"radius"			"200 300 400 500" // радиус облака
+		}
+	}
+
+	//=================================================================================================================
+	// Seva Special Bonus: +50 к урону Головной Телефон
+	//=================================================================================================================
+	"special_bonus_unique_seva_phone_damage"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Seva Special Bonus: +1 сек. длительности Головной Телефон
+	//=================================================================================================================
+	"special_bonus_unique_seva_phone_duration"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Seva Special Bonus: Головной Телефон накладывает безмолвие
+	//=================================================================================================================
+	"special_bonus_unique_seva_phone_silence"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//=================================================================================================================
+	// Seva: Привязочник
+	//=================================================================================================================
+	"seva_tether"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/seva/seva_tether"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"seva_tether"
+		"AbilityCooldown"				"75 70 60 50"
+		"AbilityCastRange"				"900"
+		"AbilityManaCost"				"300"
+		"MaxLevel" 						"4"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityValues"
+		{
+			"dmg_percent"
+			{
+				"value"			"75 100 130 150"  // % возвращаемого урона во время связки
+				"special_bonus_unique_seva_tether_damage"	"+50"	// талант
+			}
+			"distance"			"300 250 200 150" // дистанция связки
+			"duration"
+			{
+				"value"			"3 4 5 6"		  // длительность связки
+				"special_bonus_unique_seva_tether_duration"	"+1"	// талант
+			}
+			"exp_damage"		"100 150 300 350" // урон от взрыва после связки
+			"radius"			"300 350 450 500" // радиус взрыва после связки
+		}
+	}
+
+	//=================================================================================================================
+	// Seva Special Bonus: +50% возвращаемого урона Привязочник
+	//=================================================================================================================
+	"special_bonus_unique_seva_tether_damage"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Seva Special Bonus: +1 сек. длительности Привязочник
+	//=================================================================================================================
+	"special_bonus_unique_seva_tether_duration"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//=================================================================================================================
+	// Seva: On Sight 
+	//=================================================================================================================
+	"seva_ult"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/seva/seva_ult"
+		"AbilityTextureName"			"seva_ult"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityManaCost"				"400 350 200 "
+		"AbilityCastPoint"				"1.53"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityValues"
+		{	
+			"bonus_hp"			"1000 1500 2000"
+			"bonus_regen"		"25 30 45"
+			"bonus_armor"		"5 10 15"
+			"bonus_bkb"			"15 20 25"
+			"hp_to_dmg"			
+			{
+				"value"			"2"	// %здоровья в урон
+				"special_bonus_unique_seva_ult_hp_to_dmg"	"+2"	// талант
+			}
+			"duration"
+			{
+				"value"			"15 25 35"	// длительность эффекта
+				"special_bonus_unique_seva_ult_duration"	"+5"	// талант
+			}
+			"modelscale_amp"	"1.2 1.3 1.7"
+			"AbilityCooldown"
+			{
+				"value"			"160 140 120"	// перезарядка способности
+				"special_bonus_unique_seva_ult_cooldown"	"-10"	// талант
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Seva Special Bonus: +5 сек. длительности On Sight
+	//=================================================================================================================
+	"special_bonus_unique_seva_ult_duration"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Seva Special Bonus: -10 сек. перезарядки On Sight
+	//=================================================================================================================
+	"special_bonus_unique_seva_ult_cooldown"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Seva Special Bonus: +2% здоровья в урон On Sight
+	//=================================================================================================================
+	"special_bonus_unique_seva_ult_hp_to_dmg"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//-------------------------------------------------
+	// maxim
+	//-------------------------------------------------
+
+
+	//=================================================================================================================
+	// Maxim: Профессиональный Фотограф 
+	//=================================================================================================================
+	"maxim_photo"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/maxim/maxim_photo"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityTextureName"			"maxim_photo"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"0.0001"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"attackspeed_bonus"
+			{
+				"value"					"2" // бонус к скорости атаки за каждый заряд
+				"special_bonus_unique_maxim_photo_attack_speed"	"+2"	// талант
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Maxim Special Bonus: +2 скорости атаки за каждый заряд Профессиональный Фотограф
+	//=================================================================================================================
+	"special_bonus_unique_maxim_photo_attack_speed"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	
+
+	//=================================================================================================================
+	// Maxim: Ебаные Тиммейты
+	//=================================================================================================================
+	"maxim_creep"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/maxim/maxim_creep"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"maxim_creep"
+		"AbilityCooldown"				"35"
+		"AbilityManaCost"				"150"
+		"AbilityCastPoint" 				"0.5"
+		"AbilityCastAnimation"			"ACT_DOTA_RAZE_1"
+		"MaxLevel"						"4"
+
+		"AbilityValues"
+		{
+			"duration"
+			{
+				"value"			"20 30 50 60"
+				"special_bonus_unique_maxim_creep_duration"				"+10"	// талант
+			}					// длительность жизни
+			"max_hp"			"300 450 550 700"	// максимальное хп
+			"hp_regen"			"0.5 1 2 3"			// регенерация хп
+			"max_mana"			"0"					// максимальная мана
+			"dmg_sep"			"2"					// число на которое делится урон / урон юнита
+			"creep_armor"		"5"					// количество брони
+		}
+	}
+
+
+	//=================================================================================================================
+	// Maxim Special Bonus: +10 сек. к длительности жизни тиммейта
+	//=================================================================================================================
+	"special_bonus_unique_maxim_creep_duration"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Maxim(npc_dota_maxim_creep): Тиммейт Максима
+	//=================================================================================================================
+	"maxim_creep_armor"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/maxim/maxim_creep_armor"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityTextureName"			"maxim_creep_armor"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastRange"				"700"
+
+		"AbilityValues"
+		{
+			"armor_change"		"-4 -6 -8 -10"	// изменение брони врагов
+			"radius"			"700"	// радиус ауры
+		}
+	}
+	
+
+	//=================================================================================================================
+	// Maxim: Z X C
+	//=================================================================================================================
+	"maxim_zxc"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/maxim/maxim_zxc"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityTextureName"			"maxim_zxc"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitDamageType" 		"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		"HasScepterUpgrade"				"1"
+		"HasShardUpgrade"				"1"
+		"AbilityChannelTime"			"4 6 8 10"		// длительность способности
+		"AbilityCastPoint" 				"1.5"
+		"AbilityCooldown"				"45 40 35 30"
+		"AbilityCastRange"				"300" 
+		"AbilityManaCost"				"300"
+		"MaxLevel"						"4"
+
+		"AbilityValues"
+		{
+			"interval"
+			{
+				"value"			"0.8 0.7 0.6 0.5"	// интервал появления
+				"special_bonus_unique_maxim_zxc_interval""-0.3"	// талант
+			}
+			"radius"			"300"				// радиус появления
+			"damage"
+			{
+				"value"			"100 120 140 170"	// базовый урон
+				"special_bonus_unique_maxim_zxc_damage"	"+30"	// талант
+			}
+			"dmg_raze"			"30"				// доп. урон за каждый стак
+		}
+	}
+
+	//=================================================================================================================
+	// Maxim Special Bonus: +30 к урону Z X C
+	//=================================================================================================================
+	"special_bonus_unique_maxim_zxc_damage"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Maxim Special Bonus: -0.3 интервал Shadowraze у Z X C
+	//=================================================================================================================
+	"special_bonus_unique_maxim_zxc_interval"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Maxim: Рекрут 
+	//=================================================================================================================
+	"maxim_herald"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/maxim/maxim_herald"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityTextureName"			"maxim_herald"
+		"MaxLevel"						"4"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"AbilityValues"
+		{
+			"bonus_agility"
+			{
+				"value"			"2 2.5 3 3.5" // бонус к ловкости за каждую смерть\
+				"special_bonus_unique_maxim_herald_agility"	"+1.5"	// талант
+			}
+			"bonus_damage"
+			{
+				"value"			"50 65 80 90" 	// бонус к урону по цели, которая убила владельца способности
+				"special_bonus_unique_maxim_herald_damage"	"+20"	// талант
+			}
+			"duration"
+			{
+				"value"			"40 60 70 80" // длительность эффекта
+				"special_bonus_unique_maxim_herald_duration""+30"	// талант
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Maxim Special Bonus: +20 бонус к урону для Рекрут
+	//=================================================================================================================
+	"special_bonus_unique_maxim_herald_damage"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Maxim Special Bonus: +30 сек. к длительности Рекрут
+	//=================================================================================================================
+	"special_bonus_unique_maxim_herald_duration"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Maxim Special Bonus: +1.5 бонус ловкости от Рекрут
+	//=================================================================================================================
+	"special_bonus_unique_maxim_herald_agility"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+
+	//=================================================================================================================
+	// Maxim: Айзек
+	//=================================================================================================================
+	"maxim_isaac"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/maxim/maxim_isaac"
+		"AbilityTextureName"			"maxim_isaac"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityCastAnimation"			"ACT_DOTA_IDLE_RARE"
+		"AbilityManaCost"				"450 400 300"
+		"AbilityCastPoint"				"1 0.5 0.3"
+		"AbilityValues"
+		{
+			"AbilityCooldown"
+			{
+				"value"					"180 160 120"	// перезарядка способности
+				"special_bonus_unique_maxim_isaac_cooldown"	"-20"	// талант
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Maxim Special Bonus: -20 сек. перезарядки Айзек
+	//=================================================================================================================
+	"special_bonus_unique_maxim_isaac_cooldown"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//----------------------------------------------------------------------------
+	// SERGOPY
+	//----------------------------------------------------------------------------
+
+	//=================================================================================================================
+	// Sergopy: Мейнер Ежа
+	//=================================================================================================================
+	"sergopy_bristleback" 
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/sergopy/sergopy_bristleback"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"spell_amp"
+			{
+				"value"					"1" // бонус % к урону от заклинаний
+				"special_bonus_unique_sergopy_bristleback_damage"	"+1"	// талант
+			}
+			"duration"					"5"	// длительность эффекта
+		}
+	}
+
+	//=================================================================================================================
+	// Sergopy Special Bonus: +1% урона от способностей Мейнер Ежа
+	//=================================================================================================================
+	"special_bonus_unique_sergopy_bristleback_damage"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Sergopy: Войсченджер
+	//=================================================================================================================
+	"sergopy_voice"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/sergopy/sergopy_voice"
+		"AbilityTextureName"			"sergopy/sergopy_voice"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType" 		"DAMAGE_TYPE_MAGICAL"
+		"AbilityManaCost"				"50"
+		"AbilityCastRange"				"450 500 550 600" // радиус притягивания (визуал)
+		"AbilityValues"
+		{
+			"AbilityCooldown"
+			{
+				"value"			"6"
+				"special_bonus_unique_sergopy_voice_cooldown"	"-1"
+			}
+
+			"damage"			"55 65 70 90"		// урон
+			"radius"			"450 500 550 600"	// радиус притягивания
+			"pull_speed"		"600 610 620 630"	// скорость притяжения
+			"pull_duration"		"0.6"				// время притяжения
+			"silence_duration"	"1.5"				// длительность безмолвия (талант)
+		}
+	}
+
+	//=================================================================================================================
+	// Sergopy Special Bonus: -1 сек. перезарядки Войсченджер
+	//=================================================================================================================
+	"special_bonus_unique_sergopy_voice_cooldown"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Sergopy Special Bonus: Войсченджер накладывает безмолвие на 1.5 секунды
+	//=================================================================================================================
+	"special_bonus_unique_sergopy_voice_silence"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Sergopy: ИВЛ
+	//=================================================================================================================
+	"sergopy_ivl"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/sergopy/sergopy_ivl"
+		"AbilityTextureName"			"sergopy/sergopy_ivl"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType" 		"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastAnimation"			"ACT_DOTA_IDLE_RARE"
+		"AbilityCastRange"				"230 250 270 280" // радиус (визуал)
+		"AbilityCooldown"				"3"
+		"AbilityManaCost"				"30"
+		"AbilityValues"
+		{
+			"damage"
+			{
+				"value"			"50 75 80 100"		// урон
+				"special_bonus_unique_sergopy_ivl_damage"		"+25"	// талант
+			}
+			"regen_reduction"	"20 30 35 40"		// уменьшение регенерации хп
+			"slow"				"20 25 30 35"		// замедление врага
+			"stack_damage_bonus""3 5 7 8"			// урон от горения за стак
+			"stack_regen_bonus" "2"					// доп. уменьшение регенерации хп за стак
+			"stack_slow_bonus"	"2"					// доп. замедление врага за стак
+			"radius"			"300"				// радиус
+			"max_stacks"
+			{
+				"value"			"15"				// максимальное количество стаков
+				"special_bonus_unique_sergopy_ivl_max_stacks"	"+5"	// талант
+			}
+			"duration"			"10"					// длительность эффекта
+		}
+	}
+
+	//=================================================================================================================
+	// Sergopy Special Bonus: +25 к урону ИВЛ
+	//=================================================================================================================
+	"special_bonus_unique_sergopy_ivl_damage"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Sergopy Special Bonus: +5 к максимальному количеству стаков
+	//=================================================================================================================
+	"special_bonus_unique_sergopy_ivl_max_stacks"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Sergopy Special Bonus: ИВЛ Сквозь невоспр. к эффектам
+	//=================================================================================================================
+	"special_bonus_unique_sergopy_ivl_bkb"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Sergopy: Спамер
+	//=================================================================================================================
+	"sergopy_refresh"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/sergopy/sergopy_refresh"
+		"AbilityTextureName"			"sergopy/sergopy_refresh"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"HasScepterUpgrade"				"1"
+		"AbilityValues"
+		{
+			"chance"
+			{
+				"value"					"10 15 20 30"		// шанс перезарядки способностей
+				"special_bonus_unique_sergopy_refresh_chance"	"+5"	// талант
+			}
+
+			"aghanim_chance"			"3"	// шанс перезарядки предметов с аганимом
+		}
+	}
+
+	//=================================================================================================================
+	// Sergopy Special Bonus: +5% шанс срабатывания Спамер
+	//=================================================================================================================
+	"special_bonus_unique_sergopy_refresh_chance"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Sergopy: Хамстер Криминал
+	//=================================================================================================================
+	"sergopy_hamster"
+	{
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/sergopy/sergopy_hamster"
+		"AbilityTextureName"			"sergopy/sergopy_hamster"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityCastRange"				"350 400 450 500"
+		"HasShardUpgrade"				"1"
+
+		"AbilityValues"
+		{
+			"radius"					"350 400 450 500"
+			"chance"
+			{
+				"value"					"10 12 15"	// шанс перезарядки способностей
+				"special_bonus_unique_sergopy_hamster_chance"	"+5"	// талант
+			}
+			"mana_restore"				"75"	// количество восстановленой маны при перезарядке способностей (шард)
+		}
+	}
+
+	//=================================================================================================================
+	// Sergopy Special Bonus: +5% шанс срабатывания Хамстер Криминал
+	//=================================================================================================================
+	"special_bonus_unique_sergopy_hamster_chance"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Sergopy Special Bonus: +11% к уменьшению расхода и сжигания маны
+	//=================================================================================================================
+	"special_bonus_mana_reduction_11"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityValues"
+		{
+			"value"
+			{
+				"value" "11"
+			}
+		}
+	}
+
+	//----------------------------------------------------------------------------
+	// MARKER
+	//----------------------------------------------------------------------------
+
+	//=================================================================================================================
+	// Marker: Армлет
+	//=================================================================================================================
+	"marker_armlet" 
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/marker/marker_armlet"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityTextureName"			"marker/marker_armlet_deactive"
+		"AbilityCooldown"				"3"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"bonus_strength"
+			{
+				"value"					"10" 	// доп. сила при активации
+			}
+
+			"bonus_damage"
+			{
+				"value"					"20" 	// доп. урон при активации
+			}
+
+			"health_loss"
+			{
+				"value"					"20"	// потеря хп при активации
+			}
+
+			"strength_growth"			"0.5"		// прирост к доп. силе при активации за уровень
+			"damage_growth"				"3"	// прирост к доп. урону при активации за уровень
+			"health_loss_growth"		"3"		// прирост к потери хп при активации за уровень
+		}
+	}
+
+	//=================================================================================================================
+	// Marker: Чилловый Парень
+	//=================================================================================================================
+	"marker_chill" 
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/marker/marker_chill"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"marker/marker_chill"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityCastPoint"				"0.8"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_modifier"		"-70 -55 -40 -25"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_modifier_tooltip"		"30 45 60 75"
+			}
+			"03"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"arrow_count"				"3"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"split_shot_bonus_range"		"100"
+			}
+		}
+			
+	}
+
+}

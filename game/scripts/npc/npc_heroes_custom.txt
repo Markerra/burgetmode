@@ -1,0 +1,134 @@
+// Dota Heroes File
+// NOTE: This is not for creating new heroes, this is for taking a currently existing hero as a template and overriding
+// the specified key-value combinations.  Use override_hero <hero_to_override> for this.
+"DOTAHeroes"
+{
+
+	//========================================================================================================
+	// SEVA
+	//========================================================================================================
+	"npc_dota_hero_pudge" 
+	{
+		"override_hero"    "npc_dota_hero_pudge"
+	
+		"Ability1"						"seva_box"
+		"Ability2"						"seva_trader"
+		"Ability3"						"seva_phone"
+		"Ability4"						"seva_big"
+		"Ability5"						"seva_tether"
+		"Ability6"						"seva_ult"
+		"Ability7"						"generic_hidden"
+	
+		"Ability10"						"special_bonus_unique_seva_ult_duration" // правый талант на 10 ур.
+		"Ability11"						"special_bonus_unique_seva_phone_duration" // левый талант на 10 ур.
+		"Ability12"						"special_bonus_unique_seva_ult_cooldown" // правый талант на 15 ур.
+		"Ability13"						"special_bonus_unique_seva_tether_duration" // левый талант на 15 ур.
+		"Ability14"						"special_bonus_unique_seva_phone_damage" // правый талант на 20 ур.
+		"Ability15"						"special_bonus_unique_seva_tether_damage" // левый талант на 20 ур.
+		"Ability16"						"special_bonus_unique_seva_ult_hp_to_dmg" // правый талант на 25 ур.
+		"Ability17"						"special_bonus_unique_seva_phone_silence" // левый талант на 25 ур.	
+	
+		"VisionNighttimeRange"			"900"										
+	}
+
+	//========================================================================================================
+	// MAXIM
+	//========================================================================================================
+
+	"npc_dota_hero_nevermore"
+	 {
+	 	"override_hero"    				"npc_dota_hero_nevermore"
+	
+		"Ability1"						"maxim_creep"
+		"Ability2"						"maxim_zxc"
+		"Ability3"						"maxim_herald"
+	 	"Ability4"						"maxim_photo"
+		"Ability5"						"generic_hidden"
+		"Ability6"						"maxim_isaac"
+		"Ability7"						"generic_hidden"
+	
+		"Ability10"						"special_bonus_unique_maxim_creep_duration" // правый талант на 10 ур.
+		"Ability11"						"special_bonus_unique_maxim_herald_damage" // левый талант на 10 ур.
+		"Ability12"						"special_bonus_unique_maxim_photo_attack_speed" // правый талант на 15 ур.
+		"Ability13"						"special_bonus_unique_maxim_zxc_damage" // левый талант на 15 ур.
+		"Ability14"						"special_bonus_unique_maxim_isaac_cooldown" // правый талант на 20 ур.
+		"Ability15"						"special_bonus_unique_maxim_herald_duration" // левый талант на 20 ур.
+		"Ability16"						"special_bonus_unique_maxim_zxc_interval" // правый талант на 25 ур.
+		"Ability17"						"special_bonus_unique_maxim_herald_agility" // левый талант на 25 ур.
+	
+		"VisionNighttimeRange"			"900"										
+	 }
+
+	//========================================================================================================
+	// SERGOPY
+	//========================================================================================================
+
+	"npc_dota_hero_bristleback"
+	 {
+	 	"override_hero"    				"npc_dota_hero_bristleback"
+
+	 	"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"			"19"
+		"AttributeStrengthGain"			"2.300000"
+		"AttributeBaseAgility"			"18"
+		"AttributeAgilityGain"			"2.300000"
+		"AttributeBaseIntelligence"		"21"
+		"AttributeIntelligenceGain"		"3.000000"
+
+		"StatusHealthRegen"				"-0.3"
+		"StatusManaRegen"				"1.2"
+
+		"ArmorPhysical"					"4"
+
+		"MovementSpeed"					"275"
+
+		"Ability1"						"sergopy_voice"
+		"Ability2"						"sergopy_ivl"
+		"Ability3"						"sergopy_refresh"
+	 	"Ability4"						"sergopy_bristleback"
+		"Ability5"						"generic_hidden"
+		"Ability6"						"sergopy_hamster"
+		"Ability7"						"generic_hidden"
+
+		"Ability10"						"special_bonus_unique_sergopy_refresh_chance" // правый талант на 10 ур.
+		"Ability11"						"special_bonus_unique_sergopy_ivl_damage" // левый талант на 10 ур.
+		"Ability12"						"special_bonus_mana_reduction_11" // правый талант на 15 ур.
+		"Ability13"						"special_bonus_unique_sergopy_ivl_max_stacks" // левый талант на 15 ур.
+		"Ability14"						"special_bonus_unique_sergopy_voice_cooldown" // правый талант на 20 ур.
+		"Ability15"						"special_bonus_unique_sergopy_hamster_chance" // левый талант на 20 ур.
+		"Ability16"						"special_bonus_unique_sergopy_voice_silence" // правый талант на 25 ур.
+		"Ability17"						"special_bonus_unique_sergopy_bristleback_damage" // левый талант на 25 ур.
+
+		"VisionNighttimeRange"			"900"										
+	 }
+
+	//========================================================================================================
+	// MARKER
+	//========================================================================================================
+
+	"npc_dota_hero_huskar"
+	 {
+	 	"override_hero"    				"npc_dota_hero_huskar"
+
+		"MovementSpeed"					"300"
+
+		"Ability1"							"marker_armlet"
+		"Ability2"							"marker_chill"
+		//"Ability3"						"sergopy_refresh"
+	 	//"Ability4"						"sergopy_bristleback"
+		//"Ability5"						"generic_hidden"
+		//"Ability6"						"sergopy_hamster"
+		//"Ability7"						"generic_hidden"
+
+		//"Ability10"						"special_bonus_unique_sergopy_refresh_chance" // правый талант на 10 ур.
+		//"Ability11"						"special_bonus_unique_sergopy_ivl_damage" // левый талант на 10 ур.
+		//"Ability12"						"special_bonus_mana_reduction_11" // правый талант на 15 ур.
+		//"Ability13"						"special_bonus_unique_sergopy_ivl_max_stacks" // левый талант на 15 ур.
+		//"Ability14"						"special_bonus_unique_sergopy_voice_cooldown" // правый талант на 20 ур.
+		//"Ability15"						"special_bonus_unique_sergopy_hamster_chance" // левый талант на 20 ур.
+		//"Ability16"						"special_bonus_unique_sergopy_voice_silence" // правый талант на 25 ур.
+		//"Ability17"						"special_bonus_unique_sergopy_bristleback_damage" // левый талант на 25 ур.
+
+		"VisionNighttimeRange"		"900"										
+	 }
+}

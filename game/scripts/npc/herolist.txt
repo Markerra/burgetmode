@@ -1,0 +1,9 @@
+"CustomHeroList"
+{
+	"npc_dota_hero_huskar"				"1" // ярик
+	"npc_dota_hero_nevermore"			"1" // максим
+	"npc_dota_hero_legion_commander" 	"1" // арсений
+	"npc_dota_hero_bristleback"			"1" // сережа
+	"npc_dota_hero_obsidian_destroyer"	"1" // матвей
+	"npc_dota_hero_pudge"				"1" // сева
+}

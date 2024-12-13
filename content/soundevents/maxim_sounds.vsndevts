@@ -1,0 +1,539 @@
+"maxim_isaac_cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/maxim/maxim_isaac_cast.vsnd"
+						}
+					}
+					"volume"			{ "value"	"7.000000" }
+					"pitch_rand_min"	{ "value"	"-0.05000" }
+					"pitch_rand_max"	{ "value"	 "0.05000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1000.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+"item_maxim_polyphemus_cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/maxim/item_maxim_polyphemus_cast.vsnd"
+						}
+					}
+					"volume"			{ "value"	"4.000000" }
+					"pitch_rand_min"	{ "value"	"-0.05000" }
+					"pitch_rand_max"	{ "value"	 "0.05000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1000.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+
+"item_maxim_abaddon_cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/maxim/item_maxim_abaddon_cast.vsnd"
+						}
+					}
+					"volume"			{ "value"	"4.000000" }
+					"pitch_rand_min"	{ "value"	"-0.05000" }
+					"pitch_rand_max"	{ "value"	 "0.05000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1000.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+"item_maxim_thewafer_cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/maxim/item_maxim_thewafer_cast.vsnd"
+						}
+					}
+					"volume"			{ "value"	"3.000000" }
+					"pitch_rand_min"	{ "value"	"-0.04000" }
+					"pitch_rand_max"	{ "value"	 "0.02000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1000.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+"item_maxim_relevation_cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/maxim/item_maxim_relevation_cast.vsnd"
+						}
+					}
+					"volume"			{ "value"	"1.300000" }
+					"pitch_rand_min"	{ "value"	"-0.04000" }
+					"pitch_rand_max"	{ "value"	 "0.02000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1000.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+"item_maxim_godhead_cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/maxim/item_maxim_godhead_cast.vsnd"
+						}
+					}
+					"volume"			{ "value"	"2.000000" }
+					"pitch_rand_min"	{ "value"	"-0.04000" }
+					"pitch_rand_max"	{ "value"	 "0.02000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1000.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+"item_maxim_godhead_attack"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/items/brooch_target.vsnd"
+						}
+					}
+					"volume"			{ "value"	"0.500000" }
+					"pitch_rand_min"	{ "value"	"-0.04000" }
+					"pitch_rand_max"	{ "value"	 "0.02000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1000.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+"item_maxim_photo_cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/maxim/item_maxim_photo_cast.vsnd"
+						}
+					}
+					"volume"			{ "value"	"10.000000" }
+					"pitch_rand_min"	{ "value"	"-0.02000" }
+					"pitch_rand_max"	{ "value"	 "0.02000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1800.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+
+"maxim_creep_pre"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/weapons/hero/shadow_demon/soul_catcher_target.vsnd"
+						}
+					}
+					"volume"			{ "value"	"1.000000" }
+					"pitch_rand_min"	{ "value"	"-0.02000" }
+					"pitch_rand_max"	{ "value"	 "0.02000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1800.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+"maxim_creep_cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/weapons/hero/muerta/parting_shot_soul.vsnd"
+						}
+					}
+					"volume"			{ "value"	"0.400000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"pitch_rand_min"	{ "value"	"-0.02000" }
+					"pitch_rand_max"	{ "value"	 "0.02000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1800.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+"maxim_creep_cast1"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/vo/nevermore/nev_arc_ability_presence_01.vsnd"
+						}
+					}
+					"volume"			{ "value"	"2.000000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1800.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+"maxim_creep_cast2"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/vo/nevermore/nev_arc_ability_presence_02.vsnd"
+						}
+					}
+					"volume"			{ "value"	"2.000000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1800.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+"maxim_creep_cast3"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/vo/nevermore/nev_arc_ability_presence_03.vsnd"
+						}
+					}
+					"volume"			{ "value"	"2.000000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1800.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+"maxim_zxc_pre"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/vo/nevermore/nev_arc_ability_requiem_01.vsnd"
+						}
+					}
+					"volume"			{ "value"	"1.000000" }
+					"pitch_rand_min"	{ "value"	"-0.12000" }
+					"pitch_rand_max"	{ "value"	 "0.12000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1800.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+"maxim_zxc_cast"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/weapons/hero/nevermore/raze_flames.vsnd"
+						}
+					}
+					"volume"			{ "value"	"1.000000" }
+					"pitch_rand_min"	{ "value"	"-0.12000" }
+					"pitch_rand_max"	{ "value"	 "0.12000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1800.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+"maxim_zxc_raze_double"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/weapons/hero/visage/soul_assumption_target.vsnd"
+						}
+					}
+					"volume"			{ "value"	"0.900000" }
+					"pitch_rand_min"	{ "value"	"-0.12000" }
+					"pitch_rand_max"	{ "value"	 "0.12000" }
+					"pitch"				{ "value"	 "0.70000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1800.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
+
+"maxim_zxc_raze_triple"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"				"sos_reference_data"
+				"reference_stack"		"dota_src1_3d"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"	"sounds/weapons/hero/visage/soul_assumption_target.vsnd"
+						}
+					}
+					"volume"			{ "value"	"2.000000" }
+					"pitch_rand_min"	{ "value"	"-0.12000" }
+					"pitch_rand_max"	{ "value"	 "0.12000" }
+					"pitch"				{ "value"	 "1.00000" }
+					"soundLevel"		{ "value"  "100.00000" }
+					"distance_max"		{ "value"	"1800.000" }
+					"event_type"		{ "value"	"1.000000" }
+				}
+			}
+		}
+	}
+}
