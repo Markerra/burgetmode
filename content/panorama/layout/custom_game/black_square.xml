@@ -1,0 +1,14 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/black_square.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/black_square.js" />
+	</scripts>
+	<Panel class="root">
+		<Panel id="black_sq">
+			<Label id="label-text" text="ЖОПЕНЦИЯ"/>
+			<DOTAItemImage id="item" itemname="item_mask_of_madness"/>
+		</Panel>
+	</Panel>
+</root>
