@@ -824,34 +824,12 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityCastPoint"				"0.8"
-		"precache"
+
+		"AbilityValues"
 		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+			
 		}
 
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_modifier"		"-70 -55 -40 -25"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_modifier_tooltip"		"30 45 60 75"
-			}
-			"03"
-			{	
-				"var_type"					"FIELD_INTEGER"
-				"arrow_count"				"3"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"split_shot_bonus_range"		"100"
-			}
-		}
 			
 	}
 

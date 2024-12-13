@@ -45,7 +45,7 @@ function modifier_marker_chill:OnIntervalThink()
     else
         self.idle_time = 0
     end
-    self.health_regen_bonus = self.regen_per_second * self.idle_time)
+    self.health_regen_bonus = self.regen_per_second * self.idle_time
     self.damage_bonus = self.damage_per_second * self.idle_time
     --print(self.health_regen_bonus.." "..self.regen_per_second )
     --print(self.damage_bonus.." "..self.damage_per_second )

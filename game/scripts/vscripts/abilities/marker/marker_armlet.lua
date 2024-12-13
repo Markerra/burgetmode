@@ -86,7 +86,7 @@ end
 
 function modifier_marker_armlet_active:OnCreated()
 
-    if not self:GetParent():IsAlive() then return end
+    --if not self:GetParent():IsAlive() then return end
 
     print("Армлет активирован!")  -- Проверим, когда модификатор активируется
 
