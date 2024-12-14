@@ -7,8 +7,7 @@
 	</scripts>
 	<Panel class="root">
 		<Panel id="black_sq">
-			<Label id="label-text" text="ЖОПЕНЦИЯ"/>
-			<DOTAItemImage id="item" itemname="item_mask_of_madness"/>
+			<DOTAHeroImage id="hero" heroname="npc_dota_hero_abaddon"/>
 		</Panel>
 	</Panel>
 </root>

@@ -1,5 +1,5 @@
 <root>
 	<Panel>
-		<CustomUIElement type = "Hud" layoutfile="file://{resources}/layout/custom_game/black_square.xml" />
+		<CustomUIElement type = "Hud" layoutfile="file://{resources}/layout/custom_game/top_bar.xml" />
 	</Panel>
 </root>

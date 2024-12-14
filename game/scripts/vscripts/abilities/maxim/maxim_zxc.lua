@@ -1,5 +1,3 @@
-require("utils/timers")
-
 LinkLuaModifier("modifier_maxim_zxc", "abilities/maxim/maxim_zxc", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_maxim_zxc_debuff", "abilities/maxim/maxim_zxc", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_maxim_animation", "abilities/maxim/maxim_zxc", LUA_MODIFIER_MOTION_NONE)

@@ -1,3 +1,5 @@
+require("panorama/custom_top_bar")
+require("utils/timers")
 
 if GameMode == nil then
 	GameMode = class({})
@@ -56,6 +58,7 @@ function GameMode:OnSpawned(data)
 		for i=1,30 do
 			npc:HeroLevelUp(false)
 		end
+		npc:SetDayTimeVisionRange(15000)
 		--bFirstSpawned = false
 	end
 end
@@ -104,13 +107,12 @@ function GameMode:OnStateChange(data)
 	local state = GameRules:State_Get()
 
 	if state == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		GameRules:SetTimeOfDay(0.25)
-
-	local player = PlayerResource:GetPlayer(0)
-	local player_id = player:GetPlayerID()
-	local bot = CreateUnitByName("npc_dota_hero_huskar", Vector(-10121, -3513.97, 267.247), true, nil, nil, 7)
-    bot:SetControllableByPlayer(player_id, true)
-    bot:AddNewModifier(bot, nil, "maxim_herald_modifier_debuff", {duration = 999})
-
+		GameRules:SetTimeOfDay(0.25)	
+		SendHeroDataToClient(1)
+		local player = PlayerResource:GetPlayer(0)
+		local player_id = player:GetPlayerID()
+		local bot = CreateUnitByName("npc_dota_hero_huskar", Vector(-10121, -3513.97, 267.247), true, nil, nil, 7)
+    	bot:SetControllableByPlayer(player_id, true)
 	end
+
 end

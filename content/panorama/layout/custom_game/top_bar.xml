@@ -1,0 +1,25 @@
+<root>
+    <!-- Подключение CSS -->
+    <styles>
+        <include src="file://{resources}/styles/custom_game/top_bar.css" />
+    </styles>
+
+    <!-- Подключение скриптов -->
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/top_bar.js" />
+    </scripts>
+
+    <!-- Основной контейнер -->
+    <Panel class="root">
+        <Panel class="HeroPanel">
+        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_bristleback"/>
+        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_huskar"/>
+        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_nevermore"/>
+        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_nevermore"/>
+        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_nevermore"/>
+        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_nevermore"/>
+        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_nevermore"/>
+        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_nevermore"/>
+        </Panel>
+    </Panel>
+</root>

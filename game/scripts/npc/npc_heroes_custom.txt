@@ -10,6 +10,8 @@
 	"npc_dota_hero_pudge" 
 	{
 		"override_hero"    "npc_dota_hero_pudge"
+
+		"MovementSpeed"					"295"
 	
 		"Ability1"						"seva_box"
 		"Ability2"						"seva_trader"
@@ -28,7 +30,7 @@
 		"Ability16"						"special_bonus_unique_seva_ult_hp_to_dmg" // правый талант на 25 ур.
 		"Ability17"						"special_bonus_unique_seva_phone_silence" // левый талант на 25 ур.	
 	
-		"VisionNighttimeRange"			"900"										
+		"VisionNighttimeRange"			"1500"										
 	}
 
 	//========================================================================================================
@@ -38,6 +40,8 @@
 	"npc_dota_hero_nevermore"
 	 {
 	 	"override_hero"    				"npc_dota_hero_nevermore"
+
+	 	"MovementSpeed"					"315"
 	
 		"Ability1"						"maxim_creep"
 		"Ability2"						"maxim_zxc"
@@ -56,7 +60,7 @@
 		"Ability16"						"special_bonus_unique_maxim_zxc_interval" // правый талант на 25 ур.
 		"Ability17"						"special_bonus_unique_maxim_herald_agility" // левый талант на 25 ур.
 	
-		"VisionNighttimeRange"			"900"										
+		"VisionNighttimeRange"			"1500"										
 	 }
 
 	//========================================================================================================
@@ -80,7 +84,7 @@
 
 		"ArmorPhysical"					"4"
 
-		"MovementSpeed"					"275"
+		"MovementSpeed"					"335"
 
 		"Ability1"						"sergopy_voice"
 		"Ability2"						"sergopy_ivl"
@@ -99,7 +103,7 @@
 		"Ability16"						"special_bonus_unique_sergopy_voice_silence" // правый талант на 25 ур.
 		"Ability17"						"special_bonus_unique_sergopy_bristleback_damage" // левый талант на 25 ур.
 
-		"VisionNighttimeRange"			"900"										
+		"VisionNighttimeRange"			"1500"										
 	 }
 
 	//========================================================================================================
@@ -110,25 +114,24 @@
 	 {
 	 	"override_hero"    				"npc_dota_hero_huskar"
 
-		"MovementSpeed"					"300"
+		"MovementSpeed"					"330"
 
-		"Ability1"							"marker_armlet"
-		"Ability2"							"marker_chill"
-		//"Ability3"						"sergopy_refresh"
-	 	//"Ability4"						"sergopy_bristleback"
-		//"Ability5"						"generic_hidden"
-		//"Ability6"						"sergopy_hamster"
-		//"Ability7"						"generic_hidden"
+		"Ability1"						"marker_armlet"
+		"Ability2"						"marker_chill"
+		//"Ability3"					"sergopy_refresh"
+	 	//"Ability4"					"sergopy_bristleback"
+		//"Ability5"					"generic_hidden"
+		//"Ability6"					"sergopy_hamster"
+		//"Ability7"					"generic_hidden"
+		//"Ability10"					"special_bonus_unique_sergopy_refresh_chance" // правый талант на 10 ур.
+		//"Ability11"					"special_bonus_unique_sergopy_ivl_damage" // левый талант на 10 ур.
+		//"Ability12"					"special_bonus_mana_reduction_11" // правый талант на 15 ур.
+		//"Ability13"					"special_bonus_unique_sergopy_ivl_max_stacks" // левый талант на 15 ур.
+		//"Ability14"					"special_bonus_unique_sergopy_voice_cooldown" // правый талант на 20 ур.
+		//"Ability15"					"special_bonus_unique_sergopy_hamster_chance" // левый талант на 20 ур.
+		//"Ability16"					"special_bonus_unique_sergopy_voice_silence" // правый талант на 25 ур.
+		//"Ability17"					"special_bonus_unique_sergopy_bristleback_damage" // левый талант на 25 ур.
 
-		//"Ability10"						"special_bonus_unique_sergopy_refresh_chance" // правый талант на 10 ур.
-		//"Ability11"						"special_bonus_unique_sergopy_ivl_damage" // левый талант на 10 ур.
-		//"Ability12"						"special_bonus_mana_reduction_11" // правый талант на 15 ур.
-		//"Ability13"						"special_bonus_unique_sergopy_ivl_max_stacks" // левый талант на 15 ур.
-		//"Ability14"						"special_bonus_unique_sergopy_voice_cooldown" // правый талант на 20 ур.
-		//"Ability15"						"special_bonus_unique_sergopy_hamster_chance" // левый талант на 20 ур.
-		//"Ability16"						"special_bonus_unique_sergopy_voice_silence" // правый талант на 25 ур.
-		//"Ability17"						"special_bonus_unique_sergopy_bristleback_damage" // левый талант на 25 ур.
-
-		"VisionNighttimeRange"		"900"										
+		"VisionNighttimeRange"			"1500"										
 	 }
 }
