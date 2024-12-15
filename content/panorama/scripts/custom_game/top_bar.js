@@ -1,45 +1,45 @@
-GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_HEROES, false );
-GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND, false );
- 
-(function () {
-    // Подписка на событие "update_top_bar"
-    GameEvents.Subscribe("update_top_bar", function(data) {
-        $.Msg("Received data:", data);  // Выводим полученные данные для отладки
+GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_HEROES, false);
+GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND, false);
 
-        // Задержка на 0.5 секунды, чтобы интерфейс успел загрузиться
-        $.Schedule(0.5, function() {
-            // Находим контейнер с классом TopBarContainer
-            const topBarContainer = $.GetContextPanel().FindChildInLayoutFile("TopBarContainer");
+function CreateOrUpdateTopBar(event) {
+    const arrayHeroes = Object.values(event.data);
 
-            // Проверяем, существует ли контейнер
-            if (!topBarContainer) {
-                $.Msg("Не удалось найти контейнер TopBarContainer");
-                return;
-            }
+    // проверка на существование панели
+    let rootPanel = $.GetContextPanel().FindChildTraverse("HeroTopBar");
 
-            topBarContainer.RemoveAndDeleteChildren();  // Очищаем контейнер перед добавлением новых элементов
+    if (!rootPanel) {
+        // если панели нет, создаем её
+        rootPanel = $.CreatePanel("Panel", $.GetContextPanel(), "HeroTopBar");
+        rootPanel.BLoadLayoutSnippet("heroSnippet");
+    }
 
-            // Перебираем игроков
-            if (data.players && Object.keys(data.players).length > 0) {
-                for (let playerID in data.players) {
-                    if (data.players.hasOwnProperty(playerID)) {
-                        const player = data.players[playerID];
-                        
-                        $.Msg("Добавляем панель для игрока", player);  // Отладочное сообщение
+    const panelBody = rootPanel.FindChildTraverse("hero_panel");
+    if (!panelBody) {
+        $.Msg("Не удалось найти контейнер для героев");
+        return;
+    }
 
-                        const heroPanel = $.CreatePanel("Panel", topBarContainer, "");
-                        heroPanel.AddClass("HeroPanel");
+    // очищение панели
+    panelBody.RemoveAndDeleteChildren();
 
-                        const heroIcon = $.CreatePanel("DOTAHeroImage", heroPanel, "HeroIcon");
-                        heroIcon.heroname = player.hero;
-                        heroIcon.AddClass("HeroIcon");
+    // добавление героев
+    arrayHeroes.forEach((element) => {
+        const bar = $.CreatePanel("Panel", panelBody, "", { class: "hero_bar" });
 
-                        const heroGold = $.CreatePanel("Label", heroPanel, "HeroGold");
-                        heroGold.text = player.gold;
-                        heroGold.AddClass("HeroGold");
-                    }
-                }
-            }
+
+        const hero = $.CreatePanel("DOTAHeroImage", bar, "", {
+            class: "HeroIcon",
+            heroname: element.hero,
         });
+
+        const networth = $.CreatePanel("Label", bar, "", {
+            class: "HeroGold",
+            text: element.networth,
+        });
+
+        const networthIcon = $.CreatePanel("Image", networth, "", {class: "hero_networth_icon"});
+        networthIcon.SetImage("s2r://panorama/images/hud/reborn/gold_small_psd.vtex");
     });
-})();
+}
+
+GameEvents.Subscribe("update_top_bar", CreateOrUpdateTopBar);

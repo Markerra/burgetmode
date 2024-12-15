@@ -9,17 +9,19 @@
         <include src="file://{resources}/scripts/custom_game/top_bar.js" />
     </scripts>
 
-    <!-- Основной контейнер -->
+    <snippets>
+    	<snippet name="heroSnippet">
+    		<Panel>
+                <Panel id="hero_panel">
+    			    <Panel id="hero_networth">
+    			    </Panel>
+                </Panel>   
+        	</Panel>
+    	</snippet>
+    </snippets>
+
     <Panel class="root">
         <Panel class="HeroPanel">
-        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_bristleback"/>
-        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_huskar"/>
-        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_nevermore"/>
-        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_nevermore"/>
-        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_nevermore"/>
-        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_nevermore"/>
-        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_nevermore"/>
-        	<DOTAHeroImage class="HeroIcon" heroname="npc_dota_hero_nevermore"/>
         </Panel>
     </Panel>
 </root>

@@ -108,7 +108,7 @@ function GameMode:OnStateChange(data)
 
 	if state == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		GameRules:SetTimeOfDay(0.25)	
-		SendHeroDataToClient(1)
+		SendHeroDataToClient(0.34)
 		local player = PlayerResource:GetPlayer(0)
 		local player_id = player:GetPlayerID()
 		local bot = CreateUnitByName("npc_dota_hero_huskar", Vector(-10121, -3513.97, 267.247), true, nil, nil, 7)
