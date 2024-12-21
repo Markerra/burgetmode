@@ -1,31 +1,159 @@
 .root {
-	width: 16%;
-	height: 56%;
-	margin-bottom: 190px;
+	width: 35%;
+	height: 100%;
+}
+
+#debug_panel {
+	margin-bottom: 250px;
 	vertical-align: center;
-	background-image: url("s2r://panorama/images/backgrounds/generic_background_png.vtex");
+}
+
+#buttons_panel {
+	min-height: 400px;
+	min-width: 16%;
+	padding: 20px;
+	background-image: url("s2r://panorama/images/backgrounds/gallery_background_png.vtex");
 	border-radius: 10px; 
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px; 
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
 }
 
-
-#debug_panel {
-	padding: 20px;
-	
+#spawn_hero {
+	min-width: 250px;
+	min-height: 50px;
 }
 
-#spawn_bot_button {
+.hero_icon_button {
+    min-width: 130px;
+    min-height: 50px;
+    margin-left: 22px; 
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero_icon_button:hover {
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.item_icon_button {
+	min-width: 120px;
+    min-height: 50px;
+    margin-left: 22px; 
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.item_icon_button:hover {
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+#level_up {
+	max-width: 250px;
+	margin-top: 216px;
+}
+
+#lvlup_1_button {
+	width: 117px;
+	min-width: 117px;
+}
+
+#lvlup_30_button {
+	width: 117px;
+	min-width: 117px;
+	margin-left: 132px;
+}
+
+#wtf_mode_button {
+    min-height: 50px;
+}
+
+#wtf_mode {
+	margin-top: 144px;
+	width: 117px;
+}
+
+#refresh {
+	margin-top: 144px;
+	width: 117px;
+	margin-left: 132px;
+}
+
+#give_gold {
+	max-width: 250px;
+	margin-top: 288px;
+}
+
+#give_gold_1_button {
+	width: 117px;
+	min-width: 117px;
+}
+
+#give_gold_2_button {
+	width: 117px;
+	min-width: 117px;
+	margin-left: 132px;
+}
+
+.gold-icon {
+	margin-right: 10px;
+	horizontal-align: right;
+	vertical-align: center;
+    min-width: 25px; 
+    min-height: 25px;
+    background-image: url("s2r://panorama/images/hud/reborn/gold_small_psd.vtex");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
+
+
+#give_item_select {
+	margin-top: -72px;
+	padding-top: 35px;
+	padding-left: -5px;
+	padding-right: 10px;
+	min-height: 359px;
+    border: 2px solid #FFFFFF;
+    background-image: url("s2r://panorama/images/backgrounds/pregame_bg_lowquality_psd.vtex");
+    margin-left: 280px;
+}
+
+.item_icon {
+	height: 75px;
+	width: 90%;
+	horizontal-align: center;
+}
+
+#give_item {
+	margin-top: 72px;
+}
+
+#spawn_hero_select {
+	padding-top: 35px;
+    border: 2px solid #FFFFFF;
+    background-image: url("s2r://panorama/images/backgrounds/pregame_bg_lowquality_psd.vtex");
+    margin-left: 280px;
+    min-width: 320px;
+    min-height: 359px;
+}
+
+
+.debug_panel_button {
+	margin-top: 6px;
 	border: 2px solid #FFFFFF;
 	border-radius: 3px;
-	min-width: 300px;
+	min-width: 249px;
 	min-height: 50px;
-	background-image: url("s2r://panorama/images/backgrounds/dashboard_background_armory_update_psd.vtex");
+	background-image: url("s2r://panorama/images/backgrounds/pregame_bg_lowquality_psd.vtex");
 	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); 
 }
 
-#spawn_bot_button_text {
+.debug_panel_button:hover {
+	border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.debug_button_text {
 	color: white;
 	font-weight: bold;
 	font-size: 20px;
@@ -36,4 +164,17 @@
 	min-height: 40px;
 	horizontal-align: center;
 	text-shadow: 0px 3px 3px rgba(0, 0, 0, 1);
+}
+
+#close_menu_button {
+	vertical-align: center;
+	margin-left: 285px;
+	width: 30px;
+	height: 45px;
+	background-image: url("s2r://panorama/images/backgrounds/pregame_bg_lowquality_psd.vtex");
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); 
+}
+
+#close_menu_button:hover {
+	border: 2px solid rgba(0, 0, 0, 0.2);
 }

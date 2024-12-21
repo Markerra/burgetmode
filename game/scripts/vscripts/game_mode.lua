@@ -1,9 +1,13 @@
-require("panorama/custom_top_bar")
-require("utils/timers")
 
 if GameMode == nil then
 	GameMode = class({})
 end
+
+require("utils/timers")
+require("weather")
+
+require("panorama/custom_top_bar")
+require("panorama/debug_panel")
 
 function GameMode:Init()
 
@@ -35,32 +39,24 @@ function GameMode:Init()
 
 	mode:SetGiveFreeTPOnDeath(false)
 
-	ListenToGameEvent('npc_spawned', Dynamic_Wrap(self, 'OnSpawned'), self)
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(self, 'EntKilled'), self)
 	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(self, 'OnStateChange'), self)
+
+	CustomGameEventManager:RegisterListener("spawn_bot_admin", Dynamic_Wrap(self, 'Admin_SpawnBot'))
+	CustomGameEventManager:RegisterListener("give_item_admin", Dynamic_Wrap(self, 'Admin_GiveItem'))
+	CustomGameEventManager:RegisterListener("wtf_mode_admin", Dynamic_Wrap(self, 'Admin_WTFMode'))
+	CustomGameEventManager:RegisterListener("refresh_admin",   Dynamic_Wrap(self, 'Admin_Refresh'))
+	CustomGameEventManager:RegisterListener("lvlup_admin", Dynamic_Wrap(self, 'Admin_lvlUp'))
+	CustomGameEventManager:RegisterListener("gold_admin", Dynamic_Wrap(self, 'Admin_GiveGold'))
 
 end
 
 function GameMode:InitFast()
 	local mode = GameRules:GetGameModeEntity()
 
-	mode:SetCustomGameForceHero("npc_dota_hero_bristleback")
+	mode:SetCustomGameForceHero("npc_dota_hero_nevermore")
 	GameRules:SetStrategyTime(0)
 	GameRules:SetPreGameTime(0)
-end
-
-function GameMode:OnSpawned(data)
-	local npc  = EntIndexToHScript(data.entindex)
-
-	if IsInToolsMode() and bFirstSpawned == nil then
-		npc:AddItemByName("item_blink")
-		npc:AddItemByName("item_desolator")
-		for i=1,30 do
-			npc:HeroLevelUp(false)
-		end
-		npc:SetDayTimeVisionRange(15000)
-		--bFirstSpawned = false
-	end
 end
 
 function GameMode:EntKilled(data)
@@ -107,12 +103,8 @@ function GameMode:OnStateChange(data)
 	local state = GameRules:State_Get()
 
 	if state == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		GameRules:SetTimeOfDay(0.25)	
-		SendHeroDataToClient(0.34)
-		local player = PlayerResource:GetPlayer(0)
-		local player_id = player:GetPlayerID()
-		local bot = CreateUnitByName("npc_dota_hero_huskar", Vector(-10121, -3513.97, 267.247), true, nil, nil, 7)
-    	bot:SetControllableByPlayer(player_id, true)
+		GameRules:SetTimeOfDay(0.25)
+		SendHeroDataToClient(0.34, false) -- panorama/custom_top_bar.lua
 	end
 
 end

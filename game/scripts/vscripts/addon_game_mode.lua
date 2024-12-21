@@ -5,6 +5,12 @@ function Precache( context )
 	PrecacheResource("soundfile", "soundevents/game_sounds.vsndevts", context) 
 
 --================================================================================================================================================
+--------------------- WEATHER
+--================================================================================================================================================
+	PrecacheResource("particle", "particles/winter_fx/weather_frostivus_snow.vpcf", context) -- snow
+	PrecacheResource("particle", "particles/rain_fx/econ_weather_spring.vpcf", context) -- spring
+
+--================================================================================================================================================
 --------------------- SEVA
 --================================================================================================================================================
 	PrecacheResource("soundfile", "soundevents/seva_sounds.vsndevts", context)

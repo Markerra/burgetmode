@@ -5,10 +5,118 @@
 	<scripts>
 		<include src="file://{resources}/scripts/custom_game/debug_panel.js" />
 	</scripts>
-	<Panel class="root">
+
+	<Panel class="root" hittest="false">
 		<Panel id="debug_panel">
-			<Button id="spawn_bot_button">
-				<Label id="spawn_bot_button_text" text="Спавн бота"/>
+			<Panel id="buttons_panel">
+				<Panel id="spawn_hero">
+					<Panel id="spawn_hero_select">
+					    <!-- Иконка Huskar -->
+					    <Button class="hero_icon_button" onactivate="SpawnHero('npc_dota_hero_huskar')">
+					        <DOTAHeroImage heroname="npc_dota_hero_huskar" class="hero_icon"/>
+					    </Button>
+					
+					    <!-- Иконка Nevermore -->
+					    <Button class="hero_icon_button" style="margin-left: 170px;" onactivate="	SpawnHero('npc_dota_hero_nevermore')">
+					        <DOTAHeroImage heroname="npc_dota_hero_nevermore" class="hero_icon"/>
+					    </Button>
+					
+					    <!-- Иконка Legion Commander -->
+					    <Button class="hero_icon_button" style="margin-top: 105px;" onactivate="	SpawnHero('npc_dota_hero_legion_commander')">
+					        <DOTAHeroImage heroname="npc_dota_hero_legion_commander" class="hero_icon"/>
+					    </Button>
+					
+					    <!-- Иконка Bristleback -->
+					    <Button class="hero_icon_button" style="margin-top: 105px; margin-left: 170px;" onactivate=	"SpawnHero('npc_dota_hero_bristleback')">
+					        <DOTAHeroImage heroname="npc_dota_hero_bristleback" class="hero_icon"/>
+					    </Button>
+					
+					    <!-- Иконка Obsidian Destroyer -->
+					    <Button class="hero_icon_button" style="margin-top: 210px;" onactivate="	SpawnHero('npc_dota_hero_obsidian_destroyer')">
+					        <DOTAHeroImage heroname="npc_dota_hero_obsidian_destroyer" class="hero_icon"/>
+					    </Button>
+					
+					    <!-- Иконка Pudge -->
+					    <Button class="hero_icon_button" style="margin-top: 210px; margin-left: 170px;" onactivate=	"SpawnHero('npc_dota_hero_pudge')">
+					        <DOTAHeroImage heroname="npc_dota_hero_pudge" class="hero_icon"/>
+					    </Button>
+					</Panel>
+					<Button id="spawn_bot_button" class="debug_panel_button">
+						<Label class="debug_button_text" text="Спавн бота"/>
+					</Button>
+	
+				</Panel>
+				<Panel id="give_item">
+					<Panel id="give_item_select">
+	
+					    <Button class="item_icon_button" style="margin-top: 105px;" onactivate="	GiveItem('item_ultimate_scepter_2')">
+					        <DOTAItemImage itemname="item_ultimate_scepter" class="item_icon" showtooltip="false"/>
+					    </Button>
+					
+			
+					    <Button class="item_icon_button" onactivate="GiveItem('item_blink')">
+					        <DOTAItemImage itemname="item_blink" class="item_icon" showtooltip="false"/>
+					    </Button>
+					
+				
+					    <Button class="item_icon_button" style="margin-top: 105px; margin-left: 160px;" onactivate=	"GiveItem('item_aghanims_shard')">
+					        <DOTAItemImage itemname="item_aghanims_shard" class="item_icon" showtooltip="false"/>
+					    </Button>
+					
+	
+					    <Button class="item_icon_button" style="margin-left: 160px;" onactivate="	GiveItem('item_rapier')">
+					        <DOTAItemImage itemname="item_rapier" class="item_icon" showtooltip="false"/>
+					    </Button>
+					
+					    <Button class="item_icon_button" style="margin-top: 210px;" onactivate="	GiveItem('item_heart')">
+					        <DOTAItemImage itemname="item_heart" class="item_icon" showtooltip="false"/>
+					    </Button>
+					
+					    <Button class="item_icon_button" style="margin-top: 210px; margin-left: 160px;" onactivate=	"GiveItem('item_black_king_bar')">
+					        <DOTAItemImage itemname="item_black_king_bar" class="item_icon" showtooltip="false"/>
+					    </Button>
+					</Panel>
+					<Button id="give_item_button" class="debug_panel_button">
+						<Label class="debug_button_text" text="Выдать предмет"/>
+					</Button>
+				</Panel>
+	
+				<Panel id="wtf_mode">
+					<Button id="wtf_mode_button" class="debug_panel_button">
+						<Label class="debug_button_text" text="WTF"/>
+					</Button>
+				</Panel>
+	
+				<Panel id="refresh">
+					<Button id="refresh_button" class="debug_panel_button" onactivate="Refresh('true')">
+						<Label class="debug_button_text" text="Обновить"/>
+					</Button>
+				</Panel>
+	
+				<Panel id="level_up">
+					<Button id="lvlup_1_button" class="debug_panel_button" onactivate="LvlUp(1)">
+						<Label class="debug_button_text" text="+1 ур."/>
+					</Button>
+	
+					<Button id="lvlup_30_button" class="debug_panel_button" onactivate="LvlUp(30)">
+						<Label class="debug_button_text" text="+30 ур."/>
+					</Button>
+				</Panel>
+
+				<Panel id="give_gold">
+					<Button id="give_gold_1_button" class="debug_panel_button" onactivate="GiveGold(1000)">
+						<Panel class="gold-icon" />
+						<Label class="debug_button_text" text="+1000     "/>
+					</Button>
+	
+					<Button id="give_gold_2_button" class="debug_panel_button" onactivate="GiveGold(9999)">
+						<Panel class="gold-icon" />
+						<Label class="debug_button_text" text="+9999     "/>
+					</Button>
+				</Panel>
+			</Panel>
+			<Button id="close_menu_button">
+					<Label id="close_menu_button_text" class="debug_button_text" text="<"/>
 			</Button>
 		</Panel>
 	</Panel>

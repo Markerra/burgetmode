@@ -24,7 +24,7 @@ end
 function maxim_zxc:GetChannelAnimation() return ACT_DOTA_TAUNT end
 
 function maxim_zxc:OnSpellStart()
-    local caster = self:GetCaster()
+	local caster = self:GetCaster()
     local shard  = caster:HasModifier("modifier_item_aghanims_shard")
     caster:AddNewModifier(caster, self, "modifier_maxim_zxc", {duration = self:GetChannelTime()})
     caster:AddNewModifier(caster, self, "modifier_maxim_animation", {duration = self:GetChannelTime() + 0.1})
@@ -38,6 +38,7 @@ function maxim_zxc:OnSpellStart()
 end
 
 function maxim_zxc:OnChannelFinish(bInterrupted)
+	if not IsServer() then return end
     local caster = self:GetCaster()
     caster:FadeGesture(ACT_DOTA_TAUNT)
     if caster:HasModifier("modifier_maxim_zxc") then
@@ -69,7 +70,6 @@ end
 
 function modifier_maxim_zxc:ShadowRaze(radius_offset, angle_offset)
 	if not IsServer() then return end
-
 
 	local caster  = self:GetCaster()
 	local ability = self:GetAbility()
@@ -177,6 +177,7 @@ function modifier_maxim_animation:OnCreated()
 end
 
 function modifier_maxim_animation:OnIntervalThink()
+	if not IsServer() then return end
 	local caster = self:GetAbility():GetCaster()
 	caster:FadeGesture(ACT_DOTA_TAUNT)
 	if not caster:HasModifier("modifier_maxim_zxc") then return end

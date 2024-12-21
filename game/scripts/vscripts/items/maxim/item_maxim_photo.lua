@@ -31,6 +31,8 @@ function modifier_item_maxim_photo:OnDeath(params)
     if not parent or not unit then return end
     if not parent:IsAlive() or not ability then return end
 
+    if not unit:IsHero() then return end 
+
     if unit:GetTeamNumber() == parent:GetTeamNumber() then return end
 
     if parent:CanEntityBeSeenByMyTeam(unit) then

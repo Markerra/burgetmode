@@ -3,10 +3,10 @@ GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_BACKGR
 
 function CreateOrUpdateTopBar(event) {
     const arrayHeroes = Object.values(event.data);
+    arrayHeroes.sort((a, b) => b.networth - a.networth)
 
     // проверка на существование панели
     let rootPanel = $.GetContextPanel().FindChildTraverse("HeroTopBar");
-
     if (!rootPanel) {
         // если панели нет, создаем её
         rootPanel = $.CreatePanel("Panel", $.GetContextPanel(), "HeroTopBar");
