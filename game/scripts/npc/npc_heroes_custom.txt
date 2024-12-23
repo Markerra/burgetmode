@@ -42,6 +42,9 @@
 	 	"override_hero"    				"npc_dota_hero_nevermore"
 
 	 	"MovementSpeed"					"315"
+
+	 	"AttackDamageMin"       		"22" // 16+n (доп. урон)
+        "AttackDamageMax"       		"28" // 22+n (доп.урон)
 	
 		"Ability1"						"maxim_creep"
 		"Ability2"						"maxim_zxc"

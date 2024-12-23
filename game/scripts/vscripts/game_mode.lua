@@ -22,9 +22,10 @@ function GameMode:Init()
 
 	GameRules:SetUseUniversalShopMode(true)
 	GameRules:SetSafeToLeave(true)
+
 	GameRules:SetShowcaseTime( 0.0 )
 	GameRules:SetStrategyTime( 10.0 )
-	GameRules:SetPreGameTime(10)
+	GameRules:SetPreGameTime(5)
 
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 0 )
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS,  0 )
@@ -48,6 +49,8 @@ function GameMode:Init()
 	CustomGameEventManager:RegisterListener("refresh_admin",   Dynamic_Wrap(self, 'Admin_Refresh'))
 	CustomGameEventManager:RegisterListener("lvlup_admin", Dynamic_Wrap(self, 'Admin_lvlUp'))
 	CustomGameEventManager:RegisterListener("gold_admin", Dynamic_Wrap(self, 'Admin_GiveGold'))
+
+	SendHeroDataToClient(0.34, false) -- panorama/custom_top_bar.lua 
 
 end
 
@@ -104,7 +107,17 @@ function GameMode:OnStateChange(data)
 
 	if state == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		GameRules:SetTimeOfDay(0.25)
-		SendHeroDataToClient(0.34, false) -- panorama/custom_top_bar.lua
+		GameRules:SpawnNeutralCreeps()
+		Timers:CreateTimer(10, function() -- спустя 10 минут активирует возможность атаковать фонтан
+			local fountain = Entities:FindByClassname(nil, "ent_dota_fountain") 
+			while fountain do
+				print("Found fountain:", fountain)
+			    fountain:RemoveModifierByName("modifier_invulnerable")
+			    print("Removed invulnerability from fountain")
+			    fountain = Entities:FindByClassname(fountain, "ent_dota_fountain")
+			end
+
+		end)
 	end
 
 end

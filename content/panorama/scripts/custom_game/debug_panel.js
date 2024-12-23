@@ -54,12 +54,18 @@ giveButton.SetPanelEvent("onactivate", function() {
 
 function GiveItem(itemName) {
     if (!itemName) {
-        $.Msg("No hero name provided!");
+        $.Msg("No item name provided!");
         return;
     }
 
+    var entities = Players.GetSelectedEntities( 0 );
+    $.Msg( "Entities = " + entities );
+
+    var numEntities = Object.keys( entities ).length;
+    $.Msg( "Num entities = " + numEntities );
+
     var playerID = Game.GetLocalPlayerID();
-    GameEvents.SendCustomGameEventToServer("give_item_admin", { item: itemName, id: playerID });
+    GameEvents.SendCustomGameEventToServer("give_item_admin", { item: itemName, ent: entities });
     $.Msg("Requested item: " + itemName);
 }
 
@@ -95,8 +101,14 @@ function Refresh() {
 // Повысить уровень >>
 
 function LvlUp(level) {
+    var entities = Players.GetSelectedEntities( 0 );
+    $.Msg( "Entities = " + entities );
+
+    var numEntities = Object.keys( entities ).length;
+    $.Msg( "Num entities = " + numEntities );
+
     var playerID = Game.GetLocalPlayerID();
-    GameEvents.SendCustomGameEventToServer("lvlup_admin", { lvl: level, id: playerID });
+    GameEvents.SendCustomGameEventToServer("lvlup_admin", { lvl: level, ent: entities });
     $.Msg("Requested lvlup for player " + playerID);
 }
 
@@ -105,8 +117,10 @@ function LvlUp(level) {
 const networthIcon = $("#gold-icon")
 
 function GiveGold(amt) {
-    var playerID = Game.GetLocalPlayerID();
-    GameEvents.SendCustomGameEventToServer("gold_admin", { amout: amt, id: playerID });
+    var entities = Players.GetSelectedEntities( 0 );
+    $.Msg( "Entities = " + entities );
+
+    GameEvents.SendCustomGameEventToServer("gold_admin", { amout: amt, ent: entities });
     $.Msg("Requested " + amt + " gold for player " + playerID);
 }
 

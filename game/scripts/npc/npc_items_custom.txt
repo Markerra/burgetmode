@@ -3,6 +3,45 @@
 
 
 	"item_tpscroll"						"ITEM_REMOVE"
+	"item_iron_talon"					"ITEM_REMOVE"
+
+	"item_iron_talon"
+	{
+
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/shop/item_iron_talon"
+		"AbilityTextureName"			"item_iron_talon"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+		"ItemPurchasable" 				"1"
+
+		"AbilityCastRange"              "350"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "9.0"
+        "Model"                         "models/props_gameplay/quelling_blade.vmdl"
+
+        "AbilityManaCost"               "0"
+        "ItemShopTags"                  "damage"
+        "ItemCost"                      "350"
+
+        "AbilityValues"
+        {
+        	"bonus_dmg_melee"	"10"	// бонус урон по крипам для героев ближнего боя
+			"bonus_dmg_range"	"8"		// бонус урон по крипам для героев дальнего боя
+			"damage_amp"		"10"	// доп. урон по крипам (в процентах)
+        }
+	}
+
+	"item_gold_reset"
+	{
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/item_gold_reset"
+		"AbilityTextureName"			"custom/item_gold_reset"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"ItemPurchasable" 				"0"
+	}
 
 
 	"item_mega_nuggets"

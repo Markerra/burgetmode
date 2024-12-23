@@ -158,4 +158,10 @@
 			}
 		},
 	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/econ/world/towers/ti10_radiant_tower/ti10_radiant_tower_destruction_sparkle.vpcf"
+		},
+	]
 }

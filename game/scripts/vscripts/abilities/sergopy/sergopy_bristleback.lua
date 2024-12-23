@@ -12,6 +12,8 @@ function modifier_sergopy_bristleback:IsHidden() return false end
 function modifier_sergopy_bristleback:IsDebuff() return false end
 function modifier_sergopy_bristleback:IsPurgable() return false end
 
+function modifier_sergopy_bristleback:GetTexture() return "modifiers/sergopy_bristleback" end
+
 function modifier_sergopy_bristleback:DeclareFunctions()
     return {
         MODIFIER_EVENT_ON_ABILITY_EXECUTED,

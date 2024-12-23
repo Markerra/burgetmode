@@ -67,7 +67,6 @@ function modifier_sergopy_ivl_debuff:IsPurgable() return false end
 function modifier_sergopy_ivl_debuff:IsPurgeException() return true end -- можно развеять только сильным развеиванием
 
 function modifier_sergopy_ivl_debuff:OnCreated()
-    if not IsServer() then return end
 
     self.regen_reduction = self:GetAbility():GetSpecialValueFor("regen_reduction")
     self.slow            = self:GetAbility():GetSpecialValueFor("slow")
@@ -77,6 +76,8 @@ function modifier_sergopy_ivl_debuff:OnCreated()
     self.stack_regen_bonus  = self:GetAbility():GetSpecialValueFor("stack_regen_bonus")
     self.stack_slow_bonus   = self:GetAbility():GetSpecialValueFor("stack_slow_bonus")
 
+    if not IsServer() then return end
+    
     self:StartIntervalThink(1.0)
 
     self.stacks_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_batrider/batrider_stickynapalm_stack.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetParent())

@@ -9,7 +9,7 @@ function item_maxim_abaddon:OnSpellStart()
 
 	if not self:GetCaster():HasAbility("maxim_isaac") then return end
 
-	local caster    = self:GetCaster()
+	local caster = self:GetCaster()
 
 	exp_radius						 = self:GetSpecialValueFor("exp_radius")
 	duration  						 = self:GetSpecialValueFor("duration")

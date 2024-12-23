@@ -73,22 +73,22 @@ function modifier_sergopy_voice_pull:OnCreated(kv)
     self.pull_center   = self:GetCaster():GetAbsOrigin()
     self.safe_distance = 200
 
-    self:StartIntervalThink(FrameTime())
+    self:StartIntervalThink(0.001)
 end
 
 function modifier_sergopy_voice_pull:OnIntervalThink()
     if not IsServer() then return end
-
+    self.safe_distance = self.safe_distance
     local parent = self:GetParent()
     local direction = (self.pull_center - parent:GetAbsOrigin()):Normalized()
-    local new_position = parent:GetAbsOrigin() + direction * self.pull_speed * FrameTime()
+    local new_position = parent:GetAbsOrigin() + RandomInt(-30, 30) + direction * self.pull_speed * 0.001
     local distance = (self.pull_center - parent:GetAbsOrigin()):Length2D()
 
     if distance > self.safe_distance then
-        local move_distance = math.min(self.pull_speed * FrameTime(), distance - self.safe_distance)
+        local move_distance = math.min(self.pull_speed * 0.001, distance - self.safe_distance)
         local new_position = parent:GetAbsOrigin() + direction * move_distance
 
-        parent:SetAbsOrigin(new_position)
+        FindClearSpaceForUnit(parent, new_position, true)
     end
 end
 

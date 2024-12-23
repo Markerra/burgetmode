@@ -79,7 +79,7 @@
 			"item_gossamer_cape"				  "1"
 			"item_light_collector"				"1"
 			//"item_claddish_spyglass"				"1"
-			"item_iron_talon"						"1"
+			//"item_iron_talon"						"1"
 
 						
 
@@ -146,13 +146,12 @@
 			"item_spell_prism"				  "1"
 			"item_ascetic_cap"				  "1"
 			"item_avianas_feather"				  "1"
-			
 			//"item_heavy_blade"				  "1"
 			//"item_flicker"					  "1"
 			"item_ninja_gear"				  "1"
 			//"item_illusionsts_cape"		  "1"
 			//"item_fortitude_ring"			  "1"
-			"item_the_leveller"				  "1"
+			//"item_the_leveller"				  "1"
 			//"item_minotaur_horn"			  "1"
 			"item_spy_gadget"				  "1"
 			"item_trickster_cloak"			  "1"

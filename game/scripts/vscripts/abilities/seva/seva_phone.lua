@@ -36,13 +36,14 @@ function th_modifier_seva_phone:OnCreated()
     local radius   = self:GetAbility():GetSpecialValueFor("radius")
     if not IsServer() then return end
     self:StartIntervalThink(1)
-    self.effect_cast = ParticleManager:CreateParticle("particles/econ/items/riki/riki_head_ti8/riki_smokebomb_ti8_crimson_smoke_ground.vpcf", PATTACH_WORLDORIGIN, nil)
-    ParticleManager:SetParticleControl(self.effect_cast, 0, self:GetParent():GetOrigin()) 
-    ParticleManager:SetParticleControl(self.effect_cast, 1, Vector( radius, radius, radius))
+    self.particle = ParticleManager:CreateParticle("particles/econ/items/riki/riki_head_ti8/riki_smokebomb_ti8_crimson_smoke_ground.vpcf", PATTACH_WORLDORIGIN, nil)
+    ParticleManager:SetParticleControl(self.particle, 0, self:GetParent():GetOrigin()) 
+    ParticleManager:SetParticleControl(self.particle, 1, Vector( radius, radius, radius))
 end
 
 function th_modifier_seva_phone:OnDestroy()
-    ParticleManager:DestroyParticle(self.effect_cast, false) 
+    if not IsServer() then return end
+    ParticleManager:DestroyParticle(self.particle, false) 
 end
 
 function db_modifier_seva_phone:DeclareFunctions()
@@ -66,7 +67,7 @@ function th_modifier_seva_phone:OnIntervalThink()
     local radius    =   self:GetAbility():GetSpecialValueFor("radius")
     local dmg       =   self:GetAbility():GetSpecialValueFor("pure_damage")
     local mduration =   self:GetAbility():GetSpecialValueFor("mute_duration")
-    local enemies   =   FindUnitsInRadius(caster:GetTeamNumber(), parent:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, 1, 8192, 0, false)
+    local enemies   =   FindUnitsInRadius(caster:GetTeamNumber(), parent:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC , 0, 0, false)
     for _,value in ipairs(enemies) do
         if HasTalent(caster, "special_bonus_unique_seva_phone_silence") then
             value:AddNewModifier(caster, self:GetAbility(), "modifier_silence", {duration = mduration})

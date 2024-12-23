@@ -8,9 +8,6 @@ function GameMode:Admin_SpawnBot(data)
 	local playerID = data.id
 	local offset   = 100
 
-	print(heroName)
-	print(playerID)
-
 	if not heroName or heroName == "" then
         print("debug_panel: неверное имя героя")
         return nil
@@ -40,23 +37,31 @@ function GameMode:Admin_SpawnBot(data)
     local botHero = CreateUnitByName(heroName, spawnPosition, true, nil, nil, player:GetTeamNumber())
     botHero:SetControllableByPlayer(playerID, true)
     botHero:SetPlayerID(HeroList:GetHeroCount() - 1)
-    print("bot id: ", botHero:GetPlayerID())
+    print("Admin Panel: Bot Spawned.","ID: "..botHero:GetPlayerID())
 end
 
 function GameMode:Admin_GiveItem(data)
 
+	if not IsServer() then return end
+	local entities = {}
+	for key, value in pairs(data.ent) do
+	    entities[tonumber(key)] = value
+	end
+
 	local item_name = data.item
 
-	local hero = PlayerResource:GetSelectedHeroEntity(data.id)
-	print("NAME "..PlayerResource:GetSelectedHeroName(data.id))
-	if not hero or hero == "" then
-        print("debug_panel: неверное имя героя")
-        return nil
-    end
-
-    local item = CreateItem(item_name, hero, hero)
-	if item then
-		hero:AddItem(item)
+	for key, value in pairs(entities) do
+    	local hero = EntIndexToHScript(entities[key])
+		print("Admin Panel: "..item_name.." Item for "..hero:GetUnitName())
+		if not hero or hero == "" then
+        	print("Admin Panel: "..item_name.." Item for ".." <Incorrect Hero Name>")
+        	return nil
+    	end
+    	local item = CreateItem(item_name, hero, hero)
+		if item then
+			hero:AddItem(item)
+		end
+		
 	end
     
 end
@@ -96,7 +101,6 @@ function GameMode:Admin_Refresh(data)
 end
 
 function GameMode:Admin_WTFMode()
-    print(wtfMode)
 
     if wtfMode == true then
         -- Включаем режим WTF
@@ -137,17 +141,24 @@ end
 
 function GameMode:Admin_lvlUp(data)
 	if not IsServer() then return end
-	--local playerID = data.id
-	--local player   = PlayerResource:GetPlayer(playerID)
-	--for i=1, data.lvl do
-	--	player:GetAssignedHero():HeroLevelUp(true)	
-	--end
-	for player=1, HeroList:GetHeroCount() do
+	local entities = {}
+	for key, value in pairs(data.ent) do
+	    entities[tonumber(key)] = value
+	end
+	for key, value in pairs(entities) do
+    	local hero = EntIndexToHScript(entities[key])
+		print("Admin Panel: "..data.lvl.." Level Up for "..hero:GetUnitName())
 		for i=1, data.lvl do
-			print(HeroList:GetHeroCount())
-			HeroList:GetHero(player-1):HeroLevelUp(true)	
+			hero:HeroLevelUp(true)	
 		end
 	end
+	
+	--for player=1, HeroList:GetHeroCount() do
+	--	for i=1, data.lvl do
+	--		print(HeroList:GetHeroCount())
+	--		HeroList:GetHero(player-1):HeroLevelUp(true)	
+	--	end
+	--end
 
 end
 

@@ -17,9 +17,9 @@
 	}
 
 
-	//-------------------------------------------------
-	//seva
-	//-------------------------------------------------
+//-------------------------------------------------
+// SEVA
+//-------------------------------------------------
 
 	//=================================================================================================================
 	// Seva: Сила Жира
@@ -53,7 +53,7 @@
 		"AbilityTextureName"			"seva_box"
 		"MaxLevel" 						"4"
 		"AbilityCooldown"				"70 60 50 40"
-		"AbilityManaCost"				"250 200 150 100"
+		"AbilityManaCost"				"130 150 200 230"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
 		"AbilityValues"
@@ -91,7 +91,7 @@
 	{
 		"BaseClass"             		"ability_lua"
 		"ScriptFile"					"abilities/seva/seva_phone"
-		"AbilityCooldown"				"80 70 60 50"
+		"AbilityCooldown"				"50"
 		"AbilityManaCost"				"250 200 175 150"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3"
@@ -111,7 +111,7 @@
 			"mute_duration"		"0.2 0.4 0.8 1"	// длительность заглушения
 			"duration"
 			{
-				"value"			"3 4 5 6"		// длительность облака
+				"value"			"5"		// длительность облака
 				"special_bonus_unique_seva_phone_duration"	"+1"	// талант
 			}
 			"radius"			"200 300 400 500" // радиус облака
@@ -163,7 +163,7 @@
 		"AbilityTextureName"			"seva_tether"
 		"AbilityCooldown"				"75 70 60 50"
 		"AbilityCastRange"				"900"
-		"AbilityManaCost"				"300"
+		"AbilityManaCost"				"250 270 300 330"
 		"MaxLevel" 						"4"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
@@ -216,7 +216,7 @@
 		"AbilityTextureName"			"seva_ult"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityManaCost"				"400 350 200 "
+		"AbilityManaCost"				"300 350 420"
 		"AbilityCastPoint"				"1.53"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityValues"
@@ -275,9 +275,9 @@
 	}
 
 
-	//-------------------------------------------------
-	// maxim
-	//-------------------------------------------------
+//-------------------------------------------------
+// MAXIM
+//-------------------------------------------------
 
 
 	//=================================================================================================================
@@ -510,7 +510,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCastAnimation"			"ACT_DOTA_IDLE_RARE"
-		"AbilityManaCost"				"450 400 300"
+		"AbilityManaCost"				"300 400 450"
 		"AbilityCastPoint"				"1 0.5 0.3"
 		"AbilityValues"
 		{
@@ -533,9 +533,9 @@
 	}
 
 
-	//----------------------------------------------------------------------------
-	// SERGOPY
-	//----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
+// SERGOPY
+//----------------------------------------------------------------------------
 
 	//=================================================================================================================
 	// Sergopy: Мейнер Ежа
@@ -581,7 +581,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType" 		"DAMAGE_TYPE_MAGICAL"
-		"AbilityManaCost"				"50"
+		"AbilityManaCost"				"60"
 		"AbilityCastRange"				"450 500 550 600" // радиус притягивания (визуал)
 		"AbilityValues"
 		{
@@ -593,7 +593,7 @@
 
 			"damage"			"55 65 70 90"		// урон
 			"radius"			"450 500 550 600"	// радиус притягивания
-			"pull_speed"		"600 610 620 630"	// скорость притяжения
+			"pull_speed"		"700"	// скорость притяжения
 			"pull_duration"		"0.6"				// время притяжения
 			"silence_duration"	"1.5"				// длительность безмолвия (талант)
 		}
@@ -772,9 +772,9 @@
 		}
 	}
 
-	//----------------------------------------------------------------------------
-	// MARKER
-	//----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
+// MARKER
+//----------------------------------------------------------------------------
 
 	//=================================================================================================================
 	// Marker: Армлет
@@ -806,8 +806,8 @@
 				"value"					"20"	// потеря хп при активации
 			}
 
-			"strength_growth"			"0.5"		// прирост к доп. силе при активации за уровень
-			"damage_growth"				"3"	// прирост к доп. урону при активации за уровень
+			"strength_growth"			"0.5"	// прирост к доп. силе при активации за уровень
+			"damage_growth"				"3"	 	// прирост к доп. урону при активации за уровень
 			"health_loss_growth"		"3"		// прирост к потери хп при активации за уровень
 		}
 	}
@@ -831,6 +831,92 @@
 		}
 
 			
+	}
+
+
+//----------------------------------------------------------------------------
+// UNIT ABILITIES
+//----------------------------------------------------------------------------
+	
+	//=================================================================================================================
+	// Tower: Защита Башни
+	//=================================================================================================================
+
+	"tower_protection_aura"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/unit/tower/tower_protection_aura"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE || DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityTextureName"			"unit/tower_protection"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"AbilityValues"
+		{
+			"incoming_damage_percent"	"40" // уменьшение наносимого урона	(в процентах)
+			"slow_percent"				"15" // уменьшение скорости передвижения (в процентах)
+			"radius"					"1800"	// радиус
+		}	
+	}
+
+	//=================================================================================================================
+	// Tower: Иссушение
+	//=================================================================================================================
+
+	"tower_soul_drain"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/unit/tower/tower_soul_drain"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"unit/tower_soul_drain"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		"AbilityValues"
+		{
+			"hp_regen_pct"			"45" // уменьшение регенерации здоровья	(в процентах)
+			"slow_pct"				"30" // уменьшение скорости передвижения (в процентах)
+			"duration"				"5"  // длительность эффекта
+		}	
+	}
+
+	//=================================================================================================================
+	// Fountain: Улучшение Фонтана
+	//=================================================================================================================
+	"fountain_custom_upgrade" 
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/unit/fountain/fountain_custom_upgrade"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"unit/fountain_upgrade"
+
+		"AbilityValues"
+		{
+			"hp_upgrade"		"150" // увеличение здоровья
+			"regen_upgrade"		"0.5" // увеличение регенерации здоровья
+			"armor_upgrade"		"0.5" // увеличение брони
+			"damage_upgrade"	"2.5" // увеличение урона
+			"at_upgrade"		"2"	  // увеличение скорости атаки
+			"upgrade_interval"	"60" // интервал улучшения характеристик (в секундах)
+		}		
+	}
+
+	//=================================================================================================================
+	// Fountain: Исцеление Фонтана
+	//=================================================================================================================
+	"fountain_custom_heal" 
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/unit/fountain/fountain_custom_heal"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE || DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityTextureName"			"unit/fountain_custom_heal"
+
+		"AbilityValues"
+		{
+			"hp_regen"			"2.5" // регенерация здоровья (в процентах)
+			"mana_regen"		"4" // регенерация маны (в процентах)
+			"damage_resist"		"10"	// доп. сопротивление урону (в процентах)
+			"radius"			"650"	// радиус
+		}		
 	}
 
 }
