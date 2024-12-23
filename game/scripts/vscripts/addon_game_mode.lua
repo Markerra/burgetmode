@@ -1,4 +1,5 @@
-require("game_mode")
+require("game-mode/game_mode_settings")
+require("game-mode/game_mode_init")
 
 function Precache( context )
 
@@ -70,16 +71,20 @@ function Precache( context )
 --------------------- MARKER
 --================================================================================================================================================
 	PrecacheResource("particle", "particles/items_fx/armlet.vpcf", context) -- marker_armlet
-end
 
 --================================================================================================================================================
 --------------------- TOWER
 --================================================================================================================================================
-PrecacheResource("particle", "particles/econ/events/ti8/shivas_guard_ti8_slow.vpcf", context) -- tower_soul_drain
+	PrecacheResource("particle", "particles/econ/events/ti8/shivas_guard_ti8_slow.vpcf", context) -- tower_soul_drain
+end
 
 -- Create the game mode when we activate
 function Activate()
 	GameMode:Init()
-	GameMode:InitFast()
+
+	if IsInToolsMode() then
+		GameMode:InitFast() -- быстрый пик героев (для тестов)
+	end
+
 end
 

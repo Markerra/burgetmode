@@ -1,12 +1,12 @@
-LinkLuaModifier("modifier_item_iron_talon", "items/shop/item_iron_talon", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_jungle_staff", "items/shop/item_jungle_staff", LUA_MODIFIER_MOTION_NONE)
 
-item_iron_talon = class({})
+item_jungle_staff = class({})
 
-function item_iron_talon:GetIntrinsicModifierName() -- доп. урон по крипам
-    return "modifier_item_iron_talon"
+function item_jungle_staff:GetIntrinsicModifierName() -- доп. урон по крипам
+    return "modifier_item_jungle_staff"
 end
 
-function item_iron_talon:OnSpellStart() -- срубание дерева
+function item_jungle_staff:OnSpellStart() -- срубание дерева
     local caster = self:GetCaster()
     local target_point = self:GetCursorPosition()
 
@@ -22,15 +22,15 @@ function item_iron_talon:OnSpellStart() -- срубание дерева
     end
 end
 
-modifier_item_iron_talon = class({})
+modifier_item_jungle_staff = class({})
 
-function modifier_item_iron_talon:DeclareFunctions()
+function modifier_item_jungle_staff:DeclareFunctions()
     return {
         MODIFIER_EVENT_ON_ATTACK_LANDED,
     }
 end
 
-function modifier_item_iron_talon:OnAttackLanded(data)
+function modifier_item_jungle_staff:OnAttackLanded(data)
     local target   = data.target
     local attacker = data.attacker
 

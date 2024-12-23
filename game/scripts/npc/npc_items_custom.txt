@@ -3,14 +3,13 @@
 
 
 	"item_tpscroll"						"ITEM_REMOVE"
-	"item_iron_talon"					"ITEM_REMOVE"
 
-	"item_iron_talon"
+	"item_jungle_staff"
 	{
 
 		"BaseClass"             		"item_lua"
-		"ScriptFile"					"items/shop/item_iron_talon"
-		"AbilityTextureName"			"item_iron_talon"
+		"ScriptFile"					"items/shop/item_jungle_staff"
+		"AbilityTextureName"			"custom/shop/item_jungle_staff"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
         "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
         "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_CUSTOM"
@@ -20,7 +19,6 @@
 		"AbilityCastRange"              "350"
         "AbilityCastPoint"              "0.0"
         "AbilityCooldown"               "9.0"
-        "Model"                         "models/props_gameplay/quelling_blade.vmdl"
 
         "AbilityManaCost"               "0"
         "ItemShopTags"                  "damage"
