@@ -846,7 +846,7 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/unit/tower/tower_protection_aura"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE || DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityTextureName"			"unit/tower_protection"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
@@ -907,7 +907,7 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/unit/fountain/fountain_custom_heal"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE || DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityTextureName"			"unit/fountain_custom_heal"
 
 		"AbilityValues"

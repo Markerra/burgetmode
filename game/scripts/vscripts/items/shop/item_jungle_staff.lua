@@ -24,32 +24,46 @@ end
 
 modifier_item_jungle_staff = class({})
 
+function modifier_item_jungle_staff:IsHidden()   return true end
+function modifier_item_jungle_staff:IsDebuff()   return false end
+function modifier_item_jungle_staff:IsPurgable() return false end
+
 function modifier_item_jungle_staff:DeclareFunctions()
     return {
         MODIFIER_EVENT_ON_ATTACK_LANDED,
+        MODIFIER_EVENT_ON_TAKEDAMAGE,
     }
+end
+
+function modifier_item_jungle_staff:OnTakeDamage(data)
+    local target   = data.unit
+    local attacker = data.attacker
+
+    if bit.band(data.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) ~= 0 then return end
+
+    local dmg_amp  = self:GetAbility():GetSpecialValueFor("damage_amp")
+
+    if attacker == self:GetParent() and target:IsCreep() then
+        ApplyDamage({ -- доп урон по крипам
+                victim = target,
+                attacker = attacker,
+                damage = (data.damage / 100) * dmg_amp,
+                damage_type = data.damage_type,
+                ability = self:GetAbility(),
+                damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL,
+            })
+        print("%доп урон: "..(data.damage / 100) * dmg_amp)
+    end
 end
 
 function modifier_item_jungle_staff:OnAttackLanded(data)
     local target   = data.target
     local attacker = data.attacker
 
-    local dmg_amp  = self:GetAbility():GetSpecialValueFor("damage_amp")
-
     local m_damage = self:GetAbility():GetSpecialValueFor("bonus_dmg_melee")
     local r_damage = self:GetAbility():GetSpecialValueFor("bonus_dmg_range")
     if attacker == self:GetParent() then
         if target:IsNeutralUnitType() or target:IsCreep() then
-
-            ApplyDamage({ -- доп урон по крипам
-                    victim = target,
-                    attacker = attacker,
-                    damage = (data.damage / 100) * dmg_amp,
-                    damage_type = data.damage_type,
-                    ability = self:GetAbility(),
-                })
-            print("%доп урон: "..(data.damage / 100) * dmg_amp)
-
             if attacker:GetAttackCapability() == DOTA_UNIT_CAP_MELEE_ATTACK then
                 ApplyDamage({ -- доп урон для милишников
                     victim = target,

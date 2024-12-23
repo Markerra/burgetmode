@@ -163,10 +163,17 @@ function GameMode:Admin_lvlUp(data)
 end
 
 function GameMode:Admin_GiveGold(data)
-	local hero = PlayerResource:GetPlayer(data.id):GetAssignedHero()
-	EmitSoundOnEntityForPlayer("General.Coins", hero,data.id)
-	PlayerResource:ModifyGold(data.id, data.amout, false, 8)
-	SendOverheadEventMessage(nil, 0, hero, data.amout, nil)
+	local entities = {}
+
+	for key, value in pairs(data.ent) do
+	    entities[tonumber(key)] = value
+	end
+
+	for key, value in pairs(entities) do
+    	local hero = EntIndexToHScript(entities[key])
+		hero:ModifyGold(data.amout, false, 8)
+		SendOverheadEventMessage(nil, 0, hero, data.amout, nil)
+	end
 end
 
 wtfModifier = class({})

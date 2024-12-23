@@ -2,11 +2,6 @@ function GameMode:Init()
 
 	local mode = GameRules:GetGameModeEntity()
 
-	if IsInToolsMode() then
-		PlayerResource:SetCustomTeamAssignment(0, DOTA_TEAM_CUSTOM_1)
-		GameRules:SetCustomGameSetupTimeout(0)
-	end
-
 	GameRules:SetSameHeroSelectionEnabled(true)
 
 	GameRules:SetUseUniversalShopMode(true)
@@ -14,7 +9,11 @@ function GameMode:Init()
 
 	GameRules:SetShowcaseTime( 0.0 )
 	GameRules:SetStrategyTime( 10.0 )
-	GameRules:SetPreGameTime(5)
+	GameRules:SetPreGameTime(25)
+
+	mode:SetCustomScanMaxCharges(1)
+
+	mode:SetTPScrollSlotItemOverride("item_tpscroll_custom")
 
 	-- Teams
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 0 )
@@ -31,6 +30,7 @@ function GameMode:Init()
 	mode:SetGiveFreeTPOnDeath(false)
 
 	-- Lua Listeners
+	ListenToGameEvent('npc_spawned', Dynamic_Wrap(self, 'npcSpawned'), self)
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(self, 'EntKilled'), self)
 	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(self, 'OnStateChange'), self)
 
@@ -50,7 +50,11 @@ end
 function GameMode:InitFast()
 	local mode = GameRules:GetGameModeEntity()
 
-	mode:SetCustomGameForceHero("npc_dota_hero_nevermore")
+	mode:SetCustomGameForceHero("npc_dota_hero_bristleback")
+
+	PlayerResource:SetCustomTeamAssignment(0, DOTA_TEAM_CUSTOM_2)
+
 	GameRules:SetStrategyTime(0)
-	GameRules:SetPreGameTime(0)
+	GameRules:SetPreGameTime(25)
+	GameRules:SetCustomGameSetupTimeout(0)
 end

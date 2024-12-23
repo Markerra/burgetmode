@@ -121,7 +121,7 @@ function GiveGold(amt) {
     $.Msg( "Entities = " + entities );
 
     GameEvents.SendCustomGameEventToServer("gold_admin", { amout: amt, ent: entities });
-    $.Msg("Requested " + amt + " gold for player " + playerID);
+    $.Msg("Requested " + amt + " gold for entities: " + entities);
 }
 
 //networthIcon.SetImage("s2r://panorama/images/hud/reborn/gold_small_psd.vtex");
