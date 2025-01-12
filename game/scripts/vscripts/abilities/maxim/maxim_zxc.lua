@@ -4,6 +4,10 @@ LinkLuaModifier("modifier_maxim_animation", "abilities/maxim/maxim_zxc", LUA_MOD
 
 maxim_zxc = class({})
 
+function maxim_zxc:GetChannelTime()
+	return self:GetSpecialValueFor("channel_time")
+end
+
 function maxim_zxc:OnAbilityPhaseStart()
     if not IsServer() then return end
 

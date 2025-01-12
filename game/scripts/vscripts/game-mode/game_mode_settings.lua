@@ -4,12 +4,8 @@ if GameMode == nil then
 end
 
 require("utils/timers")
-require("weather")
 
 require("game-mode/custom_params")
-
-require("panorama/custom_top_bar")
-require("panorama/debug_panel")
 
 function GameMode:npcSpawned(data)
 	local unit = EntIndexToHScript(data.entindex)
@@ -58,21 +54,11 @@ function GameMode:OnStateChange(data)
 
 		GameRules:SpawnNeutralCreeps() -- спавн нейтральных крипов во всех кемпах
 
-		Timers:CreateTimer(fountain_vul_delay, function() -- спустя 10 минут активирует возможность атаковать фонтан
-			local fountain = Entities:FindByClassname(nil, "ent_dota_fountain") 
-			while fountain do
-			    fountain:RemoveModifierByName("modifier_invulnerable")
-			    print("Removed invulnerability from fountain")
-			    fountain = Entities:FindByClassname(fountain, "ent_dota_fountain")
-			end
-		end)
+		require("game-mode/functions/fountain_invul")
+		DeactivateFountainsInvul(CUSTOM_FOUNTAIN_VUL_DELAY)
 
-		print(HeroList:GetHeroCount())
-
-		for i=1, HeroList:GetHeroCount() do
-			local hero = HeroList:GetHero(i-1)
-			hero:AddItemByName("item_tpscroll_custom")
-		end
+		require("game-mode/functions/give_tpscroll")
+		GiveTPScroll()
 
 	end
 

@@ -116,6 +116,9 @@ end
 modifier_feardebuff_item_maxim_abaddon = {}
 
 function modifier_feardebuff_item_maxim_abaddon:OnCreated()
+	if not IsServer() then return end
+
+	-- if neutral, set disarm to run back towards camp
 	if self:GetParent():IsNeutralUnitType() then
 		self.neutral = true
 	end
@@ -163,7 +166,7 @@ function modifier_feardebuff_item_maxim_abaddon:OnDestroy()
 	end
 end
 
-function modifier_feardebuff_item_maxim_abaddon:IsHidden() 	 return false end
+function modifier_feardebuff_item_maxim_abaddon:IsHidden() 	 return true end
 function modifier_feardebuff_item_maxim_abaddon:IsPurgable() return true end
 
 function modifier_feardebuff_item_maxim_abaddon:GetEffectName()
@@ -177,6 +180,7 @@ end
 function modifier_feardebuff_item_maxim_abaddon:CheckState()
     return {
         [MODIFIER_STATE_FEARED] = true,
+        [MODIFIER_STATE_DISARMED] = self.neutral,
         [MODIFIER_STATE_COMMAND_RESTRICTED] = true,
     }
 end

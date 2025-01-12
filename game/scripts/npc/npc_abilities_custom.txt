@@ -390,7 +390,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		"HasScepterUpgrade"				"1"
 		"HasShardUpgrade"				"1"
-		"AbilityChannelTime"			"4 6 8 10"		// длительность способности
+		"AbilityChannelTime"			"4 6 8 10"		
 		"AbilityCastPoint" 				"1.5"
 		"AbilityCooldown"				"45 40 35 30"
 		"AbilityCastRange"				"300" 
@@ -411,6 +411,7 @@
 				"special_bonus_unique_maxim_zxc_damage"	"+30"	// талант
 			}
 			"dmg_raze"			"30"				// доп. урон за каждый стак
+			"channel_time"		"4 6 8 10"			// длительность способности
 		}
 	}
 
@@ -846,7 +847,7 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/unit/tower/tower_protection_aura"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE |	 DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityTextureName"			"unit/tower_protection"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
