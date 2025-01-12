@@ -45,7 +45,7 @@ function item_tpscroll_custom:OnSpellStart()
 	hero:StartGesture(ACT_DOTA_TELEPORT)
 	
 	hero:AddNewModifier(self:GetCaster(), self, "modifier_custom_ability_teleport", {duration = self:GetChannelTime()})
-	self.teleportFromEffect = ParticleManager:CreateParticle("particles/items2_fx/teleport_start.vpcf", PATTACH_ABSORIGIN, self:GetCaster())
+	self.teleportFromEffect = ParticleManager:CreateParticle("particles/econ/events/spring_2021/teleport_start_spring_2021.vpcf", PATTACH_ABSORIGIN, self:GetCaster())
 	ParticleManager:SetParticleControl(self.teleportFromEffect, 2, Vector(255, 255, 255))
 	self.teleport_center = CreateUnitByName("npc_dota_companion", self.point, false, nil, nil, 0)
 	
@@ -56,7 +56,7 @@ function item_tpscroll_custom:OnSpellStart()
 	self.teleport_center:AddNewModifier(self.teleport_center, nil, "modifier_invulnerable", {})
 	self.teleport_center:SetAbsOrigin(self.point)
 	
-	self.teleportToEffect = ParticleManager:CreateParticle("particles/items2_fx/teleport_end.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.teleport_center)
+	self.teleportToEffect = ParticleManager:CreateParticle("particles/econ/events/spring_2021/teleport_end_spring_2021.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.teleport_center)
 	ParticleManager:SetParticleControlEnt(self.teleportToEffect, 1, self.teleport_center, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", self.teleport_center:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControlEnt(self.teleportToEffect, 3, self:GetCaster(), PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", self.teleport_center:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControl(self.teleportToEffect, 4, Vector(0.9, 0, 0))
@@ -119,7 +119,7 @@ function item_tpscroll_custom:OnChannelFinish(bInterrupted)
 end
 
 function item_tpscroll_custom:OnChannelThink(fInterval)
-    if self:GetCaster():IsRooted() or self:GetCaster():HasModifier("modifier_custom_puck_dream_coil") then
+    if self:GetCaster():IsRooted() then
         self:GetCaster():Stop()
         self:GetCaster():Interrupt()
     end

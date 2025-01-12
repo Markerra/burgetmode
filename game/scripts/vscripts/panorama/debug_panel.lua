@@ -34,7 +34,7 @@ function GameMode:Admin_SpawnBot(data)
     local spawnPosition = playerPosition + Vector(offset, 0, 0)
 
     -- Создаем бота в указанной позиции
-    local botHero = CreateUnitByName(heroName, spawnPosition, true, nil, nil, player:GetTeamNumber())
+    local botHero = CreateUnitByName(heroName, spawnPosition, true, nil, nil, player:GetTeamNumber()+1)
     botHero:SetControllableByPlayer(playerID, true)
     botHero:SetPlayerID(HeroList:GetHeroCount() - 1)
     print("Admin Panel: Bot Spawned.","ID: "..botHero:GetPlayerID())
@@ -67,37 +67,41 @@ function GameMode:Admin_GiveItem(data)
 end
 
 function GameMode:Admin_Refresh(data)
-	local player = PlayerResource:GetPlayer(data.id)
-    local hero = player:GetAssignedHero()
-    if not hero or not hero:IsAlive() then
-        return
-    end
+    for i=1, HeroList:GetHeroCount() do
+        local hero = HeroList:GetHero(i-1)
+        if not hero then
+            print("no hero with id "..i)
+            return
+        end
+    
+        if not hero:IsAlive() then
+            hero:RespawnUnit()
+        end
 
-    -- Восстанавливаем здоровье и ману
-    hero:SetHealth(hero:GetMaxHealth())
-    hero:SetMana(hero:GetMaxMana())
-
-    -- Снимаем все кулдауны у способностей
-    for i = 0, hero:GetAbilityCount() - 1 do
-        local ability = hero:GetAbilityByIndex(i)
-        if ability then
-            ability:EndCooldown() -- Снимает кулдаун
-            if ability:GetToggleState() then
-                ability:ToggleAbility() -- Выключает способности в режиме переключения
+        hero:SetHealth(hero:GetMaxHealth())
+        hero:SetMana(hero:GetMaxMana())
+    
+        for i = 0, hero:GetAbilityCount() - 1 do
+            local ability = hero:GetAbilityByIndex(i)
+            if ability then
+                ability:EndCooldown()
+                if ability:GetToggleState() then
+                    ability:ToggleAbility()
+                end
             end
         end
-    end
-
-    -- Снимаем кулдауны у всех предметов
-    for slot = 0, 5 do
-        local item = hero:GetItemInSlot(slot)
-        if item then
-            item:EndCooldown() -- Снимает кулдаун предмета
+    
+        for slot = 0, 16 do
+            local item = hero:GetItemInSlot(slot)
+            if item then
+                item:EndCooldown()
+            end
         end
+    
+        -- Удаляем дебаффы и эффекты контроля
+        hero:Purge(false, true, false, true, true) -- Снимаем отрицательные эффекты, оставляем положительные
     end
-
-    -- Удаляем дебаффы и эффекты контроля
-    hero:Purge(false, true, false, true, true) -- Снимаем отрицательные эффекты, оставляем положительные
+    print("Admin Panel: Refresh All Heroes")
 end
 
 function GameMode:Admin_WTFMode()
@@ -183,7 +187,7 @@ function wtfModifier:IsHidden()   return true end
 
 function wtfModifier:DeclareFunctions()
 	return {
-		MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT,
+        MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT,
 		MODIFIER_PROPERTY_MANACOST_REDUCTION_CONSTANT,
 	}
 end

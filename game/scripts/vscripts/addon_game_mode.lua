@@ -76,6 +76,12 @@ function Precache( context )
 --------------------- TOWER
 --================================================================================================================================================
 	PrecacheResource("particle", "particles/econ/events/ti8/shivas_guard_ti8_slow.vpcf", context) -- tower_soul_drain
+
+--================================================================================================================================================
+--------------------- ITEMS
+--================================================================================================================================================
+	PrecacheResource("particle", "particles/econ/events/spring_2021/teleport_start_spring_2021.vpcf", context) -- item_tpscroll
+	PrecacheResource("particle", "particles/econ/events/spring_2021/teleport_end_spring_2021.vpcf", context) -- item_tpscroll
 end
 
 -- Create the game mode when we activate
@@ -83,7 +89,10 @@ function Activate()
 	GameMode:Init()
 
 	if IsInToolsMode() then
+
 		GameMode:InitFast() -- быстрый пик героев (для тестов)
+		GameMode:GiveAdminItems() -- выдать админ-предметы
+
 	end
 
 end

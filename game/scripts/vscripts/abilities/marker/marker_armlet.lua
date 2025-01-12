@@ -5,8 +5,10 @@ LinkLuaModifier("modifier_marker_armlet_active", "abilities/marker/marker_armlet
 
 
 marker_armlet = class({
-    IsToggle = true,  -- Обязательно добавляем флаг переключаемости
+    IsToggle = true,
 })
+
+function marker_armlet:ProcsMagicStick() return false end
 
 function marker_armlet:GetAbilityTextureName()
     if self:GetToggleState() then
@@ -110,7 +112,7 @@ function modifier_marker_armlet_active:OnCreated()
 end
 
 function modifier_marker_armlet_active:OnIntervalThink()
-
+    if not IsServer() then return end 
     if not self:GetParent():IsAlive() then return end
 
     local caster             = self:GetCaster()

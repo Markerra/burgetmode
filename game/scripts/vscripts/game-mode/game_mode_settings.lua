@@ -13,6 +13,17 @@ require("panorama/debug_panel")
 
 function GameMode:npcSpawned(data)
 	local unit = EntIndexToHScript(data.entindex)
+
+	if IsInToolsMode() and unit:IsHero() then
+		local adminItems = GameRules:GetGameModeEntity().GiveAdminItems
+		if adminItems then
+			if not unit:HasItemInInventory("item_admin_tp_hero") and unit.bFirstSpawned ~= false then
+				unit:AddItemByName("item_admin_tp_hero")
+				unit:AddItemByName("item_admin_gold_reset")
+				unit.bFirstSpawned = false
+			end
+		end
+	end
 	--unit.bFirstSpawned = true
 	--if not unit:HasItemInInventory("item_tpscroll_custom") and unit.bFirstSpawned == true then
 	--	unit:AddItemByName("item_tpscroll_custom")
@@ -26,7 +37,7 @@ function GameMode:EntKilled(data)
 	local team_number = unit:GetTeamNumber()
 
 	if unit:GetUnitName() == "npc_dota_custom_tower_main" then -- система выбывания игроков при потере главного тавера
-		print(unit:GetUnitName())
+		print(unit:GetUnitName().." выбывает из игры!")
 		
 		local players = {}
     	for player_id = 0, PlayerResource:GetPlayerCount() - 1 do

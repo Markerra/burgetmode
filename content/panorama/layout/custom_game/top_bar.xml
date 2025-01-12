@@ -1,27 +1,26 @@
 <root>
-    <!-- Подключение CSS -->
+
     <styles>
         <include src="file://{resources}/styles/custom_game/top_bar.css" />
     </styles>
 
-    <!-- Подключение скриптов -->
     <scripts>
         <include src="file://{resources}/scripts/custom_game/top_bar.js" />
     </scripts>
 
     <snippets>
-    	<snippet name="heroSnippet">
+    	<snippet name="heroSnippet" hittest="false">
     		<Panel>
-                <Panel id="hero_panel">
-    			    <Panel id="hero_networth">
+                <Panel id="hero_panel" hittest="false">
+    			    <Panel id="hero_networth" hittest="false">
     			    </Panel>
                 </Panel>   
         	</Panel>
     	</snippet>
     </snippets>
 
-    <Panel class="root">
-        <Panel class="HeroPanel">
+    <Panel class="root" hittest="false"">
+        <Panel class="HeroPanel" hittest="false">
         </Panel>
     </Panel>
 </root>

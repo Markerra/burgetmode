@@ -58,3 +58,7 @@ function GameMode:InitFast()
 	GameRules:SetPreGameTime(25)
 	GameRules:SetCustomGameSetupTimeout(0)
 end
+
+function GameMode:GiveAdminItems()
+	GameRules:GetGameModeEntity().GiveAdminItems = true
+end

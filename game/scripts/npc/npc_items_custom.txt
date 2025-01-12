@@ -1,6 +1,10 @@
 "DOTAAbilities"
 {
 
+	"item_refresher"					"ITEM_REMOVE"
+	"item_magic_wand"					"ITEM_REMOVE"
+	"item_gem"							"ITEM_REMOVE"
+
 	"item_tpscroll"
 	{
 		// General
@@ -144,16 +148,6 @@
 	    }
 	}
 
-	"item_gold_reset"
-	{
-		"BaseClass"             		"item_lua"
-		"ScriptFile"					"items/general/item_gold_reset"
-		"AbilityTextureName"			"custom/item_gold_reset"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"ItemPurchasable" 				"0"
-	}
-
-
 	"item_mega_nuggets"
 	{
 		"BaseClass"             		"item_lua"
@@ -292,4 +286,84 @@
 			"duration"					"10 20 30"		// длительность модификатора
 		}
 	}
+
+	"item_magic_wand_custom"
+	{
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/shop/item_magic_wand_custom"
+		"AbilityTextureName"			"item_magic_wand"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"Model"							"models/props_gameplay/magic_wand.vmdl"
+
+		// Stats	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15.0"
+		"AbilitySharedCooldown"			"magicwand"
+		"AbilityCastRange"				"1200"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"
+		"ItemShopTags"					"regen_health;regen_mana;boost_health;boost_mana"
+		"ItemQuality"					"component"
+		"ItemAliases"					"magic wand"
+		"ItemRequiresCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		//"SideShop"					"1"
+		"SuggestPregame"				"1"
+
+		"AbilityValues"
+		{
+			"radius"					"1500"
+			"charge_interval"			"10"
+			"restore_per_charge" 		"15"
+			"max_charges"				"30"
+		}
+	}
+
+	
+	"item_recipe_magic_wand_custom"
+	{
+	    "ID" "1200"
+	    "BaseClass"           			"item_datadriven"
+	    "AbilityTextureName"  			"item_recipe_magic_wand"
+	    "ItemRecipe"          			"1" //destroyed after combine
+	    "ItemCost"            			"150" //if its 0, it will combine without needing a recipe.
+	    "ItemResult"          			"item_magic_wand_custom" //the result of combining the ItemRequirements
+	    "ItemRequirements"
+	    {
+	        "01" "item_magic_stick*;item_branches;item_branches"
+	    }
+	}
+
+
+//=================================================================
+// Admin Items
+//=================================================================
+
+	"item_admin_gold_reset"
+	{
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/admin/item_admin_gold_reset"
+		"AbilityTextureName"			"custom/item_admin_gold_reset"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"ItemPurchasable" 				"0"
+	}
+
+	"item_admin_tp_hero"
+	{
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/admin/item_admin_tp_hero"
+		"AbilityTextureName"			"item_tpscroll"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		"ItemPurchasable" 				"0"
+
+		"AbilityValues"
+		{
+			"delay"						"1"
+		}
+	}
+
 }

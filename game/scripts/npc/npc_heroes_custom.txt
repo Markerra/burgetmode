@@ -41,6 +41,14 @@
 	 {
 	 	"override_hero"    				"npc_dota_hero_nevermore"
 
+	 	"AttributePrimary"				"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"			"19"
+		"AttributeStrengthGain"			"2.700000"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"2.200000"
+		"AttributeBaseAgility"			"25"
+		"AttributeAgilityGain"			"3.500000"
+
 	 	"MovementSpeed"					"315"
 
 	 	"AttackDamageMin"       		"22" // 16+n (доп. урон)
@@ -63,7 +71,11 @@
 		"Ability16"						"special_bonus_unique_maxim_zxc_interval" // правый талант на 25 ур.
 		"Ability17"						"special_bonus_unique_maxim_herald_agility" // левый талант на 25 ур.
 	
-		"VisionNighttimeRange"			"1500"										
+		"VisionNighttimeRange"			"1500"
+
+		"PickSound"						"nevermore_nev_spawn_11"
+		"HeroSelectSoundEffect"			"Hero_Nevermore.Pick"
+		"SimilarHeroes"					" "							
 	 }
 
 	//========================================================================================================
@@ -74,18 +86,20 @@
 	 {
 	 	"override_hero"    				"npc_dota_hero_bristleback"
 
-	 	"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+	 	"AttributePrimary"				"DOTA_ATTRIBUTE_ALL"
 		"AttributeBaseStrength"			"19"
-		"AttributeStrengthGain"			"2.300000"
+		"AttributeStrengthGain"			"2.600000"
 		"AttributeBaseAgility"			"18"
-		"AttributeAgilityGain"			"2.300000"
+		"AttributeAgilityGain"			"2.100000"
 		"AttributeBaseIntelligence"		"21"
-		"AttributeIntelligenceGain"		"3.000000"
+		"AttributeIntelligenceGain"		"3.100000"
 
-		"StatusHealthRegen"				"-0.3"
-		"StatusManaRegen"				"1.2"
+		"StatusHealth"					"80" // бонус
 
-		"ArmorPhysical"					"4"
+		"StatusHealthRegen"				"-0.3" // бонус
+		"StatusManaRegen"				"1.2" // бонус
+
+		"ArmorPhysical"					"5" // бонус
 
 		"MovementSpeed"					"335"
 
@@ -106,7 +120,11 @@
 		"Ability16"						"special_bonus_unique_sergopy_voice_silence" // правый талант на 25 ур.
 		"Ability17"						"special_bonus_unique_sergopy_bristleback_damage" // левый талант на 25 ур.
 
-		"VisionNighttimeRange"			"1500"										
+		"VisionNighttimeRange"			"1500"
+
+		"PickSound"						"bristleback_bristle_spawn_01"
+		"HeroSelectSoundEffect"			"Hero_Bristleback.Pick"
+		"SimilarHeroes"					" "							
 	 }
 
 	//========================================================================================================
