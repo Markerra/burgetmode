@@ -60,7 +60,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"              "260"       // Base health.
+        "StatusHealth"              "200"       // Base health.
         "StatusHealthRegen"         "2"       // Health regeneration rate.
         "StatusMana"                "0"         // Base mana.
         "StatusManaRegen"           "1.0"       // Mana regeneration rate.       
@@ -133,7 +133,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"              "325"       // Base health.
+        "StatusHealth"              "255"       // Base health.
         "StatusHealthRegen"         "0.5"       // Health regeneration rate.
         "StatusMana"                "0"         // Base mana.
         "StatusManaRegen"           "1.0"       // Mana regeneration rate.       
@@ -206,7 +206,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"              "400"       // Base health.
+        "StatusHealth"              "350"       // Base health.
         "StatusHealthRegen"         "0.5"       // Health regeneration rate.
         "StatusMana"                "0"         // Base mana.
         "StatusManaRegen"           "1.0"       // Mana regeneration rate.       
@@ -279,7 +279,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"              "400"       // Base health.
+        "StatusHealth"              "320"       // Base health.
         "StatusHealthRegen"         "0.5"       // Health regeneration rate.
         "StatusMana"                "0"         // Base mana.
         "StatusManaRegen"           "1.0"       // Mana regeneration rate.       
@@ -352,7 +352,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"              "500"       // Base health.
+        "StatusHealth"              "390"       // Base health.
         "StatusHealthRegen"         "0.5"       // Health regeneration rate.
         "StatusMana"                "400"       // Base mana.
         "StatusManaRegen"           "1.0"       // Mana regeneration rate.       
@@ -423,7 +423,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"              "500"       // Base health.
+        "StatusHealth"              "410"       // Base health.
         "StatusHealthRegen"         "0.5"       // Health regeneration rate.
         "StatusMana"                "400"       // Base mana.
         "StatusManaRegen"           "1.0"       // Mana regeneration rate.       
@@ -496,7 +496,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"              "450"       // Base health.
+        "StatusHealth"              "340"       // Base health.
         "StatusHealthRegen"         "0.5"       // Health regeneration rate.
         "StatusMana"                "125"       // Base mana.
         "StatusManaRegen"           "3"     // Mana regeneration rate.       
@@ -569,7 +569,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"              "300"       // Base health.
+        "StatusHealth"              "240"       // Base health.
         "StatusHealthRegen"         "0.5"       // Health regeneration rate.
         "StatusMana"                "200"       // Base mana.
         "StatusManaRegen"           "1"     // Mana regeneration rate.       
@@ -642,7 +642,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"              "450"       // Base health.
+        "StatusHealth"              "370"       // Base health.
         "StatusHealthRegen"         "1"       // Health regeneration rate.
         "StatusMana"                "0"         // Base mana.
         "StatusManaRegen"           "1.0"       // Mana regeneration rate.       
@@ -715,7 +715,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"              "450"       // Base health.
+        "StatusHealth"              "390"       // Base health.
         "StatusHealthRegen"         "0.5"       // Health regeneration rate.
         "StatusMana"                "500"       // Base mana.
         "StatusManaRegen"           "1.0"       // Mana regeneration rate.       
@@ -1491,8 +1491,8 @@
         // Attack
         //----------------------------------------------------------------
         "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"           "24"        // Damage range min.
-        "AttackDamageMax"           "28"        // Damage range max.    
+        "AttackDamageMin"           "28"        // Damage range min.
+        "AttackDamageMax"           "36"        // Damage range max.    
         "AttackRate"                "2"         // Speed of attack.
         "BaseAttackSpeed"           "180"       // Speed of attack.
         "AttackAnimationPoint"      "0.3"       // Normalized time in animation cycle to attack.
@@ -1565,8 +1565,8 @@
         // Attack
         //----------------------------------------------------------------
         "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"           "16"        // Damage range min.
-        "AttackDamageMax"           "20"        // Damage range max.    
+        "AttackDamageMin"           "19"        // Damage range min.
+        "AttackDamageMax"           "22"        // Damage range max.    
         "AttackRate"                "2"         // Speed of attack.
         "BaseAttackSpeed"           "180"       // Speed of attack.
         "AttackAnimationPoint"      "0.3"       // Normalized time in animation cycle to attack.
@@ -1593,7 +1593,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"              "250"       // Base health.
+        "StatusHealth"              "320"       // Base health.
         "StatusHealthRegen"         "0.5"       // Health regeneration rate.
         "StatusMana"                "400"       // Base mana.
         "StatusManaRegen"           "1"         // Mana regeneration rate.       

@@ -36,6 +36,9 @@ function GameMode:Init()
 
 	-- JS Listeners
 	---- Debug Panel
+
+	require("panorama/debug_panel")
+
 	CustomGameEventManager:RegisterListener("spawn_bot_admin", Dynamic_Wrap(self, 'Admin_SpawnBot'))
 	CustomGameEventManager:RegisterListener("give_item_admin", Dynamic_Wrap(self, 'Admin_GiveItem'))
 	CustomGameEventManager:RegisterListener("wtf_mode_admin", Dynamic_Wrap(self, 'Admin_WTFMode'))
@@ -43,6 +46,8 @@ function GameMode:Init()
 	CustomGameEventManager:RegisterListener("lvlup_admin", Dynamic_Wrap(self, 'Admin_lvlUp'))
 	CustomGameEventManager:RegisterListener("gold_admin", Dynamic_Wrap(self, 'Admin_GiveGold'))
 
+	require("panorama/custom_top_bar")
+	
 	SendHeroDataToClient(0.34, false) -- panorama/custom_top_bar.lua 
 
 end
@@ -50,7 +55,7 @@ end
 function GameMode:InitFast()
 	local mode = GameRules:GetGameModeEntity()
 
-	mode:SetCustomGameForceHero("npc_dota_hero_bristleback")
+	mode:SetCustomGameForceHero("npc_dota_hero_nevermore")
 
 	PlayerResource:SetCustomTeamAssignment(0, DOTA_TEAM_CUSTOM_2)
 
