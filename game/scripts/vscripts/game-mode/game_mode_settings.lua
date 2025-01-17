@@ -29,11 +29,12 @@ end
 
 function GameMode:EntKilled(data)
 	local unit = EntIndexToHScript(data.entindex_killed) 
+
 	local team = unit:GetTeam()
 	local team_number = unit:GetTeamNumber()
 
 	if unit:GetUnitName() == "npc_dota_custom_tower_main" then -- система выбывания игроков при потере главного тавера
-		print(unit:GetUnitName().." выбывает из игры!")
+		print("!!! Команда №"..unit:GetTeamNumber().." выбывает из игры!")
 		
 		local players = {}
     	for player_id = 0, PlayerResource:GetPlayerCount() - 1 do
@@ -50,6 +51,9 @@ function GameMode:EntKilled(data)
     	        hero:SetBuyBackDisabledByReapersScythe(true)
     	        hero:SetRespawnsDisabled(true)
     	        hero:ForceKill(false)
+
+    	        hero.IsInGame = false
+
     	    end
     	end
 
@@ -63,9 +67,12 @@ function GameMode:OnStateChange(data)
 
 		GameRules:SetTimeOfDay(0.25) -- игра начинается со дня
 
+
 		GameRules:SpawnNeutralCreeps() -- спавн нейтральных крипов во всех кемпах
 
 		require("game-mode/functions/fountain_invul")
+
+		ActivateFountainInvul() -- активирует неуязвимость фонтана
 		DeactivateFountainsInvul(CUSTOM_FOUNTAIN_VUL_DELAY)
 
 		require("game-mode/functions/give_tpscroll")

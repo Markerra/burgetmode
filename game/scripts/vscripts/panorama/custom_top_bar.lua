@@ -41,17 +41,28 @@ function SendHeroDataToClient(time, debug_mode)
             for playerID = 0, playerCount - 1 do -- player id
                 local hero     = HeroList:GetHero(playerID)
                 local heroName = hero:GetUnitName()
+                local isAlive  = hero:IsAlive()
                 local networth = 0
                 if PlayerResource:IsValidPlayerID(playerID) then
                     networth = PlayerResource:GetNetWorth(playerID)
                 else
                     networth = GetBotNetWorth(hero)
                 end
-                playersData[playerID] = { id = playerID, hero = heroName, networth = networth }
+
+                local status = 0
+
+                if not isAlive then
+                    status = 1
+                elseif hero.IsInGame == false then
+                    status = 2
+                end
+
+                playersData[playerID] = { id = playerID, hero = heroName, status=status ,networth = networth }
                 if debug_mode == true then
-                    print("Sending HeroData:\n==================")
+                    print("\nSending HeroData:\n==================")
                     print("id = ", playersData[playerID].id)
                     print("hero = ", playersData[playerID].hero)
+                    print("status = ", playersData[playerID].status)
                     print("networth = ", playersData[playerID].networth, "\n==================")
                     DeepPrintTable(playersData)
                 end

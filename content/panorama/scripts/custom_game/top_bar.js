@@ -27,11 +27,27 @@ function CreateOrUpdateTopBar(event) {
     arrayHeroes.forEach((element) => {
         const bar = $.CreatePanel("Panel", panelBody, "", { class: "hero_bar" });
 
+        const status = element.status
 
         const hero = $.CreatePanel("DOTAHeroImage", bar, "", {
             class: "HeroIcon",
             heroname: element.hero,
         });
+
+        const heroButton = $.CreatePanel("Button", bar, "", {
+            class: "HeroIcon",
+            onactivate: "SelectHero('"+ element.hero +"')", 
+        });
+
+        if (status === 0) {
+            hero.style.opacity = "1.0"
+        }
+        else if (status === 1) {
+            hero.style.opacity = "0.3"
+        }
+        else if (status === 2) {
+
+        }
 
         const networth = $.CreatePanel("Label", bar, "", {
             class: "HeroGold",
@@ -41,6 +57,13 @@ function CreateOrUpdateTopBar(event) {
         const networthIcon = $.CreatePanel("Image", networth, "", {class: "hero_networth_icon"});
         networthIcon.SetImage("s2r://panorama/images/hud/reborn/gold_small_psd.vtex");
     });
+}
+
+
+function SelectHero(data) {
+    var playerID = Game.GetLocalPlayerID();
+    var units = Entities.GetAllEntitiesByName(data)
+    GameUI.SelectUnit(units[0], false);
 }
 
 GameEvents.Subscribe("update_top_bar", CreateOrUpdateTopBar);

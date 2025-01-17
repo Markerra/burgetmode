@@ -58,13 +58,14 @@ function GiveItem(itemName) {
         return;
     }
 
-    var entities = Players.GetSelectedEntities( 0 );
+    var playerID = Game.GetLocalPlayerID();
+
+    var entities = Players.GetSelectedEntities( playerID );
     $.Msg( "Entities = " + entities );
 
     var numEntities = Object.keys( entities ).length;
     $.Msg( "Num entities = " + numEntities );
 
-    var playerID = Game.GetLocalPlayerID();
     GameEvents.SendCustomGameEventToServer("give_item_admin", { item: itemName, ent: entities });
     $.Msg("Requested item: " + itemName);
 }
@@ -101,13 +102,14 @@ function Refresh() {
 // Повысить уровень >>
 
 function LvlUp(level) {
-    var entities = Players.GetSelectedEntities( 0 );
+    var playerID = Game.GetLocalPlayerID();
+
+    var entities = Players.GetSelectedEntities( playerID );
     $.Msg( "Entities = " + entities );
 
     var numEntities = Object.keys( entities ).length;
     $.Msg( "Num entities = " + numEntities );
 
-    var playerID = Game.GetLocalPlayerID();
     GameEvents.SendCustomGameEventToServer("lvlup_admin", { lvl: level, ent: entities });
     $.Msg("Requested lvlup for player " + playerID);
 }
@@ -117,7 +119,9 @@ function LvlUp(level) {
 const networthIcon = $("#gold-icon")
 
 function GiveGold(amt) {
-    var entities = Players.GetSelectedEntities( 0 );
+    var playerID = Game.GetLocalPlayerID();
+
+    var entities = Players.GetSelectedEntities( playerID );
     $.Msg( "Entities = " + entities );
 
     GameEvents.SendCustomGameEventToServer("gold_admin", { amout: amt, ent: entities });

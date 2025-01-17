@@ -95,8 +95,8 @@ function modifier_seva_tether:OnDestroy()
     --local particle_exp  = "particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_explosion.vpcf"
     --local explosion     = ParticleManager:CreateParticle(particle_exp, PATTACH_WORLDORIGIN, self:GetParent())
     --local center        = (self:GetAbility():GetCaster():GetAbsOrigin() + self.target:GetAbsOrigin()) / 2
-    --ParticleManager:DestroyParticle(self.particle, false)
     --ParticleManager:SetParticleControl(explosion, 3, center)
+    ParticleManager:DestroyParticle(self.particle, false)
 end
 
 function modifier_seva_tether:OnDeath(params)

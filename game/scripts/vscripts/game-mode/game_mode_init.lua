@@ -55,7 +55,7 @@ end
 function GameMode:InitFast()
 	local mode = GameRules:GetGameModeEntity()
 
-	mode:SetCustomGameForceHero("npc_dota_hero_nevermore")
+	mode:SetCustomGameForceHero("npc_dota_hero_pudge")
 
 	PlayerResource:SetCustomTeamAssignment(0, DOTA_TEAM_CUSTOM_2)
 
