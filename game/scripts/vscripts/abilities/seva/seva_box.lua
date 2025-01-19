@@ -24,9 +24,9 @@ function seva_box:Roll()
     local total_chance = chances.gold +
                          chances.strength +
                          chances.level +
-                         chances.mega_nuggets +
-                         chances.levels_7 +
-                         chances.ultra_potato
+                         --chances.mega_nuggets +
+                         chances.levels_7-- +
+                         --chances.ultra_potato
 
     -- Случайное число
     local roll = RandomFloat(0, total_chance)
@@ -72,12 +72,12 @@ function seva_box:Roll()
     end
 
     -- 4. Мега-Нагетс
-    accumulated = accumulated + chances.mega_nuggets
-    if roll <= accumulated then
-        EmitSoundOn("Item.PickUpGemShop", caster)
-        print("Получен Мега-Нагетс!")
-        return
-    end
+    --accumulated = accumulated + chances.mega_nuggets
+    --if roll <= accumulated then
+    --    EmitSoundOn("Item.PickUpGemShop", caster)
+    --    print("Получен Мега-Нагетс!")
+    --    return
+    --end
 
     -- 5. 7 уровней
     accumulated = accumulated + chances.levels_7
@@ -90,12 +90,12 @@ function seva_box:Roll()
     end
 
     -- 6. Ультра-Картошка
-    accumulated = accumulated + chances.ultra_potato
-    if roll <= accumulated then
-        EmitSoundOn("Item.PickUpGemShop", caster)
-        print("Получена Ультра-Картошка!")
-        return
-    end
+    --accumulated = accumulated + chances.ultra_potato
+    --if roll <= accumulated then
+    --    EmitSoundOn("Item.PickUpGemShop", caster)
+    --    print("Получена Ультра-Картошка!")
+    --    return
+    --end
 end
 
 function seva_box:OnSpellStart()

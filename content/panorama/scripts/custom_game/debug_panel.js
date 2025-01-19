@@ -148,3 +148,41 @@ toggleMenuButton.SetPanelEvent("onactivate", function() {
         toggleMenuText.text = "<"
     }
 })
+
+
+function checkPlayerID() {
+
+    const id = Game.GetLocalPlayerID();
+
+    GameEvents.SendCustomGameEventToServer("admin_steamID_check", { playerID: id});
+
+
+    checkPlayerID2();
+
+}
+
+GameEvents.Subscribe("admin_steamID_check2", checkPlayerID2);
+
+function checkPlayerID2(data) {
+
+    if (data && data.allowedID) {
+
+        var allowedSteamID = data.allowedID;
+        var steamID = data.steamID;
+    
+        var panel = $.GetContextPanel().FindChildInLayoutFile("debug_panel");
+    
+    
+        if (panel) {
+            if (steamID == allowedSteamID) {
+                panel.RemoveClass("hidden");
+                $.Msg("+++ Admin Panel for player with #" + Game.GetLocalPlayerID() + " playerID")
+            } else {
+                panel.AddClass("hidden");
+            }
+        }
+
+    }
+}
+
+$.Schedule(5, checkPlayerID);

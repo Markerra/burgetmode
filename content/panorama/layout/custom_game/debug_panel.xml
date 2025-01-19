@@ -7,7 +7,7 @@
 	</scripts>
 
 	<Panel class="root" hittest="false">
-		<Panel id="debug_panel">
+		<Panel id="debug_panel" class="hidden">
 			<Panel id="buttons_panel">
 				<Panel id="spawn_hero">
 					<Panel id="spawn_hero_select">

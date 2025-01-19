@@ -45,6 +45,7 @@ function GameMode:Init()
 	CustomGameEventManager:RegisterListener("refresh_admin",   Dynamic_Wrap(self, 'Admin_Refresh'))
 	CustomGameEventManager:RegisterListener("lvlup_admin", Dynamic_Wrap(self, 'Admin_lvlUp'))
 	CustomGameEventManager:RegisterListener("gold_admin", Dynamic_Wrap(self, 'Admin_GiveGold'))
+	CustomGameEventManager:RegisterListener("admin_steamID_check", Dynamic_Wrap(self, 'Admin_SteamID_Check'))
 
 	require("panorama/custom_top_bar")
 	

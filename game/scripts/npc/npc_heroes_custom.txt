@@ -11,13 +11,13 @@
 	{
 		"override_hero"    "npc_dota_hero_pudge"
 
-		"MovementSpeed"					"295"
+		"MovementSpeed"					"325"
 	
-		"Ability1"						"seva_box"
-		"Ability2"						"seva_trader"
-		"Ability3"						"seva_phone"
-		"Ability4"						"seva_big"
-		"Ability5"						"seva_tether"
+		"Ability1"						"seva_phone"
+		"Ability2"						"seva_tether"
+		"Ability3"						"seva_trader"
+		"Ability4"						"seva_box"
+		"Ability5"						"seva_big"
 		"Ability6"						"seva_ult"
 		"Ability7"						"generic_hidden"
 	
@@ -45,11 +45,11 @@
 		"AttributeBaseStrength"			"19"
 		"AttributeStrengthGain"			"2.700000"
 		"AttributeBaseIntelligence"		"18"
-		"AttributeIntelligenceGain"		"2.200000"
+		"AttributeIntelligenceGain"		"2.100000"
 		"AttributeBaseAgility"			"25"
-		"AttributeAgilityGain"			"3.500000"
+		"AttributeAgilityGain"			"3.400000"
 
-	 	"MovementSpeed"					"315"
+	 	"MovementSpeed"					"345"
 
 	 	"AttackDamageMin"       		"22" // 16+n (доп. урон)
         "AttackDamageMax"       		"28" // 22+n (доп.урон)
@@ -88,9 +88,9 @@
 
 	 	"AttributePrimary"				"DOTA_ATTRIBUTE_ALL"
 		"AttributeBaseStrength"			"19"
-		"AttributeStrengthGain"			"2.600000"
+		"AttributeStrengthGain"			"2.700000"
 		"AttributeBaseAgility"			"18"
-		"AttributeAgilityGain"			"2.100000"
+		"AttributeAgilityGain"			"2.000000"
 		"AttributeBaseIntelligence"		"21"
 		"AttributeIntelligenceGain"		"3.100000"
 
@@ -101,7 +101,7 @@
 
 		"ArmorPhysical"					"5" // бонус
 
-		"MovementSpeed"					"335"
+		"MovementSpeed"					"365"
 
 		"Ability1"						"sergopy_voice"
 		"Ability2"						"sergopy_ivl"
@@ -135,7 +135,7 @@
 	 {
 	 	"override_hero"    				"npc_dota_hero_huskar"
 
-		"MovementSpeed"					"330"
+		"MovementSpeed"					"360"
 
 		"Ability1"						"marker_armlet"
 		"Ability2"						"marker_chill"

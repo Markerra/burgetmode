@@ -39,11 +39,11 @@ function modifier_item_jungle_staff:OnTakeDamage(data)
     local target   = data.unit
     local attacker = data.attacker
 
-    if bit.band(data.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) ~= 0 then return end
 
     local dmg_amp  = self:GetAbility():GetSpecialValueFor("damage_amp")
 
     if attacker == self:GetParent() and target:IsCreep() then
+        if bit.band(data.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) ~= 0 then return end
         ApplyDamage({ -- доп урон по крипам
                 victim = target,
                 attacker = attacker,

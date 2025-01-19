@@ -180,6 +180,12 @@ function GameMode:Admin_GiveGold(data)
 	end
 end
 
+function GameMode:Admin_SteamID_Check(data)
+    require("game-mode/custom_params")
+    local steamID = PlayerResource:GetSteamID(data.playerID):__tostring()
+    CustomGameEventManager:Send_ServerToAllClients("admin_steamID_check2", {allowedID = CUSTOM_ADMIN_STEAMID64, steamID = steamID})
+end
+
 wtfModifier = class({})
 
 function wtfModifier:IsPurgable() return false end

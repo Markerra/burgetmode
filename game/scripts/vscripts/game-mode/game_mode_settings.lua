@@ -12,7 +12,7 @@ function GameMode:npcSpawned(data)
 
 	if IsInToolsMode() and unit:IsHero() then
 		local adminItems = GameRules:GetGameModeEntity().GiveAdminItems
-		if adminItems then
+		if adminItems and PlayerResource:GetSteamID(unit:GetPlayerID()):__tostring() == CUSTOM_ADMIN_STEAMID64 then
 			if not unit:HasItemInInventory("item_admin_tp_hero") and unit.bFirstSpawned ~= false then
 				unit:AddItemByName("item_admin_tp_hero")
 				unit:AddItemByName("item_admin_gold_reset")

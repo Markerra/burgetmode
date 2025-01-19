@@ -8,6 +8,10 @@
 	vertical-align: center;
 }
 
+.hidden {
+	visibility: collapse;
+}
+
 #buttons_panel {
 	min-height: 400px;
 	min-width: 16%;

@@ -38,22 +38,17 @@ function modifier_seva_big:GetModifierExtraHealthBonus()
     local hp_per_stack = self:GetAbility():GetSpecialValueFor("hp_per_stack")
     local stacks = self:GetStackCount()
     --print("Extra Health Bonus: ", hp_per_stack * stacks)
-    return hp_per_stack * stacks 
+    return hp_per_stack * stacks
 end
 
 function modifier_seva_big:OnIntervalThink()
+    local hp_per_stack = self:GetAbility():GetSpecialValueFor("hp_per_stack")
+
     local caster = self:GetParent()
+
     if not caster or caster:IsNull() then return end
-    local current_stacks = self:GetStackCount()
-    self:SetStackCount(current_stacks + 1)
-    local extra_health_bonus = self:GetModifierExtraHealthBonus()
-    caster:CalculateStatBonus(true)
-    local ms = caster:GetModelScale()
-    caster:SetModelScale(ms * 1.002)
 
-    local current_health_percent = caster:GetHealth() / caster:GetMaxHealth()
-
-    caster:SetHealth(caster:GetMaxHealth() * current_health_percent)
+   caster:Heal(hp_per_stack, self:GetAbility())
 
     --print("Stacks: ", current_stacks + 1, " Max Health: ", caster:GetMaxHealth())
 end
