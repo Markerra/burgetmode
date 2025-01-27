@@ -2,7 +2,7 @@ require("utils/selection")
 
 LinkLuaModifier("wtfModifier", "panorama/debug_panel", LUA_MODIFIER_MOTION_NONE)
 
-function GameMode:Admin_SpawnBot(data)
+function GameMode:Admin_SpawnBot( data )
 
 	local heroName = data.hero
 	local playerID = data.id
@@ -40,7 +40,7 @@ function GameMode:Admin_SpawnBot(data)
     print("Admin Panel: Bot Spawned.","ID: "..botHero:GetPlayerID())
 end
 
-function GameMode:Admin_GiveItem(data)
+function GameMode:Admin_GiveItem( data )
 
 	if not IsServer() then return end
 	local entities = {}
@@ -66,7 +66,7 @@ function GameMode:Admin_GiveItem(data)
     
 end
 
-function GameMode:Admin_Refresh(data)
+function GameMode:Admin_Refresh( data )
     for i=1, HeroList:GetHeroCount() do
         local hero = HeroList:GetHero(i-1)
         if not hero then
@@ -140,7 +140,7 @@ function GameMode:Admin_WTFMode()
     end
 end
 
-function GameMode:Admin_lvlUp(data)
+function GameMode:Admin_lvlUp( data )
 	if not IsServer() then return end
 	local entities = {}
 	for key, value in pairs(data.ent) do
@@ -163,7 +163,7 @@ function GameMode:Admin_lvlUp(data)
 
 end
 
-function GameMode:Admin_GiveGold(data)
+function GameMode:Admin_GiveGold( data )
 	local entities = {}
 
 	for key, value in pairs(data.ent) do
@@ -177,10 +177,10 @@ function GameMode:Admin_GiveGold(data)
 	end
 end
 
-function GameMode:Admin_SteamID_Check(data)
+function GameMode:Admin_SteamID_Check()--( data )
     require("game-mode/custom_params")
-    local steamID = PlayerResource:GetSteamID(data.playerID):__tostring()
-    CustomGameEventManager:Send_ServerToAllClients("admin_steamID_check2", {allowedID = CUSTOM_ADMIN_STEAMID64, steamID = steamID})
+    --local steamID = PlayerResource:GetSteamID(data.playerID):__tostring()
+    CustomGameEventManager:Send_ServerToAllClients("admin_steamID", {allowedID = CUSTOM_ADMIN_STEAMID64}) --, steamID = steamID})
 end
 
 wtfModifier = class({})

@@ -152,23 +152,22 @@ toggleMenuButton.SetPanelEvent("onactivate", function() {
 
 function checkPlayerID() {
 
-    const id = Game.GetLocalPlayerID();
+    //const id = Game.GetLocalPlayerID();
 
-    GameEvents.SendCustomGameEventToServer("admin_steamID_check", { playerID: id});
+    GameEvents.SendCustomGameEventToServer("admin_steamID", {}); // {playerID: id});
 
-
-    checkPlayerID2();
+    checkPlayerID2()
 
 }
 
-GameEvents.Subscribe("admin_steamID_check2", checkPlayerID2);
+GameEvents.Subscribe("admin_steamID", checkPlayerID2);
 
 function checkPlayerID2(data) {
 
     if (data && data.allowedID) {
 
         var allowedSteamID = data.allowedID;
-        var steamID = data.steamID;
+        var steamID = Game.GetLocalPlayerInfo().player_steamid
     
         var panel = $.GetContextPanel().FindChildInLayoutFile("debug_panel");
     
