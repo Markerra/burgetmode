@@ -19,7 +19,7 @@
     	</snippet>
     </snippets>
 
-    <Panel class="root" hittest="false"">
+    <Panel class="root" hittest="false">
         <Panel class="HeroPanel" hittest="false">
         </Panel>
     </Panel>

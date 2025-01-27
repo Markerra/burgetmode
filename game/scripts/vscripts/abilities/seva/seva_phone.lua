@@ -67,7 +67,8 @@ function th_modifier_seva_phone:OnIntervalThink()
     local radius    =   self:GetAbility():GetSpecialValueFor("radius")
     local dmg       =   self:GetAbility():GetSpecialValueFor("pure_damage")
     local mduration =   self:GetAbility():GetSpecialValueFor("mute_duration")
-    local enemies   =   FindUnitsInRadius(caster:GetTeamNumber(), parent:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC , 0, 0, false)
+    local enemies   =   FindUnitsInRadius(caster:GetTeamNumber(), parent:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, 
+    DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC , 0, 0, false)
     for _,value in ipairs(enemies) do
         if HasTalent(caster, "special_bonus_unique_seva_phone_silence") then
             value:AddNewModifier(caster, self:GetAbility(), "modifier_silence", {duration = mduration})

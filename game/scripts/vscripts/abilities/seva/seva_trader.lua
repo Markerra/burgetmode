@@ -23,12 +23,14 @@ function th_modifier_seva_trader:IsHidden()
 end
 
 function th_modifier_seva_trader:OnCreated()
-    time_stack = self:GetAbility():GetSpecialValueFor("time_stack")
-    print(time_stack)
+    if not IsServer() then return end
+    local time_stack = self:GetAbility():GetSpecialValueFor("time_stack")
     self:StartIntervalThink(time_stack)
 end
 
 function th_modifier_seva_trader:OnIntervalThink()
+    if self:GetCaster():PassivesDisabled() then return end
+    if not IsServer() then return end
     local parent = self:GetParent()
     local gpm = self:GetAbility():GetSpecialValueFor("gold_per_stack")
     parent:ModifyGold(gpm, false, DOTA_ModifyGold_GameTick)

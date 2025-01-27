@@ -28,6 +28,14 @@ end
 
 modifier_tower_protection = class({})
 
+function modifier_tower_protection:OnCreated()
+    local caster = self:GetCaster()
+    if caster:PassivesDisabled() then 
+        caster:RemoveModifierByName("modifier_tower_protection")
+        return
+    end
+end
+
 function modifier_tower_protection:IsHidden()
     return false
 end

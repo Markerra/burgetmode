@@ -18,6 +18,8 @@ function modifier_tower_soul_drain:DeclareFunctions()
 end
 
 function modifier_tower_soul_drain:OnAttackLanded(data)
+    if self:GetCaster():PassivesDisabled() then return end
+    if not IsServer() then return end
     if self:GetParent() == data.attacker then
         local target = data.target
         local duration = self:GetAbility():GetSpecialValueFor("duration")

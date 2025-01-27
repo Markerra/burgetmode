@@ -94,7 +94,7 @@
 		"BaseClass"             		"ability_lua"
 		"ScriptFile"					"abilities/seva/seva_phone"
 		"AbilityCooldown"				"35"
-		"AbilityManaCost"				"250 200 175 150"
+		"AbilityManaCost"				"150 175 200 225"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3"
 		"MaxLevel" 						"4"
@@ -107,7 +107,7 @@
 		{
 			"pure_damage"
 			{
-				"value"			"50 75 100 150"	// чистый урон каждую секунду
+				"value"			"50 75 100 125"	// чистый урон каждую секунду
 				"special_bonus_unique_seva_phone_damage"	"+50"	// талант
 			}
 			"mute_duration"		"0.2 0.4 0.8 1"	// длительность заглушения
@@ -116,7 +116,7 @@
 				"value"			"5"		// длительность облака
 				"special_bonus_unique_seva_phone_duration"	"+1"	// талант
 			}
-			"radius"			"200 300 400 500" // радиус облака
+			"radius"			"350 400 450 500" // радиус облака
 		}
 	}
 
@@ -392,9 +392,9 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		"HasScepterUpgrade"				"1"
 		"HasShardUpgrade"				"1"
-		"AbilityChannelTime"			"4 6 8 10"		
+		"AbilityChannelTime"			"6"		
 		"AbilityCastPoint" 				"1.5"
-		"AbilityCooldown"				"45 40 35 30"
+		"AbilityCooldown"				"25"
 		"AbilityCastRange"				"300" 
 		"AbilityManaCost"				"300"
 		"MaxLevel"						"4"
@@ -699,6 +699,7 @@
 		"ScriptFile"					"abilities/sergopy/sergopy_refresh"
 		"AbilityTextureName"			"sergopy/sergopy_refresh"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"HasScepterUpgrade"				"1"
 		"AbilityValues"
 		{
@@ -732,18 +733,19 @@
 		"AbilityTextureName"			"sergopy/sergopy_hamster"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCastRange"				"350 400 450 500"
 		"HasShardUpgrade"				"1"
 
 		"AbilityValues"
 		{
-			"radius"					"350 400 450 500"
 			"chance"
 			{
 				"value"					"10 12 15"	// шанс перезарядки способностей
 				"special_bonus_unique_sergopy_hamster_chance"	"+5"	// талант
 			}
-			"mana_restore"				"75"	// количество восстановленой маны при перезарядке способностей (шард)
+			"radius"					"350 400 450 500"
+			"mana_restore"				"125"	// количество восстановленой маны при перезарядке способностей (шард)
 		}
 	}
 
@@ -802,17 +804,25 @@
 			"bonus_damage"
 			{
 				"value"					"20" 	// доп. урон при активации
+				"special_bonus_unique_marker_armlet_dmg"	"+45"
 			}
 
 			"health_loss"
 			{
-				"value"					"20"	// потеря хп при активации
+				"value"					"3"	// потеря хп (%) в секунду
 			}
 
 			"strength_growth"			"0.5"	// прирост к доп. силе при активации за уровень
 			"damage_growth"				"3"	 	// прирост к доп. урону при активации за уровень
-			"health_loss_growth"		"3"		// прирост к потери хп при активации за уровень
+			"health_loss_growth"		"0.05"	// прирост к потери хп при активации за уровень
 		}
+	}
+
+	"special_bonus_unique_marker_armlet_dmg"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
 
 	//=================================================================================================================
@@ -825,16 +835,190 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"marker/marker_chill"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityCastPoint"				"0.8"
+		"HasShardUpgrade"				"1"
 
 		"AbilityValues"
 		{
-			
-		}
+			"bonus_regen"				"2 2.5 3 3.5" // бонус к регенерации за 1 секунду афк
+			"bonus_dmg"					// бонус к урону за 1 секунду афк
+			{
+				"value"					"7 8 9 10" 
+				"special_bonus_unique_marker_chill_dmg" "+5" // талант
+			}
+			"max_bonus"					"5 6 7 8 10" // максимальное количество секунд афк
+			"delay"						"1" // задержка перед активацией счетсчика
+			"interval"					"0.1" // интервал проверки на афк
 
-			
+			"shard_bonus_ms"			"110" // бонус к скорости передвижения от аганим шарда
+			"shard_duration"			"2.0" // длительность ускорения от аганим шарда
+		}	
 	}
+
+	"special_bonus_unique_marker_chill_dmg"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Marker: Бан Хаммер
+	//=================================================================================================================
+	"marker_hammer"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/marker/marker_hammer"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"marker/marker_hammer"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_1_STATUE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.7"
+		"AbilityCooldown"				"16 15 14 12"
+		"AbilityManaCost"				"85 90 95 105"
+
+		"AbilityValues"
+		{
+			"damage"					// маг. урон при попадании
+			{
+				"value"					"80 100 125 155" 
+				"special_bonus_unique_marker_hammer_dmg"	"+50"
+			}
+			"radius"					"125 150 175 225" // радиус применения эффекта
+			"duration"					 // длительность эффекта
+			{
+				"value"					"0.8 1.2 1.5 2.2"
+				"special_bonus_unique_marker_hammer_duration" "+0.5" // талант
+			}
+			"dmg_decrease"		 		"5"		// уменьшение входящего урона по цели
+			"mana_restore"				"50"	// при непопадании молотом восстанавливает ману (%)
+		}	
+	}
+
+	"special_bonus_unique_marker_hammer_duration"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	"special_bonus_unique_marker_hammer_dmg"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Marker: Гиперснаряд
+	//=================================================================================================================
+	"marker_shot"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/marker/marker_shot"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"marker/marker_shot"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"HasScepterUpgrade"				"1"
+
+		"AbilityCooldown"				"12 11 10 9"
+		"AbilityManaCost"				"80 90 100 110"
+
+		"AbilityValues"
+		{
+			"channel_time"				"2" // максимальное время зарядки способности
+			"max_bonus_damage"			// макс. бонус к урону
+			{
+				"value"					"130 140 150 160"
+				"special_bonus_unique_marker_dmg" "+30"
+			}
+			"max_bonus_range"			// макс бонус к дальности атаки
+			{
+				"value"					"160 200 240 280" 
+				"special_bonus_unique_marker_range" "+200" // талант
+			}
+			"duration"					"6 8 10 12" // длительность эффекта
+
+			"scepter_charges"			"5" // доп. заряды способности от аганима
+		}	
+	}
+
+	"special_bonus_unique_marker_shot_dmg"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	"special_bonus_unique_marker_shot_range"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Marker: HYPNODANCER
+	//=================================================================================================================
+	"marker_dance"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/marker/marker_dance"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"marker/marker_dance"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"AbilityCastRange"				"550"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"60 55 45"
+		"AbilityManaCost"				"140 160 180"
+
+		"AbilityValues"
+		{
+			"damage_per_second"		"130 160 210" // маг. урон в секунду
+			"totem_health"			 // здоровье тотема
+			{
+				"value"				"400 700 1000"
+				"special_bonus_unique_marker_dance_hp" "+200" // талант
+			}
+			"bonus_attack_speed"	"90" // бонус к скорости атаки для союзников
+			"bonus_attack_range"	"130" // бонус к дальности атаки для союзников
+			"armor_decrease_pct"	"6 8 10" // уменьшение брони в сек. (%)
+			"stun_interval"			"3" // интервал оглушения врагов (в сек.)
+			"stun_duration"			"0.4" // длительность оглушения
+			"radius"				"300 350 400" // радиус ауры
+			"duration"				// длительность жизни тотема
+			{
+				"value"				"5 7 9"
+				"special_bonus_unique_marker_dance_duration" "+2" // талант
+			}
+		}	
+	}
+
+	"special_bonus_unique_marker_dance_hp"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	"special_bonus_unique_marker_dance_duration"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
 
 
 //----------------------------------------------------------------------------

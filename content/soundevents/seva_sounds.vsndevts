@@ -109,7 +109,7 @@
 							"value0"	"sounds/seva/onsight_pre.vsnd"
 						}
 					}
-					"volume"			{ "value"	"6.00000" }
+					"volume"			{ "value"	"3.00000" }
 					"pitch"				{ "value"	 "1.00000" }
 					"soundLevel"		{ "value"  "100.00000" }
 					"distance_max"		{ "value"	"8000.000" }
@@ -139,7 +139,7 @@
 							"value0"	"sounds/seva/onsight_cast1.vsnd"
 						}
 					}
-					"volume"			{ "value"	"6.00000" }
+					"volume"			{ "value"	"3.00000" }
 					"pitch"				{ "value"	 "1.00000" }
 					"soundLevel"		{ "value"  "100.00000" }
 					"distance_max"		{ "value"	"10000.000" }
@@ -169,7 +169,7 @@
 							"value0"	"sounds/seva/onsight_cast2.vsnd"
 						}
 					}
-					"volume"			{ "value"	"6.00000" }
+					"volume"			{ "value"	"3.00000" }
 					"pitch"				{ "value"	 "1.00000" }
 					"soundLevel"		{ "value"  "100.00000" }
 					"distance_max"		{ "value"	"10000.000" }
@@ -199,7 +199,7 @@
 							"value0"	"sounds/seva/onsight_cast3.vsnd"
 						}
 					}
-					"volume"			{ "value"	"6.00000" }
+					"volume"			{ "value"	"3.00000" }
 					"pitch"				{ "value"	 "1.00000" }
 					"soundLevel"		{ "value"  "100.00000" }
 					"distance_max"		{ "value"	"10000.000" }
@@ -229,7 +229,7 @@
 							"value0"	"sounds/seva/seva_tether_cast1.vsnd"
 						}
 					}
-					"volume"			{ "value"	"2.00000" }
+					"volume"			{ "value"	"1.00000" }
 					"pitch"				{ "value"	 "1.00000" }
 					"soundLevel"		{ "value"  "100.00000" }
 					"distance_max"		{ "value"	"10000.000" }
@@ -259,7 +259,7 @@
 							"value0"	"sounds/seva/seva_tether_cast2.vsnd"
 						}
 					}
-					"volume"			{ "value"	"2.00000" }
+					"volume"			{ "value"	"1.00000" }
 					"pitch"				{ "value"	 "1.00000" }
 					"soundLevel"		{ "value"  "100.00000" }
 					"distance_max"		{ "value"	"10000.000" }
@@ -289,7 +289,7 @@
 							"value0"	"sounds/seva/seva_tether_cast3.vsnd"
 						}
 					}
-					"volume"			{ "value"	"2.00000" }
+					"volume"			{ "value"	"1.00000" }
 					"pitch"				{ "value"	 "1.00000" }
 					"soundLevel"		{ "value"  "100.00000" }
 					"distance_max"		{ "value"	"10000.000" }
@@ -319,7 +319,7 @@
 							"value0"	"sounds/seva/seva_tether_cast4.vsnd"
 						}
 					}
-					"volume"			{ "value"	"2.00000" }
+					"volume"			{ "value"	"1.00000" }
 					"pitch"				{ "value"	 "1.00000" }
 					"soundLevel"		{ "value"  "100.00000" }
 					"distance_max"		{ "value"	"10000.000" }

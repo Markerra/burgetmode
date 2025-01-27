@@ -67,18 +67,15 @@ function modifier_sergopy_ivl_debuff:IsPurgable() return false end
 function modifier_sergopy_ivl_debuff:IsPurgeException() return true end -- можно развеять только сильным развеиванием
 
 function modifier_sergopy_ivl_debuff:OnCreated()
-
-    self.regen_reduction = self:GetAbility():GetSpecialValueFor("regen_reduction")
-    self.slow            = self:GetAbility():GetSpecialValueFor("slow")
-    self.reduction       = self:GetParent():GetHealthRegen() * self.regen_reduction / 100
-
-    self.stack_damage_bonus = self:GetAbility():GetSpecialValueFor("stack_damage_bonus")
-    self.stack_regen_bonus  = self:GetAbility():GetSpecialValueFor("stack_regen_bonus")
-    self.stack_slow_bonus   = self:GetAbility():GetSpecialValueFor("stack_slow_bonus")
+    self:SetHasCustomTransmitterData( true )
 
     if not IsServer() then return end
-    
+
+    self.hp_regen = self:GetParent():GetHealthRegen()
+
     self:StartIntervalThink(1.0)
+
+    self:SetStackCount(1)
 
     self.stacks_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_batrider/batrider_stickynapalm_stack.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetParent())
     ParticleManager:SetParticleControl(self.stacks_particle, 1, Vector(0, 1, 0))
@@ -89,40 +86,62 @@ function modifier_sergopy_ivl_debuff:OnCreated()
     ParticleManager:SetParticleControl(self.particle, 1, Vector(radius, 0, 0)) -- Radius
 
     EmitSoundOn("Hero_Disruptor.StaticStorm.End", self:GetParent())
+    
+    self:SendBuffRefreshToClients()
+end
+
+function modifier_sergopy_ivl_debuff:AddCustomTransmitterData()
+    local data = {
+        hp_regen = self.hp_regen
+    }
+    return data
+end
+
+function modifier_sergopy_ivl_debuff:HandleCustomTransmitterData(data)
+    self.hp_regen = data.hp_regen
 end
 
 function modifier_sergopy_ivl_debuff:OnRefresh()
+    if not IsServer() then return end
+
+    self.hp_regen = self:GetParent():GetHealthRegen()
+
     local max_stacks = self:GetAbility():GetSpecialValueFor("max_stacks")
-    if self:GetStackCount()+2 > max_stacks then self:SetStackCount(max_stacks) return end
+    if self:GetStackCount() + 1 > max_stacks then self:SetStackCount(max_stacks) return end
     self:IncrementStackCount()
 
-    if self:GetStackCount()+1 >= 10 and self:GetStackCount()+1 < 20 then
-        ParticleManager:SetParticleControl(self.stacks_particle, 1, Vector(1, self:GetStackCount()+1-10, 0))
-    elseif self:GetStackCount()+1 >= 20 then
-        ParticleManager:SetParticleControl(self.stacks_particle, 1, Vector(2, self:GetStackCount()+1-20, 0))
+    if self:GetStackCount() >= 10 and self:GetStackCount() < 20 then
+        ParticleManager:SetParticleControl(self.stacks_particle, 1, Vector(1, self:GetStackCount()-10, 0))
+    elseif self:GetStackCount() >= 20 then
+        ParticleManager:SetParticleControl(self.stacks_particle, 1, Vector(2, self:GetStackCount()-20, 0))
     else
-        ParticleManager:SetParticleControl(self.stacks_particle, 1, Vector(0, self:GetStackCount()+1, 0))
+        ParticleManager:SetParticleControl(self.stacks_particle, 1, Vector(0, self:GetStackCount(), 0))
     end
     local particle2 = ParticleManager:CreateParticle("particles/units/heroes/hero_phantom_assassin_persona/pa_persona_crit_impact_travel_spray.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
     ParticleManager:SetParticleControl(particle2, 3, self:GetParent():GetAbsOrigin())
     ParticleManager:ReleaseParticleIndex(particle2)
     EmitSoundOn("Hero_Disruptor.Attack", self:GetParent())
+    self:SendBuffRefreshToClients()
 end
 
 function modifier_sergopy_ivl_debuff:OnIntervalThink()
     if not IsServer() then return end
 
-    local stacks = self:GetStackCount()+1
+    local bonus = self:GetAbility():GetSpecialValueFor("stack_damage_bonus")
+
+    local stacks = self:GetStackCount()
     
     local damage_table = {
         victim = self:GetParent(),
         attacker = self:GetAbility():GetCaster(),
-        damage = self.stack_damage_bonus * stacks,
+        damage = bonus * stacks,
         damage_type = DAMAGE_TYPE_MAGICAL,
         ability = self:GetAbility(),
     }
 
     ApplyDamage(damage_table)
+
+    self:SendBuffRefreshToClients() 
 end
 
 function modifier_sergopy_ivl_debuff:DeclareFunctions()
@@ -134,15 +153,23 @@ end
 
 function modifier_sergopy_ivl_debuff:GetModifierConstantHealthRegen()
     local stacks = self:GetStackCount()
-    return -self.reduction + (-self.stack_regen_bonus * stacks)
+    local bonus = self:GetAbility():GetSpecialValueFor("stack_regen_bonus")
+    local regen_reduction = self:GetAbility():GetSpecialValueFor("regen_reduction")
+    local bonus_reduction = -bonus * stacks
+    local total = -(regen_reduction / 100) + (bonus_reduction / 100)
+    return total * self.hp_regen
 end
 
 function modifier_sergopy_ivl_debuff:GetModifierMoveSpeedBonus_Percentage()
-    stacks = self:GetStackCount()
-    return -self.slow + (-self.stack_slow_bonus * stacks)
+    local stacks = self:GetStackCount()
+    local bonus = self:GetAbility():GetSpecialValueFor("stack_slow_bonus")
+    local slow = self:GetAbility():GetSpecialValueFor("slow")
+    return -slow + (-bonus * stacks)
 end
 
 function modifier_sergopy_ivl_debuff:OnDestroy()
+    if not IsServer() then return end
+
     ParticleManager:DestroyParticle(self.particle, false)
     ParticleManager:DestroyParticle(self.stacks_particle, false)
 end

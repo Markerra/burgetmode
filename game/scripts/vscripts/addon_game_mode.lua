@@ -54,6 +54,7 @@ function Precache( context )
 --================================================================================================================================================
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts", context) -- sergopy_voice
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts", context) -- sergopy_ivl
+	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_rattletrap.vsndevts", context) -- sergopy_refresh
 	PrecacheResource("soundfile", "soundevents/game_sounds_items.vsndevts", context) -- sergopy_refresh
 
 	PrecacheResource("particle", "particles/units/heroes/hero_queenofpain/queen_scream_of_pain_owner.vpcf", context) -- sergopy_voice
@@ -70,7 +71,44 @@ function Precache( context )
 --================================================================================================================================================
 --------------------- MARKER
 --================================================================================================================================================
-	PrecacheResource("particle", "particles/items_fx/armlet.vpcf", context) -- marker_armlet
+	PrecacheResource( "soundfile", "soundevents/marker_sounds.vsndevts", context )
+
+	PrecacheResource( "particle", "particles/items_fx/armlet.vpcf", context) -- marker_armlet
+	
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts", context ) -- marker_chill
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts", context ) -- marker_chill
+	
+	PrecacheResource( "particle", "particles/econ/items/huskar/huskar_ti8/huskar_ti8_shoulder_heal.vpcf", context ) -- marker_chill
+	PrecacheResource( "particle", "particles/units/heroes/hero_antimage/antimage_manabreak_slow.vpcf", context ) -- marker_chill
+	PrecacheResource( "particle", "particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf", context ) -- marker_chill
+	
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts", context) -- marker_hammer
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dawnbreaker.vsndevts", context ) -- marker_hammer
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts", context ) -- marker_hammer
+	
+	PrecacheResource( "particle", "particles/units/heroes/hero_dawnbreaker/dawnbreaker_calavera_hammer_projectile.vpcf", context ) -- marker_hammer
+	PrecacheResource( "particle", "particles/units/heroes/hero_grimstroke/grimstroke_soulchain_debuff.vpcf", context ) -- marker_hammer
+	PrecacheResource( "particle", "particles/econ/items/underlord/underlord_ti8_immortal_weapon/underlord_crimson_ti8_immortal_pitofmalice_stun.vpcf", context ) -- marker_hammer
+	PrecacheResource( "particle", "particles/econ/items/gyrocopter/gyro_ti10_immortal_missile/gyro_ti10_immortal_crimson_missile_explosion.vpcf", context ) -- marker_hammer
+	
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts", context ) -- marker_shot
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts", context ) -- marker_shot
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_luna.vsndevts", context ) -- marker_shot
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts", context ) -- marker_shot
+	
+	PrecacheResource( "particle", "particles/econ/events/winter_major_2017/dagon_wm07_tgt_sparks.vpcf", context ) -- marker_shot
+	PrecacheResource( "particle", "particles/econ/items/luna/luna_lucent_ti5/luna_lucent_beam_cast_ti_5.vpcf", context ) -- marker_shot
+	PrecacheResource( "particle", "particles/econ/items/luna/luna_lucent_ti5/luna_eclipse_cast_moonfall.vpcf", context ) -- marker_shot
+	PrecacheResource( "particle", "particles/units/heroes/hero_luna/luna_lucent_beam_impact_bits.vpcf", context ) -- marker_shot
+
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts", context ) -- marker_dance
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts", context ) -- marker_dance
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_muerta.vsndevts", context ) -- marker_dance
+	PrecacheResource( "particle", "particles/units/heroes/hero_hoodwink/hoodwink_scurry_aura.vpcf", context ) -- marker_dance
+	PrecacheResource( "particle", "particles/units/heroes/hero_leshrac/leshrac_disco_tnt.vpcf", context ) -- marker_dance
+	PrecacheResource( "particle", "particles/ui_mouseactions/range_finder_aoe.vpcf", context ) -- marker_dance
+	PrecacheResource( "particle", "particles/econ/items/oracle/oracle_fortune_ti7/oracle_fortune_ti7_aoe_ground_splash.vpcf", context ) -- marker_dance
+	PrecacheResource( "particle", "particles/econ/events/ti10/hot_potato/disco_ball_channel.vpcf", context ) -- marker_dance
 
 --================================================================================================================================================
 --------------------- TOWER
@@ -82,6 +120,7 @@ function Precache( context )
 --================================================================================================================================================
 	PrecacheResource("particle", "particles/econ/events/spring_2021/teleport_start_spring_2021.vpcf", context) -- item_tpscroll
 	PrecacheResource("particle", "particles/econ/events/spring_2021/teleport_end_spring_2021.vpcf", context) -- item_tpscroll
+
 end
 
 -- Create the game mode when we activate

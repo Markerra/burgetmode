@@ -90,7 +90,7 @@ function modifier_marker_armlet_active:OnCreated()
 
     --if not self:GetParent():IsAlive() then return end
 
-    print("Армлет активирован!")  -- Проверим, когда модификатор активируется
+    print("Армлет активирован!")
 
     self.unholy_bonus_strength  = self:GetAbility():GetSpecialValueFor("bonus_strength")
 
@@ -102,8 +102,7 @@ function modifier_marker_armlet_active:OnCreated()
     
     if not self:GetParent():IsIllusion() then
         Timers:CreateTimer(0.001, function()
-            local new_health = health_before_activation + bonus_health
-            self:GetParent():SetHealth(new_health)
+            caster:Heal(bonus_health, self:GetAbility())
         end)
     end
     
@@ -118,7 +117,7 @@ function modifier_marker_armlet_active:OnIntervalThink()
     local caster             = self:GetCaster()
     local health_loss        = self:GetAbility():GetSpecialValueFor("health_loss")
     local health_loss_growth = self:GetAbility():GetSpecialValueFor("health_loss_growth")
-    local total_health_loss  = health_loss + health_loss_growth * (caster:GetLevel() - 1)
+    local total_health_loss  = (caster:GetHealth() * (health_loss * 0.01)) + (health_loss_growth * (caster:GetLevel() - 1))
     local new_health         = math.max( self:GetParent():GetHealth() - total_health_loss * 0.1, 1)
     self:GetParent():SetHealth(new_health) 
 end
@@ -126,7 +125,6 @@ end
 function modifier_marker_armlet_active:OnDestroy()
     if IsServer() then
         if self:GetCaster():IsAlive() then
-            -- Adjust caster's health
             local caster = self:GetCaster()
             local strength_growth = self:GetAbility():GetSpecialValueFor("strength_growth")
             local bonus_health = (self:GetAbility():GetSpecialValueFor("bonus_strength") + strength_growth * (self:GetCaster():GetLevel() - 1)) * 22

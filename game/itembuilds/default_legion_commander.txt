@@ -1,0 +1,49 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"			"npc_dota_hero_legion_commander"
+	"Title"			"Recommended Items for Legion Commander"
+	
+	"Items"
+	{	
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_branches"
+			"item"		"item_magic_stick"
+			"item"		"item_jungle_staff"
+		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{	
+			"item"		"item_magic_wand"
+			"item"		"item_boots"
+			"item"		"item_buckler"
+			"item"		"item_blades_of_attack"
+			"item"		"item_wind_lace"
+			"item"		"item_bracer"
+		}
+		
+		"#DOTA_Item_Build_Core_Items"
+		{
+			"item"		"item_tranquil_boots"
+			"item"		"item_radiance"
+			"item"		"item_vladmir"
+			"item"		"item_assault"
+			"item"		"item_boots_of_bearing"
+			"item"		"item_orchid"
+			"item"		"item_sheepstick"
+			"item"		"item_bloodthorn"
+		}
+		
+		"#DOTA_Item_Build_Luxury"
+		{
+			"item"		"item_shivas_guard"
+			"item"		"item_assault"
+			"item"		"item_black_king_bar"
+			"item"		"item_blink"
+			"item"		"item_desolator"
+			"item"		"item_satanic"
+			"item"		"item_heavens_halberd"
+		}
+	}
+}

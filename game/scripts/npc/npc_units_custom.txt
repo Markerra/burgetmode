@@ -1670,8 +1670,80 @@
         // Bounds
 		//----------------------------------------------------------------
         "HealthBarOffset"               "140"
-
     }
+
+//================================================================================= 
+// MARKER: HYPNODANCE
+//================================================================================= 
+    "npc_dota_marker_dance_totem"
+    {
+        // General
+        //----------------------------------------------------------------
+        "BaseClass"                     "npc_dota_creature"
+        "Model"                         "models/props_gameplay/dummy/dummy_large.vmdl"
+        "ModelScale"                    "1.5"
+        "SoundSet"                      "generic"
+        "GameSoundsFile"                "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+    
+        // Abilities
+        //----------------------------------------------------------------
+        "Ability1"                      ""                           // No abilities
+        "Ability2"                      ""                           // No abilities
+        "Ability3"                      ""                           // No abilities
+        "Ability4"                      ""                           // No abilities
+    
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"            "DOTA_UNIT_CAP_NONE"         // No attack capabilities
+        "AttackDamageMin"               "0"                          // No attack damage
+        "AttackDamageMax"               "0"                          // No attack damage
+        "AttackRate"                    "1.5"                        // Attack speed
+        "AttackRange"                   "0"                          // No attack range
+        "ProjectileSpeed"               "0"                          // No projectiles
+        "ProjectileModel"               ""                           // No projectile model
+    
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"                  "10"                         // Base health
+        "StatusHealthRegen"             "0"                          // No health regeneration
+        "StatusMana"                    "0"                          // No mana
+        "StatusManaRegen"               "0"                          // No mana regeneration
+    
+        // Resistance
+        //----------------------------------------------------------------
+        "ArmorPhysical"                 "3"                          // Physical Armor
+        "MagicalResistance"             "0"                          // No magical resistance
+    
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyGoldMin"                 "75"                          // No bounty
+        "BountyGoldMax"                 "115"                          // No bounty
+    
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"          "DOTA_UNIT_CAP_MOVE_NONE"    // The totem does not move
+        "MovementSpeed"                 "0"                          // Totem does not move
+    
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"            "400"                        // Normal vision
+        "VisionNighttimeRange"          "400"                        // Normal vision during night
+    
+        // Bounds
+        //----------------------------------------------------------------
+        "HealthBarOffset"               "140"                        // Health bar offset to make it look proper
+    
+        // Additional Properties
+        //----------------------------------------------------------------
+        "IsSummoned"                    "1"                          // Marked as a summoned unit
+        "CanBeSeenInFog"                "1"                          // Totem is visible in fog
+        "IsNeutral"                     "1"                          // Totem is neutral
+        "IsInvisible"                   "1"                          // Totem is invisible by default
+    
+        // Custom tag for easier identification in game and code
+        "CustomTag"                     "marker_dance_totem"
+    }
+
 
 //=================================================================================
 // FOUNTAIN

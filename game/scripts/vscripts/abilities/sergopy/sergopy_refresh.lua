@@ -28,6 +28,8 @@ function modifier_sergopy_refresh:DeclareFunctions()
 end
 
 function modifier_sergopy_refresh:OnAbilityExecuted(params)
+    if self:GetCaster():PassivesDisabled() then return end
+
     if not IsServer() then return end
 
     if params.unit == self:GetParent() then

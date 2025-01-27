@@ -49,14 +49,14 @@ function GameMode:Init()
 
 	require("panorama/custom_top_bar")
 	
-	SendHeroDataToClient(0.34, false) -- panorama/custom_top_bar.lua 
+	SendHeroDataToClient(0.25, false) -- panorama/custom_top_bar.lua 
 
 end
 
 function GameMode:InitFast()
 	local mode = GameRules:GetGameModeEntity()
 
-	mode:SetCustomGameForceHero("npc_dota_hero_pudge")
+	mode:SetCustomGameForceHero("npc_dota_hero_bristleback")
 
 	PlayerResource:SetCustomTeamAssignment(0, DOTA_TEAM_CUSTOM_2)
 

@@ -22,6 +22,11 @@ function maxim_herald_modifier:DeclareFunctions()
 end
 
 function maxim_herald_modifier:OnDeath(params)
+
+	if self:GetCaster():PassivesDisabled() then return end
+
+	if not IsServer() then return end
+
 	local dead 	   = params.unit
 	local attacker = params.attacker
 	local duration = self:GetAbility():GetSpecialValueFor("duration")

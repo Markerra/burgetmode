@@ -18,6 +18,8 @@ function modifier_sergopy_hamster:DeclareFunctions()
 end
 
 function modifier_sergopy_hamster:OnAbilityExecuted(keys)
+    if self:GetCaster():PassivesDisabled() then return end
+    
     if not IsServer() then return end
 
     local caster  = self:GetCaster()
@@ -56,7 +58,7 @@ function modifier_sergopy_hamster:OnAbilityExecuted(keys)
                 -- партикл рефрешера
                 local particle = ParticleManager:CreateParticle("particles/items2_fx/refresher_c.vpcf", 13, parent)
                 ParticleManager:ReleaseParticleIndex(particle)
-                parent:EmitSound("DOTA_Item.Refresher.Activate")
+                parent:EmitSound("Hero_Rattletrap.Overclock.Cast")
 
             end
         end

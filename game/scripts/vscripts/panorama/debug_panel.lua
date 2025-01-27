@@ -70,7 +70,7 @@ function GameMode:Admin_Refresh(data)
     for i=1, HeroList:GetHeroCount() do
         local hero = HeroList:GetHero(i-1)
         if not hero then
-            print("no hero with id "..i)
+            print("Admin Panel: Refresh - No hero with id "..i)
             return
         end
     
@@ -107,38 +107,35 @@ end
 function GameMode:Admin_WTFMode()
 
     if wtfMode == true then
-        -- Включаем режим WTF
         if not IsServer() then return end
-			local playerCount = PlayerResource:GetPlayerCount() - 1 
-    		for playerID = 0, playerCount do
-    			if PlayerResource:IsValidPlayerID(playerID) then
-    				PlayerResource:GetPlayer(playerID):GetAssignedHero():AddNewModifier(nil, nil, "wtfModifier", nil)
-				end
+            GameMode:Admin_Refresh()
+			local heroCount = HeroList:GetHeroCount()
+    		for hero = 0, heroCount - 1 do
+                local hHero = HeroList:GetHero(hero)
+    			hHero:AddNewModifier(nil, nil, "wtfModifier", nil)
 			end
-        print("WTF Mode: ON")
+        print("Admin Panel: WTF Mode: ON")
     	wtfMode = false
     elseif wtfMode == false then
         -- Выключаем режим WTF
         if not IsServer() then return end
-			local playerCount = PlayerResource:GetPlayerCount() - 1 
-    		for playerID = 0, playerCount do
-    			if PlayerResource:IsValidPlayerID(playerID) then
-    				PlayerResource:GetPlayer(playerID):GetAssignedHero():RemoveModifierByName("wtfModifier")
-				end
+			local heroCount = HeroList:GetHeroCount()
+            for hero = 0, heroCount - 1 do
+                local hHero = HeroList:GetHero(hero)
+    			hHero:RemoveModifierByName("wtfModifier")
 			end
 
-        print("WTF Mode: OFF")
+        print("Admin Panel: WTF Mode: OFF")
         wtfMode = true
     else
-    	-- Включаем режим WTF
         if not IsServer() then return end
-			local playerCount = PlayerResource:GetPlayerCount() - 1 
-    		for playerID = 0, playerCount do
-    			if PlayerResource:IsValidPlayerID(playerID) then
-    				PlayerResource:GetPlayer(playerID):GetAssignedHero():AddNewModifier(nil, nil, "wtfModifier", nil)
-				end
+            GameMode:Admin_Refresh()
+			local heroCount = HeroList:GetHeroCount()
+            for hero = 0, heroCount - 1 do
+                local hHero = HeroList:GetHero(hero)
+    			hHero:AddNewModifier(nil, nil, "wtfModifier", nil)
 			end
-        print("WTF Mode: ON")
+        print("Admin Panel: WTF Mode: ON")
     	wtfMode = false
     end
 end
