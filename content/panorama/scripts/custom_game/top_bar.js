@@ -2,68 +2,90 @@ GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_HEROES, fa
 GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND, false);
 GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_MENU_BUTTONS, false);
 
+let selectedHero = null;
+
 function CreateOrUpdateTopBar(event) {
     const arrayHeroes = Object.values(event.data);
-    arrayHeroes.sort((a, b) => b.networth - a.networth)
+    arrayHeroes.sort((a, b) => b.networth - a.networth);
 
-    // проверка на существование панели
     let rootPanel = $.GetContextPanel().FindChildTraverse("HeroTopBar");
     if (!rootPanel) {
-        // если панели нет, создаем её
         rootPanel = $.CreatePanel("Panel", $.GetContextPanel(), "HeroTopBar");
         rootPanel.BLoadLayoutSnippet("heroSnippet");
     }
 
     const panelBody = rootPanel.FindChildTraverse("hero_panel");
     if (!panelBody) {
-        $.Msg("Не удалось найти контейнер для героев");
         return;
     }
 
-    // очищение панели
-    panelBody.RemoveAndDeleteChildren();
-
-    // добавление героев
     arrayHeroes.forEach((element) => {
-        const bar = $.CreatePanel("Panel", panelBody, "", { class: "hero_bar" });
+        let bar = panelBody.FindChildTraverse("Hero_" + element.hero);
 
-        const status = element.status
+        if (!bar) {
+            bar = $.CreatePanel("Panel", panelBody, "Hero_" + element.hero, { class: "hero_bar" });
 
-        const hero = $.CreatePanel("DOTAHeroImage", bar, "", {
-            class: "HeroIcon",
-            heroname: element.hero,
-        });
+            const hero = $.CreatePanel("DOTAHeroImage", bar, "", {
+                class: "HeroIcon",
+                heroname: element.hero,
+            });
 
-        const heroButton = $.CreatePanel("Button", bar, "", {
-            class: "HeroIcon",
-            onactivate: "SelectHero('"+ element.hero +"')", 
-        });
+            const heroButton = $.CreatePanel("Button", bar, "", {
+                class: "HeroIcon",
+            });
 
-        if (status === 0) {
-            hero.style.opacity = "1.0"
+            heroButton.SetPanelEvent("onactivate", function () {
+                selectedHero = element.hero;
+                GetHero(selectedHero);
+                UpdateHeroSelection();
+            });
+
+            const networth = $.CreatePanel("Label", bar, "", {
+                class: "HeroGold",
+                text: element.networth,
+            });
+
+            const networthIcon = $.CreatePanel("Image", networth, "", { class: "hero_networth_icon" });
+            networthIcon.SetImage("s2r://panorama/images/hud/reborn/gold_small_psd.vtex");
         }
-        else if (status === 1) {
-            hero.style.opacity = "0.3"
+
+        let heroImage = bar.GetChild(0);
+        if (element.status === 0) {
+            heroImage.style.opacity = "1.0";
+        } else if (element.status === 1) {
+            heroImage.style.opacity = "0.3";
         }
-        else if (status === 2) {
 
+        let networthLabel = bar.GetChild(2);
+        networthLabel.text = element.networth;
+    });
+
+    UpdateHeroSelection();
+}
+
+// Функция обновления состояния кнопки
+function UpdateHeroSelection() {
+    const panelBody = $.GetContextPanel().FindChildTraverse("hero_panel");
+    if (!panelBody) return;
+
+    panelBody.Children().forEach((bar) => {
+        let button = bar.GetChild(1);
+        if (button) {
+            button.SetHasClass("selected", bar.id === "Hero_" + selectedHero);
         }
-
-        const networth = $.CreatePanel("Label", bar, "", {
-            class: "HeroGold",
-            text: element.networth,
-        });
-
-        const networthIcon = $.CreatePanel("Image", networth, "", {class: "hero_networth_icon"});
-        networthIcon.SetImage("s2r://panorama/images/hud/reborn/gold_small_psd.vtex");
     });
 }
 
 
-function SelectHero(data) {
-    var playerID = Game.GetLocalPlayerID();
-    var units = Entities.GetAllEntitiesByName(data)
-    GameUI.SelectUnit(units[0], false);
+GameEvents.Subscribe("update_top_bar", CreateOrUpdateTopBar);
+
+function GetHero( data ) {
+    GameEvents.SendCustomGameEventToServer("top_bar_select", {ent: data});
 }
 
-GameEvents.Subscribe("update_top_bar", CreateOrUpdateTopBar);
+function SelectHero( data ) {
+    $.Msg("index: "+data.index);
+    GameUI.SelectUnit(data.index, false);
+}
+
+GameEvents.Subscribe("top_bar_select_hero", SelectHero);

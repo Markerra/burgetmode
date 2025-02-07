@@ -72,4 +72,23 @@
         }
     }
 
+    "npc_dota_hero_invoker"
+    {
+        "popular_items"
+        {
+            "item_jungle_staff" "1"
+            "item_magic_wand" "1"
+            "item_arcane_boots" "1"
+            "item_power_treads" "1"
+            "item_hurricane_pike" "1"
+            "item_witch_blade" "1"
+            "item_moon_shard" "1"
+            "item_monkey_king_bar" "1"
+            "item_devastator" "1"
+            "item_yasha_and_kaya" "1"
+            "item_bloodstone" "1"
+            "item_black_king_bar" "1"
+        }
+    }
+
 }

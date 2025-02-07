@@ -4,6 +4,10 @@ LinkLuaModifier("modifier_maxim_animation", "abilities/maxim/maxim_zxc", LUA_MOD
 
 maxim_zxc = class({})
 
+function maxim_zxc:GetAOERadius()
+	return self:GetSpecialValueFor("radius")
+end
+
 function maxim_zxc:GetChannelTime()
 	return self:GetSpecialValueFor("channel_time")
 end
@@ -63,7 +67,7 @@ function modifier_maxim_zxc:OnCreated()
     self.caster   = self:GetCaster()
     self.interval = self.ability:GetSpecialValueFor("interval")
     self.dmg_raze = self.ability:GetSpecialValueFor("dmg_raze")
-    self.radius   = self.ability:GetSpecialValueFor("radius")
+    self.radius   = self.ability:GetAOERadius()
     self.damage   = self.ability:GetSpecialValueFor("damage")
     self:StartIntervalThink(self.interval)
 end

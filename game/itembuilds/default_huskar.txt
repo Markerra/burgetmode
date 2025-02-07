@@ -1,8 +1,8 @@
 "itembuilds"
 {
-	"author"		"Valve"
+	"author"		"Markerra"
 	"hero"			"npc_dota_hero_huskar"
-	"Title"			"Recommended Items for Legion Commander"
+	"Title"			"Recommended Items for Huskar"
 	
 	"Items"
 	{	

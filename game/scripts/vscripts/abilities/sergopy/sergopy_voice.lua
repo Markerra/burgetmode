@@ -1,4 +1,4 @@
-LinkLuaModifier("modifier_sergopy_voice_pull", "abilities/sergopy/sergopy_voice", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_sergopy_voice_pull", "abilities/sergopy/sergopy_voice", LUA_MODIFIER_MOTION_HORIZONTAL)
 
 function HasTalent(unit, talent_name)
     local talent = unit:FindAbilityByName(talent_name)
@@ -66,34 +66,35 @@ function modifier_sergopy_voice_pull:IsHidden() return true end
 function modifier_sergopy_voice_pull:IsDebuff() return true end
 function modifier_sergopy_voice_pull:IsPurgable() return true end
 
-function modifier_sergopy_voice_pull:OnCreated(kv)
+function modifier_sergopy_voice_pull:OnCreated()
     if not IsServer() then return end
 
-    self.pull_speed    = self:GetAbility():GetSpecialValueFor("pull_speed")
+    local parent = self:GetParent()
+
+    self.speed    = self:GetAbility():GetSpecialValueFor("pull_speed")
     self.pull_center   = self:GetCaster():GetAbsOrigin()
     self.safe_distance = 200
 
-    self:StartIntervalThink(0.001)
-end
+    self.direction = self.pull_center - parent:GetAbsOrigin()
 
-function modifier_sergopy_voice_pull:OnIntervalThink()
-    if not IsServer() then return end
-    self.safe_distance = self.safe_distance
-    local parent = self:GetParent()
-    local direction = (self.pull_center - parent:GetAbsOrigin()):Normalized()
-    local new_position = parent:GetAbsOrigin() + RandomInt(-30, 30) + direction * self.pull_speed * 0.001
-    local distance = (self.pull_center - parent:GetAbsOrigin()):Length2D()
+    self.direction.z = 0
+    self.direction = self.direction:Normalized()
 
-    if distance > self.safe_distance then
-        local move_distance = math.min(self.pull_speed * 0.001, distance - self.safe_distance)
-        local new_position = parent:GetAbsOrigin() + direction * move_distance
-
-        FindClearSpaceForUnit(parent, new_position, true)
+    if not self:ApplyHorizontalMotionController() then
+        self:Destroy()
     end
 end
 
 function modifier_sergopy_voice_pull:OnDestroy()
     if not IsServer() then return end
+    self:GetParent():RemoveHorizontalMotionController( self )
+end
 
-    self:GetParent():SetAbsOrigin(GetGroundPosition(self:GetParent():GetAbsOrigin(), self:GetParent()))
+function modifier_sergopy_voice_pull:UpdateHorizontalMotion( me, dt )
+    local target = me:GetOrigin() + self.direction * self.speed * dt
+    me:SetOrigin( target )
+end
+
+function modifier_sergopy_voice_pull:OnHorizontalMotionInterrupted()
+    self:Destroy()
 end

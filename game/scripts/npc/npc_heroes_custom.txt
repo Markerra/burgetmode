@@ -30,7 +30,23 @@
 		"Ability16"						"special_bonus_unique_seva_ult_hp_to_dmg" // правый талант на 25 ур.
 		"Ability17"						"special_bonus_unique_seva_phone_silence" // левый талант на 25 ур.	
 	
-		"VisionNighttimeRange"			"1500"										
+		"Facets"
+		{
+			"pudge_fresh_meat" 
+            {
+                "Deprecated"			"1"
+            }
+            "pudge_flayers_hook" 
+            {
+                "Deprecated"			"1"
+            }
+		}
+
+		"VisionNighttimeRange"			"1500"
+
+		"PickSound"     				"pudge_pud_spawn_10"
+		"HeroSelectSoundEffect"     	"Hero_Pudge.Pick"
+		"SimilarHeroes"					" "									
 	}
 
 	//========================================================================================================
@@ -52,7 +68,7 @@
 	 	"MovementSpeed"					"345"
 
 	 	"AttackDamageMin"       		"22" // 16+n (доп. урон)
-        "AttackDamageMax"       		"28" // 22+n (доп.урон)
+        "AttackDamageMax"       		"28" // 22+n (доп. урон)
 	
 		"Ability1"						"maxim_creep"
 		"Ability2"						"maxim_zxc"
@@ -71,6 +87,19 @@
 		"Ability16"						"special_bonus_unique_maxim_zxc_interval" // правый талант на 25 ур.
 		"Ability17"						"special_bonus_unique_maxim_herald_agility" // левый талант на 25 ур.
 	
+		"Facets"
+        {
+            "nevermore_lasting_presence"    
+            {
+               "Deprecated"				"1"
+            }           
+            "nevermore_shadowmire"      
+            {
+                "Deprecated"			"1"
+            }
+
+        }
+
 		"VisionNighttimeRange"			"1500"
 
 		"PickSound"						"nevermore_nev_spawn_11"
@@ -122,6 +151,22 @@
 
 		"VisionNighttimeRange"			"1500"
 
+		"Facets"
+		{
+			"bristleback_berserk" 
+            {
+                "Deprecated"			"1"
+            }
+            "bristleback_snot_rocket" 
+            {
+                "Deprecated"			"1"
+            }
+            "bristleback_seeing_red"
+            {
+                "Deprecated"			"1"
+            }
+		}
+
 		"PickSound"						"bristleback_bristle_spawn_01"
 		"HeroSelectSoundEffect"			"Hero_Bristleback.Pick"
 		"SimilarHeroes"					" "
@@ -154,7 +199,36 @@
 		"Ability16"						"special_bonus_unique_marker_dance_duration" // правый талант на 25 ур.
 		"Ability17"						"special_bonus_unique_marker_shot_range" // левый талант на 25 ур.
 
-		"VisionNighttimeRange"			"1500"	
+		"VisionNighttimeRange"			"1500"
+
+		"Facets"
+        {
+        	"marker_hammer"
+            {
+            	"Icon"              "dawnbreaker_hammer"
+                "Color"             "Red"
+                "GradientID"        "0"
+            }
+            "marker_stun"
+            {
+            	"Icon"              "barrier"
+                "Color"             "Green"
+                "GradientID"        "4"
+            }
+
+            "huskar_bloodbath" 
+            {
+                "Deprecated"			"1"
+            }
+            "huskar_nothl_transfusion" 
+            {
+                "Deprecated"			"1"
+            }
+            "huskar_nothl_conflagration" 
+            {
+                "Deprecated"			"1"
+            }
+        }
 
 		"PickSound"     				"huskar_husk_spawn_01"
 		"HeroSelectSoundEffect"     	"Hero_Huskar.Pick"
@@ -169,14 +243,22 @@
 	 {
 	 	"override_hero"    				"npc_dota_hero_invoker"
 
-		"MovementSpeed"					"340"
+	 	"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"			"18"
+		"AttributeStrengthGain"			"1.700000"
+		"AttributeBaseAgility"			"20"
+		"AttributeAgilityGain"			"2.300000"
+		"AttributeBaseIntelligence"		"28"
+		"AttributeIntelligenceGain"		"3.100000"
+
+		"MovementSpeed"					"360"
 
 		"Ability1"      				"generic_hidden"
-        "Ability2"      				"generic_hidden"
+        "Ability2"      				"matvey_metka"
         "Ability3"      				"generic_hidden"
-        "Ability4"      				"generic_hidden"
+        "Ability4"      				"matvey_magic"
         "Ability5"      				"generic_hidden"
-        "Ability6"      				"generic_hidden"
+        "Ability6"      				"matvey_poxititel"
         "Ability7"      				"generic_hidden"
         "Ability8"      				"generic_hidden"
         "Ability9"      				"generic_hidden"
@@ -198,7 +280,26 @@
 		"Ability23"    					"generic_hidden" // правый талант на 25 ур.
 		"Ability24"    					"generic_hidden" // левый талант на 25 ур.
 
-		"VisionNighttimeRange"			"1500"	
+		"VisionNighttimeRange"			"1500"
+
+		"Facets"
+        {
+        	"matvey_manasteal"
+            {
+            	"Icon"              "mana"
+                "Color"             "Blue"
+                "GradientID"        "2"
+            }
+            
+            "invoker_agnostic"
+            {
+                "Deprecated"			"1"
+            }           
+            "invoker_elitist"
+            {
+                "Deprecated"			"1"
+            }
+        }
 
 		"PickSound"     				"invoker_invo_spawn_02"
 		"HeroSelectSoundEffect"     	"Hero_Invoker.Pick"

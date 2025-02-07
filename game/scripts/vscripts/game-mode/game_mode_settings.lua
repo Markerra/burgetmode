@@ -52,7 +52,7 @@ function GameMode:EntKilled(data)
     	        hero:SetRespawnsDisabled(true)
     	        hero:ForceKill(false)
 
-    	        hero.IsInGame = false
+    	        hero.IsDestroyed = true
 
     	    end
     	end

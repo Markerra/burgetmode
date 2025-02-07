@@ -8,11 +8,12 @@ function GameMode:Init()
 	GameRules:SetSafeToLeave(true)
 
 	GameRules:SetShowcaseTime( 0.0 )
-	GameRules:SetStrategyTime( 10.0 )
+	GameRules:SetStrategyTime( 60.0 )
 	GameRules:SetPreGameTime(25)
 
 	mode:SetCustomScanMaxCharges(1)
-
+	mode:SetAnnouncerDisabled( true )
+	mode:SetCustomBackpackCooldownPercent(1)
 	mode:SetTPScrollSlotItemOverride("item_tpscroll_custom")
 
 	-- Teams
@@ -47,7 +48,11 @@ function GameMode:Init()
 	CustomGameEventManager:RegisterListener("gold_admin", Dynamic_Wrap(self, 'Admin_GiveGold'))
 	CustomGameEventManager:RegisterListener("admin_steamID", Dynamic_Wrap(self, 'Admin_SteamID_Check'))
 
+	---- Top Bar Panel
+
 	require("panorama/custom_top_bar")
+
+	CustomGameEventManager:RegisterListener("top_bar_select", Dynamic_Wrap(self, 'TopBar_Select'))
 	
 	SendHeroDataToClient(0.25, false) -- panorama/custom_top_bar.lua 
 
@@ -55,18 +60,18 @@ end
 
 
 function GameMode:SetupColors()
+
+    if not IsServer() then return end 
 	-- Handle Team Colors
     self.m_TeamColors = {}
     self.m_TeamColors[DOTA_TEAM_CUSTOM_1] = { 102, 0, 255 } --  "Ярик Кент"
     self.m_TeamColors[DOTA_TEAM_CUSTOM_2] = { 255, 102, 255 } --  "Сева Крейзи"
     self.m_TeamColors[DOTA_TEAM_CUSTOM_3] = { 153, 51, 255 } --  "Матвей Баклажан"
     self.m_TeamColors[DOTA_TEAM_CUSTOM_4] = { 255, 214, 51 } --  "Максим Кукуруза"
-    self.m_TeamColors[DOTA_TEAM_CUSTOM_5] = { 0, 0, 0 } --  "Арсений Яичко"
+    self.m_TeamColors[DOTA_TEAM_CUSTOM_5] = { 0, 204, 102} --  "Арсений Огурец"
     self.m_TeamColors[DOTA_TEAM_CUSTOM_6] = { 242, 242, 242 } --  "Сергеп Про"
     self.m_TeamColors[DOTA_TEAM_CUSTOM_7] = { 0, 204, 102 } --  "Миша Бургер"
     self.m_TeamColors[DOTA_TEAM_CUSTOM_8] = { 0, 0, 0 } --  "Антон Яйцо"
-    
-
 
     for team = 0, (DOTA_TEAM_COUNT-1) do
       color = self.m_TeamColors[ team ]
@@ -74,16 +79,15 @@ function GameMode:SetupColors()
         SetTeamCustomHealthbarColor( team, color[1], color[2], color[3] )
       end
     end
-
 end
 
 
 function GameMode:InitFast()
 	local mode = GameRules:GetGameModeEntity()
 
-	mode:SetCustomGameForceHero("npc_dota_hero_bristleback")
+	mode:SetCustomGameForceHero("npc_dota_hero_huskar")
 
-	--PlayerResource:SetCustomTeamAssignment(0, DOTA_TEAM_CUSTOM_2)
+	PlayerResource:SetCustomTeamAssignment(0, DOTA_TEAM_CUSTOM_1)
 
 	GameRules:SetStrategyTime(0)
 	GameRules:SetPreGameTime(25)

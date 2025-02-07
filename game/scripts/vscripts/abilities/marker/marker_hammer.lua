@@ -37,6 +37,8 @@ function marker_hammer:OnSpellStart()
     if self.projectile then
         self.hammer_particle = self:PlayEffects1(caster:GetAbsOrigin(), distance, direction:Normalized() * speed, speed)
     end
+    self:SetActivated(false)
+    self:EndCooldown()
 end
 
 function marker_hammer:GetAOERadius()
@@ -46,27 +48,38 @@ end
 
 function marker_hammer:OnProjectileHit(target)
 
-	if not target then
-		local manacost = self:GetManaCost(self:GetLevel() - 1)
-		local mana = manacost * (self:GetSpecialValueFor("mana_restore") * 0.01)
-		self:GetCaster():GiveMana(mana)
-		SendOverheadEventMessage(nil, 11, self:GetCaster(), mana, nil)
+    local caster = self:GetCaster()
 
-        StopSoundOn("Hero_Dawnbreaker.Celestial_Hammer.Projectile", self:GetCaster())
+	if not target then
+        local facet = caster:GetHeroFacetID()
+        if facet == 4 then -- marker_hammer Facet
+            local manacost = self:GetManaCost(self:GetLevel() - 1)
+            local mana = manacost * (self:GetSpecialValueFor("mana_restore") / 100)
+            local cooldown = self:GetCooldown(self:GetLevel())
+             * (self:GetSpecialValueFor("cooldown_reduction") / 100)
+
+            self:StartCooldown(cooldown)
+            print(self:GetLevel())
+
+            caster:GiveMana(mana)
+            SendOverheadEventMessage(nil, 11, caster, mana, nil)
+        end
+
+        StopSoundOn("Hero_Dawnbreaker.Celestial_Hammer.Projectile", caster)
         ParticleManager:DestroyParticle(self.hammer_particle, false)
         ParticleManager:ReleaseParticleIndex(self.hammer_particle)
-
 
 		local exp_particle = "particles/econ/items/gyrocopter/gyro_ti10_immortal_missile/gyro_ti10_immortal_crimson_missile_explosion.vpcf"
     	local exp_effect = ParticleManager:CreateParticle(exp_particle, PATTACH_WORLDORIGIN, nil)
     	ParticleManager:SetParticleControl(exp_effect, 0, self.target_position + Vector(0, 0, 120))
         ParticleManager:ReleaseParticleIndex(exp_effect)
     	EmitSoundOnLocationWithCaster(self.target_position, "Hero_Dawnbreaker.Celestial_Hammer.Impact", self:GetCaster())
-		return 
+		self:SetActivated(true)
+        if not facet == 4 then self:StartCooldown(self:GetCooldown(self:GetLevel())) end
+        return 
 	end
 
     local radius = self:GetSpecialValueFor("radius")
-    local caster = self:GetCaster()
 
     local units = FindUnitsInRadius(
         caster:GetTeamNumber(),      
@@ -85,13 +98,16 @@ function marker_hammer:OnProjectileHit(target)
     	local dmg = self:GetSpecialValueFor("damage")
     	ApplyDamage({
     		victim = unit,
-    		attacker = self:GetCaster(),
+    		attacker = caster,
     		damage = dmg,
     		damage_type = 2,
     		ability = self,
     	})
         unit:AddNewModifier(caster, self, "marker_hammer_debuff", {duration = self:GetSpecialValueFor("duration")})
     end
+
+    self:SetActivated(true)
+    self:StartCooldown(self:GetCooldown(self:GetLevel()))
 
     StopSoundOn("Hero_Dawnbreaker.Celestial_Hammer.Projectile", self:GetCaster())
     ParticleManager:DestroyParticle(self.hammer_particle, false)

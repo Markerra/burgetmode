@@ -8,12 +8,14 @@ function Precache( context )
 --================================================================================================================================================
 --------------------- WEATHER
 --================================================================================================================================================
-	PrecacheResource("particle", "particles/winter_fx/weather_frostivus_snow.vpcf", context) -- snow
-	PrecacheResource("particle", "particles/rain_fx/econ_weather_spring.vpcf", context) -- spring
+	--PrecacheResource("particle", "particles/winter_fx/weather_frostivus_snow.vpcf", context) -- snow
+	--PrecacheResource("particle", "particles/rain_fx/econ_weather_spring.vpcf", context) -- spring
 
 --================================================================================================================================================
 --------------------- SEVA
 --================================================================================================================================================
+	PrecacheResource("model_folder", "models/heroes/pudge/", context) -- hero_model
+
 	PrecacheResource("soundfile", "soundevents/seva_sounds.vsndevts", context)
 
 	PrecacheResource("particle", "particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_explosion.vpcf", context) -- seva_tether
@@ -27,6 +29,9 @@ function Precache( context )
 --================================================================================================================================================
 --------------------- MAXIM
 --================================================================================================================================================
+	PrecacheResource("model_folder", "models/heroes/shadow_fiend", context ) -- hero_model
+	PrecacheModel("models/heroes/nevermore/nevermore.vmdl", context) -- abilitiy_model
+
 	PrecacheResource("soundfile", "soundevents/maxim_sounds.vsndevts", context)
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts", context) -- item_maxim_abaddon
 
@@ -52,6 +57,8 @@ function Precache( context )
 --================================================================================================================================================
 --------------------- SERGOPY
 --================================================================================================================================================
+	PrecacheResource("model_folder", "models/heroes/bristleback/", context) -- hero_model
+
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts", context) -- sergopy_voice
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts", context) -- sergopy_ivl
 	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_rattletrap.vsndevts", context) -- sergopy_refresh
@@ -71,9 +78,9 @@ function Precache( context )
 --================================================================================================================================================
 --------------------- MARKER
 --================================================================================================================================================
-	PrecacheResource( "soundfile", "soundevents/marker_sounds.vsndevts", context )
+	PrecacheResource( "model_folder", "models/heroes/huskar/", context ) -- hero_model
 
-	PrecacheResource( "particle", "particles/items_fx/armlet.vpcf", context) -- marker_armlet
+	PrecacheResource( "soundfile", "soundevents/marker_sounds.vsndevts", context )
 	
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts", context ) -- marker_chill
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts", context ) -- marker_chill
@@ -101,6 +108,7 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/econ/items/luna/luna_lucent_ti5/luna_eclipse_cast_moonfall.vpcf", context ) -- marker_shot
 	PrecacheResource( "particle", "particles/units/heroes/hero_luna/luna_lucent_beam_impact_bits.vpcf", context ) -- marker_shot
 
+	PrecacheModel( "models/props_gameplay/dummy/dummy_large.vmdl", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts", context ) -- marker_dance
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts", context ) -- marker_dance
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_muerta.vsndevts", context ) -- marker_dance
@@ -109,6 +117,21 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/ui_mouseactions/range_finder_aoe.vpcf", context ) -- marker_dance
 	PrecacheResource( "particle", "particles/econ/items/oracle/oracle_fortune_ti7/oracle_fortune_ti7_aoe_ground_splash.vpcf", context ) -- marker_dance
 	PrecacheResource( "particle", "particles/econ/events/ti10/hot_potato/disco_ball_channel.vpcf", context ) -- marker_dance
+
+--================================================================================================================================================
+--------------------- MATVEY
+--================================================================================================================================================
+	PrecacheResource( "model_folder", "models/heroes/invoker/", context ) -- hero_model
+
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_kez.vsndevts", context ) -- matvey_metka
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts", context ) -- matvey_metka
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_kez.vsndevts", context ) -- matvey_metka
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts", context ) -- matvey_metka
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts", context ) -- matvey_metka
+	PrecacheResource( "particle_folder", "particles/custom/matvey/matvey_metka/", context ) -- matvey_metka
+
+	PrecacheResource( "particle", "particles/units/heroes/hero_antimage/antimage_manabreak_slow.vpcf", context ) -- matvey_poxititel
+	PrecacheResource( "particle", "particles/units/heroes/hero_antimage/antimage_manabreak_enemy_debuff.vpcf", context ) -- matvey_
 
 --================================================================================================================================================
 --------------------- TOWER
@@ -129,7 +152,7 @@ function Activate()
 
 	if IsInToolsMode() then
 
-		--GameMode:InitFast() -- быстрый пик героев (для тестов)
+		GameMode:InitFast() -- быстрый пик героев (для тестов)
 		GameMode:GiveAdminItems() -- выдать админ-предметы
 
 	end

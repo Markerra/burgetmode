@@ -118,7 +118,7 @@ function modifier_marker_chill_tracker:OnCreated()
         PATTACH_ABSORIGIN_FOLLOW, parent)
     ParticleManager:SetParticleControl(self.effect, 0, parent:GetAbsOrigin())
 
-    EmitSoundOn("Hero_Huskar.BerserkersBlood.Cast", parent)
+    parent:EmitSoundParams("Hero_Huskar.BerserkersBlood.Cast", 0, 0.2, 0)
 end
 
 function modifier_marker_chill_tracker:OnDestroy()
@@ -134,8 +134,8 @@ function modifier_marker_chill_tracker:OnDestroy()
 
     StopSoundOn("Hero_Huskar.BerserkersBlood.Cast", parent)
 
-    if not shard then 
-        EmitSoundOn("DOTA_Item.Nullifier.Slow", parent)
+    if not shard then
+        parent:EmitSoundParams("DOTA_Item.Nullifier.Slow", 0, 0.3, 0)
         local effect2 = ParticleManager:CreateParticle(
         "particles/units/heroes/hero_antimage/antimage_manabreak_slow.vpcf", 
         PATTACH_ABSORIGIN_FOLLOW, parent)
@@ -157,14 +157,18 @@ function modifier_marker_chill_shard:IsDebuff() return false end
 function modifier_marker_chill_shard:IsPurgable() return true end
 
 function modifier_marker_chill_shard:OnCreated()
+    if not IsServer() then return end
+
     local caster = self:GetAbility():GetCaster()
     local particle = "particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf"
 
-    EmitSoundOn("Hero_Dark_Seer.Surge", caster)
+    caster:EmitSoundParams("Hero_Dark_Seer.Surge", 0, 0.3, 0)
     self.effect = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN_FOLLOW, caster)
 end
 
 function modifier_marker_chill_shard:OnDestroy()
+    if not IsServer() then return end
+    
     ParticleManager:DestroyParticle(self.effect, false)
     ParticleManager:ReleaseParticleIndex(self.effect)
 end

@@ -13,28 +13,25 @@ function GameMode:Admin_SpawnBot( data )
         return nil
     end
 
-    -- Получаем объект игрока по playerID
     local player = PlayerResource:GetPlayer(playerID)
     if not player then
         print("debug_panel: неверный ID: " .. tostring(playerID))
         return nil
     end
 
-    -- Получаем героя игрока
     local playerHero = player:GetAssignedHero()
     if not playerHero then
         print("Player does not have a hero")
         return nil
     end
 
-    -- Получаем позицию героя игрока
     local playerPosition = playerHero:GetAbsOrigin()
 
-    -- Добавляем смещение к позиции игрока (по умолчанию смещение по X-координате)
     local spawnPosition = playerPosition + Vector(offset, 0, 0)
 
-    -- Создаем бота в указанной позиции
-    local botHero = CreateUnitByName(heroName, spawnPosition, true, nil, nil, player:GetTeamNumber()+1)
+    if not playerHero then spawnPosition = Vector( 0, 0, 0 ) end
+
+    local botHero = CreateUnitByName(heroName, spawnPosition, true, nil, nil, player:GetTeamNumber()+RandomInt(1, 4))
     botHero:SetControllableByPlayer(playerID, true)
     botHero:SetPlayerID(HeroList:GetHeroCount() - 1)
     print("Admin Panel: Bot Spawned.","ID: "..botHero:GetPlayerID())

@@ -58,7 +58,7 @@ function modifier_sergopy_refresh:OnAbilityExecuted(params)
                 -- партикл рефрешера
                 local particle = ParticleManager:CreateParticle("particles/items2_fx/refresher_b.vpcf", 13, parent)
                 ParticleManager:ReleaseParticleIndex(particle)
-                parent:EmitSound("DOTA_Item.Refresher.Activate")
+                parent:EmitSound("Hero_Rattletrap.Overclock.Cast")
             end)
         end
 
@@ -74,7 +74,7 @@ function modifier_sergopy_refresh:OnAbilityExecuted(params)
                 -- партикл рефрешера
                 local particle2 = ParticleManager:CreateParticle("particles/items2_fx/refresher.vpcf", 13, parent)
                 ParticleManager:ReleaseParticleIndex(particle2)
-                parent:EmitSound("DOTA_Item.Refresher.Activate")
+                parent:EmitSound("Hero_Rattletrap.Overclock.Cast")
             end
         end
 

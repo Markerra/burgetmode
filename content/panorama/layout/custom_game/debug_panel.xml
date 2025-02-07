@@ -31,9 +31,9 @@
 					        <DOTAHeroImage heroname="npc_dota_hero_bristleback" class="hero_icon"/>
 					    </Button>
 					
-					    <!-- Иконка Obsidian Destroyer -->
-					    <Button class="hero_icon_button" style="margin-top: 210px;" onactivate="	SpawnHero('npc_dota_hero_obsidian_destroyer')">
-					        <DOTAHeroImage heroname="npc_dota_hero_obsidian_destroyer" class="hero_icon"/>
+					    <!-- Иконка Invoker -->
+					    <Button class="hero_icon_button" style="margin-top: 210px;" onactivate="	SpawnHero('npc_dota_hero_invoker')">
+					        <DOTAHeroImage heroname="npc_dota_hero_invoker" class="hero_icon"/>
 					    </Button>
 					
 					    <!-- Иконка Pudge -->

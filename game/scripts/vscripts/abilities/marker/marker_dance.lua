@@ -209,12 +209,13 @@ function modifier_marker_dance_tracker:OnCreated( kv )
 					damage_type = 2,
 					ability = self:GetAbility()
 				})
-				print(i)
-				local stun_interval = self:GetAbility():GetSpecialValueFor("stun_interval")
-				if i == stun_interval - 1 or i == stun_interval * 2 - 1 then
-					local stun_duration = self:GetAbility():GetSpecialValueFor("stun_duration")
-					unit:AddNewModifier(caster, self:GetAbility(), 
-					"modifier_stunned", {duration = stun_duration})
+				if caster:GetHeroFacetID() == 5 then -- marker_stun Facet
+					local stun_interval = self:GetAbility():GetSpecialValueFor("stun_interval")
+					if i == stun_interval - 1 or i == stun_interval * 2 - 1 then
+						local stun_duration = self:GetAbility():GetSpecialValueFor("stun_duration")
+						unit:AddNewModifier(caster, self:GetAbility(), 
+						"modifier_stunned", {duration = stun_duration})
+					end
 				end
 			end
 
@@ -241,8 +242,6 @@ end
 
 function modifier_marker_dance_tracker:OnDestroy()
 	if not IsServer() then return end
-
-	
 
 	ParticleManager:DestroyParticle(self.effect1, true)
 	ParticleManager:DestroyParticle(self.effect2, true)

@@ -51,7 +51,7 @@
 		"BaseClass"             		"ability_lua"
 		"ScriptFile"					"abilities/seva/seva_box"
 		"AbilityTextureName"			"seva_box"
-		"AbilityCooldown"				"45"
+		"AbilityCooldown"				"35"
 		"AbilityManaCost"				"150"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 
@@ -93,7 +93,7 @@
 	{
 		"BaseClass"             		"ability_lua"
 		"ScriptFile"					"abilities/seva/seva_phone"
-		"AbilityCooldown"				"35"
+		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"150 175 200 225"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3"
@@ -163,7 +163,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityTextureName"			"seva_tether"
-		"AbilityCooldown"				"55 50 45 35"
+		"AbilityCooldown"				"40 38 36 34"
 		"AbilityCastRange"				"900"
 		"AbilityManaCost"				"250 270 300 330"
 		"MaxLevel" 						"4"
@@ -281,7 +281,6 @@
 // MAXIM
 //-------------------------------------------------
 
-
 	//=================================================================================================================
 	// Maxim: Профессиональный Фотограф 
 	//=================================================================================================================
@@ -292,8 +291,8 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityTextureName"			"maxim_photo"
 		"MaxLevel"						"1"
-		"AbilityCooldown"				"0.0001"
 		"Innate"						"1"
+		"IsBreakable"                   "0"
 
 		"AbilityValues"
 		{
@@ -325,7 +324,7 @@
 		"ScriptFile"					"abilities/maxim/maxim_creep"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"maxim_creep"
-		"AbilityCooldown"				"35"
+		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"150"
 		"AbilityCastPoint" 				"0.5"
 		"AbilityCastAnimation"			"ACT_DOTA_RAZE_1"
@@ -437,6 +436,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
 
+
 	//=================================================================================================================
 	// Maxim: Рекрут 
 	//=================================================================================================================
@@ -449,6 +449,7 @@
 		"MaxLevel"						"4"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"IsBreakable"                   "1"
 
 		"AbilityValues"
 		{
@@ -501,7 +502,6 @@
 	}
 
 
-
 	//=================================================================================================================
 	// Maxim: Айзек
 	//=================================================================================================================
@@ -519,7 +519,7 @@
 		{
 			"AbilityCooldown"
 			{
-				"value"					"180 160 120"	// перезарядка способности
+				"value"					"110"	// перезарядка способности
 				"special_bonus_unique_maxim_isaac_cooldown"	"-20"	// талант
 			}
 		}
@@ -550,6 +550,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"						"1"
 		"Innate"						"1"
+		"IsBreakable"                   "0"
 
 		"AbilityValues"
 		{
@@ -701,6 +702,8 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"HasScepterUpgrade"				"1"
+		"IsBreakable"                   "1"
+
 		"AbilityValues"
 		{
 			"chance"
@@ -736,6 +739,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCastRange"				"350 400 450 500"
 		"HasShardUpgrade"				"1"
+		"IsBreakable"                   "1"
 
 		"AbilityValues"
 		{
@@ -836,6 +840,7 @@
 		"AbilityTextureName"			"marker/marker_chill"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"HasShardUpgrade"				"1"
+		"IsBreakable"                   "1"
 
 		"AbilityValues"
 		{
@@ -894,7 +899,8 @@
 				"special_bonus_unique_marker_hammer_duration" "+0.5" // талант
 			}
 			"dmg_decrease"		 		"5"		// уменьшение входящего урона по цели
-			"mana_restore"				"50"	// при непопадании молотом восстанавливает ману (%)
+			"mana_restore"				"75"	// при непопадании молотом восстанавливает ману (%)
+			"cooldown_reduction"		"50"	// при непопадании молотом сокращает перезарядку способности (%)
 		}	
 	}
 
@@ -979,19 +985,19 @@
 
 		"AbilityCastRange"				"550"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"60 55 45"
+		"AbilityCooldown"				"50 45 40"
 		"AbilityManaCost"				"140 160 180"
 
 		"AbilityValues"
 		{
-			"damage_per_second"		"130 160 210" // маг. урон в секунду
-			"totem_health"			 // здоровье тотема
+			"damage_per_second"		"110 140 190" // маг. урон в секунду
+			"totem_health"
 			{
-				"value"				"400 700 1000"
+				"value"				"400 700 1000" // здоровье тотема
 				"special_bonus_unique_marker_dance_hp" "+200" // талант
 			}
-			"bonus_attack_speed"	"90" // бонус к скорости атаки для союзников
-			"bonus_attack_range"	"130" // бонус к дальности атаки для союзников
+			"bonus_attack_speed"	"80 90 105" // бонус к скорости атаки для союзников
+			"bonus_attack_range"	"130 140 155" // бонус к дальности атаки для союзников
 			"armor_decrease_pct"	"6 8 10" // уменьшение брони в сек. (%)
 			"stun_interval"			"3" // интервал оглушения врагов (в сек.)
 			"stun_duration"			"0.4" // длительность оглушения
@@ -1019,7 +1025,134 @@
 	}
 
 
+//----------------------------------------------------------------------------
+// MATVEY
+//----------------------------------------------------------------------------
+	
+	//=================================================================================================================
+	// Matvey: ..
+	//=================================================================================================================
+	"matvey_magic"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/matvey/matvey_magic"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"matvey/matvey_magic"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"0.0001"
+		"Innate"						"1"
+		"IsBreakable"                   "0"
 
+		"AbilityValues"
+		{
+			"transform_pct"
+			{
+				"value"					"50" // процент превращения урона с атаки в маг. урон (%)
+				"special_bonus_unique_matvey_magic_transform" "+40" // талант
+			}
+			"bonus_pct"					"7" // процент доп. урона с атаки от маны (%)
+			"manacost_pct"				"10" // стоимость атаки в ед. маны от маны (%)
+		}
+	}
+
+	"special_bonus_unique_matvey_magic_transform"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Matvey: Пакет Лосс
+	//=================================================================================================================
+	"matvey_loss"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/matvey/matvey_loss"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"matvey/matvey_loss"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"AbilityValues"
+		{
+			"chance"					"25" // шанс активации (%)
+			"attribute_steal"			"2 3 5" // сколько аттрибутов украдет атака (%)
+			"mana_steal"				"10 25 40" // сколько маны украдет атака
+			"max_stacks"				"5"	// макс бонусов
+			"duration"					"5 7 9" // длительность бонусов (сек.)
+		}
+	}
+
+	//=================================================================================================================
+	// Matvey: Метка Гея
+	//=================================================================================================================
+	"matvey_metka"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/matvey/matvey_metka"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"matvey/matvey_metka"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"26 23 20 16"
+		"AbilityManaCost"				"95 100 105 115"
+
+		"AbilityValues"
+		{
+			"slow"						"12 15 18 25" // замедление (%)
+			"resist_decrease"			"10 15 20 30" // уменьшение сопротивления к магии
+			"kill_bonus_int"		 	"2"	// бонус к интеллекту при убийстве
+			"kill_bonus_ag"		 		"1"	// бонус к ловкости при убийстве
+			"duration"
+			{
+				"value"					"6" // длительность эффекта
+				"special_bonus_unique_matvey_metka_duration" "+3" // талант
+
+			}
+
+			"aghanim_str_debuff"		"2" // при смерти понижает силу врага (аганим)
+
+		}
+	}
+
+	"special_bonus_unique_matvey_metka_duration"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Matvey: Похититель Душ
+	//=================================================================================================================
+	"matvey_poxititel"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/matvey/matvey_poxititel"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"			"matvey/matvey_poxititel"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"IsBreakable"                   "1"
+
+		"AbilityValues"
+		{
+			"chance"					"25" // шанс активации (%)
+			"attribute_steal"			"2 3 5" // сколько аттрибутов украдет атака (%)
+			"mana_steal"				"10 25 40" // сколько маны украдет атака
+			"max_stacks"				"5"	// макс бонусов
+			"duration"					"5 7 9" // длительность бонусов (сек.)
+		}
+	}
 
 //----------------------------------------------------------------------------
 // UNIT ABILITIES

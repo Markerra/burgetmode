@@ -2,10 +2,6 @@ LinkLuaModifier( "modifier_seva_big", "abilities/seva/seva_big", LUA_MODIFIER_MO
 
 seva_big = {}
 
-function seva_big:OnSpellStart()
-    AddNewModifier(self:GetCaster(), self, "modifier_seva_big", {duration = -1})
-end
-
 function seva_big:GetIntrinsicModifierName()
 	return "modifier_seva_big"
 end
@@ -43,12 +39,14 @@ end
 
 function modifier_seva_big:OnIntervalThink()
     local hp_per_stack = self:GetAbility():GetSpecialValueFor("hp_per_stack")
-
     local caster = self:GetParent()
+    local stacks = self:GetStackCount()
 
     if not caster or caster:IsNull() then return end
 
-   caster:Heal(hp_per_stack, self:GetAbility())
+    self:SetStackCount(stacks + 1)
+
+    caster:Heal(hp_per_stack, self:GetAbility())
 
     --print("Stacks: ", current_stacks + 1, " Max Health: ", caster:GetMaxHealth())
 end

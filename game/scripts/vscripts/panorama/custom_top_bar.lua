@@ -5,19 +5,16 @@ function GetBotNetWorth(hero)
         return 0
     end
 
-    -- Считаем стоимость предметов в инвентаре
     local totalItemValue = 0
-    for slot = 0, 8 do -- 0-8: стандартные слоты
+    for slot = 0, 8 do
         local item = hero:GetItemInSlot(slot)
         if item then
             totalItemValue = totalItemValue + item:GetCost()
         end
     end
 
-    -- Учитываем золото героя
     local heroGold = hero:GetGold()
 
-    -- Общий нетворс
     local netWorth = totalItemValue + heroGold
 
     return netWorth
@@ -71,4 +68,18 @@ function SendHeroDataToClient(time, debug_mode)
         
     return time
     end)
+end
+
+function GameMode:TopBar_Select( data )
+    local name = data.ent
+    local index = 0
+    for i = 0, HeroList:GetHeroCount() - 1 do
+        local hero = HeroList:GetHero(i)
+        if hero:GetUnitName() == data.ent then
+            index = hero:GetEntityIndex()
+            print("hero: "..hero:GetUnitName())
+            print("index: "..index)
+        end
+    end
+    CustomGameEventManager:Send_ServerToAllClients("top_bar_select_hero", {index = index})
 end
