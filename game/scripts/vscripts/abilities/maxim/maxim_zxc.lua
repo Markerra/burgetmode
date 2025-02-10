@@ -112,7 +112,7 @@ function modifier_maxim_zxc:ShadowRaze(radius_offset, angle_offset)
 	        victim = enemy,
 	        attacker = caster,
 	        damage = damage,
-	        damage_type = DAMAGE_TYPE_MAGICAL,
+	        damage_type = self:GetAbilityDamageType(),
 	        ability = ability
 	    })
 		else
@@ -123,7 +123,7 @@ function modifier_maxim_zxc:ShadowRaze(radius_offset, angle_offset)
 	        victim = enemy,
 	        attacker = caster,
 	        damage = damage + (stacks*self.dmg_raze),
-	        damage_type = DAMAGE_TYPE_MAGICAL,
+	        damage_type = self:GetAbilityDamageType(),
 	        ability = ability
 	    })
 			if enemy:IsAlive() then

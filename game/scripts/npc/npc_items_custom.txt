@@ -128,9 +128,9 @@
 
         "AbilityValues"
         {
-        	"bonus_dmg_melee"	"10"	// бонус урон по крипам для героев ближнего боя
+        	"bonus_dmg_melee"	"12"	// бонус урон по крипам для героев ближнего боя
 			"bonus_dmg_range"	"8"		// бонус урон по крипам для героев дальнего боя
-			"damage_amp"		"10"	// доп. урон по крипам (в процентах)
+			"damage_amp"		"15"	// доп. урон по крипам (в процентах)
         }
 	}
 
@@ -364,6 +364,15 @@
 		{
 			"delay"						"1"
 		}
+	}
+
+	"item_admin_spawn_unit"
+	{
+		"BaseClass"             		"item_lua"
+		"ScriptFile"					"items/admin/item_admin_spawn_unit"
+		"AbilityTextureName"			"item_sheepstick"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"ItemPurchasable" 				"0"
 	}
 
 }

@@ -39,11 +39,11 @@ function modifier_item_jungle_staff:OnTakeDamage(data)
     local target   = data.unit
     local attacker = data.attacker
 
-
     local dmg_amp  = self:GetAbility():GetSpecialValueFor("damage_amp")
 
     if attacker == self:GetParent() and target:IsCreep() then
         if bit.band(data.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) ~= 0 then return end
+        if not attacker then return end
         ApplyDamage({ -- доп урон по крипам
                 victim = target,
                 attacker = attacker,
@@ -52,7 +52,7 @@ function modifier_item_jungle_staff:OnTakeDamage(data)
                 ability = self:GetAbility(),
                 damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL,
             })
-        print("%доп урон: "..(data.damage / 100) * dmg_amp)
+        --print("%доп урон: "..(data.damage / 100) * dmg_amp)
     end
 end
 
@@ -72,7 +72,7 @@ function modifier_item_jungle_staff:OnAttackLanded(data)
                     damage_type = data.damage_type,
                     ability = self:GetAbility(),
                 })
-            print("доп урон милишника: "..m_damage)
+            --print("доп урон милишника: "..m_damage)
             else
                 ApplyDamage({ -- доп урон для ренжей
                     victim = target,
@@ -81,7 +81,7 @@ function modifier_item_jungle_staff:OnAttackLanded(data)
                     damage_type = data.damage_type,
                     ability = self:GetAbility(),
                 })
-            print("доп урон ренжа: "..r_damage)
+            --print("доп урон ренжа: "..r_damage)
             end
         end
     end

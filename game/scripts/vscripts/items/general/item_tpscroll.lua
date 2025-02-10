@@ -3,8 +3,6 @@ LinkLuaModifier("modifier_custom_ability_teleport", "items/general/item_tpscroll
 item_tpscroll_custom = class({})
 
 function item_tpscroll_custom:GetChannelTime() 
-
-
     if self:GetCaster():HasModifier("modifier_item_travel_boots_custom")
     	or self:GetCaster():HasModifier("modifier_item_travel_boots_2_custom") then 
     		return self:GetSpecialValueFor("channel_time_travel") 

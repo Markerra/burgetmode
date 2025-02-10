@@ -1,50 +1,51 @@
 .root {
-    margin-left: 160px; /* Уменьшено с 170px */
+    margin-left: 160px;
     horizontal-align: left;
     vertical-align: top;
-    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон остаётся */
-    border-radius: 8px; /* Скругление уменьшено с 10px */
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px; 
-    padding: 4px; /* Уменьшено с 5px */
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5); /* Тень немного уменьшена */
+    padding: 4px
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
 }
 
 #hero_panel {
-    min-width: 125px; /* Уменьшено с 140px */
-    min-height: 90px; /* Уменьшено с 104px */
-    horizontal-align: left;
+    min-width: 90px;
+    min-height: 90px;
+    horizontal-align: center;
     flow-children: right;
-    padding: 12px; /* Уменьшено с 15px */
-    padding-top: 4px; /* Уменьшено с 5px */
+    padding: 4px;
+    padding-top: 4px;
 }
 
 .hero_bar {
-    min-height: 85px; /* Уменьшено с 100px */
+    min-height: 85px;
     background-color: gradient(linear, 0% 0%, 0% 100%, from(#444), color-stop(0.2, #555), color-stop(0.5, #333), to(#222)); 
-    margin-right: 8px; /* Уменьшено с 10px */
-    border-radius: 2px; /* Оставлено без изменений */
-    border: 2px solid rgba(255, 215, 0, 0.3); /* Золотистая рамка остаётся */
+    border: 2px solid rgba(124, 0, 255, 0.2);
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 .HeroIcon {
-    width: 90px; /* Уменьшено с 100px */
-    height: 50px; /* Уменьшено с 55px */
-    border-bottom: 2px solid rgba(255, 215, 0, 0.3); /* Линия остаётся */
+    width: 90px;
+    height: 50px;
+    border-bottom: 2px solid rgba(124, 0, 255, 0.2); 
     opacity: 1.0;
 }
 
 .HeroGold {
-    min-width: 90px; /* Уменьшено с 100px */
-    min-height: 50px; /* Уменьшено с 55px */
+    min-width: 90px;
+    min-height: 50px;
     text-align: center;
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
     font-weight: bold;
     letter-spacing: 1px;
-    color: #FFD700; /* Золотистый цвет остаётся */
-    font-size: 16px; /* Уменьшено с 18px */
-    padding-top: 58px; /* Уменьшено с 65px */
-    padding-left: 6px; /* Уменьшено с 7px */
+    color: #FFD700;
+    font-size: 16px;
+    padding-top: 56px;
+    padding-bottom: 2px;
+    padding-left: 6px;
 }
 
 .hero_networth_icon {

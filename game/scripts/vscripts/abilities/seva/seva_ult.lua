@@ -29,9 +29,9 @@ function seva_ult:OnSpellStart()
     local duration  = self:GetSpecialValueFor("duration")
     local model_amp = self:GetSpecialValueFor("modelscale_amp")
     local lvl       = self:GetLevel()
-    smodel          = caster:GetModelScale()
+    local smodel    = caster:GetModelScale()
     local nmodel    = smodel * model_amp
-    caster:AddNewModifier(caster, self, "seva_ult_modif", {duration = duration})
+    caster:AddNewModifier(caster, self, "seva_ult_modif", {duration = duration, ms=smodel})
     caster:SetModelScale(nmodel)
 
     StopSoundOn("seva_tether_cast1", caster)
@@ -55,12 +55,16 @@ seva_ult_modif = {}
 
 function seva_ult_modif:IsPurgable() return false end
 
+function seva_ult_modif:OnCreated( kv )
+    self.ms = kv.ms
+end
+
 function seva_ult_modif:OnDestroy()
     StopGlobalSound("onsight_cast1")
     StopGlobalSound("onsight_cast2")
     StopGlobalSound("onsight_cast3")
     local caster = self:GetCaster()
-    caster:SetModelScale(smodel)
+    caster:SetModelScale(self.ms)
 
 end
 

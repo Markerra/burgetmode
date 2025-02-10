@@ -1,0 +1,186 @@
+require("game-mode/custom_params")
+require("utils/timers")
+
+LinkLuaModifier( "modifier_wave_upgrade", "modifiers/modifier_wave_upgrade", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_wave_mkb", "modifiers/modifier_wave_mkb", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_unselect", "modifiers/modifier_unselect", LUA_MODIFIER_MOTION_NONE )
+
+wave_types = {
+
+	--[[#1]] { 0, false, { "npc_troll_skelet_a", "npc_troll_skelet_a", "npc_troll_skelet_b", "npc_troll_skelet_b", "npc_troll_skelet_c" },
+             	{ "npc_troll_skelet_a", "npc_troll_skelet_b", "npc_troll_skelet_b", "npc_troll_skelet_c", "npc_troll_skelet_c" } },
+
+	--[[#2]] { 0, false, { "npc_ursa_red", "npc_ursa_red", "npc_ursa_red", "npc_ursa_yellow", "npc_ursa_yellow"},
+             	{ "npc_ursa_red", "npc_ursa_yellow", "npc_ursa_yellow", "npc_ursa_yellow" } },
+
+	--[[#3]] { 0, false, { "npc_boar_a", "npc_boar_b", "npc_boar_b", "npc_boar_b" },
+	 			{ "npc_boar_a", "npc_boar_a", "npc_boar_b", "npc_boar_b" } },
+
+}
+
+--[[
+
+{ 0, 			     false,      {"creep_1", 	"creep_2",   ... }      {"creep_2", "creep_1",   ... },      }
+  ↑ type       ↑ has mkb     ↑ unit1     ↑ unit2 (1st variant)    ↑ unit2    ↑ unit1 (2nd variant)
+  0 > normal
+  1 > necr
+  2 > special
+  3 > boss
+]] 
+
+wave_abilities = {
+
+  --[[#1]] { "troll_skelet_aura_a", "troll_skelet_aura_b", "troll_skelet_aura_c" },
+
+  --[[#2]] { "ursa_red_clap", "ursa_yellow_swipes", "furbolg_enrage_attack_speed" },
+
+  --[[#3]] { "boar_root", "boar_slow", "boar_amp"},
+
+}
+
+GameMode.current_wave = start_wave
+
+function GameMode:GetWaveCreeps( wave )
+	if not wave_types[wave] then
+		print("GetWaveCreeps() - wave #"..wave.." not found!") return false end
+	local wave = wave_types[wave][RandomInt(3, #wave_types[wave])]
+	local creeps = {}
+	for _, creep in pairs(wave) do
+		table.insert(creeps, creep)
+	end
+	return creeps
+end
+
+function GameMode:GetWaveUnits( n, pid )
+    local player = PlayerResource:GetPlayer(pid)
+    local hero   = player:GetAssignedHero()
+
+    local max = GameMode:GetWaveCreeps(n)
+    local wave_creeps = {}
+    local units = FindUnitsInRadius(hero:GetTeamNumber(), 
+      hero:GetAbsOrigin(), nil, 
+      FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, 
+      DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, 
+      FIND_CLOSEST, false)
+
+    for _, unit in pairs(units) do
+        if unit.wave_creep then 
+          table.insert(wave_creeps, unit) end
+    end
+
+    if not units then return {units_max = #wave_creeps} else
+    return {units = #wave_creeps, units_max = #max} end
+end
+
+function GameMode:GetWave( wave )
+    return wave_types[wave][3][1]
+end
+
+
+function GameMode:GetWaveSkills( wave )
+  if not wave_abilities[wave] then
+  print("GetWaveSkills() - wave #"..wave.." abilities not found!") return false end
+  local abilitiesList = {}
+  for i=1, #wave_abilities[wave] do
+      local ability = wave_abilities[wave][i]
+      table.insert(abilitiesList, ability)
+  end
+  return abilitiesList
+end
+
+function GameMode:GetMkb( wave )
+    return wave_types[wave][2]
+end
+
+function GameMode:CheckActiveWave( pid )
+    local player = PlayerResource:GetPlayer(pid)
+    local hero   = player:GetAssignedHero()
+
+    local wave_creeps = {}
+    local units = FindUnitsInRadius(hero:GetTeamNumber(), 
+      hero:GetAbsOrigin(), nil, 
+      FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, 
+      DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, 
+      FIND_CLOSEST, false)
+
+    for _, unit in pairs(units) do
+        if unit.wave_creep then 
+          table.insert(wave_creeps, unit) end
+    end
+
+    if #wave_creeps >= 1 then return true else return false end
+end
+
+function GameMode:SetActiveWave( pid )
+    local player = PlayerResource:GetPlayer(pid)
+    player.active_wave = self:CheckActiveWave(pid)
+end
+
+function CreatePortal( pos, data )
+	--local portal_particle = "particles/units/heroes/heroes_underlord/abbysal_underlord_portal_ambient.vpcf"
+	 
+   	local teleport_center = CreateUnitByName("npc_dota_companion", pos, false, nil, nil, 0)
+    teleport_center:AddNewModifier(teleport_center, nil, "modifier_phased", {})
+    teleport_center:AddNewModifier(teleport_center, nil, "modifier_invulnerable", {})
+    teleport_center:AddNewModifier(teleport_center, nil, "modifier_unselect", {})
+
+    teleport_center:EmitSound("Hero_AbyssalUnderlord.DarkRift.Cast")
+
+		teleport_center.nWarningFX = ParticleManager:CreateParticle( "particles/custom/portal/purple/portal_open.vpcf", PATTACH_WORLDORIGIN, nil )
+    ParticleManager:SetParticleControl( teleport_center.nWarningFX, 0, teleport_center:GetAbsOrigin() )
+
+    if teleport_center == nil then return false end
+    --local creeps_array = {}
+    Timers:CreateTimer(portal_delay, function()
+    	local allys = {}
+    	local units = data.units
+    	local level = data.lvl
+
+		for i=1, #units do
+			if units == false then return false end
+			local creep = CreateUnitByName(units[i], pos, true, nil, nil, DOTA_TEAM_NEUTRALS)
+			allys[i] = creep
+      if GameMode:GetMkb(data.wave) == true then
+        creep:AddNewModifier(creep, nil, "modifier_wave_mkb", nil) end
+        creep.mkb = true
+			creep:AddNewModifier(creep, nil, "modifier_wave_upgrade", nil)
+    	FindClearSpaceForUnit(creep, pos, true)
+    	allys[i].ally = allys
+    	allys[i].number = i
+    	creep:CreatureLevelUp(level - 1)
+      creep.wave_creep = true
+      --table.insert(creeps_array, creep)
+		end 
+
+    	ParticleManager:DestroyParticle(teleport_center.nWarningFX, false)
+    	teleport_center:StopSound("Hero_AbyssalUnderlord.DarkRift.Cast")
+ 		teleport_center:EmitSound("Hero_AbyssalUnderlord.DarkRift.Complete")
+    	teleport_center:Destroy()
+    end)
+    return true
+end
+
+function GameMode:SpawnWave( team, number, level, give_lownet )
+    for player_id = 0, PlayerResource:GetPlayerCount() - 1 do
+        local player = PlayerResource:GetPlayer(player_id)
+        if player and player:GetTeamNumber() == team then
+            if player.defeated == true or not PlayerResource:IsValidPlayerID(player_id) then
+            	local name = PlayerResource:GetPlayerName(player_id)
+            	print("SpawnWave() - player <"..name.."> is defeated or does not exist") 
+            	return end
+        end
+    end
+
+    local portal = Entities:FindByName(nil, "custom".. team-5 .."_wave_portal")
+    if not portal then return -1 end
+
+    local point = portal:GetAbsOrigin()
+
+   	local units = self:GetWaveCreeps(number)
+
+   	if units ~= false and units ~= nil then
+   		CreatePortal(point, {units=units, lvl=level, wave=number})
+   	else
+      CreatePortal(point, {units=units, lvl=level, wave=self:GetWaveCreeps(#wave_types-number) * (-1)})
+    end
+end

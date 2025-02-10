@@ -125,15 +125,15 @@ function modifier_feardebuff_item_maxim_abaddon:OnCreated()
 
 	-- find enemy fountain
 	local buildings = FindUnitsInRadius(
-		self:GetParent():GetTeamNumber(),	-- int, your team number
-		Vector(0,0,0),	-- point, center point
-		nil,	-- handle, cacheUnit. (not known)
-		FIND_UNITS_EVERYWHERE,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		DOTA_UNIT_TARGET_TEAM_FRIENDLY,	-- int, team filter
-		DOTA_UNIT_TARGET_BUILDING,	-- int, type filter
-		DOTA_UNIT_TARGET_FLAG_INVULNERABLE,	-- int, flag filter
-		0,	-- int, order filter
-		false	-- bool, can grow cache
+		self:GetParent():GetTeamNumber(),
+		Vector(0,0,0),
+		nil,
+		FIND_UNITS_EVERYWHERE,
+		DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+		DOTA_UNIT_TARGET_BUILDING,
+		DOTA_UNIT_TARGET_FLAG_INVULNERABLE,
+		0,
+		false
 	)
 
 	local fountain = nil
@@ -144,15 +144,12 @@ function modifier_feardebuff_item_maxim_abaddon:OnCreated()
 		end
 	end
 
-	-- if no fountain, just don't do anything
 	if not fountain then return end
 
-	-- for lane creep, MoveToPosition won't work, so use this
 	if self:GetParent():IsCreep() then
 		self:GetParent():SetForceAttackTargetAlly( fountain ) -- for creeps
 	end
 
-	-- for others, order to run to fountain
 	self:GetParent():MoveToPosition( fountain:GetOrigin() )
 end
 

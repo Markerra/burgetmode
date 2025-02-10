@@ -3,6 +3,13 @@ LinkLuaModifier("matvey_metka_modifier_debuff", "abilities/matvey/matvey_metka",
 
 matvey_metka = class({})
 
+function matvey_metka:Precache( context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_kez.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts", context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts", context )
+	PrecacheResource( "particle_folder", "particles/custom/matvey/matvey_metka/", context )
+end
+
 function matvey_metka:OnAbilityPhaseStart()
 	if not IsServer() then return end
 

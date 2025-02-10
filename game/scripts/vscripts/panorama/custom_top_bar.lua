@@ -45,12 +45,10 @@ function SendHeroDataToClient(time, debug_mode)
                 else
                     networth = GetBotNetWorth(hero)
                 end
-
                 local status = 0
-
                 if not isAlive then
                     status = 1
-                elseif hero.IsInGame == false then
+                elseif hero.IsDestroyed == false then
                     status = 2
                 end
 
@@ -63,9 +61,8 @@ function SendHeroDataToClient(time, debug_mode)
                     print("networth = ", playersData[playerID].networth, "\n==================")
                     DeepPrintTable(playersData)
                 end
-                CustomGameEventManager:Send_ServerToAllClients("update_top_bar", {data = playersData,})
-            end 
-        
+                CustomGameEventManager:Send_ServerToAllClients("update_top_bar", {data = playersData})
+            end
     return time
     end)
 end

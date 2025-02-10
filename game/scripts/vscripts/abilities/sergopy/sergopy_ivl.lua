@@ -10,6 +10,14 @@ end
 
 sergopy_ivl = class({})
 
+function sergopy_ivl:Precache( context )
+    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts", context)
+    PrecacheResource("particle", "particles/econ/events/fall_2022/regen/fountain_regen_fall2022_lvl2.vpcf", context)
+    PrecacheResource("particle", "particles/units/heroes/hero_phantom_assassin_persona/pa_persona_crit_impact_travel_spray.vpcf", context)
+    PrecacheResource("particle", "particles/units/heroes/hero_batrider/batrider_stickynapalm_stack.vpcf", context)
+    PrecacheResource("particle", "particles/units/heroes/hero_disruptor/disruptor_kineticfield.vpcf", context)
+end
+
 function sergopy_ivl:OnSpellStart()
     local caster   = self:GetCaster()
     local ability  = self

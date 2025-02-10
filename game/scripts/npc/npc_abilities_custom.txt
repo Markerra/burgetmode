@@ -2,20 +2,6 @@
 "DOTAAbilities"
 {
 	"Version"		"1"
-	
-	"ursa_copy"
-	{
-		"BaseClass"				"ability_lua"
-		"ScriptFile"			"abilities/ursa_copy"
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		"AbilityValues"
-		{
-			"duration"			"5 10 15 20"
-			"damage_per_stack"	"5 10 15 20"
-		}
-	}
-
 
 //-------------------------------------------------
 // SEVA
@@ -792,7 +778,7 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/marker/marker_armlet"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"AbilityTextureName"			"marker/marker_armlet_deactive"
 		"AbilityCooldown"				"3"
 		"MaxLevel"						"1"
@@ -1166,9 +1152,10 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/unit/tower/tower_protection_aura"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE |	 DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityTextureName"			"unit/tower_protection"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"IsBreakable"					"1"
 
 		"AbilityValues"
 		{
@@ -1190,6 +1177,7 @@
 		"AbilityTextureName"			"unit/tower_soul_drain"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"IsBreakable"					"1"
 
 		"AbilityValues"
 		{
@@ -1208,6 +1196,7 @@
 		"ScriptFile"					"abilities/unit/fountain/fountain_custom_upgrade"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"unit/fountain_upgrade"
+		"IsBreakable"					"0"
 
 		"AbilityValues"
 		{
@@ -1229,6 +1218,7 @@
 		"ScriptFile"					"abilities/unit/fountain/fountain_custom_heal"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityTextureName"			"unit/fountain_custom_heal"
+		"IsBreakable"					"0"
 
 		"AbilityValues"
 		{
@@ -1237,6 +1227,185 @@
 			"damage_resist"		"5"	// доп. сопротивление урону (в процентах)
 			"radius"			"650"	// радиус
 		}		
+	}
+
+//=================================================================================
+//=================================================================================
+//                                 -------------
+//                                  WAVE CREEPS
+//                                 -------------
+//=================================================================================
+//=================================================================================
+
+	"troll_skelet_aura_a"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"	
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/troll_skelet_aura_a"
+		"AbilityTextureName"			"neutral/troll_skelet_aura_a"
+		"MaxLevel" 						"4"
+		"AbilityCastRange"				"750"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"IsBreakable"					"1"
+		"AbilityValues"
+		{
+			"bonus_damage"			"4.5 5.5 6.5 7.5"
+			"radius"				"750" // радиус ауры
+		}		
+	}
+
+	"troll_skelet_aura_b"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"	
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/troll_skelet_aura_b"
+		"AbilityTextureName"			"neutral/troll_skelet_aura_b"
+		"MaxLevel" 						"4"
+		"AbilityCastRange"				"750"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"IsBreakable"					"1"
+		"AbilityValues"
+		{
+			"bonus_armor"			"2.5 3.2 3.9 4.8"
+			"radius"				"750" // радиус ауры
+		}		
+	}
+
+	"troll_skelet_aura_c"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"	
+		"BaseClass"             		"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/troll_skelet_aura_c"
+		"AbilityTextureName"			"neutral/troll_skelet_aura_c"
+		"MaxLevel" 						"4"
+		"AbilityCastRange"				"750"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"IsBreakable"					"1"
+		"AbilityValues"
+		{
+			"bonus_evasion"			"2 4 7 9" // (%)
+			"self_bonus_evasion"	"3 6 8 11" // (%)
+			"radius"				"750" // радиус ауры
+		}		
+	}
+
+	"ursa_red_clap"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/ursa_red_clap"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"polar_furbolg_ursa_warrior_thunder_clap"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"			""
+		"AbilityCastPoint"				"0.9"
+
+		"MaxLevel" 						"4"
+		"AbilityCastRange"				"300"
+		"AbilityCooldown"				"9.0"
+		"AbilityManaCost"				"85"
+
+		"AbilityValues"
+		{
+			"damage"				"90 120 150 180"
+			"slow"					"20 25 30 35"
+			"radius"				"320"
+			"stun_duration"			"0.3"
+			"duration"				"3 4 5 6"
+		}
+	}
+
+	"ursa_yellow_swipes"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/ursa_yellow_swipes"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"ursa_fury_swipes"
+		"MaxLevel" 						"4"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"damage_per_stack"		"5 10 15 20"
+			"duration"				"5 8 10 12"
+		}
+	}
+
+	"boar_root"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/boar_root"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"dark_troll_warlord_ensnare"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"AbilityCastPoint"				"0.375"
+
+		"MaxLevel" 						"4"
+		"AbilityCastRange"				"520"
+		"AbilityCooldown"				"14.0"
+		"AbilityManaCost"				"85"
+
+		"AbilityValues"
+		{
+			"duration"				"1.5 1.6 1.7 1.8"
+		}
+	}
+
+	"boar_slow"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/boar_slow"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"gnoll_assassin_envenomed_weapon"
+		"MaxLevel" 						"4"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"chance"				"30"
+			"slow"					"25 35 45 55" // (%)
+			"attackspeed_slow"		"10 25 40 60"
+			"duration"				"1.5 2 2.5 3"
+		}
+	}
+
+	"boar_amp"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/boar_amp"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"alpha_wolf_command_aura"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"AbilityCastPoint"				"0.1"
+
+		"MaxLevel" 						"4"
+		"AbilityCastRange"				"450"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"120"
+
+		"AbilityValues"
+		{
+			"damage_amp"			"7 14 28 42"
+			"radius"				"450"
+			"duration"				"5.2 5.4 5.6 5.8"
+		}
 	}
 
 }

@@ -15,7 +15,7 @@
 		
 		"#DOTA_Item_Build_Early_Game"
 		{	
-			"item"		"item_magic_wand"
+			"item"		"item_magic_wand_custom"
 			"item"		"item_boots"
 			"item"		"item_buckler"
 			"item"		"item_blades_of_attack"

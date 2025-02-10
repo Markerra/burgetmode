@@ -1,8 +1,16 @@
 <root>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/events_protector.js"/>
+	</scripts>
 	<Panel>
-		<CustomUIElement type = "Hud" layoutfile="file://{resources}/layout/custom_game/top_bar.xml" /> <!-- heroes list on top !-->
+		<!-- heroes list on top !-->
+		<CustomUIElement type = "Hud" layoutfile="file://{resources}/layout/custom_game/top_bar.xml" />
 
-		<CustomUIElement type = "Hud" layoutfile="file://{resources}/layout/custom_game/debug_panel.xml" />
 		<!-- admin panel !-->
+		<CustomUIElement type = "Hud" layoutfile="file://{resources}/layout/custom_game/debug_panel.xml" />
+
+		<!-- timer !-->
+		<CustomUIElement type = "Hud" layoutfile="file://{resources}/layout/custom_game/timer.xml" />
+
 	</Panel>
 </root>

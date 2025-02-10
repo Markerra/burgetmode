@@ -1,5 +1,9 @@
-require("game-mode/game_mode_settings")
+if GameMode == nil then
+	_G.GameMode = class({})
+end
+
 require("game-mode/game_mode_init")
+
 
 function Precache( context )
 
@@ -57,92 +61,40 @@ function Precache( context )
 --================================================================================================================================================
 --------------------- SERGOPY
 --================================================================================================================================================
-	PrecacheResource("model_folder", "models/heroes/bristleback/", context) -- hero_model
-
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts", context) -- sergopy_voice
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_disruptor.vsndevts", context) -- sergopy_ivl
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_rattletrap.vsndevts", context) -- sergopy_refresh
-	PrecacheResource("soundfile", "soundevents/game_sounds_items.vsndevts", context) -- sergopy_refresh
-
-	PrecacheResource("particle", "particles/units/heroes/hero_queenofpain/queen_scream_of_pain_owner.vpcf", context) -- sergopy_voice
-
-	PrecacheResource("particle", "particles/econ/events/fall_2022/regen/fountain_regen_fall2022_lvl2.vpcf", context) -- sergopy_ivl
-	PrecacheResource("particle", "particles/units/heroes/hero_phantom_assassin_persona/pa_persona_crit_impact_travel_spray.vpcf", context) -- sergopy_ivl
-	PrecacheResource("particle", "particles/units/heroes/hero_batrider/batrider_stickynapalm_stack.vpcf", context) -- sergopy_ivl
-	PrecacheResource("particle", "particles/units/heroes/hero_disruptor/disruptor_kineticfield.vpcf", context) -- sergopy_ivl
-
-	PrecacheResource("particle", "particles/items2_fx/refresher.vpcf", context) -- sergopy_refresh
-	PrecacheResource("particle", "particles/items2_fx/refresher_b.vpcf", context) -- sergopy_refresh
-	PrecacheResource("particle", "particles/items2_fx/refresher_c.vpcf", context) -- sergopy_refresh
-
---================================================================================================================================================
---------------------- MARKER
---================================================================================================================================================
-	PrecacheResource( "model_folder", "models/heroes/huskar/", context ) -- hero_model
-
+	PrecacheResource("model_folder", "models/heroes/bristleback/", context) -- sergopy_hero_model
+	PrecacheResource( "model_folder", "models/heroes/huskar/", context ) -- marker_hero_model
+	PrecacheModel( "models/props_gameplay/dummy/dummy_large.vmdl", context ) -- marker_dance_ability_model
+	PrecacheResource( "model_folder", "models/heroes/invoker/", context ) -- matvey_hero_model
+	
 	PrecacheResource( "soundfile", "soundevents/marker_sounds.vsndevts", context )
-	
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts", context ) -- marker_chill
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts", context ) -- marker_chill
-	
-	PrecacheResource( "particle", "particles/econ/items/huskar/huskar_ti8/huskar_ti8_shoulder_heal.vpcf", context ) -- marker_chill
-	PrecacheResource( "particle", "particles/units/heroes/hero_antimage/antimage_manabreak_slow.vpcf", context ) -- marker_chill
-	PrecacheResource( "particle", "particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf", context ) -- marker_chill
-	
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts", context) -- marker_hammer
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dawnbreaker.vsndevts", context ) -- marker_hammer
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts", context ) -- marker_hammer
-	
-	PrecacheResource( "particle", "particles/units/heroes/hero_dawnbreaker/dawnbreaker_calavera_hammer_projectile.vpcf", context ) -- marker_hammer
-	PrecacheResource( "particle", "particles/units/heroes/hero_grimstroke/grimstroke_soulchain_debuff.vpcf", context ) -- marker_hammer
-	PrecacheResource( "particle", "particles/econ/items/underlord/underlord_ti8_immortal_weapon/underlord_crimson_ti8_immortal_pitofmalice_stun.vpcf", context ) -- marker_hammer
-	PrecacheResource( "particle", "particles/econ/items/gyrocopter/gyro_ti10_immortal_missile/gyro_ti10_immortal_crimson_missile_explosion.vpcf", context ) -- marker_hammer
-	
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts", context ) -- marker_shot
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts", context ) -- marker_shot
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_luna.vsndevts", context ) -- marker_shot
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts", context ) -- marker_shot
-	
-	PrecacheResource( "particle", "particles/econ/events/winter_major_2017/dagon_wm07_tgt_sparks.vpcf", context ) -- marker_shot
-	PrecacheResource( "particle", "particles/econ/items/luna/luna_lucent_ti5/luna_lucent_beam_cast_ti_5.vpcf", context ) -- marker_shot
-	PrecacheResource( "particle", "particles/econ/items/luna/luna_lucent_ti5/luna_eclipse_cast_moonfall.vpcf", context ) -- marker_shot
-	PrecacheResource( "particle", "particles/units/heroes/hero_luna/luna_lucent_beam_impact_bits.vpcf", context ) -- marker_shot
-
-	PrecacheModel( "models/props_gameplay/dummy/dummy_large.vmdl", context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts", context ) -- marker_dance
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts", context ) -- marker_dance
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_muerta.vsndevts", context ) -- marker_dance
-	PrecacheResource( "particle", "particles/units/heroes/hero_hoodwink/hoodwink_scurry_aura.vpcf", context ) -- marker_dance
-	PrecacheResource( "particle", "particles/units/heroes/hero_leshrac/leshrac_disco_tnt.vpcf", context ) -- marker_dance
-	PrecacheResource( "particle", "particles/ui_mouseactions/range_finder_aoe.vpcf", context ) -- marker_dance
-	PrecacheResource( "particle", "particles/econ/items/oracle/oracle_fortune_ti7/oracle_fortune_ti7_aoe_ground_splash.vpcf", context ) -- marker_dance
-	PrecacheResource( "particle", "particles/econ/events/ti10/hot_potato/disco_ball_channel.vpcf", context ) -- marker_dance
-
---================================================================================================================================================
---------------------- MATVEY
---================================================================================================================================================
-	PrecacheResource( "model_folder", "models/heroes/invoker/", context ) -- hero_model
-
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_kez.vsndevts", context ) -- matvey_metka
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts", context ) -- matvey_metka
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_kez.vsndevts", context ) -- matvey_metka
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts", context ) -- matvey_metka
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts", context ) -- matvey_metka
-	PrecacheResource( "particle_folder", "particles/custom/matvey/matvey_metka/", context ) -- matvey_metka
-
-	PrecacheResource( "particle", "particles/units/heroes/hero_antimage/antimage_manabreak_slow.vpcf", context ) -- matvey_poxititel
-	PrecacheResource( "particle", "particles/units/heroes/hero_antimage/antimage_manabreak_enemy_debuff.vpcf", context ) -- matvey_
-
---================================================================================================================================================
---------------------- TOWER
---================================================================================================================================================
-	PrecacheResource("particle", "particles/econ/events/ti8/shivas_guard_ti8_slow.vpcf", context) -- tower_soul_drain
 
 --================================================================================================================================================
 --------------------- ITEMS
 --================================================================================================================================================
 	PrecacheResource("particle", "particles/econ/events/spring_2021/teleport_start_spring_2021.vpcf", context) -- item_tpscroll
 	PrecacheResource("particle", "particles/econ/events/spring_2021/teleport_end_spring_2021.vpcf", context) -- item_tpscroll
+
+--================================================================================================================================================
+--------------------- NEUTRAL CREEPS
+--================================================================================================================================================
+	PrecacheResource( "particle_folder", "particles/custom/neutral", context )
+
+	PrecacheModel( "models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl", context ) -- npc_troll_skelet
+	PrecacheModel( "models/creeps/neutral_creeps/n_creep_furbolg/n_creep_furbolg_disrupter.vmdl", context ) -- npc_ursa_red
+	PrecacheModel( "models/creeps/neutral_creeps/n_creep_beast/n_creep_beast.vmdl", context ) -- npc_ursa_yellow
+	PrecacheModel( "models/heroes/beastmaster/beastmaster_beast.vmdl", context ) -- npc_boar_a
+	PrecacheModel( "models/items/beastmaster/boar/fotw_wolf/fotw_wolf.vmdl", context ) -- npc_boar_b
+
+	PrecacheResource( "particle", "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf", context ) -- ursa_red_clap 
+	PrecacheResource( "particle", "particles/custom/general/exclamation.vpcf", context ) -- ursa_red_clap 
+	PrecacheResource( "particle", "particles/neutral_fx/dark_troll_ensnare.vpcf", context ) -- boar_roor
+	PrecacheResource( "particle", "particles/generic_gameplay/generic_purge.vpcf", context ) -- boar_slow
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lycan.vsndevts", context ) -- boar_amp
+
+--================================================================================================================================================
+--------------------- OTHER
+--================================================================================================================================================
+	PrecacheResource( "particle", "particles/custom/portal/purple/portal_open.vpcf", context ) -- wave_portal	
 end
 
 -- Create the game mode when we activate

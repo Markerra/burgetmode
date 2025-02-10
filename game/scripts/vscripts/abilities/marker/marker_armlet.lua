@@ -90,8 +90,6 @@ function modifier_marker_armlet_active:OnCreated()
 
     --if not self:GetParent():IsAlive() then return end
 
-    print("Армлет активирован!")
-
     self.unholy_bonus_strength  = self:GetAbility():GetSpecialValueFor("bonus_strength")
 
     -- Adjust caster's health
@@ -100,6 +98,8 @@ function modifier_marker_armlet_active:OnCreated()
     local bonus_health    = (self:GetAbility():GetSpecialValueFor("bonus_strength") + strength_growth * (self:GetCaster():GetLevel() - 1)) * 22
     local health_before_activation = caster:GetHealth()
     
+    if not IsServer() then return end
+
     if not self:GetParent():IsIllusion() then
         Timers:CreateTimer(0.001, function()
             caster:Heal(bonus_health, self:GetAbility())

@@ -130,7 +130,7 @@ function GiveGold(amt) {
 
 //networthIcon.SetImage("s2r://panorama/images/hud/reborn/gold_small_psd.vtex");
 
-// Закрыть / Открыть панель >>
+// закрыть / открыть панель >>
 const rootPanel = $.GetContextPanel().FindChildTraverse("buttons_panel");
 const toggleMenuButton = $("#close_menu_button")
 const toggleMenuText = toggleMenuButton.FindChildTraverse("close_menu_button_text"); 

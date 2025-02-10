@@ -7,6 +7,12 @@ LinkLuaModifier("matvey_poxititel_debuff",
 
 matvey_poxititel = class({})
 
+function matvey_poxititel:Precache( context )
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts", context )
+	PrecacheResource( "particle", "particles/units/heroes/hero_antimage/antimage_manabreak_slow.vpcf", context )
+	PrecacheResource( "particle", "particles/units/heroes/hero_antimage/antimage_manabreak_enemy_debuff.vpcf", context )
+end
+
 function matvey_poxititel:GetIntrinsicModifierName()
 	return "matvey_poxititel_modifier"
 end
@@ -35,7 +41,7 @@ function matvey_poxititel_modifier:OnAttackLanded( event )
 
 	local chance = ability:GetSpecialValueFor("chance")
 
-	if attacker == caster then
+	if attacker == caster and not attacker:IsIllusion() then
 		if RollPercentage(chance) then 
 			local name1 = "matvey_poxititel_buff"
 			local name2 = "matvey_poxititel_debuff"
@@ -73,7 +79,7 @@ function matvey_poxititel_modifier:OnAttackLanded( event )
 			if not modif2 then
 				modif2 = target:AddNewModifier(caster, ability, name2, {duration = dur})
 			end
-	
+
 			self:PlayEffects(caster, target)
 		end
 	end

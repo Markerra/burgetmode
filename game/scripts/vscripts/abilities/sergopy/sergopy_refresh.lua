@@ -4,6 +4,14 @@ LinkLuaModifier("modifier_sergopy_refresh", "abilities/sergopy/sergopy_refresh",
 
 sergopy_refresh = class({})
 
+function sergopy_refresh:Precache( context )
+    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_rattletrap.vsndevts", context)
+    PrecacheResource("soundfile", "soundevents/game_sounds_items.vsndevts", context)
+    PrecacheResource("particle", "particles/items2_fx/refresher.vpcf", context)
+    PrecacheResource("particle", "particles/items2_fx/refresher_b.vpcf", context)
+    PrecacheResource("particle", "particles/items2_fx/refresher_c.vpcf", context)
+end
+
 function sergopy_refresh:GetIntrinsicModifierName()
     return "modifier_sergopy_refresh"
 end

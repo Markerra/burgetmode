@@ -1,4 +1,5 @@
 require("utils/timers")
+require("utils/particles_presets")
 
 LinkLuaModifier("modifier_marker_dance_enemy", "abilities/marker/marker_dance", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_marker_dance_allies", "abilities/marker/marker_dance", LUA_MODIFIER_MOTION_NONE)
@@ -7,6 +8,18 @@ LinkLuaModifier("modifier_marker_dance_allies_aura", "abilities/marker/marker_da
 LinkLuaModifier("modifier_marker_dance_tracker", "abilities/marker/marker_dance", LUA_MODIFIER_MOTION_NONE)
 
 marker_dance = class({})
+
+function marker_dance:Precache( context )
+	PrecacheResource( "particle", "particles/units/heroes/hero_hoodwink/hoodwink_scurry_aura.vpcf", context )
+	PrecacheResource( "particle", "particles/units/heroes/hero_leshrac/leshrac_disco_tnt.vpcf", context )
+	PrecacheResource( "particle", "particles/custom/general/range_finder_aoe.vpcf", context )
+	PrecacheResource( "particle", "particles/econ/items/oracle/oracle_fortune_ti7/oracle_fortune_ti7_aoe_ground_splash.vpcf", context )
+	PrecacheResource( "particle", "particles/econ/events/ti10/hot_potato/disco_ball_channel.vpcf", context )
+
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts", context ) -- marker_dance
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts", context ) -- marker_dance
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_muerta.vsndevts", context ) -- marker_dance
+end
 
 function marker_dance:OnSpellStart()
 	if not IsServer() then return end
@@ -180,10 +193,7 @@ function modifier_marker_dance_tracker:OnCreated( kv )
 
 	EmitSoundOn("marker_discoball_spawn", parent)
 
-	self.effect1 = ParticleManager:CreateParticle( "particles/ui_mouseactions/range_finder_aoe.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
-	ParticleManager:SetParticleControl(self.effect1, 2, parent:GetAbsOrigin())
-	ParticleManager:SetParticleControl( self.effect1, 3, Vector( self.radius, self.radius, self.radius ) )
-
+	self.effect1 = particle_aoe( parent, self.radius )
     self.effect2 = ParticleManager:CreateParticle("particles/units/heroes/hero_hoodwink/hoodwink_scurry_aura.vpcf",
     PATTACH_ABSORIGIN_FOLLOW, parent)
 

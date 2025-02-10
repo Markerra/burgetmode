@@ -4,6 +4,14 @@ LinkLuaModifier("modifier_marker_chill_shard", "abilities/marker/marker_chill", 
 
 marker_chill = class({})
 
+function marker_chill:Precache( context )
+    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts", context )
+    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts", context )
+    PrecacheResource( "particle", "particles/econ/items/huskar/huskar_ti8/huskar_ti8_shoulder_heal.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/hero_antimage/antimage_manabreak_slow.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf", context )
+end
+
 function marker_chill:GetIntrinsicModifierName()
     return "modifier_marker_chill"
 end
