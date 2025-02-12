@@ -8,7 +8,9 @@ function item_tpscroll_custom:GetChannelTime()
     		return self:GetSpecialValueFor("channel_time_travel") 
     end
 
-	return self:GetSpecialValueFor("channel_time") 
+    if (enable_waves and GameMode.current_wave < 5) or IsInToolsMode() then
+		return self:GetSpecialValueFor("channel_time") - RandomInt(1, 3)
+	else return self:GetSpecialValueFor("channel_time") end
 end
 
 function item_tpscroll_custom:GetCooldown(level)

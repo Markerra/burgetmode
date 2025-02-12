@@ -8,7 +8,7 @@ function item_admin_spawn_unit:OnSpellStart()
 
 	require("game-mode/waves")
 
-	local units = GameMode:GetWaveCreeps(2)
+	local units = GameMode:GetWaveCreeps(4)
 	local unit_team = caster:GetTeamNumber() + 1
 	local level = 1
 

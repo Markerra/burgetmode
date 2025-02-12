@@ -1,0 +1,1 @@
+ghoul_wounds = class({})

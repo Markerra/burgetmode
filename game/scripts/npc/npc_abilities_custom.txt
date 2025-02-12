@@ -1408,4 +1408,108 @@
 		}
 	}
 
+
+	"blood_seeker_attack"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/blood_seeker_attack"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"bloodseeker_bloodrage"
+		"MaxLevel" 						"4"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"chance"				"45" // (%)
+			"health_regen_amp"		"-50" // (%)
+			"lifesteal_pct"			"90" // (%)
+			"duration"				"3 4 5 6"
+		}
+	}
+
+	"blood_seeker_rupture"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/blood_seeker_rupture"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityTextureName"			"bloodseeker_rupture"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		"AbilityCastPoint"				"0.33"
+
+		"MaxLevel" 						"4"
+		"AbilityCastRange"				"450"
+		"AbilityCooldown"				"24.0"
+
+		"AbilityValues"
+		{
+			"regen_pct"				"100" // (%)
+			"cast_damage"			"40 60 80"
+			"movement_damage_pct"	"15 25 35" // (%)
+			"duration"				"5 6 7 8"
+		}
+	}
+
+	"ghoul_wounds"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/ghoul_wounds"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"life_stealer_open_wounds"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"AbilityCastPoint"				"0.4"
+
+		"MaxLevel" 						"4"
+		"AbilityCastRange"				"420"
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"55"
+
+		"AbilityValues"
+		{
+			"slow"					"60" // (%)
+			"bonus_vamp"			"40" // (%)
+			"duration"				"2 3 4 5"
+		}
+	}
+
+	"ghoul_infest"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/ghoul_infest"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"life_stealer_infest"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"AbilityCastPoint"				"0.2"
+
+		"MaxLevel" 						"1"
+		"AbilityCastRange"				"200"
+		"AbilityCooldown"				"25.0"
+		"AbilityManaCost"				"100"
+
+		"AbilityValues"
+		{	
+			"bonus_health"			"50" // (%) от своего здоровья
+			"bonus_dmg"				"50" // (%) от своего урона
+			"bonus_ms"				"20" // (%)
+
+			"thealth"				"30" // (%) (AI)
+		}	
+	}
+
+
 }

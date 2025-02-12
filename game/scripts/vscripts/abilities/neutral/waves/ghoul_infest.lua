@@ -1,0 +1,1 @@
+ghoul_infest = class({})

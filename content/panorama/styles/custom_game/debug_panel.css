@@ -1,3 +1,40 @@
+@keyframes 'DebugPanelClose'
+{
+	100%
+	{
+		transform: translate3d( 0, 0, 0px );
+		opacity: 1;
+	}
+	
+	0%
+	{
+		transform: translate3d( -10%, 0, 0px );
+		opacity: 0;
+	}
+	
+	20%
+	{
+		opacity: 0;
+	}
+	
+}
+
+@keyframes 'DebugPanelShow'
+{
+	0%
+	{
+		transform: translate3d( 0, 0, 0px );
+		opacity: 1;
+	}
+	
+	100%
+	{
+		transform: translate3d( -30%, 0, 0px );
+		opacity: 0;
+	}
+	
+}
+
 .root {
 	width: 35%;
 	height: 100%;
@@ -8,8 +45,28 @@
 	vertical-align: center;
 }
 
-.hidden {
+.DebugPanel_hidden
+{
+	opacity: 0;
 	visibility: collapse;
+}
+
+.DebugPanel_hidde
+{
+	animation-name: DebugPanelClose;
+	animation-duration: 0.75s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+	animation-direction: reverse;
+}
+
+.DebugPanel_show
+{
+	animation-name: DebugPanelShow;
+	animation-duration: 0.75s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+	animation-direction: reverse;
 }
 
 #buttons_panel {

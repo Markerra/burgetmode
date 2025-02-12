@@ -10,7 +10,7 @@ _G.boss_stage = false
 
 _G.portal_delay = 5.0
 
-_G.enable_waves = true
+_G.enable_waves = false
 
 local winner_team = nil
 local current_player_count = 1
@@ -80,6 +80,11 @@ function GameMode:Init()
 	require("panorama/custom_top_bar")
 
 	CustomGameEventManager:RegisterListener("top_bar_select", Dynamic_Wrap(self, 'TopBar_Select'))
+
+	require("chat_wheel")
+	CustomGameEventManager:RegisterListener( "SelectVO", Dynamic_Wrap(chat_wheel, 'SelectVO'))
+	CustomGameEventManager:RegisterListener( "SelectHeroVO", Dynamic_Wrap(chat_wheel, 'SelectHeroVO'))
+	CustomGameEventManager:RegisterListener( "select_chatwheel_player", Dynamic_Wrap(chat_wheel, 'SelectChatWheel'))
 	
 	SendHeroDataToClient(0.25, false) -- panorama/custom_top_bar.lua
 
@@ -137,6 +142,7 @@ function GameMode:npcSpawned(data)
 				unit:AddItemByName("item_admin_tp_hero")
 				unit:AddItemByName("item_admin_gold_reset")
 				unit:AddItemByName("item_admin_spawn_unit")
+
 				unit.bFirstSpawned = false
 			end
 		end

@@ -2364,7 +2364,7 @@
         "AttackDamageMax"           "17"     // Damage range max.
         "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
         "AttackRate"                "2.0"       // Speed of attack
-        "BaseAttackSpeed"           "135"       // Speed of attack
+        "BaseAttackSpeed"           "85"       // Speed of attack
         "AttackAnimationPoint"      "0.3"     // Normalized time in animation cycle to attack.
         "AttackAcquisitionRange"    "500"      // Range within a target can be acquired.
         "AttackRange"               "110"       // Range within a target can be attacked.
@@ -2386,7 +2386,7 @@
         // Movement
         //----------------------------------------------------------------
         "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"         // Type of locomotion - ground, air
-        "MovementSpeed"             "320"       // Speed
+        "MovementSpeed"             "310"       // Speed
         "MovementTurnRate"          "0.9"       // Turning rate.
 
         // Status
@@ -2551,5 +2551,174 @@
         "vscripts"                  "ai/kobold.lua"
         "AutoAttacksByDefault"      "1"
     }
+
+
+    "npc_blood_seeker"
+    {
+        // General
+        
+        "BaseClass"                 "npc_dota_creature" // Class of entity of link to.
+        "Model"                     "models/heroes/blood_seeker/blood_seeker.vmdl"   // Model.
+        "SoundSet"                  "Hero_Bloodseeker"                  // Name of sound set.
+        "ModelScale"                "0.7"
+        "Level"                     "1"
+                
+        // Abilities
+        //----------------------------------------------------------------
+        
+        "Ability1"                  "blood_seeker_attack"  // Ability 1.
+        "Ability2"                  "blood_seeker_rupture"  // Ability 2.
+
+        // Armor
+        //----------------------------------------------------------------
+        "ArmorPhysical"             "4"     // Physical protection.
+        "MagicalResistance"         "19"     // Magical protection.
+
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "16"     // Damage range min.
+        "AttackDamageMax"           "21"     // Damage range max.
+        "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+        "AttackRate"                "1.6"       // Speed of attack
+        "BaseAttackSpeed"           "255"       // Speed of attack
+        "AttackAnimationPoint"      "0.3"     // Normalized time in animation cycle to attack.
+        "AttackAcquisitionRange"    "500"      // Range within a target can be acquired.
+        "AttackRange"               "110"       // Range within a target can be attacked.
+        "ProjectileModel"           ""          // Particle system model for projectile.
+        "ProjectileSpeed"           ""          // Speed of projectile.
+
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyXP"                  "75"     // Experience earn.
+        "BountyGoldMin"             "46"     // Gold earned min.
+        "BountyGoldMax"             "54"     // Gold earned max.
+
+        // Bounds
+        //----------------------------------------------------------------
+        "BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"            // Hull type used for navigation/locomotion.
+        "RingRadius"                "50"
+        "HealthBarOffset"           "150"
+
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"         // Type of locomotion - ground, air
+        "MovementSpeed"             "340"       // Speed
+        "MovementTurnRate"          "0.9"       // Turning rate.
+
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"              "215"        // Base health.
+        "StatusHealthRegen"         "1.2"       // Health regeneration rate.
+        "StatusMana"                "0"          // Base mana.
+        "StatusManaRegen"           "2.6"         // Mana regeneration rate.
+
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"                  "DOTA_TEAM_NEUTRALS"                            // Team name.
+        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+        "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_SIEGE"
+
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"        "1000"      // Range of vision during day light.
+        "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
+
+        "vscripts"                  "ai/kobold.lua"
+        "AutoAttacksByDefault"      "1"
+
+        "Creature"
+        {
+            "AttachWearables"
+            {
+                "Wearable1" { "ItemDef" "7425"} // blade
+                "Wearable2" { "ItemDef" "70"} // head
+                "Wearable3" { "ItemDef" "7426"} // offhand blade
+                "Wearable4" { "ItemDef" "72"} // necklace
+                "Wearable5" { "ItemDef" "73"} // cape
+                "Wearable6" { "ItemDef" "74"} // bracers
+                "Wearable7" { "ItemDef" "74"} // bracers
+            }
+        }
+    }
+
+    "npc_ghoul"
+    {
+        // General
+        
+        "BaseClass"                 "npc_dota_creature" // Class of entity of link to.
+        "Model"                     "models/heroes/life_stealer/life_stealer.vmdl"   // Model.
+        "SoundSet"                  "Hero_LifeStealer"                  // Name of sound set.
+        "ModelScale"                "0.7"
+        "Level"                     "1"
+                
+        // Abilities
+        //----------------------------------------------------------------
+        
+        "Ability1"                  "ghoul_wounds"  // Ability 1.
+        "Ability2"                  "ghoul_infest"  // Ability 2.
+
+        // Armor
+        //----------------------------------------------------------------
+        "ArmorPhysical"             "3"     // Physical protection.
+        "MagicalResistance"         "18"     // Magical protection.
+
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "16"     // Damage range min.
+        "AttackDamageMax"           "19"     // Damage range max.
+        "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+        "AttackRate"                "2.0"       // Speed of attack
+        "BaseAttackSpeed"           "115"       // Speed of attack
+        "AttackAnimationPoint"      "0.3"     // Normalized time in animation cycle to attack.
+        "AttackAcquisitionRange"    "500"      // Range within a target can be acquired.
+        "AttackRange"               "110"       // Range within a target can be attacked.
+        "ProjectileModel"           ""          // Particle system model for projectile.
+        "ProjectileSpeed"           ""          // Speed of projectile.
+
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyXP"                  "58"     // Experience earn.
+        "BountyGoldMin"             "37"     // Gold earned min.
+        "BountyGoldMax"             "41"     // Gold earned max.
+
+        // Bounds
+        //----------------------------------------------------------------
+        "BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"            // Hull type used for navigation/locomotion.
+        "RingRadius"                "50"
+        "HealthBarOffset"           "120"
+
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"         // Type of locomotion - ground, air
+        "MovementSpeed"             "300"       // Speed
+        "MovementTurnRate"          "0.7"       // Turning rate.
+
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"              "155"       // Base health
+        "StatusHealthRegen"         "3.9"       // Health regeneration rate
+        "StatusMana"                "450"       // Base mana
+        "StatusManaRegen"           "2.6"       // Mana regeneration rate
+
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"                  "DOTA_TEAM_NEUTRALS"                            // Team name.
+        "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_HERO"
+        "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+        "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_SIEGE"
+
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"        "1000"      // Range of vision during day light.
+        "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
+
+        "vscripts"                  "ai/kobold.lua"
+        "AutoAttacksByDefault"      "1"
+    }
+
+    
 
 }

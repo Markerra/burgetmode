@@ -49,7 +49,9 @@ function sergopy_voice:OnSpellStart()
             enemy:AddNewModifier(caster, ability, "modifier_silence", { duration = silence_duration })
         end
 
-        enemy:AddNewModifier(caster, ability, "modifier_sergopy_voice_pull", { duration = pull_duration })
+        if not enemy.wave_creep then
+            enemy:AddNewModifier(caster, ability, "modifier_sergopy_voice_pull", { duration = pull_duration })
+        end
 
         local damage_table = {
             victim = enemy,

@@ -11,10 +11,13 @@ wave_types = {
              	{ "npc_troll_skelet_a", "npc_troll_skelet_b", "npc_troll_skelet_b", "npc_troll_skelet_c", "npc_troll_skelet_c" } },
 
 	--[[#2]] { 0, false, { "npc_ursa_red", "npc_ursa_red", "npc_ursa_red", "npc_ursa_yellow", "npc_ursa_yellow"},
-             	{ "npc_ursa_red", "npc_ursa_yellow", "npc_ursa_yellow", "npc_ursa_yellow" } },
+             	{ "npc_ursa_red", "npc_ursa_red", "npc_ursa_yellow", "npc_ursa_yellow", "npc_ursa_yellow" } },
 
 	--[[#3]] { 0, false, { "npc_boar_a", "npc_boar_b", "npc_boar_b", "npc_boar_b" },
 	 			{ "npc_boar_a", "npc_boar_a", "npc_boar_b", "npc_boar_b" } },
+
+  --[[#4]] { 0, false, { "npc_blood_seeker", "npc_blood_seeker", "npc_ghoul", "npc_ghoul" },
+        { "npc_blood_seeker", "npc_ghoul", "npc_ghoul", "npc_ghoul" } },
 
 }
 
@@ -35,6 +38,8 @@ wave_abilities = {
   --[[#2]] { "ursa_red_clap", "ursa_yellow_swipes", "furbolg_enrage_attack_speed" },
 
   --[[#3]] { "boar_root", "boar_slow", "boar_amp"},
+
+  --[[#4]] { "blood_seeker_attack", "blood_seeker_rupture", "ghoul_wounds", "ghoul_infest"},
 
 }
 

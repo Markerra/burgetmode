@@ -84,12 +84,17 @@ function Precache( context )
 	PrecacheModel( "models/creeps/neutral_creeps/n_creep_beast/n_creep_beast.vmdl", context ) -- npc_ursa_yellow
 	PrecacheModel( "models/heroes/beastmaster/beastmaster_beast.vmdl", context ) -- npc_boar_a
 	PrecacheModel( "models/items/beastmaster/boar/fotw_wolf/fotw_wolf.vmdl", context ) -- npc_boar_b
+	PrecacheModel( "models/heroes/life_stealer/life_stealer.vmdl", context ) -- npc_ghoul
+	PrecacheModel( "models/heroes/blood_seeker/blood_seeker.vmdl", context ) -- npc_blood_seeker
 
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lycan.vsndevts", context ) -- boar_amp
+	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts", context ) -- blood_seeker_rupture
+	PrecacheResource( "particle", "particles/generic_gameplay/generic_lifesteal.vpcf", context ) -- blood_seeker_attack 
 	PrecacheResource( "particle", "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf", context ) -- ursa_red_clap 
 	PrecacheResource( "particle", "particles/custom/general/exclamation.vpcf", context ) -- ursa_red_clap 
 	PrecacheResource( "particle", "particles/neutral_fx/dark_troll_ensnare.vpcf", context ) -- boar_roor
 	PrecacheResource( "particle", "particles/generic_gameplay/generic_purge.vpcf", context ) -- boar_slow
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lycan.vsndevts", context ) -- boar_amp
+	PrecacheResource( "particle", "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf", context ) -- blood_seeker_rupture 
 
 --================================================================================================================================================
 --------------------- OTHER

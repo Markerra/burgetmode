@@ -12,5 +12,9 @@
 		<!-- timer !-->
 		<CustomUIElement type = "Hud" layoutfile="file://{resources}/layout/custom_game/timer.xml" />
 
+		<!-- chat_wheel !-->
+		<CustomUIElement type = "Hud" layoutfile="file://{resources}/layout/custom_game/dota_hud_chat_wheel.xml" />
+		<CustomUIElement type = "Hud" layoutfile="file://{resources}/layout/custom_game/dota_hud_hero_chat_wheel.xml" />
+		
 	</Panel>
 </root>

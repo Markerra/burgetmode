@@ -62,12 +62,13 @@ end
 
 check_mods =
 {
-    "modifier_boar_root_debuff"
+    "modifier_boar_root_debuff",
+    "modifier_blood_seeker_rupture_debuff"
 }
 
 check_mods_friend =
 {
-
+    "modifier_ghoul_infest"
 }
 
 not_require_attack =
@@ -82,7 +83,8 @@ check_self =
 
 require_friend =
 {
-    "boar_amp"
+    "boar_amp",
+    "ghoul_infest"
 }
 
 radius_check =
@@ -152,7 +154,6 @@ local name = ability:GetAbilityName()
 return false
 end
 
-
 function check_self_buff( ability )
 local name = ability:GetAbilityName()
     for i = 1,#check_self do
@@ -160,7 +161,6 @@ local name = ability:GetAbilityName()
     end
 return false
 end
-
 
 function check_friend( ability )
 local name = ability:GetAbilityName()
@@ -355,7 +355,6 @@ if thisEntity.ability:IsFullyCastable() then
 
         if IsValidEntity(friends_for_ability[1]) then
             for _,friend in ipairs(friends_for_ability) do
-
 
                 if friend:GetHealthPercent() <= thisEntity.ability:GetSpecialValueFor("thealth")
                 and (thisEntity:GetAbsOrigin() - friend:GetAbsOrigin()):Length2D()  <= thisEntity.ability:GetCastRange(thisEntity:GetAbsOrigin(), thisEntity)

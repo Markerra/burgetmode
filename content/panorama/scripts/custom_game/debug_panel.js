@@ -135,16 +135,12 @@ const rootPanel = $.GetContextPanel().FindChildTraverse("buttons_panel");
 const toggleMenuButton = $("#close_menu_button")
 const toggleMenuText = toggleMenuButton.FindChildTraverse("close_menu_button_text"); 
 toggleMenuButton.SetPanelEvent("onactivate", function() {
-    if (rootPanel.style.visibility === "visible") {
-        rootPanel.style.visibility = "collapse";
-        giveSelect_menu.style.visibility = "collapse";
-        spawnSelect_menu.style.visibility = "collapse";
-        toggleMenuButton.style.marginLeft = "5px";
+    if (rootPanel && rootPanel.BHasClass("DebugPanel_show")) {
+        HideDebugPanel()
         toggleMenuText.text = ">"
     }
     else {
-        rootPanel.style.visibility = "visible";
-        toggleMenuButton.style.marginLeft = "285px";
+        ShowDebugPanel()
         toggleMenuText.text = "<"
     }
 })
@@ -174,10 +170,10 @@ function checkPlayerID2(data) {
     
         if (panel) {
             if (steamID == allowedSteamID) {
-                panel.RemoveClass("hidden");
+                panel.RemoveClass("DebugPanel_hidden");
                 $.Msg("+++ Admin Panel for player with #" + Game.GetLocalPlayerID() + " playerID")
             } else {
-                panel.AddClass("hidden");
+                panel.AddClass("DebugPanel_hidden");
             }
         }
 
@@ -185,3 +181,57 @@ function checkPlayerID2(data) {
 }
 
 $.Schedule(5, checkPlayerID);
+
+function ShowDebugPanel()
+{
+    let main = $.GetContextPanel().FindChildTraverse("buttons_panel")
+
+    if (main && main.BHasClass("DebugPanel_hidden"))
+    {
+        main.RemoveClass("DebugPanel_hidden")
+        main.RemoveClass("DebugPanel_hide")
+        main.AddClass("DebugPanel_show")
+    }
+}
+
+function ShowSelect()
+{
+    let main = $.GetContextPanel().FindChildTraverse("buttons_panel")
+
+    if (main && main.BHasClass("DebugPanel_hidden"))
+    {
+        main.RemoveClass("Select_hidden")
+        main.RemoveClass("Select_hide")
+        main.AddClass("Select_show")
+    }
+}
+
+function HideSelect()
+{
+    let main = $.GetContextPanel().FindChildTraverse("buttons_panel")
+
+    if (main && main.BHasClass("Select_hidden"))
+    {
+        main.RemoveClass("Select_hidden")
+        main.RemoveClass("Select_hide")
+        main.AddClass("Select_show")
+    }
+}
+
+function HideDebugPanel()
+{
+
+    let main = $.GetContextPanel().FindChildTraverse("AllTimer")
+
+    if (main && main.BHasClass("DebugPanel_show"))
+    {
+        main.RemoveClass("DebugPanel_show")
+        main.AddClass("DebugPanel_hide")
+
+        $.Schedule(0.7, function ()
+        { 
+            main.AddClass("DebugPanel_hidden")
+        })
+    }
+
+}
