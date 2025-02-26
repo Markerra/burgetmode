@@ -1,20 +1,39 @@
+const mouse_over = $.GetContextPanel().FindChildTraverse("mouse_over")
+const spawnSelect_menu = $("#spawn_hero_select")
+const giveSelect_menu = $("#give_item_select")
+
+mouse_over.SetPanelEvent('onmouseover', function() {
+   ShowDebugPanel()
+});
+
+mouse_over.SetPanelEvent('onmouseout', function() {
+   HideDebugPanel()
+   $.Schedule(0.1, function (){   
+        if (giveSelect_menu.style.visibility === "visible") {
+            giveSelect_menu.style.visibility = "collapse";
+            mouse_over.style.width = "46%";
+        }
+        if (spawnSelect_menu && spawnSelect_menu.style.visibility === "visible") {
+            spawnSelect_menu.style.visibility = "collapse";
+            mouse_over.style.width = "46%";
+        }
+    })
+});
+
+
 // спавн бота >>
 
 const spawnButton = $("#spawn_bot_button")
-const spawnSelect_menu = $("#spawn_hero_select")
 
 spawnSelect_menu.style.visibility = "collapse";
 spawnButton.SetPanelEvent("onactivate", function() {
-    if (spawnSelect_menu.style.visibility === "visible") {
+    if (spawnSelect_menu && spawnSelect_menu.style.visibility === "visible") {
         spawnSelect_menu.style.visibility = "collapse";
-        toggleMenuButton.style.marginLeft = "285px";
+        mouse_over.style.width = "46%";
     }
     else {
         spawnSelect_menu.style.visibility = "visible";
-        toggleMenuButton.style.marginLeft = "635px";
-    }
-    if (giveSelect_menu.style.visibility === "visible") {
-        giveSelect_menu.style.visibility = "collapse"
+        mouse_over.style.width = "95%";
     }
 	
 })
@@ -33,21 +52,21 @@ function SpawnHero(heroName) {
 // выдать предмет >>
 
 const giveButton = $("#give_item_button")
-const giveSelect_menu = $("#give_item_select")
 
 giveSelect_menu.style.visibility = "collapse";
 
 giveButton.SetPanelEvent("onactivate", function() {
     if (giveSelect_menu.style.visibility === "visible") {
         giveSelect_menu.style.visibility = "collapse";
-        toggleMenuButton.style.marginLeft = "285px";
+        mouse_over.style.width = "46%";
     }
     else {
         giveSelect_menu.style.visibility = "visible";
-        toggleMenuButton.style.marginLeft = "605px";
+        mouse_over.style.width = "95%";
     }
     if (spawnSelect_menu.style.visibility === "visible") {
         spawnSelect_menu.style.visibility = "collapse";
+        mouse_over.style.width = "46%";
     }
     
 })
@@ -131,20 +150,19 @@ function GiveGold(amt) {
 //networthIcon.SetImage("s2r://panorama/images/hud/reborn/gold_small_psd.vtex");
 
 // закрыть / открыть панель >>
-const rootPanel = $.GetContextPanel().FindChildTraverse("buttons_panel");
-const toggleMenuButton = $("#close_menu_button")
-const toggleMenuText = toggleMenuButton.FindChildTraverse("close_menu_button_text"); 
-toggleMenuButton.SetPanelEvent("onactivate", function() {
-    if (rootPanel && rootPanel.BHasClass("DebugPanel_show")) {
-        HideDebugPanel()
-        toggleMenuText.text = ">"
-    }
-    else {
-        ShowDebugPanel()
-        toggleMenuText.text = "<"
-    }
-})
-
+//const rootPanel = $.GetContextPanel().FindChildTraverse("buttons_panel");
+//const toggleMenuButton = $("#close_menu_button")
+//const toggleMenuText = toggleMenuButton.FindChildTraverse("close_menu_button_text"); 
+//toggleMenuButton.SetPanelEvent("onactivate", function() {
+//    if (rootPanel && rootPanel.BHasClass("DebugPanel_show")) {
+//        HideDebugPanel()
+//        toggleMenuText.text = ">"
+//    }
+//    else {
+//        ShowDebugPanel()
+//        toggleMenuText.text = "<"
+//    }
+//})
 
 function checkPlayerID() {
 
@@ -171,6 +189,7 @@ function checkPlayerID2(data) {
         if (panel) {
             if (steamID == allowedSteamID) {
                 panel.RemoveClass("DebugPanel_hidden");
+                panel.AddClass("DebugPanel_show");
                 $.Msg("+++ Admin Panel for player with #" + Game.GetLocalPlayerID() + " playerID")
             } else {
                 panel.AddClass("DebugPanel_hidden");
@@ -184,10 +203,11 @@ $.Schedule(5, checkPlayerID);
 
 function ShowDebugPanel()
 {
-    let main = $.GetContextPanel().FindChildTraverse("buttons_panel")
+    let main = $.GetContextPanel().FindChildTraverse("debug_panel")
 
     if (main && main.BHasClass("DebugPanel_hidden"))
     {
+        $.Msg("DebugPanel_hidden")
         main.RemoveClass("DebugPanel_hidden")
         main.RemoveClass("DebugPanel_hide")
         main.AddClass("DebugPanel_show")
@@ -196,9 +216,9 @@ function ShowDebugPanel()
 
 function ShowSelect()
 {
-    let main = $.GetContextPanel().FindChildTraverse("buttons_panel")
+    let main = $.GetContextPanel().FindChildTraverse("spawn_hero_select")
 
-    if (main && main.BHasClass("DebugPanel_hidden"))
+    if (main && main.BHasClass("Select_hidden"))
     {
         main.RemoveClass("Select_hidden")
         main.RemoveClass("Select_hide")
@@ -206,11 +226,12 @@ function ShowSelect()
     }
 }
 
+
 function HideSelect()
 {
-    let main = $.GetContextPanel().FindChildTraverse("buttons_panel")
+    let main = $.GetContextPanel().FindChildTraverse("spawn_hero_select")
 
-    if (main && main.BHasClass("Select_hidden"))
+    if (main && main.BHasClass("Select_show"))
     {
         main.RemoveClass("Select_hidden")
         main.RemoveClass("Select_hide")
@@ -221,17 +242,19 @@ function HideSelect()
 function HideDebugPanel()
 {
 
-    let main = $.GetContextPanel().FindChildTraverse("AllTimer")
-
+    let main = $.GetContextPanel().FindChildTraverse("debug_panel")
     if (main && main.BHasClass("DebugPanel_show"))
     {
+        $.Msg("DebugPanel_show")
         main.RemoveClass("DebugPanel_show")
         main.AddClass("DebugPanel_hide")
 
-        $.Schedule(0.7, function ()
-        { 
+        $.Schedule(0.1, function ()
+        {   
             main.AddClass("DebugPanel_hidden")
         })
     }
 
 }
+$.Schedule(1.0, function ()
+    { HideDebugPanel() })

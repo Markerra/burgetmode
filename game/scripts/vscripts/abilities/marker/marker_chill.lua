@@ -126,7 +126,7 @@ function modifier_marker_chill_tracker:OnCreated()
         PATTACH_ABSORIGIN_FOLLOW, parent)
     ParticleManager:SetParticleControl(self.effect, 0, parent:GetAbsOrigin())
 
-    parent:EmitSoundParams("Hero_Huskar.BerserkersBlood.Cast", 0, 0.2, 0)
+    parent:EmitSoundParams("Hero_Huskar.BerserkersBlood.Cast", 1, 0.6, 0)
 end
 
 function modifier_marker_chill_tracker:OnDestroy()
@@ -143,7 +143,7 @@ function modifier_marker_chill_tracker:OnDestroy()
     StopSoundOn("Hero_Huskar.BerserkersBlood.Cast", parent)
 
     if not shard then
-        parent:EmitSoundParams("DOTA_Item.Nullifier.Slow", 0, 0.3, 0)
+        parent:EmitSoundParams("DOTA_Item.Nullifier.Slow", 0, 0.5, 0)
         local effect2 = ParticleManager:CreateParticle(
         "particles/units/heroes/hero_antimage/antimage_manabreak_slow.vpcf", 
         PATTACH_ABSORIGIN_FOLLOW, parent)

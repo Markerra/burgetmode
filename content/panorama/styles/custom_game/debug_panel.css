@@ -35,6 +35,51 @@
 	
 }
 
+@keyframes 'SelectClose'
+{
+	100%
+	{
+		transform: translate3d( 0, 0, 0px );
+		opacity: 1;
+	}
+	
+	0%
+	{
+		transform: translate3d( -10%, 0, 0px );
+		opacity: 0;
+	}
+	
+	20%
+	{
+		opacity: 0;
+	}
+	
+}
+
+@keyframes 'SelectShow'
+{
+	0%
+	{
+		transform: translate3d( 0, 0, 0px );
+		opacity: 1;
+	}
+	
+	100%
+	{
+		transform: translate3d( -30%, 0, 0px );
+		opacity: 0;
+	}
+	
+}
+
+#mouse_over {
+	width: 46%;
+	height: 38%;
+	vertical-align: center;
+	margin-bottom: 50px;
+	z-index: 10;
+}
+
 .root {
 	width: 35%;
 	height: 100%;
@@ -51,10 +96,10 @@
 	visibility: collapse;
 }
 
-.DebugPanel_hidde
+.DebugPanel_hide
 {
 	animation-name: DebugPanelClose;
-	animation-duration: 0.75s;
+	animation-duration: 0.3s;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: 1;
 	animation-direction: reverse;
@@ -63,7 +108,7 @@
 .DebugPanel_show
 {
 	animation-name: DebugPanelShow;
-	animation-duration: 0.75s;
+	animation-duration: 0.3s;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: 1;
 	animation-direction: reverse;
@@ -80,13 +125,6 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
 }
 
-#butons_panel:enabled {
-	
-}
-
-#butons_panel:disabled {
-	transform: translateX(200px);
-}
 
 #spawn_hero {
 	min-width: 250px;
@@ -206,7 +244,6 @@
     min-width: 320px;
     min-height: 359px;
 }
-
 
 .debug_panel_button {
 	margin-top: 6px;

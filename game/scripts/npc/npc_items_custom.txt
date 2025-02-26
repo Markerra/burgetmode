@@ -4,6 +4,17 @@
 	"item_refresher"					"ITEM_REMOVE"
 	"item_magic_wand"					"ITEM_REMOVE"
 	"item_gem"							"ITEM_REMOVE"
+	"item_dagon"                        "ITEM_REMOVE"
+	"item_dagon_2"                      "ITEM_REMOVE"
+	"item_dagon_3"                      "ITEM_REMOVE"
+	"item_dagon_4"                      "ITEM_REMOVE"
+	"item_dagon_5"                      "ITEM_REMOVE"
+	"item_recipe_dagon"                 "ITEM_REMOVE"
+	"item_recipe_dagon_2"               "ITEM_REMOVE"
+	"item_recipe_dagon_3"               "ITEM_REMOVE"
+	"item_recipe_dagon_4"               "ITEM_REMOVE"
+	"item_recipe_dagon_5"               "ITEM_REMOVE"
+
 
 	"item_tpscroll"
 	{

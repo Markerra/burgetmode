@@ -3,6 +3,8 @@ var nowrings = 9;
 var selected_sound_current = undefined;
 var nowselect = 0;
 
+$.Msg("Voice Wheel Init")
+
 var rings = new Array(
     new Array(//0 start
         new Array("","","","","","","",""),
@@ -11,6 +13,7 @@ var rings = new Array(
 );
 
 function StartWheel() {
+    $.Msg("Voice Wheel Start")
     selected_sound_current = undefined;
     $("#Wheel").visible = true;
     $("#Bubble").visible = true;
@@ -72,7 +75,7 @@ function StopWheel() {
     $("#Wheel").visible = false;
     $("#Bubble").visible = false;
     $("#PhrasesContainer").visible = false;
-
+    $.Msg("StopWheel()")
     let sounds_table = CustomNetTables.GetTableValue("custom_sounds", "sounds")
     if (sounds_table)
     {
@@ -82,6 +85,7 @@ function StopWheel() {
             {
                 if (sounds_table[Entities.GetUnitName(Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() ))][selected_sound_current+1][2])
                 {
+                    $.Msg("yep")
                     GameEvents.SendCustomGameEventToServer_custom("SelectHeroVO", {num: String(sounds_table[Entities.GetUnitName(Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() ))][selected_sound_current+1][2]), name : String(sounds_table[Entities.GetUnitName(Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() ))][selected_sound_current+1][2])});
                 }
             }
@@ -231,7 +235,8 @@ function ChatSound( data )
     let Hudchat = dotaHud.FindChildTraverse("HudChat")
     let LinesPanel = $("#PhraseChatContainer2")
 
-    let hero_icon = "file://{images}/heroes/" + Game.GetHeroImage(data.player_id, data.hero_name) + ".png"
+    
+    let hero_icon = "file://{images}/heroes/" + data.hero_name + ".png"
 
     let player_name = Players.GetPlayerName( data.player_id )
     let sound_name = $.Localize(data.sound_name)

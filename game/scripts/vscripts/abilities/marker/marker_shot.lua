@@ -34,8 +34,7 @@ function marker_shot:OnSpellStart()
 	EmitSoundOn( self.sound_cast, caster )
 end
 
---------------------------------------------------------------------------------
--- Ability Channeling
+
 function marker_shot:OnChannelFinish( bInterrupted )
 
 	local caster = self:GetCaster()
@@ -148,8 +147,10 @@ function marker_shot_modifier:OnAttackLanded( event )
 			ParticleManager:SetParticleControl(effect2, 1, event.target:GetOrigin())
 			ParticleManager:ReleaseParticleIndex(effect2)
 			EmitSoundOn("Hero_Luna.Eclipse.Target", event.target)
+			ScreenShake(event.target:GetAbsOrigin(), 100, 1.1, 0.5, 1200, 0, true)
 		else
 			EmitSoundOn("Hero_Luna.Eclipse.NoTarget", event.target)
+			ScreenShake(event.target:GetAbsOrigin(), 5, 1.1, 0.3, 1200, 0, true)
 		end
 
 		local effect = ParticleManager:CreateParticle(

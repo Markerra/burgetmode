@@ -2,6 +2,7 @@
 	<scripts>
 		<include src="file://{resources}/scripts/custom_game/events_protector.js"/>
 	</scripts>
+
 	<Panel>
 		<!-- heroes list on top !-->
 		<CustomUIElement type = "Hud" layoutfile="file://{resources}/layout/custom_game/top_bar.xml" />
@@ -13,8 +14,30 @@
 		<CustomUIElement type = "Hud" layoutfile="file://{resources}/layout/custom_game/timer.xml" />
 
 		<!-- chat_wheel !-->
-		<CustomUIElement type = "Hud" layoutfile="file://{resources}/layout/custom_game/dota_hud_chat_wheel.xml" />
+
 		<CustomUIElement type = "Hud" layoutfile="file://{resources}/layout/custom_game/dota_hud_hero_chat_wheel.xml" />
 		
+	</Panel>
+</root>
+
+<root>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/utils.js" />
+        <include src="file://{resources}/scripts/custom_game/manifest.js" />
+        <include src="file://{resources}/scripts/custom_game/events_protector.js"/>
+    </scripts>
+	<Panel>
+		<CustomUIElement type= "Hud" layoutfile="file://{resources}/layout/custom_game/dota_hud_hero_chat_wheel.xml" />
+        <CustomUIElement type="GameSetup"   layoutfile="file://{resources}/layout/custom_game/team_select.xml" />
+        <CustomUIElement type="Hud"   layoutfile="file://{resources}/layout/custom_game/nicknames.xml" />
+        <CustomUIElement type="Hud"   layoutfile="file://{resources}/layout/custom_game/topbar_fix.xml" />
+        <CustomUIElement type="HeroSelection"   layoutfile="file://{resources}/layout/custom_game/topbar_fix_selection.xml" />
+        <CustomUIElement type="PregameStrategy"   layoutfile="file://{resources}/layout/custom_game/model_scene_fix.xml" />
+        <!-- <CustomUIElement type="HeroSelection"   layoutfile="file://{resources}/layout/custom_game/fix_portraits.xml" /> -->
+        <Image class="SeqImg" src="file://{resources}/images/items/major_winner.png" />
+        <Image class="SeqImg" src="file://{resources}/images/heroes/selection/npc_dota_hero_omniknight.png" />
+        <!-- <Image class="SeqImg" src="file://{resources}/images/heroes/npc_dota_hero_omniknight.png" /> -->
+        <Image class="SeqImg" src="file://{resources}/images/heroes/icons/npc_dota_hero_omniknight.png" />
+        <Image class="SeqImg" src="file://{resources}/images/npc_dota_hero_omniknight.png" />
 	</Panel>
 </root>

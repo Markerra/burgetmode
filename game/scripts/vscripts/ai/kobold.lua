@@ -62,13 +62,19 @@ end
 
 check_mods =
 {
-    "modifier_boar_root_debuff",
-    "modifier_blood_seeker_rupture_debuff"
+    {"boar_root", "modifier_boar_root_debuff"},
+    {"blood_seeker_rupture", "modifier_blood_seeker_rupture_debuff"},
+    {"ghoul_wounds", "modifier_ghoul_wounds_debuff"},
+    {"radiant_troop_stone", "modifier_radiant_troop_stone_stunned"},
+    {"wraith_creep_stun", "modifier_wraith_creep_stun"},
+    {"wraith_creep_stun", "modifier_wraith_creep_stun_red"},
+    {"wraith_creep_stun_red", "modifier_wraith_creep_stun_red"},
+    {"wraith_creep_stun_red", "modifier_wraith_creep_stun"},
 }
 
 check_mods_friend =
 {
-    "modifier_ghoul_infest"
+     {"ghoul_infest", "modifier_ghoul_infest_ally"},
 }
 
 not_require_attack =
@@ -84,22 +90,23 @@ check_self =
 require_friend =
 {
     "boar_amp",
-    "ghoul_infest"
+    "ghoul_infest",
 }
 
 radius_check =
 {
     "ursa_red_clap",
+    "radiant_troop_stone",
 }
 
 check_health =
 {
-
+    ["ghoul_infest"] = true
 }
 
 dont_check_order =
 {
-
+    ["ghoul_infest"] = true
 }
 
 new_return =
@@ -201,7 +208,7 @@ function Spawn( entityKeyValues )
     if not IsServer() then
         return
     end
-    if not IsValidEntity(thisEntity) then return end
+    if not IsValidEntity(thisEntity) then print("not valid") return end
 
     thisEntity.init = false
     thisEntity.tower = nil
@@ -209,23 +216,22 @@ function Spawn( entityKeyValues )
     thisEntity.abilityBehavior = ''
 
     for i = 0,thisEntity:GetAbilityCount()-1 do
-    	local a = thisEntity:GetAbilityByIndex(i)
-    	if not a then break end
+        local a = thisEntity:GetAbilityByIndex(i)
+        if not a  then break end
 
-    	if not ContainsValue(a:GetBehavior(), DOTA_ABILITY_BEHAVIOR_PASSIVE) then  thisEntity.ability = a else break end
+        if not ContainsValue(a:GetBehavior(), DOTA_ABILITY_BEHAVIOR_PASSIVE) then  thisEntity.ability = a else break end
+
+        if ContainsValue(thisEntity.ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_NO_TARGET) then  thisEntity.abilityBehavior = "NoTarget" end
+        if ContainsValue(thisEntity.ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_POINT) then thisEntity.abilityBehavior = "Point" end
+
+        if ContainsValue(thisEntity.ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_UNIT_TARGET)
+         and ContainsValue(thisEntity.ability:GetAbilityTargetTeam(),  DOTA_UNIT_TARGET_TEAM_FRIENDLY) then thisEntity.abilityBehavior = "TargetFriendly" end
 
 
-    	if ContainsValue(thisEntity.ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_NO_TARGET) then  thisEntity.abilityBehavior = "NoTarget" end
-    	if ContainsValue(thisEntity.ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_POINT) then thisEntity.abilityBehavior = "Point" end
-
-    	if ContainsValue(thisEntity.ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_UNIT_TARGET)
- 		 and ContainsValue(thisEntity.ability:GetAbilityTargetTeam(),  DOTA_UNIT_TARGET_TEAM_FRIENDLY) then thisEntity.abilityBehavior = "TargetFriendly" end
-
-
-    	if ContainsValue(thisEntity.ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_UNIT_TARGET)
+        if ContainsValue(thisEntity.ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_UNIT_TARGET)
       and ContainsValue(thisEntity.ability:GetAbilityTargetTeam(),  DOTA_UNIT_TARGET_TEAM_ENEMY) then thisEntity.abilityBehavior = "TargetEnemy" end
       break
-	end
+    end
 
 
     thisEntity:SetContextThink( "bevavior", function()
@@ -251,8 +257,7 @@ function bevavior()
 
 if not thisEntity.init then
     thisEntity.init = true
-
-    local tower = FindUnitsInRadius(thisEntity:GetTeamNumber(), thisEntity:GetAbsOrigin(), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_BUILDING, 0 + 128, FIND_CLOSEST, false)
+    local tower = FindUnitsInRadius(thisEntity:GetTeamNumber(), thisEntity:GetAbsOrigin(), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_BUILDING, 0, FIND_CLOSEST, false)
     for _, t in ipairs(tower) do
         if IsValidEntity(t) and t:GetClassname() == "npc_dota_tower" then
             thisEntity.tower_location = t:GetAbsOrigin()
@@ -284,7 +289,7 @@ friends_for_ability = FindUnitsInRadius(thisEntity:GetTeamNumber(), thisEntity:G
 enemy_for_attack = FindUnitsInRadius(thisEntity:GetTeamNumber(), thisEntity:GetAbsOrigin(), nil, 1000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD, FIND_CLOSEST, false)
 
 local control = false
-if thisEntity:IsSilenced() or thisEntity:IsHexed() then
+if thisEntity:IsSilenced() or thisEntity:IsHexed() or thisEntity:IsStunned() then
     control = true
 end
 
@@ -294,19 +299,14 @@ local nReturn = thisEntity.ability:GetCastPoint()*1.5
 if check_return(thisEntity.ability) ~= -1 then nReturn = check_return(thisEntity.ability) end
 
 if thisEntity.ability:IsFullyCastable() then
-
 	if thisEntity.abilityBehavior == "TargetEnemy" then
-
-        --print( thisEntity.ability:GetCastRange(thisEntity:GetAbsOrigin(), thisEntity))
-
-		if IsValidEntity(enemy_for_ability[1])
-		and check_order(thisEntity)
-		and not enemy_for_ability[1]:HasModifier(check_mod(thisEntity.ability))
+        if IsValidEntity(enemy_for_ability[1])
+        and check_order(thisEntity)
+        and not enemy_for_ability[1]:HasModifier(check_mod(thisEntity.ability))
         and check_mod_ally(thisEntity, thisEntity.ability)
-		and ((thisEntity:GetAbsOrigin() - enemy_for_ability[1]:GetAbsOrigin()):Length2D()  <= thisEntity.ability:GetCastRange(thisEntity:GetAbsOrigin(), thisEntity)
-		or ((thisEntity.ability:GetName() == "npc_werewolf_rupture") and (thisEntity:GetAbsOrigin() - enemy_for_ability[1]:GetAbsOrigin()):Length2D()  <= thisEntity.ability:GetSpecialValueFor("range")) )
+        and ((thisEntity:GetAbsOrigin() - enemy_for_ability[1]:GetAbsOrigin()):Length2D()  <= thisEntity.ability:GetCastRange(thisEntity:GetAbsOrigin(), thisEntity)
+        or ((thisEntity.ability:GetName() == "blood_seeker_rupture") and (thisEntity:GetAbsOrigin() - enemy_for_ability[1]:GetAbsOrigin()):Length2D()  <= thisEntity.ability:GetSpecialValueFor("range")) )
             then
-
 			thisEntity:CastAbilityOnTarget(enemy_for_ability[1], thisEntity.ability, 1)
             print(thisEntity.ability:GetAbilityName().." targetEnemy")
     		return nReturn
@@ -315,7 +315,6 @@ if thisEntity.ability:IsFullyCastable() then
 
 
 	if thisEntity.abilityBehavior == "NoTarget" then
-        --print(#friends_for_ability)
 		if ((thisEntity:GetAttackTarget() ~= nil and not thisEntity:GetAttackTarget():HasModifier(check_mod(thisEntity.ability)) )
          or not_require_attack[thisEntity.ability:GetName()])
 
@@ -329,8 +328,7 @@ if thisEntity.ability:IsFullyCastable() then
         and check_order(thisEntity)
 
 		and ((not check_friend(thisEntity.ability)) or (#friends_for_ability > 1))
-			then
-			thisEntity:CastAbilityNoTarget(thisEntity.ability, 1)
+			then thisEntity:CastAbilityNoTarget(thisEntity.ability, 1)
             return nReturn
 		end
 	end
@@ -350,18 +348,17 @@ if thisEntity.ability:IsFullyCastable() then
 
     if thisEntity.abilityBehavior == "TargetFriendly" then
 
-
     if check_order(thisEntity) then
-
         if IsValidEntity(friends_for_ability[1]) then
+
             for _,friend in ipairs(friends_for_ability) do
 
                 if friend:GetHealthPercent() <= thisEntity.ability:GetSpecialValueFor("thealth")
-                and (thisEntity:GetAbsOrigin() - friend:GetAbsOrigin()):Length2D()  <= thisEntity.ability:GetCastRange(thisEntity:GetAbsOrigin(), thisEntity)
+                and (thisEntity:GetAbsOrigin() - friend:GetAbsOrigin()):Length2D() <= thisEntity.ability:GetCastRange(thisEntity:GetAbsOrigin(), thisEntity)
                 and not friend:HasModifier(check_mod(thisEntity.ability))
                   then
                     thisEntity:CastAbilityOnTarget(friend, thisEntity.ability, 1)
-                    print(thisEntity.ability:GetAbilityName().." targetFriendly")
+                    --print(thisEntity.ability:GetAbilityName().." targetFriendly")
                     return nReturn
                   end
             end
@@ -385,7 +382,6 @@ for _, target in pairs(enemy_for_attack) do
     if IsValidEntity(target) and not target:IsCourier() and target:GetUnitName() ~= "npc_teleport"
     and (target:GetAbsOrigin() - thisEntity.tower:GetAbsOrigin()):Length2D() > 800  and
     not target:IsInvulnerable() and not target:IsAttackImmune() then
-
         enemy = target
         break
     end

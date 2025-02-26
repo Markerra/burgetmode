@@ -49,7 +49,7 @@ function sergopy_voice:OnSpellStart()
             enemy:AddNewModifier(caster, ability, "modifier_silence", { duration = silence_duration })
         end
 
-        if not enemy.wave_creep then
+        if not enemy.wave_creep or not enemy:GetUnitName() == "npc_boss_roshan" then
             enemy:AddNewModifier(caster, ability, "modifier_sergopy_voice_pull", { duration = pull_duration })
         end
 

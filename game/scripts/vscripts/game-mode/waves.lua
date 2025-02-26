@@ -16,15 +16,30 @@ wave_types = {
 	--[[#3]] { 0, false, { "npc_boar_a", "npc_boar_b", "npc_boar_b", "npc_boar_b" },
 	 			{ "npc_boar_a", "npc_boar_a", "npc_boar_b", "npc_boar_b" } },
 
-  --[[#4]] { 0, false, { "npc_blood_seeker", "npc_blood_seeker", "npc_ghoul", "npc_ghoul" },
+  --[[#4]] { 0, true, { "npc_blood_seeker", "npc_blood_seeker", "npc_ghoul", "npc_ghoul" },
         { "npc_blood_seeker", "npc_ghoul", "npc_ghoul", "npc_ghoul" } },
+
+  --[[#5]] { 0, false, { "npc_satyr_a", "npc_satyr_a", "npc_satyr_b", "npc_satyr_b" },
+        { "npc_satyr_a", "npc_satyr_b", "npc_satyr_b", "npc_satyr_b" } },
+
+  --[[#6]] { 0, false, { "npc_radiant_troop_a", "npc_radiant_troop_a", "npc_radiant_troop_b", "npc_radiant_troop_b" },
+        { "npc_radiant_troop_a", "npc_radiant_troop_b", "npc_radiant_troop_b", "npc_radiant_troop_b" } },
+
+  --[[#7]] { 0, false, { "npc_wraith_creep_a", "npc_wraith_creep_a", "npc_wraith_creep_b", "npc_wraith_creep_b" },
+        { "npc_wraith_creep_a", "npc_wraith_creep_a", "npc_wraith_creep_a", "npc_wraith_creep_b" } },
+
+  --[[#8]] { 0, false, { "npc_gold_creep", "npc_gold_creep", "npc_gold_creep", "npc_gold_creep" } },
+
+  --[[#9]] { 0, false, { "npc_xp_creep", "npc_xp_creep", "npc_xp_creep", "npc_xp_creep" } },
+
+  --[[#10]] { 3, false, { "npc_boss_roshan" },--[[ { "npc_boss_warden" } ]]},
 
 }
 
 --[[
 
-{ 0, 			     false,      {"creep_1", 	"creep_2",   ... }      {"creep_2", "creep_1",   ... },      }
-  ↑ type       ↑ has mkb     ↑ unit1     ↑ unit2 (1st variant)    ↑ unit2    ↑ unit1 (2nd variant)
+{ 0, 			     false,    { {"creep_1", 	"creep_2",   ... },      {"creep_2", "creep_1",   ... },       } }
+  ↑ type       ↑ has mkb      ↑ unit1     ↑ unit2 (1st variant)     ↑ unit2    ↑ unit1 (2nd variant)
   0 > normal
   1 > necr
   2 > special
@@ -37,9 +52,19 @@ wave_abilities = {
 
   --[[#2]] { "ursa_red_clap", "ursa_yellow_swipes", "furbolg_enrage_attack_speed" },
 
-  --[[#3]] { "boar_root", "boar_slow", "boar_amp"},
+  --[[#3]] { "boar_root", "boar_slow", "boar_amp" },
 
-  --[[#4]] { "blood_seeker_attack", "blood_seeker_rupture", "ghoul_wounds", "ghoul_infest"},
+  --[[#4]] { "blood_seeker_attack", "blood_seeker_rupture", "ghoul_infest", "ghoul_wounds" },
+
+  --[[#5]] { "satyr_stun", "satyr_magic_res", "satyr_purge", "satyr_linken" },
+
+  --[[#6]] { "radiant_troop_armor", "radiant_troop_root", "radiant_troop_stone", "radiant_troop_blade_mail" },
+
+  --[[#7]] { "wraith_creep_stun", "wraith_creep_crit", "wraith_creep_stun_red", "wraith_creep_reincarnate_red" },
+
+  --[[#8]] { "gold_creep_bounty" },
+
+  --[[#9]] { "xp_creep_bounty" },
 
 }
 
@@ -143,7 +168,7 @@ function CreatePortal( pos, data )
 
 		for i=1, #units do
 			if units == false then return false end
-			local creep = CreateUnitByName(units[i], pos, true, nil, nil, DOTA_TEAM_NEUTRALS)
+			local creep = CreateUnitByName(units[i], pos, true, nil, nil, DOTA_TEAM_BADGUYS)
 			allys[i] = creep
       if GameMode:GetMkb(data.wave) == true then
         creep:AddNewModifier(creep, nil, "modifier_wave_mkb", nil) end
@@ -166,11 +191,13 @@ function CreatePortal( pos, data )
 end
 
 function GameMode:SpawnWave( team, number, level, give_lownet )
+    local player = nil
+
     for player_id = 0, PlayerResource:GetPlayerCount() - 1 do
-        local player = PlayerResource:GetPlayer(player_id)
+        player = PlayerResource:GetPlayer(player_id)
         if player and player:GetTeamNumber() == team then
-            if player.defeated == true or not PlayerResource:IsValidPlayerID(player_id) then
-            	local name = PlayerResource:GetPlayerName(player_id)
+            if player.defeated == true or not PlayerResource:IsValidPlayerID(player_id) or not player:GetAssignedHero() then
+              local name = PlayerResource:GetPlayerName(player_id)
             	print("SpawnWave() - player <"..name.."> is defeated or does not exist") 
             	return end
         end
@@ -187,5 +214,9 @@ function GameMode:SpawnWave( team, number, level, give_lownet )
    		CreatePortal(point, {units=units, lvl=level, wave=number})
    	else
       CreatePortal(point, {units=units, lvl=level, wave=self:GetWaveCreeps(#wave_types-number) * (-1)})
+    end
+
+    if give_lownet then
+      print("LOWNET WAVE FOR: "..PlayerResource:GetPlayerName(player:GetPlayerID()))
     end
 end

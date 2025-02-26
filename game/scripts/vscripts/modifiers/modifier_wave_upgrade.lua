@@ -16,6 +16,12 @@ function modifier_wave_upgrade:DeclareFunctions()
   }
 end
 
+function modifier_wave_upgrade:CheckState()
+	return {
+		[MODIFIER_STATE_FORCED_FLYING_VISION] = true
+	}
+end
+
 function modifier_wave_upgrade:OnCreated( kv )
 	if not IsServer() then return end
 

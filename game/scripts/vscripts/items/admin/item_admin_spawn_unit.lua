@@ -8,7 +8,9 @@ function item_admin_spawn_unit:OnSpellStart()
 
 	require("game-mode/waves")
 
-	local units = GameMode:GetWaveCreeps(4)
+	local units = {
+		"npc_boss_roshan"
+	}
 	local unit_team = caster:GetTeamNumber() + 1
 	local level = 1
 
@@ -20,7 +22,7 @@ function item_admin_spawn_unit:OnSpellStart()
     	FindClearSpaceForUnit(creep, point, true)
     	creep:CreatureLevelUp( (creep:GetLevel() - level) * (-1) )
     	EmitSoundOnClient("NeutralStack.Success", caster)
-	end  
+	end
 end
 
 item_admin_spawn_unit_modifier = class({})

@@ -64,8 +64,7 @@ function ursa_red_clap:OnSpellStart()
 				attacker=caster,
 				damage=damage,
 				damage_type=self:GetAbilityDamageType(),
-				DOTA_DAMAGE_FLAG_NONE,
-				self,
+				ability=self
 			})
 		end
 	

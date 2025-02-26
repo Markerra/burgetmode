@@ -47,7 +47,7 @@ end
 modifier_marker_armlet = class({})
 
 function modifier_marker_armlet:IsHidden() return true end
-function modifier_marker_armlet:IsPurgable() return false end
+function modifier_marker_armlet:IsPurgable() return true end
 function modifier_marker_armlet:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,

@@ -1,22 +1,17 @@
 LinkLuaModifier("modifier_blood_seeker_rupture_debuff", "abilities/neutral/waves/blood_seeker_rupture", LUA_MODIFIER_MOTION_NONE)
 
-
 blood_seeker_rupture = class({})
 
-function blood_seeker_rupture:OnSpellStart(target)
-	local hTarget = target or self:GetCursorTarget()
+function blood_seeker_rupture:OnSpellStart()
+	local hTarget = self:GetCursorTarget()
 	local caster = self:GetCaster()
 
 	if not IsServer() then return end
-	
-	if target then
-		hTarget:AddNewModifier(caster, self, "modifier_blood_seeker_rupture_debuff", {duration = 0.3})
-	else
-		if hTarget:TriggerSpellAbsorb(self) then return end
-		hTarget:AddNewModifier(caster, self, "modifier_blood_seeker_rupture_debuff", {duration = self:GetSpecialValueFor("duration")})
-		EmitSoundOn("Hero_Bloodseeker.Rupture.Cast", caster)
-		EmitSoundOn("Hero_Bloodseeker.Rupture", hTarget)
-	end
+
+	if hTarget:TriggerSpellAbsorb(self) then return end
+	hTarget:AddNewModifier(caster, self, "modifier_blood_seeker_rupture_debuff", {duration = self:GetSpecialValueFor("duration")})
+	EmitSoundOn("Hero_Bloodseeker.Rupture.Cast", caster)
+	EmitSoundOn("Hero_Bloodseeker.Rupture", hTarget)
 end
 
 modifier_blood_seeker_rupture_debuff = class({})
@@ -59,9 +54,11 @@ if IsServer() then
 			self.movedamage = self.movedamage_think
 		
 			local move_damage = self:CalculateDistance(self.prevLoc, self.parent) * self.movedamage
-			if move_damage > 0 then
+			if move_damage > 0 and self:GetParent():IsAlive() then
 				ApplyDamage({victim = self.parent, attacker = self.caster, damage = move_damage, damage_type = self.ability:GetAbilityDamageType(), damage_flags = DOTA_DAMAGE_FLAG_NONE, ability = self.ability})
-				self.caster:Heal(move_damage * (self.ability:GetSpecialValueFor("regen_pct") / 100), self.ability)
+				local heal_hp = move_damage * (self.ability:GetSpecialValueFor("regen_pct") / 100)
+				self.caster:Heal(heal_hp, self.ability)
+				SendOverheadEventMessage(nil, 10, self.caster, heal_hp, nil)
 				local healFX = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_POINT_FOLLOW, self.caster)
 				ParticleManager:ReleaseParticleIndex(healFX)
 			end

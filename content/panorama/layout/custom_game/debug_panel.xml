@@ -7,7 +7,8 @@
 	</scripts>
 
 	<Panel class="root" hittest="false">
-		<Panel id="debug_panel" class="hidden">
+		<Panel id="mouse_over" />
+		<Panel id="debug_panel" class="DebugPanel_hidden">
 			<Panel id="buttons_panel">
 				<Panel id="spawn_hero">
 					<Panel id="spawn_hero_select">
@@ -115,9 +116,9 @@
 					</Button>
 				</Panel>
 			</Panel>
-			<Button id="close_menu_button">
+			<!--<Button id="close_menu_button">
 					<Label id="close_menu_button_text" class="debug_button_text" text="<"/>
-			</Button>
+			</Button> !-->
 		</Panel>
 	</Panel>
 </root>

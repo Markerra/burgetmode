@@ -35,7 +35,8 @@ function modifier_blood_seeker_attack:OnAttackLanded( event )
 	if attacker == caster then
 		if RollPercentage(chance) then
 			local hp = event.damage * (lifesteal / 100)
-			caster:Heal( hp ,caster )
+			caster:Heal( hp, caster )
+			SendOverheadEventMessage(nil, 10, caster, hp, nil)
 			self:PlayEffects()
 			target:AddNewModifier(
 				caster, 

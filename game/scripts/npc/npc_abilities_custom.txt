@@ -441,7 +441,7 @@
 		{
 			"bonus_agility"
 			{
-				"value"			"2 2.5 3 3.5" // бонус к ловкости за каждую смерть\
+				"value"			"2 2.5 3 3.5" // бонус к ловкости за каждую смерть
 				"special_bonus_unique_maxim_herald_agility"	"+1.5"	// талант
 			}
 			"bonus_damage"
@@ -780,6 +780,7 @@
 		"ScriptFile"					"abilities/marker/marker_armlet"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
 		"AbilityTextureName"			"marker/marker_armlet_deactive"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityCooldown"				"3"
 		"MaxLevel"						"1"
 		"Innate"						"1"
@@ -1187,6 +1188,7 @@
 		}	
 	}
 
+
 	//=================================================================================================================
 	// Fountain: Улучшение Фонтана
 	//=================================================================================================================
@@ -1444,7 +1446,7 @@
 		"AbilityCastPoint"				"0.33"
 
 		"MaxLevel" 						"4"
-		"AbilityCastRange"				"450"
+		"AbilityCastRange"				"550"
 		"AbilityCooldown"				"24.0"
 
 		"AbilityValues"
@@ -1468,7 +1470,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.2"
 
 		"MaxLevel" 						"4"
 		"AbilityCastRange"				"420"
@@ -1479,7 +1481,7 @@
 		{
 			"slow"					"60" // (%)
 			"bonus_vamp"			"40" // (%)
-			"duration"				"2 3 4 5"
+			"duration"				"4 5 6 7"
 		}
 	}
 
@@ -1487,28 +1489,531 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/neutral/waves/ghoul_infest"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityTextureName"			"life_stealer_infest"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
 		"AbilityCastPoint"				"0.2"
 
-		"MaxLevel" 						"1"
-		"AbilityCastRange"				"200"
+		"MaxLevel" 						"4"
+		"AbilityCastRange"				"300"
 		"AbilityCooldown"				"25.0"
 		"AbilityManaCost"				"100"
 
 		"AbilityValues"
 		{	
-			"bonus_health"			"50" // (%) от своего здоровья
-			"bonus_dmg"				"50" // (%) от своего урона
-			"bonus_ms"				"20" // (%)
+			"bonus_health"			"50 55 60 65" // (%)
+			"bonus_dmg"				"7 11 15 19"
+			"bonus_ms"				"20 25 30 35" // (%)
+			"heal_amt"				"80" // (%)
+			"aoe_damage"			"75 100 125 150"
 
-			"thealth"				"30" // (%) (AI)
+			"thealth"				"50" // (%) (AI)
 		}	
+	}
+
+	"satyr_stun"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/satyr_stun"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"neutral/satyr_stun"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"			""
+		"AbilityCastPoint"				"0.53"
+
+		"MaxLevel" 						"4"
+		"AbilityCooldown"				"9.0"
+		"AbilityManaCost"				"85"
+
+		"AbilityValues"
+		{
+			"damage"				"100 120 140 160"
+			"radius"				"320"
+			"duration"				"1 2 3 4"
+			"slow"					"80"
+			"slow_duration"			"0.45"
+		}
+	}
+
+	"satyr_magic_res"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/satyr_magic_res"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityTextureName"			"neutral/satyr_magic_res"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel" 						"4"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"radius"				"600"
+			"magic_res"				"60" // (%)
+		}
+	}
+
+	"satyr_purge"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/satyr_purge"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"neutral/satyr_purge"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		"AbilityCastPoint"				"0.83"
+
+		"MaxLevel" 						"4"
+		"AbilityCastRange"				"850"
+		"AbilityCooldown"				"9.0"
+
+		"AbilityValues"
+		{
+			"damage"				"35 75 105 135"
+			"slow"					"40 50 60 70" // (%)
+			"duration"				"5 6 7 8"
+		}
+	}
+
+	"satyr_linken"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/satyr_linken"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"neutral/satyr_linken"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"IsBreakable"					"1"
+		"MaxLevel" 						"4"
+
+		"AbilityCooldown"				"4.0"
+
+		"AbilityValues"
+		{
+			"damage"				"150 175 200 225"
+		}
+	}
+
+
+	"radiant_troop_armor"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/radiant_troop_armor"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityTextureName"			"neutral/radiant_troop_armor"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel" 						"4"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"phys_res"				"60" // (%)
+			"radius"				"600"
+		}
+	}
+
+	"radiant_troop_root"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/radiant_troop_root"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"neutral/radiant_troop_root"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel" 						"4"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"damage"				"110 140 170 200"
+			"chance"				"35 40 45 50" // (%)
+			"duration"				"2 3 4 5"
+		}
+	}
+
+	"radiant_troop_blade_mail"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/radiant_troop_blade_mail"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"neutral/radiant_troop_blade_mail"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel" 						"4"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"damage_reflection"		"50 60 70 80" // (%)
+			"chance"				"35 40 45 50" // (%)
+		}
+	}
+
+	"radiant_troop_stone"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/radiant_troop_stone"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"neutral/radiant_troop_stone"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		"MaxLevel" 						"4"
+		"AbilityCastRange"				"300"
+
+		"AbilityCooldown"				"13"
+		"AbilityManaCost"				"75"
+
+		"AbilityValues"
+		{
+			"damage"				"60 100 140 175"
+			"tick_interval"			"0.25"
+			"num_ticks"				"4"
+			"stun_duration"			"1 2 3 4"
+			"projectile_duration"	"0.5"
+			"radius"				"300"
+		}
+	}
+
+	"brood_spider"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/brood_spider"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"neutral/brood_spider"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		"AbilityCastPoint"				"0.1"
+
+		"MaxLevel" 						"4"
+		"AbilityCooldown"				"18.0"
+		"AbilityManaCost"				"85"
+
+		"AbilityValues"
+		{
+			"duration"				"30.0"
+		}
+	}
+
+	"brood_poison"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/brood_poison"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"neutral/brood_poison"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel" 						"4"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"chance"				"35 40 45 50" // (%)
+			"slow"					"50 60 70 80" // (%)
+			"duration"				"2 3 4 5"
+		}
+	}
+
+	"wraith_creep_stun"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/wraith_creep_stun"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"skeleton_king_hellfire_blast"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"AbilityCastPoint"				"0.28"
+
+		"MaxLevel" 						"4"
+		"AbilityCastRange"				"550"
+		"AbilityCooldown"				"14.0"
+
+		"AbilityValues"
+		{
+			"stun_damage"			"70 105 135 165"
+			"stun_duration"			"2.5"
+			"burn_damage"			"20 35 50 65"
+			"slow"					"30 40 50 60" // (%)
+			"slow_duration"			"0.5"
+		}
+	}
+
+	"wraith_creep_crit"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/wraith_creep_crit"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"skeleton_king_mortal_strike"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel" 						"4"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"chance"				"40 50 60 70" // (%)
+			"crit_damage"			"180 200 220 240"
+		}
+	}
+
+	"wraith_creep_reincarnate_red"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/wraith_creep_reincarnate_red"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"neutral/wraith_creep_reincarnate_red"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel" 						"1"
+		"IsBreakable"					"1"
+
+		"AbilityValues"
+		{
+			"reincarnate_time"			"3.0"
+			"health_amp"				"2"
+			"health_cap"				"1050"
+			"attackslow"				"60"
+			"slow"						"80" // (%)
+			"slow_radius"				"900"
+			"slow_duration"				"5.0"
+		}
+	}
+
+	"wraith_creep_stun_red"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/wraith_creep_stun_red"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"neutral/wraith_creep_stun_red"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"AbilityCastPoint"				"0.28"
+
+		"MaxLevel" 						"4"
+		"AbilityCastRange"				"550"
+		"AbilityCooldown"				"9.0"
+
+		"AbilityValues"
+		{
+			"stun_damage"			"30 50 70 90"
+			"stun_duration"			"0.7"
+			"burn_damage"			"35 50 65 80"
+			"slow"					"30 40 50 60" // (%)
+			"slow_duration"			"4.5"
+		}
+	}
+
+	"gold_creep_bounty"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/gold_creep_bounty"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"neutral/gold_creep_bounty"
+		"MaxLevel" 						"1"
+		"IsBreakable"					"0"
+
+		"AbilityValues"
+		{
+			"bounty"				"100"
+			"gpa"					"1"
+		}
+	}
+
+	"xp_creep_bounty"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/waves/xp_creep_bounty"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"neutral/xp_creep_bounty"
+		"MaxLevel" 						"1"
+		"IsBreakable"					"0"
+
+		"AbilityValues"
+		{
+			"bounty"				"205"
+			"xpa"					"1"
+		}
+	}
+
+	"boss_roshan_lotus"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/boss/boss_roshan_lotus"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"neutral/boss_roshan_lotus"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"IsBreakable"					"0"
+		"MaxLevel" 						"1"
+
+		"AbilityCooldown"				"12"
+
+		"AbilityValues"
+		{
+			"heal_pct"				"50" // (%)
+			"bonus_damage"			"100"
+		}
+	}
+
+	"boss_roshan_clap"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/boss/boss_roshan_clap"
+		"AbilityTextureName"			"neutral/boss_roshan_clap"
+		"MaxLevel"						"1"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"120"
+
+		"AbilityValues"
+		{
+			"amout"					"12"
+			"shock_damage"			"250"
+			"shock_speed"			"1300"
+			"shock_width"			"200"
+			"pull_duration"			"0.2"
+			"pull_distance"			"280"
+			"movement_slow"			"95"
+			"slow_duration"			"1.4"
+		}
+	}
+
+	"boss_roshan_amp"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/boss/boss_roshan_amp"
+		"AbilityTextureName"			"neutral/boss_roshan_amp"
+		"MaxLevel"						"1"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.24"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"200"
+
+		"AbilityValues"
+		{
+			"delay"					"5.0"
+			"heal_pct"				"80" // (%)
+			"bonus_damage"			"150"
+			"bonus_attackspeed"		"70"
+			"bonus_armor"			"10"
+			"bonus_magic_res"		"40" // (%)
+			"bonus_spell_amp"		"30" // (%)
+			"duration"				"10"
+			"fear_duration"			"2"
+		}
+	}
+
+	"boss_roshan_rocks"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/boss/boss_roshan_rocks"
+		"AbilityTextureName"			"neutral/boss_roshan_rocks"
+		"MaxLevel"						"1"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18"
+		"AbilityManaCost"				"250"
+
+		"AbilityValues"
+		{
+			"delay"					"4.0"
+			"amout"					"45"
+			"repeat"				"8.0"
+			"damage"				"290"
+			"radius"				"300"
+			"heal_pct"				"60" // (%)
+			"slow"					"50" // (%)
+			"slow_duration"			"4.5"
+			"stun_duration"			"2.0"
+		}
+	}
+
+	"boss_roshan_dispel"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/boss/boss_roshan_dispel"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"neutral/boss_roshan_dispel"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"IsBreakable"					"1"
+		"MaxLevel" 						"1"
+
+		"AbilityValues"
+		{
+			"radius"				"2100"
+			"movespeed_cap"			"70" // (%)
+			"dispel"				"5"
+		}
 	}
 
 

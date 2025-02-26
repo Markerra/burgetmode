@@ -10,14 +10,7 @@ function item_maxim_abaddon:OnSpellStart()
 	if not self:GetCaster():HasAbility("maxim_isaac") then return end
 
 	local caster = self:GetCaster()
-
-	exp_radius						 = self:GetSpecialValueFor("exp_radius")
-	duration  						 = self:GetSpecialValueFor("duration")
-	fear_duration_item_maxim_abaddon = self:GetSpecialValueFor("fear_duration")
-	chance_item_maxim_abaddon 	   	 = self:GetSpecialValueFor("fear_chance")
-	ms_bonus_item_maxim_abaddon	     = self:GetSpecialValueFor("ms_bonus")
-	dmg_bonus_item_maxim_abaddon	 = self:GetSpecialValueFor("dmg_bonus")
-	exp_dmg						  	 = self:GetSpecialValueFor("exp_dmg")
+	local duration = self:GetSpecialValueFor("duration")
 
 	is_explosion = false
 
@@ -52,18 +45,18 @@ function modifier_item_maxim_abaddon:DeclareFunctions()
 end
 
 function modifier_item_maxim_abaddon:GetModifierBaseAttack_BonusDamage()
-	return dmg_bonus_item_maxim_abaddon
+	return self:GetSpecialValueFor("dmg_bonus")
 end
 
 function modifier_item_maxim_abaddon:GetModifierMoveSpeedBonus_Constant()
-	return ms_bonus_item_maxim_abaddon
+	return self:GetSpecialValueFor("ms_bonus")
 end
 
 function modifier_item_maxim_abaddon:OnIntervalThink()
 	local new_maxhealth = self:GetParent():GetMaxHealth() * 0.5
 	if self:GetParent():GetHealth() <= new_maxhealth and not is_explosion == true then -- при хп < 50%
-		local dmg 		=	exp_dmg
-		local radius 	=   exp_radius or 500
+		local dmg 		=	self:GetSpecialValueFor("exp_dmg")
+		local radius 	=   self:GetSpecialValueFor("exp_radius") or 500
 		local caster 	=	self:GetParent()
 		local enemies   =   FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, 1 + 18, 0, 0, false)
     	for _,value in ipairs(enemies) do
@@ -92,21 +85,22 @@ end
 
 modifier_fear_item_maxim_abaddon = {}
 
-
 function modifier_fear_item_maxim_abaddon:IsHidden() return true end
+function modifier_fear_item_maxim_abaddon:IsDebuff() return true end
 function modifier_fear_item_maxim_abaddon:IsPurgable() return true end
+
 function modifier_fear_item_maxim_abaddon:DeclareFunctions()
     return {
-        MODIFIER_EVENT_ON_ATTACK_LANDED,
+        MODIFIER_EVENT_ON_ATTACK_LANDED
     }
 end
 
 function modifier_fear_item_maxim_abaddon:OnAttackLanded(params)
     if not IsServer() then return end
     if params.attacker == self:GetParent() then
-    	local chance = chance_item_maxim_abaddon
+    	local chance = self:GetSpecialValueFor("fear_chance")
         if RollPercentage(chance) then
-        	local duration = fear_duration_item_maxim_abaddon
+        	local duration = self:GetSpecialValueFor("fear_duration")
             params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_feardebuff_item_maxim_abaddon", {duration = duration})
         end
     end
@@ -123,34 +117,29 @@ function modifier_feardebuff_item_maxim_abaddon:OnCreated()
 		self.neutral = true
 	end
 
-	-- find enemy fountain
-	local buildings = FindUnitsInRadius(
-		self:GetParent():GetTeamNumber(),
-		Vector(0,0,0),
-		nil,
-		FIND_UNITS_EVERYWHERE,
-		DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-		DOTA_UNIT_TARGET_BUILDING,
-		DOTA_UNIT_TARGET_FLAG_INVULNERABLE,
-		0,
-		false
-	)
+	local hero = self:GetParent()
 
-	local fountain = nil
-	for _,building in pairs(buildings) do
-		if building:GetClassname()=="ent_dota_fountain" then
-			fountain = building
-			break
-		end
+	local alltowers = {}
+
+	local towerCount = 8 -- текущее кол-во таверов на карте
+
+	for i=1, towerCount do
+		local name = "dota_custom"..tostring(i).."_tower_main"
+    	local towers = Entities:FindAllByName(name)
+    	table.insert(alltowers, towers)
 	end
 
-	if not fountain then return end
+	local targetTower = alltowers[hero:GetTeamNumber()-5]
+
+	if not targetTower then return end
 
 	if self:GetParent():IsCreep() then
-		self:GetParent():SetForceAttackTargetAlly( fountain ) -- for creeps
+		self:GetParent():SetForceAttackTargetAlly( targetTower[1] ) -- for creeps
 	end
 
-	self:GetParent():MoveToPosition( fountain:GetOrigin() )
+	self:GetParent():MoveToPosition( targetTower[1]:GetOrigin() )
+
+	EmitSoundOn("Hero_DarkWillow.Fear.Target", self:GetParent())
 end
 
 function modifier_feardebuff_item_maxim_abaddon:OnDestroy()

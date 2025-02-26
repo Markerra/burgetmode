@@ -4,16 +4,18 @@ _G.max_timer = 0
 _G.game_end = false
 
 _G.start_wave = 1
+_G.test_waves = false
 _G.low_net_waves = { 6, 10, 15 }
 
 _G.boss_stage = false
 
 _G.portal_delay = 5.0
 
-_G.enable_waves = false
+_G.enable_waves = true
 
 local winner_team = nil
 local current_player_count = 1
+local test_waves_first = true
 
 require("game-mode/custom_params")
 require("game-mode/waves")
@@ -118,13 +120,14 @@ end
 function GameMode:InitFast()
 	local mode = GameRules:GetGameModeEntity()
 
-	mode:SetCustomGameForceHero("npc_dota_hero_huskar")
+	mode:SetCustomGameForceHero("npc_dota_hero_bristleback")
 
 	PlayerResource:SetCustomTeamAssignment(0, DOTA_TEAM_CUSTOM_1)
 
 	GameRules:SetStrategyTime(0)
 	GameRules:SetPreGameTime(25)
 	GameRules:SetCustomGameSetupTimeout(0)
+	if test_waves then GameRules:SetPreGameTime(3) end
 end
 
 
@@ -243,13 +246,24 @@ end
 
 function MaxTime(n)
 	local t = 70
-	if n >= 1 then t = 25 end
-	if n >= 2 then t = 35 end 
-	if n >= 3 then t = 45 end 
-	if n >= 10 then t = 75 end
-	if n >= 15 then t = 90 end
+	if n >= 1  then t = 25  end
+	if n >= 2  then t = 45  end 
+	if n >= 3  then t = 65  end 
+	if n >= 11 then t = 85  end
+	if n >= 15 then t = 90  end
 	if n >= 25 then t = 120 end
+	if BossTime(n) then 
+	 t = 150 - portal_delay end	
 	return t + portal_delay
+end
+
+function BossTime(n)
+	local b = false
+	if n == 10 then b = true elseif
+	   n == 20 then b = true elseif 
+	   n == 30 then b = true else
+				    b = false end
+	return b
 end
 
 function CreepLevel(n)
@@ -265,6 +279,9 @@ end
 function GetLowestNet( getTeam )
 	local players = { }
 	local networth_table = { }
+	--for i=1, #low_net_waves do
+	--	if not GameMode.current_wave 
+	--end
     for player_id = 0, PlayerResource:GetPlayerCount() - 1 do
         local networth = PlayerResource:GetNetWorth(player_id)
         table.insert(players, player_id)
@@ -280,31 +297,45 @@ function GetLowestNet( getTeam )
     end
 end
 
+local gtimer = timer
+
 function waves_think()
 	if enable_waves == false then return end
 	if game_end == true then return end
 	timer = timer + 1
+	gtimer = gtimer + 1
 	max_timer = MaxTime(GameMode.current_wave)
+	boss_timer = BossTime(GameMode.current_wave)
 	--print("Next wave in: "..max_timer-timer.."s")
 
-	if not boss_stage then
+	if boss_timer or boss_stage then
+		local wave_number = GameMode.current_wave
+		local wave_name = "?????"
+
+		for id=0, 8 do
+			if PlayerResource:IsValidPlayerID(id) then
+				local max = max_timer
+				if boss_stage then max = 0 end
+				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(id), 'timer_progress',  {upgrade = true, necro = false , units = -1, units_max = -1, time = timer, max = boss_timer, name = wave_name, skills = skills, mkb = mkb, number = wave_number})
+			end
+		end
+
+		if boss_timer then
+			print("Current wave: "..wave_number.." (BOSS WAVE)")
+			GameMode:SpawnBoss( wave_number )
+		end
+	end
+
+	if not boss_stage and not boss_timer then
 		local wave_number = GameMode.current_wave
 		local wave_name = GameMode:GetWave(wave_number)
 		local skills = GameMode:GetWaveSkills(wave_number)
 		local mkb = GameMode:GetMkb(wave_number)
-		--print("skills: "..skills)
-		--print("mkb: "..mkb)
 		for id=0, 8 do
 			if PlayerResource:IsValidPlayerID(id) then
 				local player = PlayerResource:GetPlayer(id)
 				GameMode:SetActiveWave(id)
-				local units = GameMode:GetWaveUnits(GameMode.current_wave, id).units
-				local units_max = GameMode:GetWaveUnits(GameMode.current_wave, id).units_max
-				if player.active_wave then
-					CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(id), 'timer_progress',  {upgrade = true, necro = false , units = units, units_max = units_max, time = timer, max = max_timer, name = GameMode:GetWave(GameMode.current_wave), skills = skills, mkb = 0, gold = false, number = GameMode.current_wave})
-				else
-					CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(id), 'timer_progress',  {upgrade = true, necro = false , units = -1, units_max = -1, time = timer, max = max_timer, name = wave_name, skills = skills, mkb = mkb, gold = false, number = wave_number})
-				end
+				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(id), 'timer_progress',  {upgrade = true, necro = false , units = -1, units_max = -1, time = timer, max = max_timer, name = GameMode:GetWave(GameMode.current_wave), skills = skills, mkb = 0, number = GameMode.current_wave})
 			end
 		end
 		if timer == max_timer then
@@ -316,6 +347,13 @@ function waves_think()
 				GameMode:SpawnWave( team, wave_number, level, give_lownet )
 			end
 		timer = 0
+		elseif test_waves and test_waves_first then
+			test_waves_first = false
+			for team=DOTA_TEAM_CUSTOM_1, DOTA_TEAM_CUSTOM_8 do
+			if team == GetLowestNet( true ) then give_lownet = true end
+				local level = CreepLevel(wave_number)
+				GameMode:SpawnWave( team, wave_number, level, give_lownet )
+			end
 		end
 	end
 

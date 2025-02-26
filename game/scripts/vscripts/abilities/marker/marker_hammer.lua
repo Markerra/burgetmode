@@ -1,5 +1,3 @@
-require("utils/timers")
-
 LinkLuaModifier("marker_hammer_debuff", "abilities/marker/marker_hammer", LUA_MODIFIER_MOTION_NONE)
 
 marker_hammer = class({})
@@ -114,6 +112,7 @@ function marker_hammer:OnProjectileHit(target)
     		ability = self,
     	})
         unit:AddNewModifier(caster, self, "marker_hammer_debuff", {duration = self:GetSpecialValueFor("duration")})
+        ScreenShake(unit:GetAbsOrigin(), 100, 1.1, 0.3, 1200, 0, true)
     end
 
     self:SetActivated(true)

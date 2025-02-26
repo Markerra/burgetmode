@@ -11,11 +11,9 @@ function item_maxim_relevation:OnSpellStart()
 	--if not caster:HasAbility("maxim_isaac") then return end
 
 	bat = self:GetSpecialValueFor("new_bat")
-	print("BAT: "..self:GetCaster():GetBaseAttackTime())
 	local duration = self:GetSpecialValueFor("duration")
 	caster:AddNewModifier(caster, self, "modifier_item_maxim_relevation", {duration = duration})
 	caster:AddNewModifier(caster, self, "modifier_item_maxim_relevation_free_movement", {duration = duration})
-	print("after BAT: "..self:GetCaster():GetBaseAttackTime())
 	EmitSoundOn("item_maxim_relevation_cast", caster)
 
 	local removed_item = caster:TakeItem(self)

@@ -48,3 +48,13 @@
 	}
 	ObtainKey()
 })()
+
+GameEvents.Subscribe_custom("panorama_cooldown_error", function(data) 
+{
+	GameEvents.SendEventClientSide("dota_hud_error_message", 
+	{
+		"splitscreenplayer": 0,
+		"reason": data.reason || 80,
+		"message": $.Localize(data.message) + data.time
+	})
+})

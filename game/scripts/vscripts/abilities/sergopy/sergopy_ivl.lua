@@ -72,14 +72,14 @@ modifier_sergopy_ivl_debuff = class({})
 function modifier_sergopy_ivl_debuff:IsHidden() return false end
 function modifier_sergopy_ivl_debuff:IsDebuff() return true end
 function modifier_sergopy_ivl_debuff:IsPurgable() return false end
-function modifier_sergopy_ivl_debuff:IsPurgeException() return true end -- можно развеять только сильным развеиванием
+function modifier_sergopy_ivl_debuff:IsPurgeException() return true end
 
 function modifier_sergopy_ivl_debuff:OnCreated()
     self:SetHasCustomTransmitterData( true )
 
     if not IsServer() then return end
 
-    self.hp_regen = self:GetParent():GetHealthRegen()
+    self.hp_regen = self:GetParent():GetHealthRegen() * (1 - self:GetParent():GetStatusResistance())
 
     self:StartIntervalThink(1.0)
 
@@ -91,7 +91,7 @@ function modifier_sergopy_ivl_debuff:OnCreated()
     ParticleManager:SetParticleControl(particle2, 3, self:GetParent():GetAbsOrigin())
     ParticleManager:ReleaseParticleIndex(particle2)
     self.particle = ParticleManager:CreateParticle("particles/econ/events/fall_2022/regen/fountain_regen_fall2022_lvl2.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-    ParticleManager:SetParticleControl(self.particle, 1, Vector(radius, 0, 0)) -- Radius
+    ParticleManager:SetParticleControl(self.particle, 1, Vector(radius, 0, 0))
 
     EmitSoundOn("Hero_Disruptor.StaticStorm.End", self:GetParent())
     
@@ -129,7 +129,6 @@ function modifier_sergopy_ivl_debuff:OnRefresh()
     ParticleManager:SetParticleControl(particle2, 3, self:GetParent():GetAbsOrigin())
     ParticleManager:ReleaseParticleIndex(particle2)
     EmitSoundOn("Hero_Disruptor.Attack", self:GetParent())
-    self:SendBuffRefreshToClients()
 end
 
 function modifier_sergopy_ivl_debuff:OnIntervalThink()
@@ -165,7 +164,9 @@ function modifier_sergopy_ivl_debuff:GetModifierConstantHealthRegen()
     local regen_reduction = self:GetAbility():GetSpecialValueFor("regen_reduction")
     local bonus_reduction = -bonus * stacks
     local total = -(regen_reduction / 100) + (bonus_reduction / 100)
-    return total * self.hp_regen
+    if self.hp_regen then
+        return total * self.hp_regen
+    else return total * self.hp_regen end
 end
 
 function modifier_sergopy_ivl_debuff:GetModifierMoveSpeedBonus_Percentage()
