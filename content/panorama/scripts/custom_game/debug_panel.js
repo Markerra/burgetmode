@@ -1,23 +1,29 @@
+let isAllowed = false
+
 const mouse_over = $.GetContextPanel().FindChildTraverse("mouse_over")
 const spawnSelect_menu = $("#spawn_hero_select")
 const giveSelect_menu = $("#give_item_select")
 
 mouse_over.SetPanelEvent('onmouseover', function() {
-   ShowDebugPanel()
+    if (isAllowed) {
+        ShowDebugPanel()
+    }
 });
 
 mouse_over.SetPanelEvent('onmouseout', function() {
-   HideDebugPanel()
-   $.Schedule(0.1, function (){   
-        if (giveSelect_menu.style.visibility === "visible") {
-            giveSelect_menu.style.visibility = "collapse";
-            mouse_over.style.width = "46%";
-        }
-        if (spawnSelect_menu && spawnSelect_menu.style.visibility === "visible") {
-            spawnSelect_menu.style.visibility = "collapse";
-            mouse_over.style.width = "46%";
-        }
-    })
+    if (isAllowed) {
+        HideDebugPanel()
+        $.Schedule(0.1, function (){   
+            if (giveSelect_menu.style.visibility === "visible") {
+                giveSelect_menu.style.visibility = "collapse";
+                mouse_over.style.width = "46%";
+            }
+            if (spawnSelect_menu && spawnSelect_menu.style.visibility === "visible") {
+                spawnSelect_menu.style.visibility = "collapse";
+                mouse_over.style.width = "46%";
+            }
+        })
+    }
 });
 
 
@@ -188,11 +194,11 @@ function checkPlayerID2(data) {
     
         if (panel) {
             if (steamID == allowedSteamID) {
-                panel.RemoveClass("DebugPanel_hidden");
-                panel.AddClass("DebugPanel_show");
+                ShowDebugPanel()
+                isAllowed = true
                 $.Msg("+++ Admin Panel for player with #" + Game.GetLocalPlayerID() + " playerID")
             } else {
-                panel.AddClass("DebugPanel_hidden");
+                HideDebugPanel()
             }
         }
 

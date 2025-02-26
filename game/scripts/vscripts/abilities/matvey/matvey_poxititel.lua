@@ -92,6 +92,8 @@ function matvey_poxititel_modifier:PlayEffects( caster, target )
 	EmitSoundOn(sound, target)
 
 	local particle = ParticleManager:CreateParticle(effect, PATTACH_ABSORIGIN_FOLLOW, target)
+	ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())
+	ParticleManager:SetParticleControl(particle, 1, target:GetAbsOrigin())
 	ParticleManager:ReleaseParticleIndex(particle)
 end
 
