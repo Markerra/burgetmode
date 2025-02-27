@@ -2,17 +2,6 @@ LinkLuaModifier("marker_shot_modifier", "abilities/marker/marker_shot", LUA_MODI
 
 marker_shot = class({})
 
-function marker_shot:Precache( context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_luna.vsndevts", context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts", context )
-	PrecacheResource( "particle", "particles/econ/events/winter_major_2017/dagon_wm07_tgt_sparks.vpcf", context )
-	PrecacheResource( "particle", "particles/econ/items/luna/luna_lucent_ti5/luna_lucent_beam_cast_ti_5.vpcf", context )
-	PrecacheResource( "particle", "particles/econ/items/luna/luna_lucent_ti5/luna_eclipse_cast_moonfall.vpcf", context )
-	PrecacheResource( "particle", "particles/units/heroes/hero_luna/luna_lucent_beam_impact_bits.vpcf", context )
-end
-
 function marker_shot:GetChannelTime()
 	return self:GetSpecialValueFor("channel_time")
 end

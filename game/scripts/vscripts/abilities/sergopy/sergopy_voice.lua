@@ -10,11 +10,6 @@ end
 
 sergopy_voice = class({})
 
-function sergopy_voice:Precache( context )
-    PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts", context)
-    PrecacheResource("particle", "particles/units/heroes/hero_queenofpain/queen_scream_of_pain_owner.vpcf", context)
-end
-
 function sergopy_voice:OnSpellStart()
     local caster  = self:GetCaster()
     local ability = self

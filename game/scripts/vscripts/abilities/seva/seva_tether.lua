@@ -31,14 +31,8 @@ function seva_tether:OnSpellStart()
         caster:AddNewModifier(target, self, "modifier_seva_tether", {target_entindex = target:entindex(), duration = duration})
         Timers:CreateTimer(0.01, function()
             target:AddNewModifier(caster, self, "modifier_seva_tether", {target_entindex = caster:entindex(), duration = duration})
-        end
-        )
-    end
-    )
-    
-
-    
-
+        end)
+    end)
 end
 
 -----------------------------------------------------------------------------------

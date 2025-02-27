@@ -2,16 +2,6 @@ LinkLuaModifier("marker_hammer_debuff", "abilities/marker/marker_hammer", LUA_MO
 
 marker_hammer = class({})
 
-function marker_hammer:Precache( context )
-    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts", context)
-    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_dawnbreaker.vsndevts", context )
-    PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts", context )
-    PrecacheResource( "particle", "particles/units/heroes/hero_dawnbreaker/dawnbreaker_calavera_hammer_projectile.vpcf", context )
-    PrecacheResource( "particle", "particles/units/heroes/hero_grimstroke/grimstroke_soulchain_debuff.vpcf", context )
-    PrecacheResource( "particle", "particles/econ/items/underlord/underlord_ti8_immortal_weapon/underlord_crimson_ti8_immortal_pitofmalice_stun.vpcf", context )
-    PrecacheResource( "particle", "particles/econ/items/gyrocopter/gyro_ti10_immortal_missile/gyro_ti10_immortal_crimson_missile_explosion.vpcf", context )
-end
-
 function marker_hammer:OnSpellStart()
     local caster = self:GetCaster()
     self.point = self:GetCursorPosition()

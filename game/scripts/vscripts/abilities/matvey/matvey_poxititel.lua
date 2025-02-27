@@ -7,12 +7,6 @@ LinkLuaModifier("matvey_poxititel_debuff",
 
 matvey_poxititel = class({})
 
-function matvey_poxititel:Precache( context )
-	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts", context )
-	PrecacheResource( "particle", "particles/units/heroes/hero_antimage/antimage_manabreak_slow.vpcf", context )
-	PrecacheResource( "particle", "particles/units/heroes/hero_antimage/antimage_manabreak_enemy_debuff.vpcf", context )
-end
-
 function matvey_poxititel:GetIntrinsicModifierName()
 	return "matvey_poxititel_modifier"
 end

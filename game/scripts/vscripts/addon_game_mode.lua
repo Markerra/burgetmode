@@ -11,35 +11,30 @@ function Precache( context )
 		PrecacheResource("particle", particle, context)
 	end
 
-	for _, soundfiles in ipairs(soundfile) do
+	for _, soundfile in ipairs(soundfiles) do
 		PrecacheResource("soundfile", soundfile, context)
 	end
 
-	for _, models in ipairs(model) do
+	for _, model in ipairs(models) do
 		PrecacheModel(model, context)
 	end
 
-	for _, model_folders in ipairs(model_folder) do
+	for _, model_folder in ipairs(model_folders) do
 		PrecacheResource("model_folder", model_folder, context)
 	end
 
-	for _, particle_folders in ipairs(particle_folder) do
+	for _, particle_folder in ipairs(particle_folders) do
 		PrecacheResource("particle_folder", particle_folder, context)
 	end
 
 end
 
--- Create the game mode when we activate
 function Activate()
 	GameMode:Init()
 	GameMode:SetupColors()
 
 	if IsInToolsMode() then
-
 		GameMode:InitFast() -- быстрый пик героев (для тестов)
 		GameMode:GiveAdminItems() -- выдать админ-предметы
-
 	end
-
 end
-
