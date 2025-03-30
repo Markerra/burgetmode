@@ -31,8 +31,9 @@ function maxim_creep:OnSpellStart()
         creep:CreatureLevelUp(3)
     end
 
-    local particle_path = "particles/econ/items/dazzle/dazzle_ti9/dazzle_shadow_wave_ti9_crimson_impact_damage.vpcf"
-    ParticleManager:CreateParticle(particle_path, PATTACH_ABSORIGIN, creep)
+    local particle = "particles/econ/items/dazzle/dazzle_ti9/dazzle_shadow_wave_ti9_crimson_impact_damage.vpcf"
+    local fx = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN, creep)
+    ParticleManager:ReleaseParticleIndex(fx)
 
     EmitSoundOn("maxim_creep_cast", caster)
 

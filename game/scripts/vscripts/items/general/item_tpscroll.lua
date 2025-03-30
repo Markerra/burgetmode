@@ -1,5 +1,7 @@
 LinkLuaModifier("modifier_custom_ability_teleport", "items/general/item_tpscroll", LUA_MODIFIER_MOTION_NONE)
 
+require("utils/funcs")
+
 item_tpscroll_custom = class({})
 
 function item_tpscroll_custom:GetChannelTime() 
@@ -26,19 +28,9 @@ function item_tpscroll_custom:OnSpellStart()
 
 	local hero = self:GetCaster()
 
-	local alltowers = {}
+	local targetTower = GetTowerByTeam(hero:GetTeamNumber(), true)
 
-	local towerCount = 8 -- текущее кол-во таверов на карте
-
-	for i=1, towerCount do
-		local name = "dota_custom"..tostring(i).."_tower_main"
-    	local towers = Entities:FindAllByName(name)
-    	table.insert(alltowers, towers)
-	end
-
-	local targetTower = alltowers[hero:GetTeamNumber()-5]
-
-	self.point = targetTower[1]:GetAbsOrigin() + RandomVector(190)
+	self.point = targetTower:GetAbsOrigin() + RandomVector(190)
 	self.point = GetGroundPosition(self.point, nil)
 	self.point_start = self:GetCaster():GetAbsOrigin()
 	

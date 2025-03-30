@@ -98,9 +98,9 @@ end
 function modifier_fear_item_maxim_abaddon:OnAttackLanded(params)
     if not IsServer() then return end
     if params.attacker == self:GetParent() then
-    	local chance = self:GetSpecialValueFor("fear_chance")
+    	local chance = self:GetAbility():GetSpecialValueFor("fear_chance")
         if RollPercentage(chance) then
-        	local duration = self:GetSpecialValueFor("fear_duration")
+        	local duration = self:GetAbility():GetSpecialValueFor("fear_duration")
             params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_feardebuff_item_maxim_abaddon", {duration = duration})
         end
     end

@@ -8,11 +8,13 @@ boss_roshan_rocks = class({})
 
 function boss_roshan_rocks:OnAbilityPhaseInterrupted()
 	local caster = self:GetCaster()
-	FadeGesture(ACT_DOTA_CAST_ABILITY_1)
+	if IsServer() then
+	FadeGesture(ACT_DOTA_CAST_ABILITY_1) end
 	StopSoundOn("Roshan.RevengeRoar.Local", caster)
 end
 
 function boss_roshan_rocks:OnSpellStart()
+	if not IsServer() then return end
 	local caster = self:GetCaster()
 	caster:AddNewModifier(caster, self, "modifier_boss_roshan_rocks", {})
 end
@@ -86,6 +88,9 @@ function modifier_boss_roshan_rocks:CreateRock(radius_offset, angle_offset, rtyp
 	end
 
 	Timers:CreateTimer(delay, function()
+
+		if not caster then return end
+
 		local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_primal_beast/primal_beast_rock_throw_impact.vpcf", PATTACH_WORLDORIGIN, nil)
 		ParticleManager:SetParticleControl(particle, 3, position)
 		ParticleManager:ReleaseParticleIndex(particle)

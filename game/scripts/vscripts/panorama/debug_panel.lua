@@ -1,6 +1,6 @@
 require("utils/selection")
 
-LinkLuaModifier("wtfModifier", "panorama/debug_panel", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_wtf", "modifiers/modifier_wtf", LUA_MODIFIER_MOTION_NONE)
 
 function GameMode:Admin_SpawnBot( data )
 
@@ -72,7 +72,7 @@ function GameMode:Admin_Refresh( data )
         end
     
         if not hero:IsAlive() then
-            hero:RespawnUnit()
+            hero:RespawnHero(false, false)
         end
 
         hero:SetHealth(hero:GetMaxHealth())
@@ -169,8 +169,10 @@ function GameMode:Admin_GiveGold( data )
 
 	for key, value in pairs(entities) do
     	local hero = EntIndexToHScript(entities[key])
-		hero:ModifyGold(data.amout, false, 8)
-		SendOverheadEventMessage(nil, 0, hero, data.amout, nil)
+        if IsServer() then
+		    hero:ModifyGold(data.amout, false, 8)
+		    SendOverheadEventMessage(nil, 0, hero, data.amout, nil)
+        end
 	end
 end
 
@@ -178,24 +180,4 @@ function GameMode:Admin_SteamID_Check()--( data )
     require("game-mode/custom_params")
     --local steamID = PlayerResource:GetSteamID(data.playerID):__tostring()
     CustomGameEventManager:Send_ServerToAllClients("admin_steamID", {allowedID = CUSTOM_ADMIN_STEAMID64}) --, steamID = steamID})
-end
-
-wtfModifier = class({})
-
-function wtfModifier:IsPurgable() return false end
-function wtfModifier:IsHidden()   return true end
-
-function wtfModifier:DeclareFunctions()
-	return {
-        MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT,
-		MODIFIER_PROPERTY_MANACOST_REDUCTION_CONSTANT,
-	}
-end
-
-function wtfModifier:GetModifierManacostReduction_Constant()
-	return 1000
-end
-
-function wtfModifier:GetModifierCooldownReduction_Constant()
-	return 1000
 end

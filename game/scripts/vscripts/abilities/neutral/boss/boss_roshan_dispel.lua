@@ -22,9 +22,9 @@ function modifier_boss_roshan_dispel:OnCreated()
 
     self:SetStackCount(1)
 
-    self.radius = self:GetAbility():GetSpecialValueFor("radius") -- 3500
+    self.radius = self:GetAbility():GetSpecialValueFor("radius")
     self.stacks_per_second = 1
-    self.max_stacks = self:GetAbility():GetSpecialValueFor("dispel") + 1 -- 5
+    self.max_stacks = self:GetAbility():GetSpecialValueFor("dispel") + 1
     
     self:StartIntervalThink(1)
 end
@@ -33,6 +33,19 @@ function modifier_boss_roshan_dispel:OnIntervalThink()
     if not IsServer() then return end
 
     if self:GetCaster():PassivesDisabled() then return end
+
+    local units = FindUnitsInRadius(
+    self:GetCaster():GetTeam(),
+    self:GetCaster():GetAbsOrigin(), 
+    nil,
+    self.radius,
+    DOTA_UNIT_TARGET_TEAM_ENEMY,
+    DOTA_UNIT_TARGET_HERO,
+    DOTA_UNIT_TARGET_FLAG_NONE,
+    FIND_CLOSEST,
+    true)
+
+    if #units == 0 then self:SetStackCount(1) return end
 
     local current_stack_count = self:GetStackCount()
     self:SetStackCount(current_stack_count + self.stacks_per_second)
@@ -67,15 +80,15 @@ end
 
 function modifier_boss_roshan_dispel_debuff:GetModifierMoveSpeedBonus_Percentage()
     local distance = (self:GetParent():GetAbsOrigin() - self:GetCaster():GetAbsOrigin()):Length2D()
-    local max_distance = self:GetAbility():GetSpecialValueFor("radius") -- 3500
-    local cap = self:GetAbility():GetSpecialValueFor("movespeed_cap") -- 70
+    local max_distance = self:GetAbility():GetSpecialValueFor("radius")
+    local cap = self:GetAbility():GetSpecialValueFor("movespeed_cap")
     
     local slow_percentage = 0
     if distance < max_distance and distance > 150 then
-        slow_percentage = ((distance / max_distance) - 1) * 40
+        slow_percentage = (1 - (distance / max_distance)) * 50
     end
 
-    local bonus = math.max(-slow_percentage, -cap)
+    local bonus = math.min(slow_percentage, cap)
 
     return -bonus
 end

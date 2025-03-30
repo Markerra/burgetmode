@@ -1228,8 +1228,71 @@
 			"mana_regen"		"4" // регенерация маны (в процентах)
 			"damage_resist"		"5"	// доп. сопротивление урону (в процентах)
 			"radius"			"650"	// радиус
-		}		
+		}	
 	}
+//=================================================================================
+//=================================================================================
+//                                 ------------
+//                                  SHOPKEEPER
+//                                 ------------
+//=================================================================================
+//=================================================================================
+
+	"shopkeeper_upgrade_tower"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/shopkeeper/shopkeeper_upgrade_tower"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"shopkeeper_upgrade_tower"
+
+		"MaxLevel" 						"5"
+		"AbilityGoldCost"				"550 850 1350 1900 2300"
+
+		"AbilityValues"
+		{
+			"hp"        			 "150 400 650 900 1150"
+			"at"        			 "10 20 30 40 50"
+			"dmg"       			 "12 17 22 27 32"
+			"armor"     			 "0 0 5 7 10"
+			"hp_regen"  			 "0.5 1 2 3.5 5"
+			"magic_dmg" 			 "0 0 0 15 30"
+			"second_tower_pct"		"30" // (%)
+		}
+	}
+
+	"shopkeeper_upgrade_creep"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/shopkeeper/shopkeeper_upgrade_creep"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			""
+
+		"MaxLevel" 						"1"
+		//"AbilityGoldCost"				"550"
+
+		"AbilityValues"
+		{
+			"max_level"				"5"
+		}
+	}
+
+
+	"shopkeeper_glyph"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/neutral/shopkeeper/shopkeeper_glyph"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"shopkeeper_glyph"
+
+		"MaxLevel" 						"5"
+		//"AbilityGoldCost"				"550"
+
+		"AbilityValues"
+		{
+			"max_level"				"5"
+		}
+	}
+
 
 //=================================================================================
 //=================================================================================
@@ -1905,13 +1968,14 @@
 		"AbilityValues"
 		{
 			"amout"					"12"
-			"shock_damage"			"250"
+			"shock_damage"			"210"
 			"shock_speed"			"1300"
 			"shock_width"			"200"
 			"pull_duration"			"0.2"
 			"pull_distance"			"280"
 			"movement_slow"			"95"
 			"slow_duration"			"1.4"
+			"radius"				"3900"
 		}
 	}
 
@@ -2010,11 +2074,10 @@
 
 		"AbilityValues"
 		{
-			"radius"				"2100"
-			"movespeed_cap"			"70" // (%)
+			"radius"				"1500"
+			"movespeed_cap"			"40" // (%)
 			"dispel"				"5"
 		}
 	}
-
 
 }

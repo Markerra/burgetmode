@@ -3,7 +3,12 @@ require("utils/timers")
 
 LinkLuaModifier( "modifier_wave_upgrade", "modifiers/modifier_wave_upgrade", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_wave_mkb", "modifiers/modifier_wave_mkb", LUA_MODIFIER_MOTION_NONE )
+
+LinkLuaModifier( "modifier_damage_tracker", "modifiers/modifier_damage_tracker", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier( "modifier_unselect", "modifiers/modifier_unselect", LUA_MODIFIER_MOTION_NONE )
+
+LinkLuaModifier( "modifier_arena_boss_sleep", "modifiers/modifier_arena_boss_sleep", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_boss_upgrade", "modifiers/modifier_boss_upgrade", LUA_MODIFIER_MOTION_NONE )
 
 wave_types = {
 
@@ -66,6 +71,8 @@ wave_abilities = {
 
   --[[#9]] { "xp_creep_bounty" },
 
+  --[[#10]] { "boss_roshan_clap", "boss_roshan_rocks", "boss_roshan_amp", "boss_roshan_dispel", "boss_roshan_lotus" },
+
 }
 
 GameMode.current_wave = start_wave
@@ -106,6 +113,9 @@ function GameMode:GetWave( wave )
     return wave_types[wave][3][1]
 end
 
+function GameMode:GetWaveType( wave )
+    return wave_types[wave][1]
+end
 
 function GameMode:GetWaveSkills( wave )
   if not wave_abilities[wave] then
@@ -184,7 +194,7 @@ function CreatePortal( pos, data )
 
     	ParticleManager:DestroyParticle(teleport_center.nWarningFX, false)
     	teleport_center:StopSound("Hero_AbyssalUnderlord.DarkRift.Cast")
- 		teleport_center:EmitSound("Hero_AbyssalUnderlord.DarkRift.Complete")
+ 		  teleport_center:EmitSound("Hero_AbyssalUnderlord.DarkRift.Complete")
     	teleport_center:Destroy()
     end)
     return true
@@ -219,4 +229,76 @@ function GameMode:SpawnWave( team, number, level, give_lownet )
     if give_lownet then
       print("LOWNET WAVE FOR: "..PlayerResource:GetPlayerName(player:GetPlayerID()))
     end
+end
+
+function GameMode:SpawnBoss( type )
+  if not IsServer() then return end
+
+  if type == 1 then
+    --
+  elseif type == 2 then
+    --
+  end
+
+  local boss = CreateUnitByName("npc_boss_roshan", Vector( 0, 0, 0 ), true, nil, nil, DOTA_TEAM_BADGUYS)
+
+  if not boss then return end
+
+  boss:AddNewModifier(nil, nil, "modifier_damage_tracker", {})
+  boss:AddNewModifier(nil, nil, "modifier_boss_upgrade", {})
+  boss:AddNewModifier(nil, nil, "modifier_arena_boss_sleep", {duration = 5.5})
+
+  local particle = "particles/econ/items/dazzle/dazzle_ti9/dazzle_shadow_wave_ti9_crimson_impact_damage.vpcf"
+  local spawn_fx = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN, boss)
+  ParticleManager:ReleaseParticleIndex(spawn_fx)
+
+  for team = DOTA_TEAM_CUSTOM_1, DOTA_TEAM_CUSTOM_8 do
+    local player = nil
+    local hero   = nil
+
+    for player_id = 0, PlayerResource:GetPlayerCount() - 1 do
+        player = PlayerResource:GetPlayer(player_id)
+        if player and player:GetTeamNumber() == team then
+          if player.defeated == true or not PlayerResource:IsValidPlayerID(player_id) or not player:GetAssignedHero() then
+            local name = PlayerResource:GetPlayerName(player_id)
+            print("SpawnBoss() - player <"..name.."> is defeated or does not exist") 
+            return end
+        end
+    end
+
+    hero = player:GetAssignedHero()
+
+    if not hero:IsAlive() then
+      hero:RespawnHero(false, false)
+      hero:RemoveModifierByName("modifier_fountain_invulnerability")
+    end
+
+    local teleport = Entities:FindByName(nil, "arena_boss_tp_".. team-5)
+    if not teleport then return -1 end
+
+    local point = teleport:GetAbsOrigin()
+
+    hero:Stop()
+    FindClearSpaceForUnit(hero, point, true)
+    hero:AddNewModifier(nil, nil, "modifier_arena_boss_sleep", {duration = 5.0})
+
+    PlayerResource:SetCameraTarget(player:GetPlayerID(), hero)
+    Timers:CreateTimer(0.5, function()
+      PlayerResource:SetCameraTarget(player:GetPlayerID(), nil)
+    end)
+
+    hero:SetHealth(hero:GetMaxHealth())
+    hero:Purge(true, true, false, true, true)
+
+    for i = 0, hero:GetAbilityCount() - 1 do
+        local ability = hero:GetAbilityByIndex(i)
+        if ability and ability:GetCooldown(-1) > 0 then
+            ability:EndCooldown()
+        end
+    end
+
+  end
+
+  EmitGlobalSound("Hero_LegionCommander.Duel.Cast.Arcana")
+
 end

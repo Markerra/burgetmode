@@ -2,6 +2,7 @@ modifier_boss_upgrade = class({})
 
 function modifier_boss_upgrade:IsHidden() return true end
 function modifier_boss_upgrade:IsPurgable() return false end
+function modifier_boss_upgrade:IsPurgeException() return false end
 
 function modifier_boss_upgrade:DeclareFunctions()
    return   {
@@ -17,12 +18,15 @@ end
 
 function modifier_boss_upgrade:CheckState()
 	return {
-		[MODIFIER_STATE_FORCED_FLYING_VISION] = true
+		[MODIFIER_STATE_FORCED_FLYING_VISION] = true,
+    [MODIFIER_STATE_NO_HEALTH_BAR] = true,
 	}
 end
 
 function modifier_boss_upgrade:OnCreated( kv )
 	if not IsServer() then return end
+
+  local wave = GameMode.current_wave
 
 	self.health = 0
 	self.damage = 0

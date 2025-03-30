@@ -12,8 +12,7 @@
 		"item"		"item_flask"
 		"item"		"item_tango"
 		"item"		"item_blood_grenade"
-		"item"		"item_dust"	
-		"item"		"item_bottle"
+		"item"		"item_dust"
 		"item"		"item_aghanims_shard"
 		
 	}
@@ -162,9 +161,7 @@
 		"item"		"item_assault"
 		"item"		"item_bloodstone"
 		"item"		"item_helm_of_the_overlord"				
-		"item"		"item_eternal_shroud"				
-
-
+		"item"		"item_eternal_shroud"
 	}
 			
 	"weapons"
@@ -282,7 +279,7 @@
 		"item"		"item_slippers"
 		"item"		"item_mantle"
 		"item"		"item_circlet"
-		"item"		"item_magic_wand"
+		"item"		"item_magic_wand_custom"
 		"item"		"item_ring_of_protection"
 		"item"		"item_quelling_blade"
 		"item"		"item_fluffy_hat"
@@ -320,7 +317,7 @@
 		"item"		"item_slippers"
 		"item"		"item_mantle"
 		"item"		"item_circlet"
-		"item"		"item_recipe_magic_wand"
+		"item"		"item_recipe_magic_wand_custom"
 		"item"		"item_ring_of_protection"
 		"item"		"item_stout_shield"
 		"item"		"item_quelling_blade"
@@ -389,7 +386,7 @@
 		"item"		"item_slippers"
 		"item"		"item_mantle"
 		"item"		"item_circlet"
-		"item"		"item_recipe_magic_wand"
+		"item"		"item_recipe_magic_wand_custom"
 		"item"		"item_ring_of_protection"
 		"item"		"item_quelling_blade"
 		"item"		"item_fluffy_hat"
@@ -459,7 +456,7 @@
 		"item"		"item_slippers"
 		"item"		"item_mantle"
 		"item"		"item_circlet"
-		"item"		"item_magic_wand"
+		"item"		"item_magic_wand_custom"
 		"item"		"item_ring_of_protection"
 		"item"		"item_quelling_blade"
 		"item"		"item_fluffy_hat"

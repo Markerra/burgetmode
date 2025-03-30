@@ -32,7 +32,7 @@ function boss_roshan_clap:OnSpellStart()
     ScreenShake(caster:GetAbsOrigin(), 800, 1.1, 0.3, 4000, 0, true)
 
     local name = "particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
-    local distance = 2800
+    local distance = self:GetSpecialValueFor("radius")
     local radius = self:GetSpecialValueFor("shock_width")
     local speed = self:GetSpecialValueFor("shock_speed")
 
@@ -119,15 +119,15 @@ end
 --------------------------------------------------------------------------------
 -- Effects
 function boss_roshan_clap:PlayEffects2( target, mod )
-	-- Get Resources
+
+	if not target or not mod then return end
+
 	local particle_cast = "particles/units/heroes/hero_magnataur/magnataur_shockwave_hit.vpcf"
 	local sound_cast = "Hero_Magnataur.ShockWave.Target"
 
-	-- Create Particle
 	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, target )
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 
-	-- buff particle
 	mod:AddParticle(
 		effect_cast,
 		false, -- bDestroyImmediately
@@ -144,11 +144,10 @@ end
 function boss_roshan_clap:PlayEffects1()
 	local caster = self:GetCaster()
 
-	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_magnataur/magnataur_shockwave_cast.vpcf"
 	local sound_cast = "Hero_Magnataur.ShockWave.Cast"
 
-	-- Create Particle
+
 	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, caster )
 	ParticleManager:SetParticleControlEnt(
 		effect_cast,
@@ -162,7 +161,7 @@ function boss_roshan_clap:PlayEffects1()
 	self.effect_cast = effect_cast
 
 	caster:StartGesture(ACT_DOTA_CAST_ABILITY_3)
-	-- Create Sound
+
 	EmitSoundOn( sound_cast, caster )
 end
 
@@ -193,7 +192,6 @@ end
 function modifier_boss_roshan_clap:IsPurgable()
 	return true
 end
-
 
 function modifier_boss_roshan_clap:OnCreated( kv )
 	self.slow = -self:GetAbility():GetSpecialValueFor( "movement_slow" )

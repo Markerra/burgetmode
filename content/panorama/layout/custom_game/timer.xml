@@ -61,6 +61,7 @@
 							<DOTAAbilityImage class="SkillIcon" id="SkillIcon2" />
 							<DOTAAbilityImage class="SkillIcon" id="SkillIcon3" />
 							<DOTAAbilityImage class="SkillIcon" id="SkillIcon4" />
+							<DOTAAbilityImage class="SkillIcon" id="SkillIcon5" />						
 						</Panel>
 					</Panel>
 				</Panel>

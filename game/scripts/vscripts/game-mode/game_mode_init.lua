@@ -22,51 +22,64 @@ require("game-mode/waves")
 require("utils/timers")
 
 function GameMode:Init()
-	local mode = GameRules:GetGameModeEntity()
+	
+	current_player_count = PlayerResource:GetPlayerCount()
 
-	GameRules:SetSameHeroSelectionEnabled(true)
+	if IsServer() then
 
-	GameRules:SetUseUniversalShopMode(true)
-	GameRules:SetSafeToLeave(true)
+		GameRules:SetSameHeroSelectionEnabled(true)
+		GameRules:SetUseUniversalShopMode(false)
+		GameRules:SetSafeToLeave(true)
+		GameRules:SetShowcaseTime( 0.0 )
+		GameRules:SetStrategyTime( 60.0 )
+		GameRules:SetPreGameTime(25)
+		GameRules:SetRuneSpawnTime(20)
+		GameRules:SetStartingGold(NORMAL_START_GOLD)
+		
+		-- Teams
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 0 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS,  0 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_1, 1 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 1 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 1 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_4, 1 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 1 ) 
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_7, 1 )
+		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_8, 1 )
+		
+		local mode = GameRules:GetGameModeEntity()
 
-	GameRules:SetShowcaseTime( 0.0 )
-	GameRules:SetStrategyTime( 60.0 )
-	GameRules:SetPreGameTime(25)
-
-	mode:SetCustomScanMaxCharges(1)
-	mode:SetAnnouncerDisabled( true )
-	mode:SetCustomBackpackCooldownPercent(1)
-	mode:SetTPScrollSlotItemOverride("item_tpscroll_custom")
-	mode:SetCustomBuybackCostEnabled(CUSTOM_BUYBACK_COST_ENABLED)
-	mode:SetMaximumAttackSpeed(MAXIMUM_ATTACK_SPEED)
-	mode:SetFreeCourierModeEnabled(true)
-
-	--mode:SetThink( "OnThink", self, "GlobalThink", 0 )
-
-	GameRules:SetStartingGold(NORMAL_START_GOLD)
-
-	-- Teams
-	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 0 )
-	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS,  0 )
-	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_1, 1 )
-	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 1 )
-	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 1 )
-	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_4, 1 )
-	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 1 ) 
-	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
-	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_7, 1 )
-	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_8, 1 )
-
-	mode:SetGiveFreeTPOnDeath(false)
+		mode:SetCustomScanMaxCharges(1)
+		mode:SetAnnouncerDisabled(true)
+		mode:SetCustomBackpackCooldownPercent(1)
+		mode:SetTPScrollSlotItemOverride("item_tpscroll_custom")
+		mode:SetCustomBuybackCostEnabled(CUSTOM_BUYBACK_COST_ENABLED)
+		mode:SetMaximumAttackSpeed(MAXIMUM_ATTACK_SPEED)
+		mode:SetFreeCourierModeEnabled(true)
+		mode:SetPowerRuneSpawnInterval(25)
+		mode:SetGiveFreeTPOnDeath(false)
+		mode:SetRuneSpawnFilter(Dynamic_Wrap(GameMode, "RuneSpawnFilter"), self)
+		
+		for i = 0, 10 do
+			if i == 1 then
+				mode:SetRuneEnabled(i, true)
+			else
+				mode:SetRuneEnabled(i, false)
+			end
+		end
+		
+		--mode:SetThink( "OnThink", self, "GlobalThink", 0 )
+	end
 
 	-- Lua Listeners
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(self, 'npcSpawned'), self)
+	ListenToGameEvent('entity_hurt', Dynamic_Wrap(self, 'EntHurt'), self)
 	ListenToGameEvent('entity_killed', Dynamic_Wrap(self, 'EntKilled'), self)
 	ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(self, 'OnStateChange'), self)
 
 	-- JS Listeners
 	---- Debug Panel
-
 	require("panorama/debug_panel")
 
 	CustomGameEventManager:RegisterListener("spawn_bot_admin", Dynamic_Wrap(self, 'Admin_SpawnBot'))
@@ -78,20 +91,16 @@ function GameMode:Init()
 	CustomGameEventManager:RegisterListener("admin_steamID", Dynamic_Wrap(self, 'Admin_SteamID_Check'))
 
 	---- Top Bar Panel
-
 	require("panorama/custom_top_bar")
 
 	CustomGameEventManager:RegisterListener("top_bar_select", Dynamic_Wrap(self, 'TopBar_Select'))
+	SendHeroDataToClient(0.25, false) -- panorama/custom_top_bar.lua
 
+	---- Custom Chat Wheel
 	require("chat_wheel")
 	CustomGameEventManager:RegisterListener( "SelectVO", Dynamic_Wrap(chat_wheel, 'SelectVO'))
 	CustomGameEventManager:RegisterListener( "SelectHeroVO", Dynamic_Wrap(chat_wheel, 'SelectHeroVO'))
 	CustomGameEventManager:RegisterListener( "select_chatwheel_player", Dynamic_Wrap(chat_wheel, 'SelectChatWheel'))
-	
-	SendHeroDataToClient(0.25, false) -- panorama/custom_top_bar.lua
-
-	current_player_count = PlayerResource:GetPlayerCount()
-
 end
 
 function GameMode:SetupColors()
@@ -120,7 +129,7 @@ end
 function GameMode:InitFast()
 	local mode = GameRules:GetGameModeEntity()
 
-	mode:SetCustomGameForceHero("npc_dota_hero_bristleback")
+	mode:SetCustomGameForceHero("npc_dota_hero_huskar")
 
 	PlayerResource:SetCustomTeamAssignment(0, DOTA_TEAM_CUSTOM_1)
 
@@ -130,13 +139,19 @@ function GameMode:InitFast()
 	if test_waves then GameRules:SetPreGameTime(3) end
 end
 
+function GameMode:RuneSpawnFilter(keys)
+
+	keys.rune_type = 1
+
+	return true
+end
 
 function GameMode:GiveAdminItems()
 	GameRules:GetGameModeEntity().GiveAdminItems = true
 end
 
-function GameMode:npcSpawned(data)
-	local unit = EntIndexToHScript(data.entindex)
+function GameMode:npcSpawned( event )
+	local unit = EntIndexToHScript(event.entindex)
 
 	if IsInToolsMode() and unit:IsHero() then
 		local adminItems = GameRules:GetGameModeEntity().GiveAdminItems
@@ -155,6 +170,56 @@ function GameMode:npcSpawned(data)
 	--	unit:AddItemByName("item_tpscroll_custom")
 	--	unit.bFirstSpawned = false
 	--end
+
+end
+
+function GameMode:EntHurt( event )
+	local attacker = EntIndexToHScript(event.entindex_attacker)
+	local target = EntIndexToHScript(event.entindex_killed)
+end
+
+function GameMode:EntKilled( event )
+	local attacker = EntIndexToHScript(event.entindex_attacker)
+	local target = EntIndexToHScript(event.entindex_killed)
+
+	local team = target:GetTeamNumber()
+
+	if target:GetUnitName() == "npc_dota_custom_tower_main" then -- система выбывания игроков при потере главного тавера
+		if current_player_count ~= 2 then
+			if self:DefeatTeam(target) == true then
+				self:SetWinner(attacker, 1)
+			end
+		end
+	end
+end
+
+function GameMode:OnStateChange()
+	local state = GameRules:State_Get()
+	local mode = GameRules:GetGameModeEntity()
+
+	if state == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then -- запускается при начале игры (0:00 на таймере)
+		GameRules:SetTimeOfDay(0.251) -- игра начинается со дня
+
+		for t=DOTA_TEAM_CUSTOM_1, DOTA_TEAM_CUSTOM_8 do
+			local couriers = Entities:FindAllByName("npc_dota_courier")
+			if COURIER_MAX then
+				for key,courier in pairs(couriers) do
+					courier:UpgradeCourier(12)
+				end
+			end
+		end
+
+		GameRules:SpawnNeutralCreeps() -- спавн нейтральных крипов во всех кемпах
+
+		require("game-mode/functions/fountain_invul")
+		ActivateFountainInvul() -- активирует неуязвимость фонтана
+		DeactivateFountainsInvul(CUSTOM_FOUNTAIN_VUL_DELAY)
+
+		require("game-mode/functions/give_tpscroll")
+		GiveTPScroll()
+
+		mode:SetThink( waves_think, "", 1 )
+	end
 end
 
 function GameMode:DefeatTeam( unit )
@@ -200,50 +265,6 @@ function GameMode:SetWinner( unit, delay )
 	end
 end
 
-function GameMode:EntKilled(data)
-	local killed_unit = EntIndexToHScript(data.entindex_killed)
-	local attacker_unit = EntIndexToHScript(data.entindex_killed)
-
-	local team = killed_unit:GetTeamNumber()
-
-	if killed_unit:GetUnitName() == "npc_dota_custom_tower_main" then -- система выбывания игроков при потере главного тавера
-		if current_player_count ~= 2 then
-			if self:DefeatTeam(killed_unit) == true then
-				self:SetWinner(attacker_unit, 1)
-			end
-		end
-	end
-end
-
-function GameMode:OnStateChange(data)
-	local state = GameRules:State_Get()
-	local mode = GameRules:GetGameModeEntity()
-
-	if state == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then -- запускается при начале игры (0:00 на таймере)
-		GameRules:SetTimeOfDay(0.251) -- игра начинается со дня
-
-		for t=DOTA_TEAM_CUSTOM_1, DOTA_TEAM_CUSTOM_8 do
-			local couriers = Entities:FindAllByName("npc_dota_courier")
-			if COURIER_MAX then
-				for key,courier in pairs(couriers) do
-					courier:UpgradeCourier(12)
-				end
-			end
-		end
-
-		GameRules:SpawnNeutralCreeps() -- спавн нейтральных крипов во всех кемпах
-
-		require("game-mode/functions/fountain_invul")
-		ActivateFountainInvul() -- активирует неуязвимость фонтана
-		DeactivateFountainsInvul(CUSTOM_FOUNTAIN_VUL_DELAY)
-
-		require("game-mode/functions/give_tpscroll")
-		GiveTPScroll()
-
-		mode:SetThink( waves_think, "", 1 )
-	end
-end
-
 function MaxTime(n)
 	local t = 70
 	if n >= 1  then t = 25  end
@@ -253,7 +274,8 @@ function MaxTime(n)
 	if n >= 15 then t = 90  end
 	if n >= 25 then t = 120 end
 	if BossTime(n) then 
-	 t = 150 - portal_delay end	
+	 t = 150 - portal_delay end
+	if test_waves then t = 20 end	
 	return t + portal_delay
 end
 
@@ -270,9 +292,8 @@ function CreepLevel(n)
 	local t = 70
 	if n >= 1  then t = 1 end
 	if n >= 5  then t = 2 end
-	if n >= 10 then t = 3 end
-	if n >= 15 then t = 4 end
-	if n >= 20 then t = 5 end
+	if n >= 11 then t = 3 end
+	if n >= 16 then t = 4 end
 	return t
 end
 
@@ -302,57 +323,77 @@ local gtimer = timer
 function waves_think()
 	if enable_waves == false then return end
 	if game_end == true then return end
-	timer = timer + 1
-	gtimer = gtimer + 1
 	max_timer = MaxTime(GameMode.current_wave)
-	boss_timer = BossTime(GameMode.current_wave)
-	--print("Next wave in: "..max_timer-timer.."s")
+	boss_wave = BossTime(GameMode.current_wave)
+	print("Next wave in: "..max_timer-timer.."s")
 
-	if boss_timer or boss_stage then
-		local wave_number = GameMode.current_wave
-		local wave_name = "?????"
+	--if boss_wave and not boss_stage then
+--
+	--	print("boss_stage")
+--
+	--	local wave_number = GameMode.current_wave
+	--	local wave_name = "?????"
+--
+	--	for id=0, 8 do
+	--		if PlayerResource:IsValidPlayerID(id) then
+	--			local max = max_timer
+	--			if boss_stage then max = 0 end
+	--			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(id), 'timer_progress',  {upgrade = true, necro = false , units = -1, units_max = -1, time = timer, max = boss_timer, name = wave_name, skills = skills, mkb = mkb, number = wave_number})
+	--		end
+	--	end
+--
+	--	if boss_wave then
+	--		print("Current wave: "..wave_number.." (BOSS WAVE)")
+	--		GameMode:SpawnBoss( RandomInt(1, 2) )
+	--	end
+	--end
 
-		for id=0, 8 do
-			if PlayerResource:IsValidPlayerID(id) then
-				local max = max_timer
-				if boss_stage then max = 0 end
-				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(id), 'timer_progress',  {upgrade = true, necro = false , units = -1, units_max = -1, time = timer, max = boss_timer, name = wave_name, skills = skills, mkb = mkb, number = wave_number})
+	if not boss_stage then
+		timer = timer + 1
+		gtimer = gtimer + 1
+		if boss_wave then 
+			local wave_number = GameMode.current_wave
+			local wave_name = GameMode:GetWave(wave_number)
+			local skills = GameMode:GetWaveSkills(wave_number)
+			local mkb = GameMode:GetMkb(wave_number)
+			for id=0, 8 do
+				if PlayerResource:IsValidPlayerID(id) then
+					GameMode:SetActiveWave(id)
+					CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(id), 'timer_progress',  {upgrade = true, necro = false , units = -1, units_max = -1, time = timer, max = max_timer, name = GameMode:GetWave(GameMode.current_wave), skills = skills, mkb = 0, number = GameMode.current_wave})
+				end
 			end
-		end
-
-		if boss_timer then
+			if timer == max_timer then
+			for id=0, 8 do
+				if PlayerResource:IsValidPlayerID(id) then				
+					CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(id), 'timer_hide', {})
+				end
+			end
 			print("Current wave: "..wave_number.." (BOSS WAVE)")
-			GameMode:SpawnBoss( wave_number )
-		end
-	end
-
-	if not boss_stage and not boss_timer then
-		local wave_number = GameMode.current_wave
-		local wave_name = GameMode:GetWave(wave_number)
-		local skills = GameMode:GetWaveSkills(wave_number)
-		local mkb = GameMode:GetMkb(wave_number)
-		for id=0, 8 do
-			if PlayerResource:IsValidPlayerID(id) then
-				local player = PlayerResource:GetPlayer(id)
-				GameMode:SetActiveWave(id)
-				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(id), 'timer_progress',  {upgrade = true, necro = false , units = -1, units_max = -1, time = timer, max = max_timer, name = GameMode:GetWave(GameMode.current_wave), skills = skills, mkb = 0, number = GameMode.current_wave})
+			GameMode.current_wave = GameMode.current_wave + 1
+			GameMode:SpawnBoss( RandomInt(1, 2) )
+			timer = 0
 			end
-		end
-		if timer == max_timer then
-		print("Current wave: "..wave_number)
-		GameMode.current_wave = GameMode.current_wave + 1	
-		for team=DOTA_TEAM_CUSTOM_1, DOTA_TEAM_CUSTOM_8 do
-			if team == GetLowestNet( true ) then give_lownet = true end
-				local level = CreepLevel(wave_number)
-				GameMode:SpawnWave( team, wave_number, level, give_lownet )
+		else
+			local wave_number = GameMode.current_wave
+			local wave_name = GameMode:GetWave(wave_number)
+			local skills = GameMode:GetWaveSkills(wave_number)
+			local mkb = GameMode:GetMkb(wave_number)
+			for id=0, 8 do
+				if PlayerResource:IsValidPlayerID(id) then
+					GameMode:SetActiveWave(id)
+					CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(id), 'timer_show', {})
+					CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(id), 'timer_progress',  {upgrade = true, necro = false , units = -1, units_max = -1, time = timer, max = max_timer, name = GameMode:GetWave(GameMode.current_wave), skills = skills, mkb = 0, number = GameMode.current_wave})
+				end
 			end
-		timer = 0
-		elseif test_waves and test_waves_first then
-			test_waves_first = false
+			if timer == max_timer then
+			print("Current wave: "..wave_number)
+			GameMode.current_wave = GameMode.current_wave + 1
 			for team=DOTA_TEAM_CUSTOM_1, DOTA_TEAM_CUSTOM_8 do
-			if team == GetLowestNet( true ) then give_lownet = true end
-				local level = CreepLevel(wave_number)
-				GameMode:SpawnWave( team, wave_number, level, give_lownet )
+				if team == GetLowestNet( true ) then give_lownet = true end
+					local level = CreepLevel(wave_number)
+					GameMode:SpawnWave( team, wave_number, level, give_lownet )
+				end
+			timer = 0
 			end
 		end
 	end

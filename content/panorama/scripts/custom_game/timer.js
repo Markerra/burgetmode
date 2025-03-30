@@ -4,9 +4,8 @@ function init()
 
 	GameEvents.Subscribe_custom('timer_progress', OnTimer)
 
-	//GameEvents.Subscribe_custom('PreGameEnd', ShowTimer)
-
-	//GameEvents.Subscribe_custom('duel_timer_progress', OnDuelTimer)
+	GameEvents.Subscribe_custom('timer_hide', HideTimer)
+	GameEvents.Subscribe_custom('timer_show', ShowTimer)
 
 	var GoldIcon = $.GetContextPanel().FindChildTraverse("GoldIcon");
 	var MkbIcon = $.GetContextPanel().FindChildTraverse("MkbIcon");
@@ -117,8 +116,6 @@ function OnTimer( kv )
 	var Necro = $.GetContextPanel().FindChildTraverse("NecroWave")
 	var Upgrade = $.GetContextPanel().FindChildTraverse("UpgradeWave")
 
-
-
 	if (necro == true)
 	{
 		Necro.style.visibility = "visible"
@@ -185,23 +182,16 @@ function OnTimer( kv )
 	var b_icon = null 
 	var b_text = ''
 
-	for (var i = 1; i <= 4; i++) 
-
+	for (var i = 1; i <= 5; i++) 
 	{
 		b_icon = $.GetContextPanel().FindChildTraverse("SkillIcon"+i)
 		if (skills[i] != null ) {
-		
+
 		b_icon.style.visibility = "visible"
 		b_icon.abilityname = skills[i]
 		MouseOver(b_icon, skills[i])
-
-	   } else 
-
-	   {
-
-
+	   } else {
 		b_icon.style.visibility = "collapse"
-
 	   }
 	}
 

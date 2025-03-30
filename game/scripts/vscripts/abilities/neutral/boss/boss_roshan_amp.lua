@@ -123,6 +123,7 @@ function modifier_boss_roshan_amp:GetModifierSpellAmplify_Percentage()
 end
 
 function modifier_boss_roshan_amp:OnDestroy()
+	if not self:GetCaster() then return end
 	self:GetCaster():Purge(false, true, false, true, true)
 end
 

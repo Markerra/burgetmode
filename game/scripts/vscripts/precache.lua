@@ -82,6 +82,7 @@ particles = {
 	"particles/custom/portal/purple/portal_open.vpcf", -- wave_portal
 	"particles/generic_gameplay/generic_stunned.vpcf",
 	"particles/units/heroes/hero_riki/riki_shard_sleep.vpcf", -- modifier_arena_boss_sleep
+	"particles/creatures/aghanim/aghanim_beam_channel.vpcf", -- shopkeeper_upgrade_tower
 
 }
 
@@ -130,8 +131,9 @@ soundfiles = {
 }
 
 models = {
-	"models/heroes/nevermore/nevermore.vmdl", -- abilitiy_model
-	"models/props_gameplay/dummy/dummy_large.vmdl", -- marker_dance_ability_model
+	"models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl", --npc_custom_shopkeeper
+	"models/heroes/nevermore/nevermore.vmdl", -- maxim_creep abilitiy_model
+	"models/props_gameplay/dummy/dummy_large.vmdl", -- marker_dance ability_model
 	"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl", -- npc_troll_skelet
 	"models/creeps/neutral_creeps/n_creep_furbolg/n_creep_furbolg_disrupter.vmdl", -- npc_ursa_red
 	"models/creeps/neutral_creeps/n_creep_beast/n_creep_beast.vmdl", -- npc_ursa_yellow

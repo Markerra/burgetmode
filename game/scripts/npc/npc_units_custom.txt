@@ -49,8 +49,8 @@
         // Bounty
         //----------------------------------------------------------------
         "BountyXP"                  "14"        // Experience earn.
-        "BountyGoldMin"             "4"         // Gold earned min.
-        "BountyGoldMax"             "6"         // Gold earned max.
+        "BountyGoldMin"             "6"         // Gold earned min.
+        "BountyGoldMax"             "9"         // Gold earned max.
 
         // Movement
         //----------------------------------------------------------------
@@ -195,8 +195,8 @@
         // Bounty
         //----------------------------------------------------------------
         "BountyXP"                  "30"        // Experience earn.
-        "BountyGoldMin"             "14"        // Gold earned min.
-        "BountyGoldMax"             "16"        // Gold earned max.
+        "BountyGoldMin"             "16"        // Gold earned min.
+        "BountyGoldMax"             "19"        // Gold earned max.
 
         // Movement
         //----------------------------------------------------------------
@@ -268,8 +268,8 @@
         // Bounty
         //----------------------------------------------------------------
         "BountyXP"                  "35"        // Experience earn.
-        "BountyGoldMin"             "10"        // Gold earned min.
-        "BountyGoldMax"             "12"        // Gold earned max.
+        "BountyGoldMin"             "13"        // Gold earned min.
+        "BountyGoldMax"             "18"        // Gold earned max.
 
         // Movement
         //----------------------------------------------------------------
@@ -341,8 +341,8 @@
         // Bounty
         //----------------------------------------------------------------
         "BountyXP"                  "40"        // Experience earn.
-        "BountyGoldMin"             "16"        // Gold earned min.
-        "BountyGoldMax"             "20"        // Gold earned max.
+        "BountyGoldMin"             "19"        // Gold earned min.
+        "BountyGoldMax"             "24"        // Gold earned max.
 
         // Movement
         //----------------------------------------------------------------
@@ -413,8 +413,8 @@
         // Bounty
         //----------------------------------------------------------------
         "BountyXP"                  "15"        // Experience earn.
-        "BountyGoldMin"             "9"        // Gold earned min.
-        "BountyGoldMax"             "13"        // Gold earned max.
+        "BountyGoldMin"             "13"        // Gold earned min.
+        "BountyGoldMax"             "18"        // Gold earned max.
 
         // Movement
         //----------------------------------------------------------------
@@ -485,8 +485,8 @@
         // Bounty
         //----------------------------------------------------------------
         "BountyXP"                  "35"        // Experience earn.
-        "BountyGoldMin"             "12"        // Gold earned min.
-        "BountyGoldMax"             "16"        // Gold earned max.
+        "BountyGoldMin"             "16"        // Gold earned min.
+        "BountyGoldMax"             "19"        // Gold earned max.
 
         // Movement
         //----------------------------------------------------------------
@@ -558,8 +558,8 @@
         // Bounty
         //----------------------------------------------------------------
         "BountyXP"                  "26"        // Experience earn.
-        "BountyGoldMin"             "14"        // Gold earned min.
-        "BountyGoldMax"             "16"        // Gold earned max.
+        "BountyGoldMin"             "16"        // Gold earned min.
+        "BountyGoldMax"             "19"        // Gold earned max.
 
         // Movement
         //----------------------------------------------------------------
@@ -631,8 +631,8 @@
         // Bounty
         //----------------------------------------------------------------
         "BountyXP"                  "28"        // Experience earn.
-        "BountyGoldMin"             "10"        // Gold earned min.
-        "BountyGoldMax"             "16"        // Gold earned max.
+        "BountyGoldMin"             "16"        // Gold earned min.
+        "BountyGoldMax"             "21"        // Gold earned max.
 
         // Movement
         //----------------------------------------------------------------
@@ -704,8 +704,8 @@
         // Bounty
         //----------------------------------------------------------------
         "BountyXP"                  "28"        // Experience earn.
-        "BountyGoldMin"             "12"        // Gold earned min.
-        "BountyGoldMax"             "18"        // Gold earned max.
+        "BountyGoldMin"             "18"        // Gold earned min.
+        "BountyGoldMax"             "24"        // Gold earned max.
 
         // Movement
         //----------------------------------------------------------------
@@ -776,9 +776,9 @@
 
         // Bounty
         //----------------------------------------------------------------
-        "BountyXP"                  "32"        // Experience earn.
-        "BountyGoldMin"             "36"        // Gold earned min.
-        "BountyGoldMax"             "39"        // Gold earned max.
+        "BountyXP"                  "45"        // Experience earn.
+        "BountyGoldMin"             "34"        // Gold earned min.
+        "BountyGoldMax"             "38"        // Gold earned max.
 
         // Movement
         //----------------------------------------------------------------
@@ -850,7 +850,7 @@
         // Bounty
         //----------------------------------------------------------------
         "BountyXP"                  "55"        // Experience earn.
-        "BountyGoldMin"             "42"        // Gold earned min.
+        "BountyGoldMin"             "41"        // Gold earned min.
         "BountyGoldMax"             "46"        // Gold earned max.
 
         // Movement
@@ -1859,14 +1859,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"15"		// Physical protection.
-		"MagicalResistance"			"60"	    // Magical protection.
+		"ArmorPhysical"				"5"		// Physical protection.
+		"MagicalResistance"			"50"	    // Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"172"		// Damage range min.
-		"AttackDamageMax"			"174"		// Damage range max.
+		"AttackDamageMin"			"132"		// Damage range min.
+		"AttackDamageMax"			"134"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"BaseAttackSpeed"			"130"
 		"AttackRate"				"0.9"		// Speed of attack.
@@ -1888,8 +1888,8 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyGoldMin"				"0"		// Gold earned min.
-		"BountyGoldMax"				"0"		// Gold earned max.
+		"BountyGoldMin"				"100"		// Gold earned min.
+		"BountyGoldMax"				"250"		// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -1906,7 +1906,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2700"		// Base health.
+		"StatusHealth"				"2350"		// Base health.
 		"StatusHealthRegen"			"2"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -1958,7 +1958,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"12"		// Physical protection.
+		"ArmorPhysical"				"6"		// Physical protection.
 		"MagicalResistance"			"30"		// Magical protection.
 
 		// Attack
@@ -1987,8 +1987,8 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyGoldMin"				"0"		// Gold earned min.
-		"BountyGoldMax"				"0"		// Gold earned max.
+		"BountyGoldMin"				"100"		// Gold earned min.
+		"BountyGoldMax"				"150"		// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -2108,9 +2108,9 @@
         "VisionDaytimeRange"        "1000"      // Range of vision during day light.
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
-        "UseNeutralCreepBehavior"     "0"
-        "vscripts"                    "ai/kobold.lua"
-        "AutoAttacksByDefault"        "1"
+        "UseNeutralCreepBehavior"   "0"
+        "vscripts"                  "ai/wave_creep.lua"
+        "AutoAttacksByDefault"      "1"
     }
 
     "npc_troll_skelet_b"
@@ -2183,9 +2183,9 @@
         "VisionDaytimeRange"        "1000"      // Range of vision during day light.
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
-        "UseNeutralCreepBehavior"      "0"
-        "vscripts"                     "ai/kobold.lua"
-        "AutoAttacksByDefault"         "1"
+        "UseNeutralCreepBehavior"   "0"
+        "vscripts"                  "ai/wave_creep.lua"
+        "AutoAttacksByDefault"      "1"
     }
 
     "npc_troll_skelet_c"
@@ -2259,7 +2259,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
     }
 
@@ -2336,7 +2336,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
     }
 
@@ -2413,7 +2413,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
     }
 
@@ -2484,7 +2484,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
     }
 
@@ -2555,7 +2555,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
     }
 
@@ -2633,7 +2633,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
 
         "Creature"
@@ -2724,7 +2724,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
     }
 
@@ -2800,7 +2800,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
     }
 
@@ -2877,7 +2877,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
     }
 
@@ -2954,7 +2954,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
     }
 
@@ -3030,7 +3030,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
     }
 
@@ -3106,7 +3106,7 @@
         "VisionNighttimeRange"      "1000" // Range of vision at night time.  
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
 
     }
@@ -3134,8 +3134,8 @@
         // Attack
         //----------------------------------------------------------------
         "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"           "34"     // Damage range min.
-        "AttackDamageMax"           "39"     // Damage range max.
+        "AttackDamageMin"           "38"     // Damage range min.
+        "AttackDamageMax"           "42"     // Damage range max.
         "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
         "AttackRate"                "1.0"       // Speed of attack
         "BaseAttackSpeed"           "105"       // Speed of attack
@@ -3165,7 +3165,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"              "290"       // Base health
+        "StatusHealth"              "295"       // Base health
         "StatusHealthRegen"         "2.7"       // Health regeneration rate
         "StatusMana"                "0.0"       // Base mana
         "StatusManaRegen"           "0.0"       // Mana regeneration rate
@@ -3183,7 +3183,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
     }
 
@@ -3258,7 +3258,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
     }
 
@@ -3335,7 +3335,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
     }
 
@@ -3412,7 +3412,7 @@
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
         "UseNeutralCreepBehavior"   "0"
-        "vscripts"                  "ai/kobold.lua"
+        "vscripts"                  "ai/wave_creep.lua"
         "AutoAttacksByDefault"      "1"
     }
 
@@ -3462,14 +3462,14 @@
 
         // Bounds
         //----------------------------------------------------------------
-        "BoundsHullName"            "DOTA_HULL_SIZE_HERO"           // Hull type used for navigation/locomotion.
+        "BoundsHullName"            "DOTA_HULL_SIZE_HERO" // Hull type used for navigation/locomotion.
         "RingRadius"                "150"
-        "HealthBarOffset"           "999999"
+        "HealthBarOffset"           "250"
 
         // Movement
         //----------------------------------------------------------------
-        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"         // Type of locomotion - ground, air
-        "MovementSpeed"             "270"       // Speed
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND" // Type of locomotion - ground, air
+        "MovementSpeed"             "290"       // Speed
         "MovementTurnRate"          "1.0"       // Turning rate.
 
         // Status
@@ -3491,8 +3491,80 @@
         "VisionDaytimeRange"        "1000"      // Range of vision during day light.
         "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
 
-        //"UseNeutralCreepBehavior"   "0"
-        //"vscripts"                  "ai/boss.lua"
+        "UseNeutralCreepBehavior"   "0"
+        "vscripts"                  "ai/boss_roshan.lua"
+    }
+
+    "npc_custom_shopkeeper"
+    {
+         // General
+        //----------------------------------------------------------------
+        "BaseClass"                 "npc_dota_creature" // Class of entity of link to
+        "Model"                     "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl"   // Model.
+        "SoundSet"                  "" // Name of sound set
+        "ModelScale"                "1.0"
+        "Level"                     "1"
+
+        // Abilities
+        //----------------------------------------------------------------
+        "Ability1"                  "shopkeeper_upgrade_tower"  // Ability 1
+        "Ability2"                  "shopkeeper_upgrade_creep"  // Ability 2
+        "Ability3"                  "shopkeeper_glyph"  // Ability 3
+
+        // Armor
+        //----------------------------------------------------------------
+        "ArmorPhysical"             "40"     // Physical protection.
+        "MagicalResistance"         "60"     // Magical protection.
+
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+        "AttackDamageMin"           "0" // Damage range min.
+        "AttackDamageMax"           "0" // Damage range max.
+        "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+        "AttackRate"                "2.0"   // Speed of attack
+        "BaseAttackSpeed"           "150"   // Speed of attack
+        "AttackAnimationPoint"      "0.6"   // Normalized time in animation cycle to attack
+        "AttackAcquisitionRange"    "150"   // Range within a target can be acquired.
+        "AttackRange"               "150"   // Range within a target can be attacked.
+        "ProjectileModel"           ""      // Particle system model for projectile.
+        "ProjectileSpeed"           ""      // Speed of projectile.
+
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyXP"                  "0"     // Experience earn
+        "BountyGoldMin"             "0"     // Gold earned min
+        "BountyGoldMax"             "0"     // Gold earned max
+
+        // Bounds
+        //----------------------------------------------------------------
+        "BoundsHullName"            "DOTA_HULL_SIZE_HERO" // Hull type used for navigation/locomotion.
+        "RingRadius"                "150"
+        "HealthBarOffset"           "250"
+
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE" // Type of locomotion - ground, air
+        "MovementSpeed"             "150"       // Speed
+        "MovementTurnRate"          "1.0"       // Turning rate.
+
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"              "1000"      // Base health
+        "StatusHealthRegen"         "0"       // Health regeneration rate
+        "StatusMana"                "0"     // Base mana
+        "StatusManaRegen"           "0"      // Mana regeneration rate
+
+        // Team
+        //----------------------------------------------------------------
+        //"TeamName"                  "DOTA_TEAM_GOODGUYS" // Team name.
+
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"        "1000"      // Range of vision during day light.
+        "VisionNighttimeRange"      "1000"      // Range of vision at night time.   
+
+        "UseNeutralCreepBehavior"   "0"
     }
 
 
