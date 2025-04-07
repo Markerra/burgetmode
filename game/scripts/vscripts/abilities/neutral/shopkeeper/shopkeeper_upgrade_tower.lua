@@ -20,12 +20,14 @@ function shopkeeper_upgrade_tower:GetAbilityTextureName()
 end
 
 function shopkeeper_upgrade_tower:Spawn()
-    if not IsServer() then return end
-    Timers:CreateTimer(3.0, function()
+    Timers:CreateTimer(5.0, function()
+        if not IsServer() then return end
         local caster = self:GetCaster()
         local player = GetPlayerByTeam(caster:GetTeam())
-        caster:SetControllableByPlayer(0, false)
-        caster:SetOwner(player:GetAssignedHero())
+        if player then
+            caster:SetControllableByPlayer(player:GetPlayerID(), false)
+            caster:SetOwner(player:GetAssignedHero())
+        end
         caster:AddNewModifier(caster, nil, "modifier_invulnerable", {})
     end)
 end

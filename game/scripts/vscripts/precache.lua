@@ -83,7 +83,8 @@ particles = {
 	"particles/generic_gameplay/generic_stunned.vpcf",
 	"particles/units/heroes/hero_riki/riki_shard_sleep.vpcf", -- modifier_arena_boss_sleep
 	"particles/creatures/aghanim/aghanim_beam_channel.vpcf", -- shopkeeper_upgrade_tower
-
+	"particles/econ/world/towers/ti10_radiant_tower/ti10_radiant_tower_destruction_sparkle.vpcf",
+	
 }
 
 soundfiles = {
@@ -166,5 +167,5 @@ particle_folders = {
 	"particles/custom/neutral",
 	"particles/custom/neutral/boss",
 	"particles/units/heroes/hero_life_stealer",
-
+	"particles/items_fx",
 }

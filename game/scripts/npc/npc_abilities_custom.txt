@@ -1285,11 +1285,13 @@
 		"AbilityTextureName"			"shopkeeper_glyph"
 
 		"MaxLevel" 						"5"
-		//"AbilityGoldCost"				"550"
+		"AbilityGoldCost"				"250"
 
 		"AbilityValues"
 		{
-			"max_level"				"5"
+			"cooldown"				"40"
+			"duration"				"4"
+			"cooldown_increase"		"20"
 		}
 	}
 

@@ -381,7 +381,7 @@ for _, target in pairs(enemy_for_attack) do
 
     if IsValidEntity(target) and not target:IsCourier() and target:GetUnitName() ~= "npc_teleport"
     and (target:GetAbsOrigin() - thisEntity.tower:GetAbsOrigin()):Length2D() > 800  and
-    not target:IsInvulnerable() and not target:IsAttackImmune() then
+    not target:IsInvulnerable() and not target:IsAttackImmune() and not target:HasModifier("shopkeeper_tower_glyph") then
         enemy = target
         break
     end
