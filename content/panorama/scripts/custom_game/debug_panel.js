@@ -14,14 +14,10 @@ mouse_over.SetPanelEvent('onmouseout', function() {
     if (isAllowed) {
         HideDebugPanel()
         $.Schedule(0.1, function (){   
-            if (giveSelect_menu.style.visibility === "visible") {
-                giveSelect_menu.style.visibility = "collapse";
-                mouse_over.style.width = "46%";
-            }
-            if (spawnSelect_menu && spawnSelect_menu.style.visibility === "visible") {
-                spawnSelect_menu.style.visibility = "collapse";
-                mouse_over.style.width = "46%";
-            }
+            HideSelect("spawn_hero_select");
+            spawnButton.state = 0;
+            HideSelect("give_item_select");
+            spawnButton.state = 0;
         })
     }
 });
@@ -30,18 +26,19 @@ mouse_over.SetPanelEvent('onmouseout', function() {
 // спавн бота >>
 
 const spawnButton = $("#spawn_bot_button")
-
-spawnSelect_menu.style.visibility = "collapse";
+spawnButton.state = 0
+HideSelect("spawn_hero_select")
 spawnButton.SetPanelEvent("onactivate", function() {
-    if (spawnSelect_menu && spawnSelect_menu.style.visibility === "visible") {
-        spawnSelect_menu.style.visibility = "collapse";
-        mouse_over.style.width = "46%";
-    }
-    else {
-        spawnSelect_menu.style.visibility = "visible";
+    if (spawnButton.state === 0) {
+        ShowSelect("spawn_hero_select");
+        spawnButton.state = 1;
         mouse_over.style.width = "95%";
     }
-	
+    else {
+        HideSelect("spawn_hero_select");
+        spawnButton.state = 0;
+        mouse_over.style.width = "46%";
+    }
 })
 
 function SpawnHero(heroName) {
@@ -52,26 +49,24 @@ function SpawnHero(heroName) {
 
     var playerID = Game.GetLocalPlayerID();
     GameEvents.SendCustomGameEventToServer("spawn_bot_admin", { hero: heroName, id: playerID });
+    Game.EmitSound("General.ButtonClick");
     $.Msg("Requested spawn for hero: " + heroName);
 }
 
 // выдать предмет >>
 
 const giveButton = $("#give_item_button")
-
-giveSelect_menu.style.visibility = "collapse";
-
+giveButton.state = 0
+HideSelect("give_item_select")
 giveButton.SetPanelEvent("onactivate", function() {
-    if (giveSelect_menu.style.visibility === "visible") {
-        giveSelect_menu.style.visibility = "collapse";
-        mouse_over.style.width = "46%";
-    }
-    else {
-        giveSelect_menu.style.visibility = "visible";
+    if (giveButton.state === 0) {
+        ShowSelect("give_item_select");
+        giveButton.state = 1;
         mouse_over.style.width = "95%";
     }
-    if (spawnSelect_menu.style.visibility === "visible") {
-        spawnSelect_menu.style.visibility = "collapse";
+    else {
+        HideSelect("give_item_select");
+        giveButton.state = 0;
         mouse_over.style.width = "46%";
     }
     
@@ -93,13 +88,15 @@ function GiveItem(itemName) {
 
     GameEvents.SendCustomGameEventToServer("give_item_admin", { item: itemName, ent: entities });
     $.Msg("Requested item: " + itemName);
+
+    Game.EmitSound("General.ButtonClick");
 }
 
 // режим WTF >>
 
 function WTF_Toggle() {
     GameEvents.SendCustomGameEventToServer("wtf_mode_admin", {});
-   
+    Game.EmitSound("General.ButtonClick");
 }
 
 const wtfButton = $("#wtf_mode_button")
@@ -109,9 +106,7 @@ wtfButton.SetPanelEvent("onactivate", function() {
     $.Msg(wtfButton.style.border);
     if (wtfButton.style.border == "solidsolidsolidsolid/ 2.0px 2.0px 2.0px 2.0px / #FFFFFFFF #FFFFFFFF #FFFFFFFF #FFFFFFFF ") {
         wtfButton.style.border = "2px solid black";
-        $.Msg("NE ZHOPA");
     } else if (wtfButton.style.border == "solidsolidsolidsolid/ 2.0px 2.0px 2.0px 2.0px / #000000FF #000000FF #000000FF #000000FF ") {
-        $.Msg("ZHOPA");
         wtfButton.style.border = "2px solid white";
     }
 })
@@ -121,6 +116,7 @@ wtfButton.SetPanelEvent("onactivate", function() {
 function Refresh() {
     var playerID = Game.GetLocalPlayerID();
     GameEvents.SendCustomGameEventToServer("refresh_admin", { id: playerID });
+    Game.EmitSound("General.ButtonClick");
     $.Msg("Requested refresh for player " + playerID);
 }
 
@@ -137,6 +133,8 @@ function LvlUp(level) {
 
     GameEvents.SendCustomGameEventToServer("lvlup_admin", { lvl: level, ent: entities });
     $.Msg("Requested lvlup for player " + playerID);
+
+    Game.EmitSound("General.ButtonClick");
 }
 
 // Выдать золото >>
@@ -151,6 +149,8 @@ function GiveGold(amt) {
 
     GameEvents.SendCustomGameEventToServer("gold_admin", { amout: amt, ent: entities });
     $.Msg("Requested " + amt + " gold for entities: " + entities);
+
+    Game.EmitSound("General.ButtonClick");
 }
 
 //networthIcon.SetImage("s2r://panorama/images/hud/reborn/gold_small_psd.vtex");
@@ -217,31 +217,37 @@ function ShowDebugPanel()
         main.RemoveClass("DebugPanel_hidden")
         main.RemoveClass("DebugPanel_hide")
         main.AddClass("DebugPanel_show")
+        Game.EmitSound("Shop.PanelUp")
     }
 }
 
-function ShowSelect()
-{
-    let main = $.GetContextPanel().FindChildTraverse("spawn_hero_select")
+function ShowSelect(name)
+{   
+    let main = $.GetContextPanel().FindChildTraverse(name)
 
-    if (main && main.BHasClass("Select_hidden"))
+    if (main && main.BHasClass("DebugPanel_hidden"))
     {
-        main.RemoveClass("Select_hidden")
-        main.RemoveClass("Select_hide")
-        main.AddClass("Select_show")
+        main.RemoveClass("DebugPanel_hidden")
+        main.RemoveClass("DebugPanel_hide")
+        main.AddClass("DebugPanel_show")
+        Game.EmitSound("Shop.PanelUp")
     }
 }
 
 
-function HideSelect()
+function HideSelect(name)
 {
-    let main = $.GetContextPanel().FindChildTraverse("spawn_hero_select")
+    let main = $.GetContextPanel().FindChildTraverse(name)
 
-    if (main && main.BHasClass("Select_show"))
+    if (main && main.BHasClass("DebugPanel_show"))
     {
-        main.RemoveClass("Select_hidden")
-        main.RemoveClass("Select_hide")
-        main.AddClass("Select_show")
+        main.RemoveClass("DebugPanel_show")
+        main.AddClass("DebugPanel_hide")
+        Game.EmitSound("Shop.PanelDown")
+        $.Schedule(0.1, function ()
+        {   
+            main.AddClass("DebugPanel_hidden")
+        })
     }
 }
 
@@ -254,7 +260,7 @@ function HideDebugPanel()
         $.Msg("DebugPanel_show")
         main.RemoveClass("DebugPanel_show")
         main.AddClass("DebugPanel_hide")
-
+        Game.EmitSound("Shop.PanelDown")
         $.Schedule(0.1, function ()
         {   
             main.AddClass("DebugPanel_hidden")

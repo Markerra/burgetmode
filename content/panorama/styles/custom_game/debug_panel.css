@@ -35,42 +35,6 @@
 	
 }
 
-@keyframes 'SelectClose'
-{
-	100%
-	{
-		transform: translate3d( 0, 0, 0px );
-		opacity: 1;
-	}
-	
-	0%
-	{
-		transform: translate3d( -10%, 0, 0px );
-		opacity: 0;
-	}
-	
-	20%
-	{
-		opacity: 0;
-	}
-	
-}
-
-@keyframes 'SelectShow'
-{
-	0%
-	{
-		transform: translate3d( 0, 0, 0px );
-		opacity: 1;
-	}
-	
-	100%
-	{
-		transform: translate3d( -30%, 0, 0px );
-		opacity: 0;
-	}
-	
-}
 
 #mouse_over {
 	width: 46%;

@@ -94,10 +94,9 @@ end
 function chat_wheel:SelectHeroVO(keys)
 	if keys.PlayerID == nil then return end
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
-	print(keys.PlayerID)
 	local sound_name = keys.num
 	local heroes = {}
-	local hero_name = "npc_dota_hero_omniknight"
+	local hero_name = ""
 	for i=0, PlayerResource:GetPlayerCount()-1 do
 		if PlayerResource:IsValidPlayerID(i) then
 			table.insert(heroes, PlayerResource:GetPlayer(i):GetAssignedHero())
@@ -105,7 +104,7 @@ function chat_wheel:SelectHeroVO(keys)
 	end
 	local hero = heroes[keys.PlayerID+1]
 	if hero then
-		--hero_name = hero:GetUnitName()
+		hero_name = hero:GetUnitName()
 	end
 
 	local tier_hero = 30
@@ -113,41 +112,40 @@ function chat_wheel:SelectHeroVO(keys)
 	local phase_tier = 30
 
 	local table_data = CustomNetTables:GetTableValue("sub_data", tostring(keys.PlayerID))
-		--if player.sound_use_one == nil then
-		--    player.sound_use_one = 1
-		--end
+		if player.sound_use_one == nil then
+		    player.sound_use_one = 1
+		end
 
-		--if player.sound_use_two == nil then
-		--    player.sound_use_two = 0
-		--end
-		
-		--if (player.sound_use_one and player.sound_use_one > 0) and (player.sound_use_two and player.sound_use_two > 0) then
-		--  	local player = PlayerResource:GetPlayer(keys.PlayerID)
-		--  	if player then
-		--      	local cooldown_sound = math.max(player.sound_use_one, player.sound_use_two)
-		--      	CustomGameEventManager:Send_ServerToPlayer(player, "panorama_cooldown_error", {message="#dota_sound_error", time=cooldown_sound})
-		--  	end
-		--  	EmitSoundOnClient("General.Cancel", player)
-		--  	return
-		--end
+		if player.sound_use_two == nil then
+		    player.sound_use_two = 0
+		end
+	
+		if (player.sound_use_one and player.sound_use_one > 0) and (player.sound_use_two and player.sound_use_two > 0) then
+		  	local player = PlayerResource:GetPlayer(keys.PlayerID)
+		  	if player then
+		      	local cooldown_sound = math.max(player.sound_use_one, player.sound_use_two)
+		      	CustomGameEventManager:Send_ServerToPlayer(player, "panorama_cooldown_error", {message="#dota_sound_error", time=cooldown_sound})
+		  	end
+		  	EmitSoundOnClient("General.Cancel", player)
+		  	return
+		end
 
-	  if true then --if player.sound_use_one > 0 then
+	if player.sound_use_one > 0 then
+	  		local cd = 5
+	  		if test then 
+	  			cd = 0
+	  		end
 
-	  		--local cd = 5
-	  		--if test then 
-	  		--	cd = 0
-	  		--end
-
-	      	--player.sound_use_two = cd
-	      	--Timers:CreateTimer({
-			--    useGameTime = false,
-			--    endTime = 1,
-			--    callback = function()
-			--      	if player.sound_use_two <= 0 then return nil end
-    		--        player.sound_use_two = player.sound_use_two - 1
-    		--        return 1
-			--    end
-			--})
+	      	player.sound_use_two = cd
+	      	Timers:CreateTimer({
+			    useGameTime = false,
+			    endTime = 1,
+			    callback = function()
+			      	if player.sound_use_two <= 0 then return nil end
+    		        player.sound_use_two = player.sound_use_two - 1
+    		        return 1
+			    end
+			})
 
 		CustomGameEventManager:Send_ServerToAllClients( 'chat_dota_sound', {hero_name = hero_name, player_id = keys.PlayerID, sound_name = sound_string, sound_name_global = sound_name, tier = tier_hero, phase_tier = phase_tier})
 	else
@@ -262,8 +260,7 @@ function chat_wheel:SelectVO(keys)
 		    end
 		})
   	end
-  	print(sound_string)
-  	pritn(sound_name)
+
 	CustomGameEventManager:Send_ServerToAllClients( 'chat_dota_sound', {hero_name = hero_name, player_id = keys.PlayerID, sound_name = sound_string, sound_name_global = sound_name, tier = 30})
 end
 

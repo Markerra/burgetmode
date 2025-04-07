@@ -11,7 +11,7 @@
 		<Panel id="debug_panel" class="DebugPanel_hidden">
 			<Panel id="buttons_panel">
 				<Panel id="spawn_hero">
-					<Panel id="spawn_hero_select">
+					<Panel class="DebugPanel_hidden" id="spawn_hero_select">
 					    <!-- Иконка Huskar -->
 					    <Button class="hero_icon_button" onactivate="SpawnHero('npc_dota_hero_huskar')">
 					        <DOTAHeroImage heroname="npc_dota_hero_huskar" class="hero_icon"/>
@@ -48,9 +48,9 @@
 	
 				</Panel>
 				<Panel id="give_item">
-					<Panel id="give_item_select">
+					<Panel class="DebugPanel_hidden" id="give_item_select">
 	
-					    <Button class="item_icon_button" style="margin-top: 105px;" onactivate="	GiveItem('item_ultimate_scepter_2')">
+					    <Button class="item_icon_button" style="margin-top: 105px;" onactivate="GiveItem('item_ultimate_scepter_2')">
 					        <DOTAItemImage itemname="item_ultimate_scepter" class="item_icon" showtooltip="false"/>
 					    </Button>
 					
