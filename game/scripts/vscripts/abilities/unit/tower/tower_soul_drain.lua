@@ -3,10 +3,6 @@ LinkLuaModifier("modifier_tower_soul_drain_debuff", "abilities/unit/tower/tower_
 
 tower_soul_drain = class({})
 
-function tower_soul_drain:Precache( context )
-    PrecacheResource( "particle", "particles/econ/events/ti8/shivas_guard_ti8_slow.vpcf", context )
-end
-
 function tower_soul_drain:GetIntrinsicModifierName()
     return "modifier_tower_soul_drain"
 end

@@ -84,7 +84,7 @@ particles = {
 	"particles/units/heroes/hero_riki/riki_shard_sleep.vpcf", -- modifier_arena_boss_sleep
 	"particles/creatures/aghanim/aghanim_beam_channel.vpcf", -- shopkeeper_upgrade_tower
 	"particles/econ/world/towers/ti10_radiant_tower/ti10_radiant_tower_destruction_sparkle.vpcf",
-	
+	"particles/econ/events/ti8/shivas_guard_ti8_slow.vpcf",
 }
 
 soundfiles = {
@@ -164,6 +164,8 @@ model_folders = {
 }
 
 particle_folders = {
+	"particles/units/heroes/hero_nevermore",
+	"particles/units/heroes/hero_invoker",
 	"particles/custom/neutral",
 	"particles/custom/neutral/boss",
 	"particles/units/heroes/hero_life_stealer",

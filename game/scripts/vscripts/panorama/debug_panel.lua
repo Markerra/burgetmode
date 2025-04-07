@@ -12,6 +12,15 @@ function GameMode:Admin_SpawnBot( data )
         print("debug_panel: неверное имя героя")
         return nil
     end
+    
+    for i=1, HeroList:GetHeroCount() do
+        if HeroList:GetHero(i-1):GetUnitName() == heroName then
+            print("debug_panel: имя героя уже занято")
+            return nil
+        end
+    end
+
+    local playerPosition = Vector(0, 0, 0)
 
     local player = PlayerResource:GetPlayer(playerID)
     if not player then
@@ -20,16 +29,14 @@ function GameMode:Admin_SpawnBot( data )
     end
 
     local playerHero = player:GetAssignedHero()
+
     if not playerHero then
-        print("Player does not have a hero")
-        return nil
+        playerPosition = Vector(0, 0, 0)
+    else
+        playerPosition = playerHero:GetAbsOrigin()
     end
 
-    local playerPosition = playerHero:GetAbsOrigin()
-
     local spawnPosition = playerPosition + Vector(offset, 0, 0)
-
-    if not playerHero then spawnPosition = Vector( 0, 0, 0 ) end
 
     local botHero = CreateUnitByName(heroName, spawnPosition, true, nil, nil, player:GetTeamNumber()+RandomInt(1, 4))
     botHero:SetControllableByPlayer(playerID, true)
