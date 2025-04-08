@@ -1,43 +1,50 @@
-LinkLuaModifier( "th_modifier_seva_trader", "abilities/seva/seva_trader", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_seva_trader", "abilities/seva/seva_trader", LUA_MODIFIER_MOTION_NONE )
 
 seva_trader = {}
 
-function seva_trader:OnUpgrade()
-    local caster = self:GetCaster()
-    modif = caster:FindModifierByName("th_modifier_seva_trader")
-    if modif then
-        caster:RemoveModifierByName("th_modifier_seva_trader")
-    end
-    caster:AddNewModifier(caster, self, "th_modifier_seva_trader", {})
-	--CreateModifierThinker(caster, self, "th_modifier_seva_trader", {duration = 1}, caster:GetAbsOrigin(), caster:GetTeamNumber(), false)
+function seva_trader:GetIntrinsicModifierName()
+    return "modifier_doom_bringer_devils_bargain"
 end
 
-th_modifier_seva_trader = {}
+function seva_trader:OnUpgrade()
+    local caster = self:GetCaster()
+    modif = caster:FindModifierByName("modifier_seva_trader")
+    if modif then
+        caster:RemoveModifierByName("modifier_seva_trader")
+    end
+    caster:AddNewModifier(caster, self, "modifier_seva_trader", {})
+end
 
-function th_modifier_seva_trader:IsPurgable()
+modifier_seva_trader = {}
+
+function modifier_seva_trader:IsPurgable()
     return false
 end
 
-function th_modifier_seva_trader:IsHidden()
+function modifier_seva_trader:IsHidden()
     return true
 end
 
-function th_modifier_seva_trader:OnCreated()
-    if not IsServer() then return end
-    local time_stack = self:GetAbility():GetSpecialValueFor("time_stack")
-    self:StartIntervalThink(time_stack)
+function modifier_seva_trader:OnCreated()
+    self:StartIntervalThink(1)
 end
 
-function th_modifier_seva_trader:OnIntervalThink()
-    if self:GetCaster():PassivesDisabled() then return end
+function modifier_seva_trader:OnIntervalThink()
     if not IsServer() then return end
     local parent = self:GetParent()
-    local gpm = self:GetAbility():GetSpecialValueFor("gold_per_stack")
-    parent:ModifyGold(gpm, false, DOTA_ModifyGold_GameTick)
-	return 
+
+    for slot = 0, 5 do
+        local item = parent:GetItemInSlot(slot)
+        if item then
+            local original_cost = item:GetCost()
+            item._original_cost = original_cost
+            print(item)
+            function item:GetCost()
+                return 0
+            end
+
+        end
+    end
+
+    return 1
 end
-
-
- 
-
-------------------------------------------------------

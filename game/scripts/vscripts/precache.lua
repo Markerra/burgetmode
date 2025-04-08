@@ -1,7 +1,6 @@
 print("Precache Init")
 
 particles = {
-	"particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_explosion.vpcf", -- seva_tether
 	"particles/econ/items/wisp/wisp_tether_ti7.vpcf", -- seva_tether	
 	"particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf", -- seva_box
 	"particles/econ/events/ti9/shovel_revealed_loot_variant_0_treasure.vpcf", -- seva_box
@@ -85,11 +84,22 @@ particles = {
 	"particles/creatures/aghanim/aghanim_beam_channel.vpcf", -- shopkeeper_upgrade_tower
 	"particles/econ/world/towers/ti10_radiant_tower/ti10_radiant_tower_destruction_sparkle.vpcf",
 	"particles/econ/events/ti8/shivas_guard_ti8_slow.vpcf",
+	"particles/tower_fx/shopkeeper_tower_glyph.vpcf",
+	"particles/units/heroes/hero_disruptor/disruptor_kineticfield_formation.vpcf",
+	"particles/units/heroes/hero_disruptor/disruptor_kineticfield.vpcf",
+	"particles/units/heroes/hero_disruptor/disruptor_static_storm.vpcf",
+	"particles/econ/items/bloodseeker/bloodseeker_eztzhok_weapon/bloodseeker_bloodbath_eztzhok_burst.vpcf",
+	"particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_explosion.vpcf", 
+	"particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf",
+	"particles/econ/events/ti6/blink_dagger_start_ti6.vpcf",
+	"particles/econ/events/ti6/blink_dagger_end_ti6.vpcf",
+	
 }
 
 soundfiles = {
 	"soundevents/game_sounds.vsndevts",
 	"soundevents/game_sounds_items.vsndevts",
+	"soundevents/game_sounds_creeps.vsndevts",
 	"soundevents/seva_sounds.vsndevts",
 	"soundevents/maxim_sounds.vsndevts",
 	"soundevents/marker_sounds.vsndevts",
@@ -128,6 +138,8 @@ soundfiles = {
 	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts", -- boss_roshan_dispel
 	"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts", -- wave_portal
 	"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts", -- modifier_arena_boss_sleep
+	"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts", -- matvey_petard
+	"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts", -- matvey_petard
 
 }
 
@@ -151,7 +163,8 @@ models = {
 	"models/courier/greevil/gold_greevil.vmdl", -- npc_gold_creep
 	"models/creeps/lane_creeps/creep_bad_melee/creep_crystal_bad_melee.vmdl", -- npc_xp_creep
 	"models/creeps/roshan/roshan.vmdl", -- npc_boss_roshan
-
+	"models/heroes/gyro/gyro_missile.vmdl", --matvey_petard
+	
 }
 
 model_folders = {
@@ -164,10 +177,14 @@ model_folders = {
 }
 
 particle_folders = {
+	"particles/units/heroes/hero_pudge",
 	"particles/units/heroes/hero_nevermore",
 	"particles/units/heroes/hero_invoker",
+	"particles/units/heroes/hero_huskar",
 	"particles/custom/neutral",
 	"particles/custom/neutral/boss",
+	"particles/custom/matvey/matvey_metka",
+	"particles/custom/matvey/matvey_petard",
 	"particles/units/heroes/hero_life_stealer",
 	"particles/items_fx",
 }

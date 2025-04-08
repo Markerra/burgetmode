@@ -183,8 +183,8 @@ function GameMode:Admin_GiveGold( data )
 	end
 end
 
-function GameMode:Admin_SteamID_Check()--( data )
+function GameMode:Admin_SteamID_Check()
     require("game-mode/custom_params")
     --local steamID = PlayerResource:GetSteamID(data.playerID):__tostring()
-    CustomGameEventManager:Send_ServerToAllClients("admin_steamID", {allowedID = CUSTOM_ADMIN_STEAMID64}) --, steamID = steamID})
+    CustomGameEventManager:Send_ServerToAllClients("admin_steamID", {allowedIDs = CUSTOM_ALLOWED_STEAMIDS}) --, steamID = steamID})
 end

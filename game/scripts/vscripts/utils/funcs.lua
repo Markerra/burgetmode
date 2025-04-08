@@ -28,3 +28,11 @@ function GetPlayerByTeam( team )
 		end
 	end
 end
+
+function HasTalent(unit, talent_name)
+    local talent = unit:FindAbilityByName(talent_name)
+    if talent and talent:GetLevel() > 0 then
+        return true
+    end
+    return false
+end

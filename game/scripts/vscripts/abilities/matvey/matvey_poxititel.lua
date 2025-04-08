@@ -35,6 +35,10 @@ function matvey_poxititel_modifier:OnAttackLanded( event )
 
 	local chance = ability:GetSpecialValueFor("chance")
 
+	if target:IsCreep() or target:IsNeutralUnitType() then 
+		chance = chance / 2
+	end
+
 	if attacker == caster and not attacker:IsIllusion() then
 		if RollPercentage(chance) then 
 			local name1 = "matvey_poxititel_buff"

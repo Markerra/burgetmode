@@ -11,11 +11,10 @@ _G.boss_stage = false
 
 _G.portal_delay = 5.0
 
-_G.enable_waves = true
+_G.enable_waves = false
 
 local winner_team = nil
 local current_player_count = 1
-local test_waves_first = true
 
 require("game-mode/custom_params")
 require("game-mode/waves")
@@ -129,7 +128,7 @@ end
 function GameMode:InitFast()
 	local mode = GameRules:GetGameModeEntity()
 
-	mode:SetCustomGameForceHero("npc_dota_hero_huskar")
+	mode:SetCustomGameForceHero("npc_dota_hero_invoker")
 
 	PlayerResource:SetCustomTeamAssignment(0, DOTA_TEAM_CUSTOM_1)
 
@@ -154,8 +153,16 @@ function GameMode:npcSpawned( event )
 	local unit = EntIndexToHScript(event.entindex)
 
 	if IsInToolsMode() and unit:IsHero() then
+		local isVerified = false
+		local playerSteamID = PlayerResource:GetSteamID(unit:GetPlayerID()):__tostring()
+		for _, allowedID in ipairs(CUSTOM_ALLOWED_STEAMIDS) do
+            if playerSteamID == allowedID then
+                isVerified = true
+                break
+            end
+        end
 		local adminItems = GameRules:GetGameModeEntity().GiveAdminItems
-		if adminItems and PlayerResource:GetSteamID(unit:GetPlayerID()):__tostring() == CUSTOM_ADMIN_STEAMID64 then
+		if (adminItems or GameRules:IsCheatMode()) and isVerified then
 			if not unit:HasItemInInventory("item_admin_tp_hero") and unit.bFirstSpawned ~= false then
 				unit:AddItemByName("item_admin_tp_hero")
 				unit:AddItemByName("item_admin_gold_reset")
@@ -325,7 +332,7 @@ function waves_think()
 	if game_end == true then return end
 	max_timer = MaxTime(GameMode.current_wave)
 	boss_wave = BossTime(GameMode.current_wave)
-	print("Next wave in: "..max_timer-timer.."s")
+	--print("Next wave in: "..max_timer-timer.."s")
 
 	--if boss_wave and not boss_stage then
 --

@@ -25,8 +25,8 @@
 		"Ability11"						"special_bonus_unique_seva_phone_duration" // левый талант на 10 ур.
 		"Ability12"						"special_bonus_unique_seva_ult_cooldown" // правый талант на 15 ур.
 		"Ability13"						"special_bonus_unique_seva_tether_duration" // левый талант на 15 ур.
-		"Ability14"						"special_bonus_unique_seva_phone_damage" // правый талант на 20 ур.
-		"Ability15"						"special_bonus_unique_seva_tether_damage" // левый талант на 20 ур.
+		"Ability14"						"special_bonus_unique_seva_tether_damage" // правый талант на 20 ур.
+		"Ability15"						"special_bonus_unique_seva_phone_mute_duration" // левый талант на 20 ур.
 		"Ability16"						"special_bonus_unique_seva_ult_hp_to_dmg" // правый талант на 25 ур.
 		"Ability17"						"special_bonus_unique_seva_phone_silence" // левый талант на 25 ур.	
 	
@@ -36,7 +36,7 @@
             {
                 "Deprecated"			"1"
             }
-            "pudge_flayers_hook" 
+            "pudge_rotten_core" 
             {
                 "Deprecated"			"1"
             }
@@ -216,11 +216,11 @@
                 "GradientID"        "4"
             }
 
-            "huskar_bloodbath" 
+            "huskar_cauterize" 
             {
                 "Deprecated"			"1"
             }
-            "huskar_nothl_transfusion" 
+            "huskar_incendiary" 
             {
                 "Deprecated"			"1"
             }
@@ -255,9 +255,9 @@
 
 		"Ability1"      				"generic_hidden"
         "Ability2"      				"matvey_metka"
-        "Ability3"      				"generic_hidden"
+        "Ability3"      				"matvey_petard"
         "Ability4"      				"matvey_magic"
-        "Ability5"      				"generic_hidden"
+        "Ability5"      				"matvey_petard_blink"
         "Ability6"      				"matvey_poxititel"
         "Ability7"      				"generic_hidden"
         "Ability8"      				"generic_hidden"
@@ -273,12 +273,12 @@
 
 		"Ability17"    					"generic_hidden" // правый талант на 10 ур.
 		"Ability18"    					"generic_hidden" // левый талант на 10 ур.
-		"Ability19"    					"generic_hidden" // правый талант на 15 ур.
-		"Ability20"    					"generic_hidden" // левый талант на 15 ур.
+		"Ability19"    					"special_bonus_unique_matvey_petard_mana_steal_pct" // правый талант на 15 ур.
+		"Ability20"    					"special_bonus_unique_matvey_metka_duration" // левый талант на 15 ур.
 		"Ability21"    					"generic_hidden" // правый талант на 20 ур.
 		"Ability22"    					"generic_hidden" // левый талант на 20 ур.
 		"Ability23"    					"generic_hidden" // правый талант на 25 ур.
-		"Ability24"    					"generic_hidden" // левый талант на 25 ур.
+		"Ability24"    					"special_bonus_unique_matvey_magic_transform" // левый талант на 25 ур.
 
 		"VisionNighttimeRange"			"1500"
 
@@ -291,11 +291,15 @@
                 "GradientID"        "2"
             }
             
-            "invoker_agnostic"
+            "invoker_quas_focus"
             {
                 "Deprecated"			"1"
             }           
-            "invoker_elitist"
+            "invoker_wex_focus"
+            {
+                "Deprecated"			"1"
+            }
+            "invoker_exort_focus"
             {
                 "Deprecated"			"1"
             }

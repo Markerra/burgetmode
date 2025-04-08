@@ -14,18 +14,6 @@ function seva_tether:OnSpellStart()
 
     if target:TriggerSpellAbsorb(self) then return end
 
-    if not self:GetCaster():HasModifier("seva_ult_modif") then
-        if lvl == 1 then
-            EmitSoundOn("seva_tether_cast1", caster)
-        elseif lvl == 2 then 
-            EmitSoundOn("seva_tether_cast2", caster)
-        elseif lvl == 3 then
-            EmitSoundOn("seva_tether_cast3", caster)
-        elseif lvl == 4 then
-            EmitSoundOn("seva_tether_cast4", caster)
-        end
-    end
-
     Timers:CreateTimer(0.05, function()
         EmitSoundOn("DOTA_Item.BlinkDagger.Activate", caster)
         caster:AddNewModifier(target, self, "modifier_seva_tether", {target_entindex = target:entindex(), duration = duration})

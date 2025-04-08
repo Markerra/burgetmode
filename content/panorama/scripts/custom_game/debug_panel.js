@@ -27,9 +27,18 @@ mouse_over.SetPanelEvent('onmouseout', function() {
 
 const spawnButton = $("#spawn_bot_button")
 spawnButton.state = 0
+
+const giveButton = $("#give_item_button")
+giveButton.state = 0
+
 HideSelect("spawn_hero_select")
 spawnButton.SetPanelEvent("onactivate", function() {
+
     if (spawnButton.state === 0) {
+        HideSelect("give_item_select");
+        giveButton.state = 0;
+        mouse_over.style.width = "46%";
+
         ShowSelect("spawn_hero_select");
         spawnButton.state = 1;
         mouse_over.style.width = "95%";
@@ -55,11 +64,15 @@ function SpawnHero(heroName) {
 
 // выдать предмет >>
 
-const giveButton = $("#give_item_button")
-giveButton.state = 0
-HideSelect("give_item_select")
+HideSelect("give_item_select");
 giveButton.SetPanelEvent("onactivate", function() {
+    HideSelect("spawn_hero_select");
+
     if (giveButton.state === 0) {
+        HideSelect("spawn_hero_select");
+        spawnButton.state = 0;
+        mouse_over.style.width = "46%";
+        
         ShowSelect("give_item_select");
         giveButton.state = 1;
         mouse_over.style.width = "95%";
@@ -153,52 +166,29 @@ function GiveGold(amt) {
     Game.EmitSound("General.ButtonClick");
 }
 
-//networthIcon.SetImage("s2r://panorama/images/hud/reborn/gold_small_psd.vtex");
-
-// закрыть / открыть панель >>
-//const rootPanel = $.GetContextPanel().FindChildTraverse("buttons_panel");
-//const toggleMenuButton = $("#close_menu_button")
-//const toggleMenuText = toggleMenuButton.FindChildTraverse("close_menu_button_text"); 
-//toggleMenuButton.SetPanelEvent("onactivate", function() {
-//    if (rootPanel && rootPanel.BHasClass("DebugPanel_show")) {
-//        HideDebugPanel()
-//        toggleMenuText.text = ">"
-//    }
-//    else {
-//        ShowDebugPanel()
-//        toggleMenuText.text = "<"
-//    }
-//})
-
 function checkPlayerID() {
-
-    //const id = Game.GetLocalPlayerID();
-
-    GameEvents.SendCustomGameEventToServer("admin_steamID", {}); // {playerID: id});
-
+    GameEvents.SendCustomGameEventToServer("admin_steamID", {});
     checkPlayerID2()
-
 }
 
 GameEvents.Subscribe("admin_steamID", checkPlayerID2);
 
 function checkPlayerID2(data) {
+    if (data && data.allowedIDs) {
+        // Получаем все значения из объекта allowedIDs
+        var allowedSteamIDs = Object.values(data.allowedIDs);
+        var steamID = Game.GetLocalPlayerInfo().player_steamid;
 
-    if (data && data.allowedID) {
-
-        var allowedSteamID = data.allowedID;
-        var steamID = Game.GetLocalPlayerInfo().player_steamid
-    
         var panel = $.GetContextPanel().FindChildInLayoutFile("debug_panel");
-    
-    
+
         if (panel) {
-            if (steamID == allowedSteamID) {
-                ShowDebugPanel()
-                isAllowed = true
-                $.Msg("+++ Admin Panel for player with #" + Game.GetLocalPlayerID() + " playerID")
+            // Проверяем, есть ли steamID в массиве allowedSteamIDs
+            if (allowedSteamIDs.includes(steamID)) {
+                //ShowDebugPanel();
+                isAllowed = true;
+                $.Msg("+++ Admin Panel for player with #" + Game.GetLocalPlayerID() + " playerID");
             } else {
-                HideDebugPanel()
+                HideDebugPanel();
             }
         }
 
@@ -206,6 +196,7 @@ function checkPlayerID2(data) {
 }
 
 $.Schedule(5, checkPlayerID);
+
 
 function ShowDebugPanel()
 {

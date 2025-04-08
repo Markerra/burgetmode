@@ -72,7 +72,7 @@ function matvey_magic_modifier:OnAttackLanded( event )
 			victim = event.target,
 			attacker = attacker,
 			damage = dmg,
-			damage_type = 2,
+			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = ability
 		})
 		
@@ -83,7 +83,7 @@ function matvey_magic_modifier:OnAttackLanded( event )
 			victim = event.target,
 			attacker = attacker,
 			damage = dmg,
-			damage_type = 1,
+			damage_type = DAMAGE_TYPE_PHYSICAL,
 			ability = ability
 		})
 	end

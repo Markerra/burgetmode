@@ -1,12 +1,6 @@
 LinkLuaModifier("modifier_sergopy_voice_pull", "abilities/sergopy/sergopy_voice", LUA_MODIFIER_MOTION_HORIZONTAL)
 
-function HasTalent(unit, talent_name)
-    local talent = unit:FindAbilityByName(talent_name)
-    if talent and talent:GetLevel() > 0 then
-        return true
-    end
-    return false
-end
+require("utils/funcs")
 
 sergopy_voice = class({})
 

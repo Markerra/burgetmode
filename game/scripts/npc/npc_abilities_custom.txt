@@ -69,6 +69,8 @@
 		{
 			"time_stack"		"10 8 4 2"	// интервал получения золота
 			"gold_per_stack"	"2"	// получаемое золото
+			"buyback_penalty"	"0"
+			"item_sellback_percent" "70"
 		}
 	}
 
@@ -93,10 +95,14 @@
 		{
 			"pure_damage"
 			{
-				"value"			"50 75 100 125"	// чистый урон каждую секунду
+				"value"			"75 90 110 155"	// чистый урон каждую секунду
 				"special_bonus_unique_seva_phone_damage"	"+50"	// талант
 			}
-			"mute_duration"		"0.2 0.4 0.8 1"	// длительность заглушения
+			"mute_duration"
+			{
+				"value"	"0.3 0.5 0.6 0.8"	// длительность заглушения
+				"special_bonus_unique_seva_phone_mute_duration"	"+0.2"	// талант
+			}
 			"duration"
 			{
 				"value"			"5"		// длительность облака
@@ -120,6 +126,16 @@
 	// Seva Special Bonus: +1 сек. длительности Головной Телефон
 	//=================================================================================================================
 	"special_bonus_unique_seva_phone_duration"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Seva Special Bonus: +0.2 сек. длительности заглушения Головной Телефон
+	//=================================================================================================================
+	"special_bonus_unique_seva_phone_mute_duration"
 	{
 		"BaseClass"             		"special_bonus_base"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
@@ -1017,7 +1033,7 @@
 //----------------------------------------------------------------------------
 	
 	//=================================================================================================================
-	// Matvey: ..
+	// Matvey: Мейнер ОД
 	//=================================================================================================================
 	"matvey_magic"
 	{
@@ -1040,7 +1056,7 @@
 				"special_bonus_unique_matvey_magic_transform" "+40" // талант
 			}
 			"bonus_pct"					"7" // процент доп. урона с атаки от маны (%)
-			"manacost_pct"				"10" // стоимость атаки в ед. маны от маны (%)
+			"manacost_pct"				"10" // стоимость атаки в ед. маны от макс. маны (%)
 		}
 	}
 
@@ -1049,28 +1065,6 @@
 		"BaseClass"             		"special_bonus_base"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	}
-
-	//=================================================================================================================
-	// Matvey: Пакет Лосс
-	//=================================================================================================================
-	"matvey_loss"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"abilities/matvey/matvey_loss"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"matvey/matvey_loss"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-
-		"AbilityValues"
-		{
-			"chance"					"25" // шанс активации (%)
-			"attribute_steal"			"2 3 5" // сколько аттрибутов украдет атака (%)
-			"mana_steal"				"10 25 40" // сколько маны украдет атака
-			"max_stacks"				"5"	// макс бонусов
-			"duration"					"5 7 9" // длительность бонусов (сек.)
-		}
 	}
 
 	//=================================================================================================================
@@ -1090,8 +1084,10 @@
 		"AbilityCastRange"				"750"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"26 23 20 16"
-		"AbilityManaCost"				"95 100 105 115"
-
+		"AbilityManaCost"				"90 100 105 115"
+		
+		"HasScepterUpgrade"				"1"
+		
 		"AbilityValues"
 		{
 			"slow"						"12 15 18 25" // замедление (%)
@@ -1115,6 +1111,63 @@
 		"BaseClass"             		"special_bonus_base"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Matvey: Петарда
+	//=================================================================================================================
+	"matvey_petard"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/matvey/matvey_petard"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"matvey/matvey_petard"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"AbilityCastPoint"			"0.1"
+		"AbilityCastRange"			"950 1050 1150 1300"
+		"AbilityManaCost"			"85 90 95 105"
+		"AbilityCooldown"			"18"
+
+		"AbilityValues"
+		{
+			"damage"				"140 170 200 230"
+			"mana_steal_pct"
+			{
+				"value"			"15 18 21 24" // 
+				"special_bonus_unique_matvey_petard_mana_steal_pct" "+6"
+			}
+			"petard_health"			"90 120 150 180"
+			"projectile_speed"		"230 240 245 250"
+			"stun_duration"			"0.6 0.9 1.2 1.5"
+			"duration"				"18 24 30 36"
+			"aghanim_cooldown_pct"	"50" // (%)
+		}
+	}
+
+	"special_bonus_unique_matvey_petard_mana_steal_pct"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Matvey: Блинк (Aghanim's Scepter)
+	//=================================================================================================================
+	"matvey_petard_blink"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/matvey/matvey_petard_blink"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"matvey/matvey_petard_blink"
+
+		"MaxLevel"						"1"
+		"IsGrantedByScepter"			"1"
 	}
 
 	//=================================================================================================================

@@ -15,4 +15,7 @@ CUSTOM_FOUNTAIN_PCT_HP_REGEN   = 2.5 -- регенерация здоровья 
 CUSTOM_FOUNTAIN_PCT_MANA_REGEN = 4 -- регенерация маны около фонтана (%)
 CUSTOM_FOUNTAIN_PCT_DMG_RESIST = 5 -- доп. сопротивление урону около фонтана (%)
 
-CUSTOM_ADMIN_STEAMID64 = "76561199052097407" -- стим айди админа (мой)
+CUSTOM_ALLOWED_STEAMIDS = { -- стим айди разрешенные для админ панели
+    "76561199052097407",
+    "76561199168798322",
+}

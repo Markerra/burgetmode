@@ -33,7 +33,7 @@ function modifier_marker_chill:OnCreated()
     self.health_regen_bonus = 0
     self.damage_bonus       = 0
 
-    self:SetHasCustomTransmitterData( true )
+    self:SetHasCustomTransmitterData(true)
 
     self:StartIntervalThink( self.interval )
 end
