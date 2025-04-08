@@ -29,6 +29,7 @@
 			"item"		"item_witch_blade"
 			"item"		"item_dragon_lance"
 			"item"		"item_kaya"
+			"item"		"item_orchid"
 			"item"		"item_devastator"
 			"item"		"item_yasha_and_kaya"
 			"item"		"item_moon_shard"

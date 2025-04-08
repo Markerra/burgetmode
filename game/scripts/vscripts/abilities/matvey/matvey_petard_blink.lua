@@ -36,6 +36,30 @@ function matvey_petard_blink:OnSpellStart()
 	local end_p = ParticleManager:CreateParticle(end_fx, PATTACH_WORLDORIGIN, ability.missile)
 	ParticleManager:SetParticleControl(end_p, 0, pos)
 
+------------------------------------------------------------------------------------------------
+
+    local enemies = FindUnitsInRadius(caster:GetTeam(), pos, nil, 900,
+	DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false )
+	for _, enemy in pairs(enemies) do
+        local damage = ability:GetSpecialValueFor("damage")
+		ApplyDamage({
+			victim = enemy,
+			attacker = caster,
+			damage = damage,
+			damage_type = DAMAGE_TYPE_MAGICAL,
+			ability = ability,
+		})
+		local duration = ability:GetSpecialValueFor("stun_duration")
+		enemy:AddNewModifier(caster, ability, "modifier_stunned", {duration = duration})
+    end
+
+    local exp = ParticleManager:CreateParticle( "particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_explosion.vpcf", PATTACH_WORLDORIGIN, ability.missile )
+    ParticleManager:SetParticleControl(exp, 3, ability.missile:GetAbsOrigin())
+    ParticleManager:ReleaseParticleIndex(exp)
+    EmitSoundOn("Hero_Rattletrap.Rocket_Flare.Explode", ability.missile)
+
+------------------------------------------------------------------------------------------------
+
     StopSoundOn("Hero_Gyrocopter.HomingMissile", ability.missile)
 	ability.missile:Destroy()
 

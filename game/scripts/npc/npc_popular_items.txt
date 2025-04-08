@@ -88,6 +88,7 @@
             "item_yasha_and_kaya" "1"
             "item_bloodstone" "1"
             "item_black_king_bar" "1"
+            "item_aether_lens" "1"
         }
     }
 

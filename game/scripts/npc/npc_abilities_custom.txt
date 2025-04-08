@@ -1128,6 +1128,8 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
+		"HasScepterUpgrade"			"1"
+
 		"AbilityCastPoint"			"0.1"
 		"AbilityCastRange"			"950 1050 1150 1300"
 		"AbilityManaCost"			"85 90 95 105"
