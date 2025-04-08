@@ -22,9 +22,9 @@ function matvey_petard:OnSpellStart()
 
     local caster = self:GetCaster()
 	if caster:HasScepter() then
-		
+
 		local enemies = FindUnitsInRadius(caster:GetTeam(), self:GetCursorPosition(), nil, 200,
-		DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
+		DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
 		if #enemies > 0 then
 			self.target = enemies[1]
 		else
@@ -53,7 +53,7 @@ function matvey_petard:OnSpellStart()
 	self:SetActivated(false)
     self:EndCooldown()
 
-	Timers:CreateTimer(self.waitAmount + 2.9, function()
+	Timers:CreateTimer(self.waitAmount + 2.6, function()
 		local blink = caster:FindAbilityByName("matvey_petard_blink")
 		blink:SetActivated(true)
 	end)
@@ -113,7 +113,7 @@ function matvey_petard:InitialiseRocket(velocity, acceleration, detonationRadius
 			if not missile then return end
             if missile:GetHealth() <= 0 then -- ROCKET DESTROY
 				local enemies = FindUnitsInRadius(self:GetCaster():GetTeam(), rocket.location, nil, aoeRadius,
-				DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false )
+				DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false )
 				for _, enemy in pairs(enemies) do 
 					ApplyDamage({
 						victim = enemy,
@@ -132,7 +132,7 @@ function matvey_petard:InitialiseRocket(velocity, acceleration, detonationRadius
 				self:SetActivated(true)
 				self:StartCooldown(self:GetCooldown(self:GetLevel()))
 
-                local exp = ParticleManager:CreateParticle( "particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_explosion.vpcf", PATTACH_POINT, rocket.target )
+                local exp = ParticleManager:CreateParticle( "particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_explosion.vpcf", PATTACH_POINT, missile )
                 ParticleManager:SetParticleControl(exp, 3, missile:GetAbsOrigin())
                 ParticleManager:ReleaseParticleIndex(exp)
                 EmitSoundOn("Hero_Rattletrap.Rocket_Flare.Explode", missile)
@@ -164,7 +164,7 @@ function matvey_petard:InitialiseRocket(velocity, acceleration, detonationRadius
     		if ( distance < detonationRadius ) then -- ROCKET HITS TARGET
     			
 				local enemies = FindUnitsInRadius(self:GetCaster():GetTeam(), rocket.location, nil, 50,
-				DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false )
+				DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false )
 				for _,enemy in pairs(enemies) do 
                     local duration = self:GetSpecialValueFor("duration")
 					if enemy:GetMaxMana() > 0 and not enemy:IsCreep() then
@@ -183,7 +183,7 @@ function matvey_petard:InitialiseRocket(velocity, acceleration, detonationRadius
 				if self:GetCaster():HasScepter() and self.target:GetUnitName() == "npc_dota_companion" then
 					self.target:Destroy()
 					local enemies = FindUnitsInRadius(self:GetCaster():GetTeam(), rocket.location, nil, 30,
-					DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false )
+					DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false )
 					for _, enemy in pairs(enemies) do 
 						ApplyDamage({
 							victim = enemy,
@@ -296,7 +296,7 @@ function matvey_petard:InitialiseRocket2(caster, velocity, acceleration, detonat
 
             if missile:GetHealth() <= 0 then
 				local enemies = FindUnitsInRadius(self.target:GetTeam(), rocket.location, nil, aoeRadius,
-				DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false )
+				DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false )
 				for _, enemy in pairs(enemies) do 
 					ApplyDamage({
 						victim = enemy,
@@ -341,7 +341,7 @@ function matvey_petard:InitialiseRocket2(caster, velocity, acceleration, detonat
     		if ( distance < detonationRadius ) then -- ROCKET 2 HITS TARGET
     			
 				local enemies = FindUnitsInRadius(self.target:GetTeam(), rocket.location, nil, aoeRadius,
-				DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false )
+				DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false )
 				for _,enemy in pairs(enemies) do 
 					local enemyDistance = (enemy:GetAbsOrigin() - rocket.location):Length2D()
                     local modif = caster:FindModifierByName("modifier_matvey_petard_debuff")
@@ -395,7 +395,7 @@ function matvey_petard:FindNearestEnemy()
 		nil,
 		FIND_UNITS_EVERYWHERE,
 		DOTA_UNIT_TARGET_TEAM_ENEMY,
-		DOTA_UNIT_TARGET_ALL,
+		DOTA_UNIT_TARGET_HERO,
 		DOTA_UNIT_TARGET_FLAG_NONE,
 		FIND_CLOSEST,
 		false )
