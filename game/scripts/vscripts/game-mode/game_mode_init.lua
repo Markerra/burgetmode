@@ -3,7 +3,7 @@ _G.max_timer = 0
 
 _G.game_end = false
 
-_G.start_wave = 1
+_G.start_wave = 4
 _G.test_waves = false
 _G.low_net_waves = { 6, 10, 15 }
 
@@ -11,7 +11,7 @@ _G.boss_stage = false
 
 _G.portal_delay = 5.0
 
-_G.enable_waves = false
+_G.enable_waves = true
 
 local winner_team = nil
 local current_player_count = 1
@@ -19,6 +19,7 @@ local current_player_count = 1
 require("game-mode/custom_params")
 require("game-mode/waves")
 require("utils/timers")
+require("utils/funcs")
 
 function GameMode:Init()
 	
@@ -172,6 +173,7 @@ function GameMode:npcSpawned( event )
 			end
 		end
 	end
+
 	--unit.bFirstSpawned = true
 	--if not unit:HasItemInInventory("item_tpscroll_custom") and unit.bFirstSpawned == true then
 	--	unit:AddItemByName("item_tpscroll_custom")
@@ -192,11 +194,12 @@ function GameMode:EntKilled( event )
 	local team = target:GetTeamNumber()
 
 	if target:GetUnitName() == "npc_dota_custom_tower_main" then -- система выбывания игроков при потере главного тавера
-		if current_player_count ~= 2 then
+		print("ENT_KILLED: "..target:GetUnitName())
+		--if current_player_count ~= 2 then
 			if self:DefeatTeam(target) == true then
 				self:SetWinner(attacker, 1)
 			end
-		end
+		--end
 	end
 end
 
@@ -224,6 +227,17 @@ function GameMode:OnStateChange()
 
 		require("game-mode/functions/give_tpscroll")
 		GiveTPScroll()
+
+		local shopkeepers = Entities:FindAllByName("npc_custom_shopkeeper")
+		for _, unit in pairs(shopkeepers) do
+			if not IsServer() then return end
+			local player = GetPlayerByTeam(unit:GetTeam())
+			if player then
+				unit:SetControllableByPlayer(player:GetPlayerID(), false)
+				unit:SetOwner(player:GetAssignedHero())
+			end
+			unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})		
+		end
 
 		mode:SetThink( waves_think, "", 1 )
 	end

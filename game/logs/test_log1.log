@@ -1,0 +1,1631 @@
+[Server] PR:SetSelectedHeroFacet 0:[U:1:1091831679] (5)
+[Server] PR:SetSelectedHeroFacet 1:[U:1:1208532594] (6)
+S:Gamerules: entering state 'DOTA_GAMERULES_STATE_TEAM_SHOWCASE'
+ 
+C:Gamerules: entering state 'DOTA_GAMERULES_STATE_TEAM_SHOWCASE'
+[Client] CDOTA_Hud_Main::EventGameRulesStateChanged DOTA_GAMERULES_STATE_TEAM_SHOWCASE
+S:Gamerules: entering state 'DOTA_GAMERULES_STATE_WAIT_FOR_MAP_TO_LOAD'
+--- Sent CMsgGameServerInfo to GC
+server_public_ip_addr: 1435472110
+server_private_ip_addr: 2886971393
+server_port: 27015
+server_tv_port: 0
+server_key: ""
+server_hibernation: false
+server_type: GAME
+server_region: 0
+server_loadavg: 0.189826295
+server_tv_broadcast_time: -120
+server_game_time: 0.0333328247
+relay_slots_max: 0
+relays_connected: 0
+relay_clients_connected: 0
+tv_secret_code: 4929354012401038601
+server_version: 6384
+server_cluster: 0
+assigned_server_tv_port: 27020
+allow_custom_games: BOTH
+build_version: 6384
+is_recording_match_training_data: false
+
+---
+C:Gamerules: entering state 'DOTA_GAMERULES_STATE_WAIT_FOR_MAP_TO_LOAD'
+[Client] CDOTA_Hud_Main::EventGameRulesStateChanged DOTA_GAMERULES_STATE_WAIT_FOR_MAP_TO_LOAD
+WriteSteamRemoteStorageFileAsync( "cfg/hero_facet_config.cfg" ) -> at 3228.080
+[Client] PregameHud - eGameState is now DOTA_GAMERULES_STATE_TEAM_SHOWCASE
+CAsyncWriteInProgress::OnComplete( "cfg/hero_facet_config.cfg" ) -> Success at 3228.108
+[GCClient] Send msg 4508 (k_EMsgGCGameServerInfo), 85 bytes
+S:Gamerules: entering state 'DOTA_GAMERULES_STATE_PRE_GAME'
+m_flPreGameStartTime set to 108.70
+m_flStateTransitionTime set to 133.70
+ 
+C:Gamerules: entering state 'DOTA_GAMERULES_STATE_PRE_GAME'
+[PanoramaScript] Voice Wheel Init
+[Client] CDOTA_Hud_Main::EventGameRulesStateChanged DOTA_GAMERULES_STATE_PRE_GAME
+ 
+[Client] PregameHud - SetPreGameVisible 0
+ 
+[GCClient] Send msg 8744 (k_EMsgServerToGCGetGuildContracts), 29 bytes
+Excessive frame time of 127.06ms clamped.  Acting as if the frame only took 100.00ms
+ 
+[Client] PregameHud - eGameState is now DOTA_GAMERULES_STATE_PRE_GAME
+[Client] PregameHud - SetPreGameVisible 1
+ 
+Excessive frame time of 145.73ms clamped.  Acting as if the frame only took 100.00ms
+ 
+ 
+ 
+[Entity System] Cannot create an entity because entity class is NULL -1
+[GCClient] Recv msg 8745 (k_EMsgServerToGCGetGuildContractsResponse), 17 bytes
+[Entity System] Cannot create an entity because entity class is NULL -1
+ 
+[Entity System] Entity hero_camera [point_camera]: Cannot find entity referred to by 'parentname' key of skeleton instance: loadout_camera_model!
+[Entity System] Cannot create an entity because entity class is NULL -1
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+[WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 56.996833ms
+ 
+[WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 56.291270ms
+ 
+ 
+ 
+ 
+[Entity System] Cannot create an entity because entity class is NULL -1
+ 
+ 
+[SndOperators] Operator Error: Event valve_ti7.music.ui_hero_select: CSosOperatorConvar
+[SndOperators] Warning: Unable to acquire convar value: dota_music_enable_spectator_mode
+ 
+[Entity System] Cannot create an entity because entity class is NULL -1
+
+Sending CMsgConnectedPlayers for reason PLAYER_HERO.  Last send was 66.3s ago, urgency is 10.0s
+connected_players {
+  steam_id: 76561199052097407
+  hero_id: 59
+}
+connected_players {
+  steam_id: 76561199168798322
+  hero_id: 74
+}
+game_state: DOTA_GAMERULES_STATE_GAME_IN_PROGRESS
+first_blood_happened: false
+send_reason: PLAYER_HERO
+radiant_kills: 0
+dire_kills: 0
+radiant_lead: 0
+building_state: 19138340
+
+[GCClient] Send msg 7034 (k_EMsgGCConnectedPlayers), 51 bytes
+
+[SceneSystem] Too many non-culled draws (alloc 768, need 823), resizing!
+[GCClient] Recv msg 26 (k_ESOMsg_UpdateMultiple), 734 bytes
++++ CSODOTALobby.all_members[0]: hero_id: 59
++++ CSODOTALobby.all_members[1]: hero_id: 74
+
+ {
+}
+[PanoramaScript] +++ Admin Panel for player with #0 playerID
+ 
+[Client] PregameHud - SetPreGameVisible 0
+ 
+ {
+}
+[PanoramaScript] +++ Admin Panel for player with #0 playerID
+
+[VScript] -- Fountain Upgraded	Current Fountain Level: 2
+[VScript] -- Fountain Upgraded	Current Fountain Level: 2
+[VScript] -- Fountain Upgraded	Current Fountain Level: 2
+[VScript] -- Fountain Upgraded	Current Fountain Level: 2
+[VScript] -- Fountain Upgraded	Current Fountain Level: 2
+[VScript] -- Fountain Upgraded	Current Fountain Level: 2
+ChangeGameUIState: DOTA_GAME_UI_DOTA_INGAME -> DOTA_GAME_UI_STATE_DASHBOARD
+ 
+[SteamNetSockets] WSASendTo 26.39.77.95:53470 failed, returned -1, last error=0x2743 A socket operation was attempted to an unreachable network.
+ 
+[SteamNetSockets] WSASendTo 192.168.210.1:53471 failed, returned -1, last error=0x2743 A socket operation was attempted to an unreachable network.
+Excessive frame time of 156.22ms clamped.  Acting as if the frame only took 100.00ms
+ 
+[SteamNetSockets] WSASendTo 192.168.135.1:53472 failed, returned -1, last error=0x2743 A socket operation was attempted to an unreachable network.
+ 
+[SteamNetSockets] WSASendTo 192.168.0.178:53473 failed, returned -1, last error=0x2743 A socket operation was attempted to an unreachable network.
+ 
+[SteamNetSockets] Incoming binding request from [2001:0:284a:364:2c72:dc71:a0c9:19d9]:53474 to [2001:0:284a:364:1c10:1dde:aa70:6f11]:61058.
+[SteamNetSockets] Sending a STUN response to [2001:0:284a:364:2c72:dc71:a0c9:19d9]:53474 from [2001:0:284a:364:1c10:1dde:aa70:6f11]:61058.
+Unknown command: cmd1
+[Entity System] Cannot create an entity because entity class is NULL -1
+[ResourceSystem] Failed loading resource "panorama/images/items/dota_base_ability_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[WorldRenderer] CWorldRendererMgr::ServiceWorldRequests long frame: 64.676530ms
+S:Gamerules: entering state 'DOTA_GAMERULES_STATE_GAME_IN_PROGRESS'
+m_flGameStartTime set to 133.73
+[VScript] Added invulnerability to fountain #1
+[VScript] Added invulnerability to fountain #2
+[VScript] Added invulnerability to fountain #3
+[VScript] Added invulnerability to fountain #4
+[VScript] Added invulnerability to fountain #5
+[VScript] Added invulnerability to fountain #6
+C:Gamerules: entering state 'DOTA_GAMERULES_STATE_GAME_IN_PROGRESS'
+[Client] CDOTA_Hud_Main::EventGameRulesStateChanged DOTA_GAMERULES_STATE_GAME_IN_PROGRESS
+[Client] CDOTA_Hud_Main::DeleteGameEndScreen deleted GameEndContainer
+Excessive frame time of 106.64ms clamped.  Acting as if the frame only took 100.00ms
+--- Sent CMsgGameServerInfo to GC
+server_public_ip_addr: 1435472110
+server_private_ip_addr: 2886971393
+server_port: 27015
+server_tv_port: 0
+server_key: ""
+server_hibernation: false
+server_type: GAME
+server_region: 0
+server_loadavg: 0.244156241
+server_tv_broadcast_time: -120
+server_game_time: 0.100006104
+relay_slots_max: 0
+relays_connected: 0
+relay_clients_connected: 0
+tv_secret_code: 4929354012401038601
+server_version: 6384
+server_cluster: 0
+assigned_server_tv_port: 27020
+allow_custom_games: BOTH
+build_version: 6384
+is_recording_match_training_data: false
+
+---
+[GCClient] Send msg 4508 (k_EMsgGCGameServerInfo), 85 bytes
+[GCClient] Send msg 7197 (k_EMsgGCMatchmakingStatsRequest), 8 bytes
+WriteSteamRemoteStorageFileAsync( "cfg/dotakeys_personal.lst" ) -> at 3253.622
+[RenderSystem] Saved video settings config to 'cfg\video.txt'
+CAsyncWriteInProgress::OnComplete( "cfg/dotakeys_personal.lst" ) -> Success at 3253.638
+[SplitScreen] Writing configuration for slot 0
+[SplitScreen] Saved 'user_keys.vcfg' to SteamRemoteStorage, 309 bytes OK
+[SplitScreen] Saved user config file 'cfg/user_keys_0_slot0.vcfg': type 1
+[SplitScreen] Saved user config file 'cfg/user_keys_0_slot0.vcfg_lastclouded': type 3
+[SplitScreen] Saved 'user_convars.vcfg' to SteamRemoteStorage, 10409 bytes OK
+[SplitScreen] Saved user config file 'cfg/user_convars_0_slot0.vcfg': type 1
+[SplitScreen] Saved user config file 'cfg/user_convars_0_slot0.vcfg_lastclouded': type 3
+ChangeGameUIState: DOTA_GAME_UI_STATE_DASHBOARD -> DOTA_GAME_UI_DOTA_INGAME
+Excessive frame time of 248.45ms clamped.  Acting as if the frame only took 100.00ms
+[ResourceSystem] Failed loading resource "panorama/images/players/0_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 4.63
+[GCClient] Recv msg 7198 (k_EMsgGCMatchmakingStatsResponse), 314 bytes
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 6.63
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 5.50
+[InputSystem] Processing SDL events took 5.7ms
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 4.37
+[GCClient] Send msg 4523 (k_EMsgClientToGCAggregateMetrics), 100 bytes
+[VScript] -- Fountain Upgraded	Current Fountain Level: 3
+[VScript] -- Fountain Upgraded	Current Fountain Level: 3
+[VScript] -- Fountain Upgraded	Current Fountain Level: 3
+[VScript] -- Fountain Upgraded	Current Fountain Level: 3
+[VScript] -- Fountain Upgraded	Current Fountain Level: 3
+[VScript] -- Fountain Upgraded	Current Fountain Level: 3
+Sending CMsgConnectedPlayers for reason FIRST_BLOOD.  Last send was 79.5s ago, urgency is 0.0s
+game_state: DOTA_GAMERULES_STATE_GAME_IN_PROGRESS
+first_blood_happened: true
+send_reason: FIRST_BLOOD
+radiant_kills: 0
+dire_kills: 0
+radiant_lead: 0
+building_state: 19138340
+
+[GCClient] Send msg 7034 (k_EMsgGCConnectedPlayers), 25 bytes
+[VScript] Script Runtime Error: ...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: attempt to index field 'tracker' (a nil value)
+stack traceback:
+	...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:48>
+[VScript] Script Runtime Error: ...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: attempt to index field 'tracker' (a nil value)
+stack traceback:
+	...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:48>
+[VScript] Script Runtime Error: ...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: attempt to index field 'tracker' (a nil value)
+stack traceback:
+	...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:48>
+[VScript] Script Runtime Error: ...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: attempt to index field 'tracker' (a nil value)
+stack traceback:
+	...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:48>
+[GCClient] Recv msg 26 (k_ESOMsg_UpdateMultiple), 734 bytes
+--- CSODOTALobby.first_blood_happened: false
++++ CSODOTALobby.first_blood_happened: true
+[VScript] Script Runtime Error: ...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: attempt to index field 'tracker' (a nil value)
+stack traceback:
+	...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:48>
+[VScript] Script Runtime Error: ...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: attempt to index field 'tracker' (a nil value)
+stack traceback:
+	...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:48>
+[VScript] Script Runtime Error: ...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: attempt to index field 'tracker' (a nil value)
+stack traceback:
+	...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:48>
+[InputSystem] Processing SDL events took 5.0ms
+[VScript] Script Runtime Error: ...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: attempt to index field 'tracker' (a nil value)
+stack traceback:
+	...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:48>
+[VScript] Script Runtime Error: ...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: attempt to index field 'tracker' (a nil value)
+stack traceback:
+	...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:48>
+[VScript] Script Runtime Error: ...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: attempt to index field 'tracker' (a nil value)
+stack traceback:
+	...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:69: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_chill.lua:48>
+[VScript] Message count limit of 10 hit. Subsequent duplicate messages will be squelched.
+ {
+  ent npc_dota_hero_huskar
+}
+[VScript] hero: npc_dota_hero_huskar
+[VScript] index: 368
+[PanoramaScript] index: 368
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 3.63
+[InputSystem] Processing SDL events took 10.8ms
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 5.00
+ {
+  amout int( 9999 = 0x270F )
+  ent {
+    0 int( 418 = 0x1A2 )
+  }
+}
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 47.00
+[InputSystem] Processing SDL events took 6.0ms
+ {
+  lvl int( 30 = 0x1E )
+  ent {
+    0 int( 418 = 0x1A2 )
+  }
+}
+[VScript] Admin Panel: 30 Level Up for npc_dota_hero_invoker
+[PanoramaScript] DebugPanel_hidden
+ {
+}
+[VScript] Admin Panel: Refresh All Heroes
+Attempted to create unknown modifier type wtfModifier!
+Attempted to create unknown modifier type wtfModifier!
+[VScript] Admin Panel: WTF Mode: ON
+[InputSystem] Processing SDL events took 5.5ms
+[PanoramaScript] DebugPanel_show
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 6.37
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 9.40
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.63
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+[VScript] -- Fountain Upgraded	Current Fountain Level: 4
+[VScript] -- Fountain Upgraded	Current Fountain Level: 4
+[VScript] -- Fountain Upgraded	Current Fountain Level: 4
+[VScript] -- Fountain Upgraded	Current Fountain Level: 4
+[VScript] -- Fountain Upgraded	Current Fountain Level: 4
+[VScript] -- Fountain Upgraded	Current Fountain Level: 4
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.87
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 5.50
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+ {
+  item item_rapier
+  ent {
+    0 int( 418 = 0x1A2 )
+  }
+}
+[VScript] Admin Panel: item_rapier Item for npc_dota_hero_invoker
+[PanoramaScript] index: 418
+ {
+  item item_ultimate_scepter_2
+  ent {
+    0 int( 418 = 0x1A2 )
+  }
+}
+[VScript] Admin Panel: item_ultimate_scepter_2 Item for npc_dota_hero_invoker
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Entities = 368
+[PanoramaScript] Requested 9999 gold for entities: 368
+ {
+  amout int( 9999 = 0x270F )
+  ent {
+    0 int( 368 = 0x170 )
+  }
+}
+[PanoramaScript] DebugPanel_show
+[InputSystem] Processing SDL events took 7.0ms
+ {
+  item item_heart
+  ent {
+    0 int( 418 = 0x1A2 )
+  }
+}
+[VScript] Admin Panel: item_heart Item for npc_dota_hero_invoker
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Entities = 368
+[PanoramaScript] Num entities = 1
+[PanoramaScript] Requested lvlup for player 0
+ {
+  lvl int( 30 = 0x1E )
+  ent {
+    0 int( 368 = 0x170 )
+  }
+}
+[VScript] Admin Panel: 30 Level Up for npc_dota_hero_huskar
+[PanoramaScript] DebugPanel_show
+ {
+  item item_blink
+  ent {
+    0 int( 418 = 0x1A2 )
+  }
+}
+[VScript] Admin Panel: item_blink Item for npc_dota_hero_invoker
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 7.47
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+ERROR: CreateLinearProjectile() called with non-zero vertical velocity! Projectile velocity must be two-dimensional.
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+[VScript] Script Runtime Error: ...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: Can't call CBaseEntity:GetAbsOrigin on an object of type [none]
+stack traceback:
+	[C]: in function 'GetAbsOrigin'
+	...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: in function <...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:19>
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] Client (account 1091831679) tried to execute invalid order (41). Order invalid for units with attack capability DOTA_UNIT_CAP_NO_ATTACK.
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 4.00
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.37
+[Server] Client (account 1208532594) tried to execute invalid order (19). Target NPC is dead.
+[VScript] ...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: Can't call CDOTA_Buff:GetParent on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetParent'
+	...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:194>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[VScript] Script Runtime Error: ...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: Can't call CBaseEntity:GetAbsOrigin on an object of type [none]
+stack traceback:
+	[C]: in function 'GetAbsOrigin'
+	...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: in function <...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:19>
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[VScript] -- Fountain Upgraded	Current Fountain Level: 5
+[VScript] -- Fountain Upgraded	Current Fountain Level: 5
+[VScript] -- Fountain Upgraded	Current Fountain Level: 5
+[VScript] -- Fountain Upgraded	Current Fountain Level: 5
+[VScript] -- Fountain Upgraded	Current Fountain Level: 5
+[VScript] -- Fountain Upgraded	Current Fountain Level: 5
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[InputSystem] Processing SDL events took 6.1ms
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl" for entity "npc_dota_creature"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl" for entity "npc_dota_creature"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl" for entity "npc_dota_creature"
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl" for entity "npc_dota_creature"
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl" for entity "npc_dota_creature"
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 34.73
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl" for entity "npc_dota_creature"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl" for entity "npc_dota_creature"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl" for entity "npc_dota_creature"
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.00
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl" for entity "npc_dota_creature"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl" for entity "npc_dota_creature"
+[Server] Client (account 1208532594) tried to execute invalid order (19). Target NPC is dead.
+[VScript] ...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: Can't call CDOTA_Buff:GetParent on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetParent'
+	...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:194>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl" for entity "npc_dota_creature"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl" for entity "npc_dota_creature"
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.10
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl" for entity "npc_dota_creature"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_gameplay/npc/shopkeeper_the_lost_meepo/shopkeeper_the_lost_meepo.vmdl" for entity "npc_dota_creature"
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.63
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] -- Fountain Upgraded	Current Fountain Level: 6
+[VScript] -- Fountain Upgraded	Current Fountain Level: 6
+[VScript] -- Fountain Upgraded	Current Fountain Level: 6
+[VScript] -- Fountain Upgraded	Current Fountain Level: 6
+[VScript] -- Fountain Upgraded	Current Fountain Level: 6
+[VScript] -- Fountain Upgraded	Current Fountain Level: 6
+[InputSystem] Processing SDL events took 5.8ms
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.37
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[InputSystem] Processing SDL events took 5.3ms
+[InputSystem] Processing SDL events took 5.1ms
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 393.633362
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/development/invisiblebox.vmdl" for entity "npc_dota_companion"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/development/invisiblebox.vmdl" for entity "npc_dota_companion"
+[PanoramaScript] DebugPanel_hidden
+[InputSystem] Processing SDL events took 11.3ms
+[PanoramaScript] DebugPanel_show
+[InputSystem] Processing SDL events took 13.6ms
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 21.00
+[VScript] -- Fountain Upgraded	Current Fountain Level: 7
+[VScript] -- Fountain Upgraded	Current Fountain Level: 7
+[VScript] -- Fountain Upgraded	Current Fountain Level: 7
+[VScript] -- Fountain Upgraded	Current Fountain Level: 7
+[VScript] -- Fountain Upgraded	Current Fountain Level: 7
+[VScript] -- Fountain Upgraded	Current Fountain Level: 7
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 10.63
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 6.37
+[InputSystem] Processing SDL events took 5.5ms
+[Server] PR:NotePlayerCommsTime 0:[U:1:1091831679] communicated at 443.033356
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 444.066681
+[InputSystem] Processing SDL events took 5.9ms
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 15.50
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/development/invisiblebox.vmdl" for entity "npc_dota_companion"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/development/invisiblebox.vmdl" for entity "npc_dota_companion"
+[Server] Client (account 1208532594) tried to execute invalid order (61). Item is still in cooldown.
+[InputSystem] Processing SDL events took 5.1ms
+[VScript] -- Fountain Upgraded	Current Fountain Level: 8
+[VScript] -- Fountain Upgraded	Current Fountain Level: 8
+[VScript] -- Fountain Upgraded	Current Fountain Level: 8
+[VScript] -- Fountain Upgraded	Current Fountain Level: 8
+[VScript] -- Fountain Upgraded	Current Fountain Level: 8
+[VScript] -- Fountain Upgraded	Current Fountain Level: 8
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[VScript] ...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: Can't call CDOTA_Buff:GetParent on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetParent'
+	...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:194>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 3.90
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 4.50
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.77
+[SteamNetSockets] Certificate expires in 41h55m at 1744304775 (current time 1744153833), will renew in 39h55m
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 4.37
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[VScript] Script Runtime Error: ...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: Can't call CBaseEntity:GetAbsOrigin on an object of type [none]
+stack traceback:
+	[C]: in function 'GetAbsOrigin'
+	...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: in function <...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:19>
+[Localization System] CLocalize::FindSafe failed to localize: #DOTA_Tooltip_matvey_metka_modifier_debuff
+**** Unable to localize '#DOTA_Tooltip_matvey_metka_modifier_debuff' on panel 'BuffName'
+[Localization System] CLocalize::FindSafe failed to localize: #DOTA_Tooltip_matvey_metka_modifier_debuff
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[InputSystem] Processing SDL events took 12.3ms
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 9.93
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 4.80
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 3.00
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 9.80
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+[VScript] ...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: Can't call CDOTA_Buff:GetParent on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetParent'
+	...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:194>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 4.00
+[VScript] -- Fountain Upgraded	Current Fountain Level: 9
+[VScript] -- Fountain Upgraded	Current Fountain Level: 9
+[VScript] -- Fountain Upgraded	Current Fountain Level: 9
+[VScript] -- Fountain Upgraded	Current Fountain Level: 9
+[VScript] -- Fountain Upgraded	Current Fountain Level: 9
+[VScript] -- Fountain Upgraded	Current Fountain Level: 9
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[Server] Game code (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[InputSystem] Processing SDL events took 5.3ms
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 5.50
+[InputSystem] Processing SDL events took 5.7ms
+ {
+  amout int( 9999 = 0x270F )
+  ent {
+    0 int( 418 = 0x1A2 )
+  }
+}
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 5.20
+ERROR: CreateLinearProjectile() called with non-zero vertical velocity! Projectile velocity must be two-dimensional.
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.40
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+[SteamNetSockets] Certificate expires in 47h50m at 1744326130 (current time 1744153929), will renew in 45h50m
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.20
+[VScript] -- Fountain Upgraded	Current Fountain Level: 10
+[VScript] -- Fountain Upgraded	Current Fountain Level: 10
+[VScript] -- Fountain Upgraded	Current Fountain Level: 10
+[VScript] -- Fountain Upgraded	Current Fountain Level: 10
+[VScript] -- Fountain Upgraded	Current Fountain Level: 10
+[VScript] -- Fountain Upgraded	Current Fountain Level: 10
+[Server] Client (account 1208532594) tried to execute invalid order (19). Target NPC is dead.
+[VScript] ...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: Can't call CDOTA_Buff:GetParent on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetParent'
+	...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:194>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 7.90
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+[InputSystem] Processing SDL events took 6.1ms
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 9.80
+[Server] PR:NotePlayerCommsTime 0:[U:1:1091831679] communicated at 639.700012
+[Server] PR:NotePlayerCommsTime 0:[U:1:1091831679] communicated at 639.866699
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.00
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 8.90
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] Script Runtime Error: ...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: Can't call CBaseEntity:GetAbsOrigin on an object of type [none]
+stack traceback:
+	[C]: in function 'GetAbsOrigin'
+	...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: in function <...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:19>
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 3.50
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] -- Fountain Upgraded	Current Fountain Level: 11
+[VScript] -- Fountain Upgraded	Current Fountain Level: 11
+[VScript] -- Fountain Upgraded	Current Fountain Level: 11
+[VScript] -- Fountain Upgraded	Current Fountain Level: 11
+[VScript] -- Fountain Upgraded	Current Fountain Level: 11
+[VScript] -- Fountain Upgraded	Current Fountain Level: 11
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+[ResourceSystem] Failed loading resource "panorama/images/heroes/dota_custom_fountain_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.30
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.10
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+ {
+  amout int( 9999 = 0x270F )
+  ent {
+    0 int( 418 = 0x1A2 )
+  }
+}
+[InputSystem] Processing SDL events took 5.3ms
+[InputSystem] Processing SDL events took 5.3ms
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 31.80
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 27.80
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[InputSystem] Processing SDL events took 5.6ms
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.60
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[VScript] -- Fountain Upgraded	Current Fountain Level: 12
+[VScript] -- Fountain Upgraded	Current Fountain Level: 12
+[VScript] -- Fountain Upgraded	Current Fountain Level: 12
+[VScript] -- Fountain Upgraded	Current Fountain Level: 12
+[VScript] -- Fountain Upgraded	Current Fountain Level: 12
+[VScript] -- Fountain Upgraded	Current Fountain Level: 12
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 3.20
+[Server] Client (account 1208532594) tried to execute invalid order (19). Target NPC is dead.
+[VScript] ...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: Can't call CDOTA_Buff:GetParent on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetParent'
+	...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:194>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+--- Sent CMsgGameServerInfo to GC
+server_public_ip_addr: 1435472110
+server_private_ip_addr: 2886971393
+server_port: 27015
+server_tv_port: 0
+server_key: ""
+server_hibernation: false
+server_type: GAME
+server_region: 0
+server_loadavg: 0.245691448
+server_tv_broadcast_time: -120
+server_game_time: 599.966675
+relay_slots_max: 0
+relays_connected: 0
+relay_clients_connected: 0
+tv_secret_code: 4929354012401038601
+server_version: 6384
+server_cluster: 0
+assigned_server_tv_port: 27020
+allow_custom_games: BOTH
+build_version: 6384
+is_recording_match_training_data: false
+
+---
+[GCClient] Send msg 4508 (k_EMsgGCGameServerInfo), 85 bytes
+[VScript] Removed invulnerability from fountain #1
+[VScript] Removed invulnerability from fountain #2
+[VScript] Removed invulnerability from fountain #3
+[VScript] Removed invulnerability from fountain #4
+[VScript] Removed invulnerability from fountain #5
+[VScript] Removed invulnerability from fountain #6
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[PanoramaScript] DebugPanel_hidden
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[PanoramaScript] DebugPanel_show
+ERROR: CreateLinearProjectile() called with non-zero vertical velocity! Projectile velocity must be two-dimensional.
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:158: Can't call CBaseEntity:SetForwardVector on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'SetForwardVector'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:158: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+ERROR: CreateLinearProjectile() called with non-zero vertical velocity! Projectile velocity must be two-dimensional.
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+[VScript] ....vpk:scripts\vscripts\abilities\marker\marker_armlet.lua:105: Can't call CDOTA_Buff:GetAbility on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetAbility'
+	....vpk:scripts\vscripts\abilities\marker\marker_armlet.lua:105: in function <....vpk:scripts\vscripts\abilities\marker\marker_armlet.lua:104>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[InputSystem] Processing SDL events took 5.4ms
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 8.60
+[VScript] -- Fountain Upgraded	Current Fountain Level: 13
+[VScript] -- Fountain Upgraded	Current Fountain Level: 13
+[VScript] -- Fountain Upgraded	Current Fountain Level: 13
+[VScript] -- Fountain Upgraded	Current Fountain Level: 13
+[VScript] -- Fountain Upgraded	Current Fountain Level: 13
+[VScript] -- Fountain Upgraded	Current Fountain Level: 13
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.10
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 9.50
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+[InputSystem] Processing SDL events took 6.1ms
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.60
+[VScript] ...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: Can't call CDOTA_Buff:GetParent on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetParent'
+	...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:194>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+[PanoramaScript] DebugPanel_hidden
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 6.20
+[PanoramaScript] solidsolidsolidsolid/ 2.0px 2.0px 2.0px 2.0px / #FFFFFFFF #FFFFFFFF #FFFFFFFF #FFFFFFFF 
+ {
+}
+[VScript] Admin Panel: WTF Mode: OFF
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] solidsolidsolidsolid/ 2.0px 2.0px 2.0px 2.0px / #000000FF #000000FF #000000FF #000000FF 
+ {
+}
+[VScript] Admin Panel: Refresh All Heroes
+Attempted to create unknown modifier type wtfModifier!
+Attempted to create unknown modifier type wtfModifier!
+[VScript] Admin Panel: WTF Mode: ON
+[PanoramaScript] solidsolidsolidsolid/ 2.0px 2.0px 2.0px 2.0px / #FFFFFFFF #FFFFFFFF #FFFFFFFF #FFFFFFFF 
+ {
+}
+[VScript] Admin Panel: WTF Mode: OFF
+[PanoramaScript] solidsolidsolidsolid/ 2.0px 2.0px 2.0px 2.0px / #000000FF #000000FF #000000FF #000000FF 
+ {
+}
+[VScript] Admin Panel: Refresh All Heroes
+Attempted to create unknown modifier type wtfModifier!
+Attempted to create unknown modifier type wtfModifier!
+[VScript] Admin Panel: WTF Mode: ON
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.30
+[VScript] -- Fountain Upgraded	Current Fountain Level: 14
+[VScript] -- Fountain Upgraded	Current Fountain Level: 14
+[VScript] -- Fountain Upgraded	Current Fountain Level: 14
+[VScript] -- Fountain Upgraded	Current Fountain Level: 14
+[VScript] -- Fountain Upgraded	Current Fountain Level: 14
+[VScript] -- Fountain Upgraded	Current Fountain Level: 14
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+**** Panel AbilityDescriptionContainer has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+[VScript] ...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: Can't call CDOTA_Buff:GetParent on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetParent'
+	...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:195: in function <...9.vpk:scripts\vscripts\abilities\marker\marker_dance.lua:194>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 5.30
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 7.20
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 861.466736
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 5.30
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:158: Can't call CBaseEntity:SetForwardVector on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'SetForwardVector'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:158: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[InputSystem] Processing SDL events took 7.8ms
+[InputSystem] Processing SDL events took 7.0ms
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+Attempted to find unknown particle system " "
+Attempted to find unknown particle system " "
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.30
+[InputSystem] Processing SDL events took 5.7ms
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.50
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[Server] Game code (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[VScript] -- Fountain Upgraded	Current Fountain Level: 15
+[VScript] -- Fountain Upgraded	Current Fountain Level: 15
+[VScript] -- Fountain Upgraded	Current Fountain Level: 15
+[VScript] -- Fountain Upgraded	Current Fountain Level: 15
+[VScript] -- Fountain Upgraded	Current Fountain Level: 15
+[VScript] -- Fountain Upgraded	Current Fountain Level: 15
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 28.40
+[InputSystem] Processing SDL events took 5.2ms
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 4.30
+[VScript] Script Runtime Error: ...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: attempt to call method 'CalculateStatBonus' (a nil value)
+stack traceback:
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:158>
+	[C]: in function 'AddNewModifier'
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:63: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:25>
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 4.70
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 5.40
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 961.266724
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 961.433411
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 961.600037
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 961.766724
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/development/invisiblebox.vmdl" for entity "npc_dota_companion"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/development/invisiblebox.vmdl" for entity "npc_dota_companion"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] -- Fountain Upgraded	Current Fountain Level: 16
+[VScript] -- Fountain Upgraded	Current Fountain Level: 16
+[VScript] -- Fountain Upgraded	Current Fountain Level: 16
+[VScript] -- Fountain Upgraded	Current Fountain Level: 16
+[VScript] -- Fountain Upgraded	Current Fountain Level: 16
+[VScript] -- Fountain Upgraded	Current Fountain Level: 16
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 966.100037
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 966.300049
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 966.466736
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 10.20
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 6.80
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Entities = 368
+[PanoramaScript] Requested 1000 gold for entities: 368
+ {
+  amout int( 1000 = 0x3E8 )
+  ent {
+    0 int( 368 = 0x170 )
+  }
+}
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 3.10
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:158: Can't call CBaseEntity:SetForwardVector on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'SetForwardVector'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:158: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[InputSystem] Processing SDL events took 6.0ms
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+[Server] Client (account 1208532594) tried to execute invalid order (19). Target NPC is dead.
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.20
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.50
+[VScript] -- Fountain Upgraded	Current Fountain Level: 17
+[VScript] -- Fountain Upgraded	Current Fountain Level: 17
+[VScript] -- Fountain Upgraded	Current Fountain Level: 17
+[VScript] -- Fountain Upgraded	Current Fountain Level: 17
+[VScript] -- Fountain Upgraded	Current Fountain Level: 17
+[VScript] -- Fountain Upgraded	Current Fountain Level: 17
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 25.80
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/development/invisiblebox.vmdl" for entity "npc_dota_companion"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/development/invisiblebox.vmdl" for entity "npc_dota_companion"
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 22.00
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 418
+[PanoramaScript] index: 418
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 8.30
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 1049.133423
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 12.40
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/development/invisiblebox.vmdl" for entity "npc_dota_companion"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/development/invisiblebox.vmdl" for entity "npc_dota_companion"
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 3.90
+[PanoramaScript] DebugPanel_show
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.00
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:158: Can't call CBaseEntity:SetForwardVector on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'SetForwardVector'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:158: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 7.60
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 6.00
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+[VScript] Script Runtime Error: ...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: attempt to call method 'CalculateStatBonus' (a nil value)
+stack traceback:
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:158>
+	[C]: in function 'AddNewModifier'
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:63: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:25>
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+[VScript] Script Runtime Error: ...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: attempt to call method 'CalculateStatBonus' (a nil value)
+stack traceback:
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:158>
+	[C]: in function 'AddNewModifier'
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:63: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:25>
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] Script Runtime Error: ...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: attempt to call method 'CalculateStatBonus' (a nil value)
+stack traceback:
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:158>
+	[C]: in function 'AddNewModifier'
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:63: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:25>
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+[VScript] Script Runtime Error: ...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: attempt to call method 'CalculateStatBonus' (a nil value)
+stack traceback:
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:158>
+	[C]: in function 'AddNewModifier'
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:63: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:25>
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] Script Runtime Error: ...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: attempt to call method 'CalculateStatBonus' (a nil value)
+stack traceback:
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:158>
+	[C]: in function 'AddNewModifier'
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:63: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:25>
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] Script Runtime Error: ...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: attempt to call method 'CalculateStatBonus' (a nil value)
+stack traceback:
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:158>
+	[C]: in function 'AddNewModifier'
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:63: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:25>
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] Script Runtime Error: ...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: attempt to call method 'CalculateStatBonus' (a nil value)
+stack traceback:
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:158>
+	[C]: in function 'AddNewModifier'
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:63: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:25>
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] Script Runtime Error: ...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: attempt to call method 'CalculateStatBonus' (a nil value)
+stack traceback:
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:158>
+	[C]: in function 'AddNewModifier'
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:63: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:25>
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] Script Runtime Error: ...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: attempt to call method 'CalculateStatBonus' (a nil value)
+stack traceback:
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:158>
+	[C]: in function 'AddNewModifier'
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:63: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:25>
+[VScript] Message count limit of 10 hit. Subsequent duplicate messages will be squelched.
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+[VScript] -- Fountain Upgraded	Current Fountain Level: 18
+[VScript] -- Fountain Upgraded	Current Fountain Level: 18
+[VScript] -- Fountain Upgraded	Current Fountain Level: 18
+[VScript] -- Fountain Upgraded	Current Fountain Level: 18
+[VScript] -- Fountain Upgraded	Current Fountain Level: 18
+[VScript] -- Fountain Upgraded	Current Fountain Level: 18
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[SteamNetSockets] Relay dfw#133 (155.133.253.54:27055) is going offline in 503 seconds
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 17.60
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+[SteamNetSockets] Certificate expires in 41h45m at 1744304775 (current time 1744154433), will renew in 39h45m
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CDOTAGameRules:Pause = true PlayerId=0 fUnpauseDelay=3.00 fPauseDelay=0.00
+[InputSystem] Processing SDL events took 14.9ms
+CSwapChainBase::QueuePresentAndWait() looped for 21 iterations without a present event.
+CSwapChainBase::QueuePresentAndWait() looped for 22 iterations without a present event.
+CSwapChainBase::QueuePresentAndWait() looped for 23 iterations without a present event.
+CSwapChainBase::QueuePresentAndWait() looped for 24 iterations without a present event.
+[Networking] Netchan queued message new high water mark reached by Оригинальный ник at 40 messages
+CSwapChainBase::QueuePresentAndWait() looped for 25 iterations without a present event.
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+**** Panel  has fill-parent-flow for width, but isn't in a flowing right layout
+[Server] PR:NotePlayerCommsTime 0:[U:1:1091831679] communicated at 1126.366699
+[Server] PR:NotePlayerCommsTime 0:[U:1:1091831679] communicated at 1126.566772
+[InputSystem] Processing SDL events took 11.2ms
+CDOTAGameRules:Pause = false
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CSwapChainBase::QueuePresentAndWait() looped for 21 iterations without a present event.
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "models/props_frostivus/frostivus_snowman_break.vmdl" for entity "npc_dota_tower"
+CSwapChainBase::QueuePresentAndWait() looped for 21 iterations without a present event.
+CSwapChainBase::QueuePresentAndWait() looped for 22 iterations without a present event.
+CSwapChainBase::QueuePresentAndWait() looped for 23 iterations without a present event.
+CSwapChainBase::QueuePresentAndWait() looped for 24 iterations without a present event.
+CSwapChainBase::QueuePresentAndWait() looped for 25 iterations without a present event.
+CSwapChainBase::QueuePresentAndWait() looped for 26 iterations without a present event.
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 37.77
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+[VScript] -- Fountain Upgraded	Current Fountain Level: 19
+[VScript] -- Fountain Upgraded	Current Fountain Level: 19
+[VScript] -- Fountain Upgraded	Current Fountain Level: 19
+[VScript] -- Fountain Upgraded	Current Fountain Level: 19
+[VScript] -- Fountain Upgraded	Current Fountain Level: 19
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 8.90
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.20
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.00
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[SteamNetSockets] Certificate expires in 47h40m at 1744326130 (current time 1744154529), will renew in 45h40m
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+

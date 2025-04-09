@@ -1,5 +1,7 @@
 matvey_petard_blink = class({})
 
+function matvey_petard_blink:ProcsMagicStick() return false end
+
 function matvey_petard_blink:Spawn()
     if not IsServer() then return end
     self:SetActivated(false)

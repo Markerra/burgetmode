@@ -54,8 +54,10 @@ function matvey_petard:OnSpellStart()
     self:EndCooldown()
 
 	Timers:CreateTimer(self.waitAmount + 2.6, function()
-		local blink = caster:FindAbilityByName("matvey_petard_blink")
-		blink:SetActivated(true)
+		if self.missile then
+			local blink = caster:FindAbilityByName("matvey_petard_blink")
+			blink:SetActivated(true)
+		end
 	end)
 
 end

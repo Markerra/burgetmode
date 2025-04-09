@@ -93,6 +93,7 @@ particles = {
 	"particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf",
 	"particles/econ/events/ti6/blink_dagger_start_ti6.vpcf",
 	"particles/econ/events/ti6/blink_dagger_end_ti6.vpcf",
+	"particles/units/heroes/hero_beastmaster/beastmaster_boar_attack.vpcf",
 	
 }
 
@@ -177,14 +178,15 @@ model_folders = {
 }
 
 particle_folders = {
+	"particles/items_fx",
 	"particles/units/heroes/hero_pudge",
 	"particles/units/heroes/hero_nevermore",
-	"particles/units/heroes/hero_invoker",
+	"particles/units/heroes/hero_bristleback",
 	"particles/units/heroes/hero_huskar",
+	"particles/units/heroes/hero_invoker",
 	"particles/custom/neutral",
 	"particles/custom/neutral/boss",
+	"particles/units/heroes/hero_life_stealer",
 	"particles/custom/matvey/matvey_metka",
 	"particles/custom/matvey/matvey_petard",
-	"particles/units/heroes/hero_life_stealer",
-	"particles/items_fx",
 }

@@ -1865,11 +1865,11 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"132"		// Damage range min.
-		"AttackDamageMax"			"134"		// Damage range max.
+		"AttackDamageMin"			"112"		// Damage range min.
+		"AttackDamageMax"			"114"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"BaseAttackSpeed"			"130"
-		"AttackRate"				"0.9"		// Speed of attack.
+		"BaseAttackSpeed"			"105"
+		"AttackRate"				"1"		// Speed of attack.
 		"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
 		"AttackRange"				"750"		// Range within a target can be attacked.
@@ -1967,9 +1967,9 @@
 		"AttackDamageMin"			"52"		// Damage range min.
 		"AttackDamageMax"			"64"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"BaseAttackSpeed"			"100"
+		"BaseAttackSpeed"			"60"
 		"AttackRate"				"1"		// Speed of attack.
-		"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
+		"AttackAnimationPoint"		"0.8"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
 		"AttackRange"				"900"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"		// Particle system model for projectile.

@@ -60,38 +60,39 @@ function bevavior()
                 end
             end
 
-            for team = DOTA_TEAM_CUSTOM_1, DOTA_TEAM_CUSTOM_8 do
-                hero = player:GetAssignedHero()
-
-                if not hero:IsAlive() then
-                    hero:RespawnHero(false, false)
-                    hero:RemoveModifierByName("modifier_fountain_invulnerability")
-                end
-            
-                local teleport = Entities:FindByName(nil, "arena_boss_tp_".. team-5)
-                if not teleport then return -1 end
-            
-                local point = teleport:GetAbsOrigin()
-            
-                hero:Stop()
-                FindClearSpaceForUnit(hero, point, true)
-                hero:AddNewModifier(nil, nil, "modifier_arena_boss_sleep", {duration = 5.0})
-            
-                PlayerResource:SetCameraTarget(player:GetPlayerID(), hero)
-                Timers:CreateTimer(0.5, function()
-                    PlayerResource:SetCameraTarget(player:GetPlayerID(), nil)
-                end)
-            
-                hero:SetHealth(hero:GetMaxHealth())
-                hero:Purge(true, true, false, true, true)
-            
-                for i = 0, hero:GetAbilityCount() - 1 do
-                    local ability = hero:GetAbilityByIndex(i)
-                    if ability and ability:GetCooldown(-1) > 0 then
-                        ability:EndCooldown()
-                    end
-                end
-            end
+            --for team = DOTA_TEAM_CUSTOM_1, DOTA_TEAM_CUSTOM_8 do
+            --    hero = player:GetAssignedHero()
+            --
+            --    if not hero:IsAlive() then
+            --        hero:RespawnHero(false, false)
+            --    end
+            --    
+            --    hero:RemoveModifierByName("modifier_fountain_invulnerability")
+            --
+            --    local teleport = Entities:FindByName(nil, "arena_boss_tp_".. team-5)
+            --    if not teleport then return -1 end
+            --
+            --    local point = teleport:GetAbsOrigin()
+            --
+            --    hero:Stop()
+            --    FindClearSpaceForUnit(hero, point, true)
+            --    hero:AddNewModifier(nil, nil, "modifier_arena_boss_sleep", {duration = 5.0})
+            --
+            --    PlayerResource:SetCameraTarget(player:GetPlayerID(), hero)
+            --    Timers:CreateTimer(0.5, function()
+            --        PlayerResource:SetCameraTarget(player:GetPlayerID(), nil)
+            --    end)
+            --
+            --    hero:SetHealth(hero:GetMaxHealth())
+            --    hero:Purge(true, true, false, true, true)
+            --
+            --    for i = 0, hero:GetAbilityCount() - 1 do
+            --        local ability = hero:GetAbilityByIndex(i)
+            --        if ability and ability:GetCooldown(-1) > 0 then
+            --            ability:EndCooldown()
+            --        end
+            --    end
+            --end
             thisEntity:ForceKill(false) 
         return -1 end
 

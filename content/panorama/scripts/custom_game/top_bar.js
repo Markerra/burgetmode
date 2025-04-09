@@ -1,6 +1,6 @@
 GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_HEROES, false);
 GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND, false);
-GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_MENU_BUTTONS, false);
+GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD, false);
 
 let selectedHero = null;
 
@@ -34,11 +34,9 @@ function CreateOrUpdateTopBar(event) {
                 class: "HeroIcon",
             });
 
-            heroButton.SetPanelEvent("onactivate", function () {
-                selectedHero = element.hero;
-                GetHero(selectedHero);
-                UpdateHeroSelection();
-            });
+            heroButton.SetPanelEvent("onactivate", () => {
+                Players.PlayerPortraitClicked(element.id, GameUI.IsControlDown(), GameUI.IsAltDown());
+            })
 
             const networth = $.CreatePanel("Label", bar, "", {
                 class: "HeroGold",
@@ -63,7 +61,7 @@ function CreateOrUpdateTopBar(event) {
     UpdateHeroSelection();
 }
 
-// Функция обновления состояния кнопки
+
 function UpdateHeroSelection() {
     const panelBody = $.GetContextPanel().FindChildTraverse("hero_panel");
     if (!panelBody) return;

@@ -6,6 +6,15 @@ function item_maxim_photo:GetIntrinsicModifierName()
     return "modifier_item_maxim_photo"
 end
 
+function item_maxim_photo:GetItemSlot()
+    return DOTA_ITEM_NEUTRAL_ACTIVE_SLOT
+end
+
+function item_maxim_photo:Spawn()
+    if not IsServer() then return end
+    self:SetItemState(1)
+end
+
 modifier_item_maxim_photo = class({})
 
 function modifier_item_maxim_photo:IsHidden()   return false end

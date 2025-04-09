@@ -39,7 +39,7 @@ function matvey_poxititel_modifier:OnAttackLanded( event )
 		chance = chance / 2
 	end
 
-	if attacker == caster and not attacker:IsIllusion() then
+	if attacker == caster and not attacker:IsIllusion() and not attacker:IsBuilding() then
 		if RollPercentage(chance) then 
 			local name1 = "matvey_poxititel_buff"
 			local name2 = "matvey_poxititel_debuff"

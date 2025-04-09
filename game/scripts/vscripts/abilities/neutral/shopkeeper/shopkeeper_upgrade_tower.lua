@@ -19,22 +19,11 @@ function shopkeeper_upgrade_tower:GetAbilityTextureName()
     end
 end
 
-function shopkeeper_upgrade_tower:Spawn()
-    Timers:CreateTimer(5.0, function()
-        if not IsServer() then return end
-        local caster = self:GetCaster()
-        local player = GetPlayerByTeam(caster:GetTeam())
-        if player then
-            caster:SetControllableByPlayer(player:GetPlayerID(), false)
-            caster:SetOwner(player:GetAssignedHero())
-        end
-        caster:AddNewModifier(caster, nil, "modifier_invulnerable", {})
-    end)
-end
-
 function shopkeeper_upgrade_tower:OnSpellStart()
     local caster = self:GetCaster()
     local team = caster:GetTeam()
+
+    EmitSoundOn("DOTA_Item.HavocHammer.Cast", caster)
 
 	local tower_main = GetTowerByTeam(caster:GetTeamNumber(), true)
     local modif_main = tower_main:FindModifierByName("modifier_shopkeeper_upgrade_tower")
@@ -54,6 +43,7 @@ function shopkeeper_upgrade_tower:OnSpellStart()
     EmitSoundOn("Hero_Luna.LucentBeam.Cast", tower_main)    
 
     local tower_1 = GetTowerByTeam(caster:GetTeamNumber(), false)
+    if not tower_1 then return end
     local modif_1 = tower_1:FindModifierByName("modifier_shopkeeper_upgrade_tower")
     
     if modif_1 then
@@ -68,8 +58,6 @@ function shopkeeper_upgrade_tower:OnSpellStart()
     ParticleManager:SetParticleControl(particle_1, 0, tower_1:GetAbsOrigin())
     ParticleManager:ReleaseParticleIndex(particle_1)
     EmitSoundOn("Hero_Luna.LucentBeam.Cast", tower_1)
-
-    EmitSoundOn("DOTA_Item.HavocHammer.Cast", caster)
 end
 
 modifier_shopkeeper_upgrade_tower = class({})

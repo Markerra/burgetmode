@@ -21,6 +21,8 @@ function shopkeeper_glyph:OnSpellStart()
     local caster = self:GetCaster()
     local team = caster:GetTeam()
 
+    self.glyph_lvl = self.glyph_lvl + 1
+
     local duration = self:GetSpecialValueFor("duration")
 
     local fx = "particles/econ/world/towers/ti10_radiant_tower/ti10_radiant_tower_destruction_sparkle.vpcf"
@@ -33,13 +35,13 @@ function shopkeeper_glyph:OnSpellStart()
     ParticleManager:ReleaseParticleIndex(particle_main)
 
     local tower_1 = GetTowerByTeam(caster:GetTeamNumber(), false)
+    if not tower_1 then return end
     tower_1:AddNewModifier(caster, self, "modifier_shopkeeper_glyph", {duration = duration})
 
     local particle_1 = ParticleManager:CreateParticle(fx, PATTACH_WORLDORIGIN, tower_1)
     ParticleManager:SetParticleControl(particle_1, 0, tower_1:GetAbsOrigin())
     ParticleManager:ReleaseParticleIndex(particle_1)
 
-    self.glyph_lvl = self.glyph_lvl + 1
 end
 
 modifier_shopkeeper_glyph = class({})

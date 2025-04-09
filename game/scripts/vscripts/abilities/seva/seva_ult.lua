@@ -60,10 +60,10 @@ function seva_ult_modif:OnCreated( kv )
 end
 
 function seva_ult_modif:OnDestroy()
-    StopGlobalSound("onsight_cast1")
-    StopGlobalSound("onsight_cast2")
-    StopGlobalSound("onsight_cast3")
     local caster = self:GetCaster()
+    StopSoundOn("onsight_cast1", caster)
+    StopSoundOn("onsight_cast2", caster)
+    StopSoundOn("onsight_cast3", caster)
     caster:SetModelScale(self.ms)
 
 end

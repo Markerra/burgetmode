@@ -1,0 +1,2240 @@
+[VScript] roll 81.658737182617
+[VScript] 70
+[VScript] 70
+[VScript] Получено 10 силы!
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[SceneSystem] Too many non-culled draws (alloc 768, need 782), resizing!
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 83.867729187012
+[VScript] 70
+[VScript] 70
+[VScript] Получено 10 силы!
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 45.282997131348
+[VScript] 70
+[VScript] 70
+[VScript] Получено 30 золота!
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 48.699771881104
+[VScript] 70
+[VScript] 70
+[VScript] Получено 30 золота!
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 4.824061870575
+[VScript] 70
+[VScript] 70
+[VScript] Получено 30 золота!
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 89.890251159668
+[VScript] 70
+[VScript] 70
+[VScript] Получено 10 силы!
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 80.802551269531
+[VScript] 70
+[VScript] 70
+[VScript] Получено 10 силы!
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 25.126964569092
+[VScript] 70
+[VScript] 70
+[VScript] Получено 30 золота!
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 15.226907730103
+[VScript] 70
+[VScript] 70
+[VScript] Получено 30 золота!
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 33.073917388916
+[VScript] 70
+[VScript] 70
+[VScript] Получено 30 золота!
+[VScript] Stacks: 	49	 Max Health: 	5362
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[Networking] Netchan queued message new high water mark reached by Оригинальный ник at 33 messages
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 89.98836517334
+[VScript] 70
+[VScript] 70
+[VScript] Получено 10 силы!
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 43.123252868652
+[VScript] 70
+[VScript] 70
+[VScript] Получено 30 золота!
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 88.699966430664
+[VScript] 70
+[VScript] 70
+[VScript] Получено 10 силы!
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 98.082397460938
+[VScript] 70
+[VScript] 70
+[VScript] Получен 1 уровень!
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 73.843292236328
+[VScript] 70
+[VScript] 70
+[VScript] Получено 10 силы!
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[InputSystem] Processing SDL events took 6.0ms
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+[InputSystem] Processing SDL events took 6.4ms
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 49.50
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_tower Missing Attachment attach_attack1 on model models/props_frostivus/frostivus_snowman_break.vmdl!!
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[InputSystem] Processing SDL events took 5.8ms
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.10
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/invoker_kid/invoker_kid.vmdl" for entity "npc_dota_hero_invoker"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/pudge/pudge.vmdl" for entity "npc_dota_hero_pudge"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[Server] Client (account 1208532594) tried to execute invalid order (24). Unit can't cast, unit is silenced.
+[VScript] npc_dota_hero_invoker получил 13.674716949463 урона
+[VScript] npc_dota_hero_invoker получил 13.674716949463 урона
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] npc_dota_hero_pudge получил 97.465400695801 урона
+[VScript] npc_dota_hero_pudge получил 2.4865589141846 урона
+[VScript] npc_dota_hero_pudge получил 40.06799697876 урона
+[VScript] npc_dota_hero_pudge получил 70.564514160156 урона
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] npc_dota_hero_pudge получил 184.3127746582 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] npc_dota_hero_pudge получил 117.47175598145 урона
+[VScript] npc_dota_hero_pudge получил 2.8981852531433 урона
+[VScript] npc_dota_hero_pudge получил 46.423202514648 урона
+[VScript] npc_dota_hero_pudge получил 120.89546203613 урона
+[VScript] npc_dota_hero_invoker получил 12.044737815857 урона
+[VScript] npc_dota_hero_invoker получил 12.044737815857 урона
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.80
+[VScript] npc_dota_hero_pudge получил 109.56329345703 урона
+[VScript] npc_dota_hero_pudge получил 9.4719753265381 урона
+[VScript] npc_dota_hero_pudge получил 46.423202514648 урона
+[VScript] npc_dota_hero_pudge получил 72.795623779297 урона
+[VScript] npc_dota_hero_pudge получил 155.05349731445 урона
+[VScript] Stacks: 	50	 Max Health: 	7922
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] npc_dota_hero_invoker получил 13.765414237976 урона
+[VScript] npc_dota_hero_invoker получил 13.765414237976 урона
+[VScript] npc_dota_hero_pudge получил 99.359474182129 урона
+[VScript] npc_dota_hero_pudge получил 3.1442241668701 урона
+[VScript] npc_dota_hero_pudge получил 46.423202514648 урона
+[VScript] npc_dota_hero_pudge получил 74.16268157959 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] npc_dota_hero_invoker получил 13.191855430603 урона
+[VScript] npc_dota_hero_invoker получил 13.191855430603 урона
+[VScript] npc_dota_hero_pudge получил 155.05349731445 урона
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] npc_dota_hero_invoker получил 14.625752449036 урона
+[VScript] npc_dota_hero_invoker получил 14.625752449036 урона
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] npc_dota_hero_invoker получил 14.625752449036 урона
+[VScript] npc_dota_hero_invoker получил 14.625752449036 урона
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[RenderSystem] Bad texture dimension type 3 for texture "materials/models/heroes/statuseffects/colorwarp_rupture.vtex" parameter "?".. wanted 1 - returning error texture in CTextureManagerDx11::GetResourceView
+[VScript] npc_dota_hero_invoker получил 178.34240722656 урона
+[VScript] npc_dota_hero_invoker получил 178.34240722656 урона
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] npc_dota_hero_pudge получил 155.05349731445 урона
+[VScript] npc_dota_hero_pudge получил 998.98272705078 урона
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[ResourceSystem] Failed loading resource "panorama/images/heroes/dota_custom_fountain_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[ResourceSystem] Failed loading resource "panorama/images/heroes/npc_dota_custom_tower_main_png.vtex_c" (ERROR_FILEOPEN: File not found)
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] Script Runtime Error: ...0903779.vpk:scripts\vscripts\abilities\seva\seva_ult.lua:63: attempt to call global 'StopGlobalSound' (a nil value)
+stack traceback:
+	...0903779.vpk:scripts\vscripts\abilities\seva\seva_ult.lua:63: in function <...0903779.vpk:scripts\vscripts\abilities\seva\seva_ult.lua:62>
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] Stacks: 	51	 Max Health: 	8042
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[PanoramaScript] DebugPanel_hidden
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[PanoramaScript] DebugPanel_show
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[InputSystem] Processing SDL events took 5.8ms
+[InputSystem] Processing SDL events took 7.0ms
+[InputSystem] Processing SDL events took 7.1ms
+[InputSystem] Processing SDL events took 6.4ms
+[InputSystem] Processing SDL events took 5.5ms
+[InputSystem] Processing SDL events took 12.7ms
+[InputSystem] Processing SDL events took 23.5ms
+[InputSystem] Processing SDL events took 10.8ms
+[PanoramaScript] DebugPanel_hidden
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 16.30
+[InputSystem] Processing SDL events took 5.8ms
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] Stacks: 	52	 Max Health: 	8052
+[PanoramaScript] DebugPanel_hidden
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[InputSystem] Processing SDL events took 5.7ms
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] Stacks: 	53	 Max Health: 	8062
+[InputSystem] Processing SDL events took 5.1ms
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[InputSystem] Processing SDL events took 5.3ms
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] -- Fountain Upgraded	Current Fountain Level: 11
+[VScript] -- Fountain Upgraded	Current Fountain Level: 11
+[VScript] -- Fountain Upgraded	Current Fountain Level: 11
+[VScript] -- Fountain Upgraded	Current Fountain Level: 11
+[VScript] -- Fountain Upgraded	Current Fountain Level: 11
+[VScript] -- Fountain Upgraded	Current Fountain Level: 11
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] Stacks: 	54	 Max Health: 	6072
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 24.30
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[InputSystem] Processing SDL events took 5.7ms
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.40
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] Stacks: 	55	 Max Health: 	8170
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/invoker_kid/invoker_kid.vmdl" for entity "npc_dota_hero_invoker"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/pudge/pudge.vmdl" for entity "npc_dota_hero_pudge"
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] npc_dota_hero_invoker получил 187.31452941895 урона
+[VScript] npc_dota_hero_invoker получил 187.31452941895 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] npc_dota_hero_invoker получил 170.5 урона
+[VScript] npc_dota_hero_invoker получил 170.5 урона
+[VScript] npc_dota_hero_invoker получил 187.31452941895 урона
+[VScript] npc_dota_hero_invoker получил 187.31452941895 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] npc_dota_hero_invoker получил 170.5 урона
+[VScript] npc_dota_hero_invoker получил 170.5 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] npc_dota_hero_invoker получил 186.73262023926 урона
+[VScript] npc_dota_hero_invoker получил 186.73262023926 урона
+[VScript] npc_dota_hero_invoker получил 170.5 урона
+[VScript] npc_dota_hero_invoker получил 170.5 урона
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] Stacks: 	56	 Max Health: 	8180
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 688.100037
+[VScript] Script Runtime Error: ...0903779.vpk:scripts\vscripts\abilities\seva\seva_ult.lua:63: attempt to call global 'StopGlobalSound' (a nil value)
+stack traceback:
+	...0903779.vpk:scripts\vscripts\abilities\seva\seva_ult.lua:63: in function <...0903779.vpk:scripts\vscripts\abilities\seva\seva_ult.lua:62>
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[PanoramaScript] DebugPanel_hidden
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[PanoramaScript] DebugPanel_show
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[InputSystem] Processing SDL events took 7.1ms
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[PanoramaScript] DebugPanel_hidden
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 5.00
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] Stacks: 	57	 Max Health: 	8190
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x001e7588
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[InputSystem] Processing SDL events took 5.4ms
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] Stacks: 	58	 Max Health: 	8200
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 11.80
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 3.10
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] Script Runtime Error: ...0903779.vpk:scripts\vscripts\abilities\seva\seva_ult.lua:63: attempt to call global 'StopGlobalSound' (a nil value)
+stack traceback:
+	...0903779.vpk:scripts\vscripts\abilities\seva\seva_ult.lua:63: in function <...0903779.vpk:scripts\vscripts\abilities\seva\seva_ult.lua:62>
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+Malformed script damage call. Aborting
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:328: Can't call CDOTA_BaseNPC:StartGesture on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'StartGesture'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:328: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:293>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] Stacks: 	59	 Max Health: 	6210
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[InputSystem] Processing SDL events took 5.2ms
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] Script Runtime Error: ...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: Can't call CBaseEntity:GetAbsOrigin on an object of type [none]
+stack traceback:
+	[C]: in function 'GetAbsOrigin'
+	...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: in function <...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:19>
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] Script Runtime Error: ...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: Can't call CBaseEntity:GetAbsOrigin on an object of type [none]
+stack traceback:
+	[C]: in function 'GetAbsOrigin'
+	...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: in function <...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:19>
+[VScript] Script Runtime Error: ...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: Can't call CBaseEntity:GetAbsOrigin on an object of type [none]
+stack traceback:
+	[C]: in function 'GetAbsOrigin'
+	...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: in function <...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:19>
+[VScript] Script Runtime Error: ...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: Can't call CBaseEntity:GetAbsOrigin on an object of type [none]
+stack traceback:
+	[C]: in function 'GetAbsOrigin'
+	...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: in function <...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:19>
+[VScript] Script Runtime Error: ...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: Can't call CBaseEntity:GetAbsOrigin on an object of type [none]
+stack traceback:
+	[C]: in function 'GetAbsOrigin'
+	...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: in function <...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:19>
+[VScript] Script Runtime Error: ...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: Can't call CBaseEntity:GetAbsOrigin on an object of type [none]
+stack traceback:
+	[C]: in function 'GetAbsOrigin'
+	...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: in function <...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:19>
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] -- Fountain Upgraded	Current Fountain Level: 12
+[VScript] -- Fountain Upgraded	Current Fountain Level: 12
+[VScript] -- Fountain Upgraded	Current Fountain Level: 12
+[VScript] -- Fountain Upgraded	Current Fountain Level: 12
+[VScript] -- Fountain Upgraded	Current Fountain Level: 12
+[VScript] -- Fountain Upgraded	Current Fountain Level: 12
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+[Server] PR:NotePlayerCommsTime 0:[U:1:1091831679] communicated at 726.200012
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/invoker_kid/invoker_kid.vmdl" for entity "npc_dota_hero_invoker"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/pudge/pudge.vmdl" for entity "npc_dota_hero_pudge"
+[VScript] npc_dota_hero_invoker получил 170.5 урона
+[VScript] npc_dota_hero_invoker получил 170.5 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] npc_dota_hero_pudge получил 67.491470336914 урона
+[VScript] npc_dota_hero_pudge получил 9.6942863464355 урона
+[VScript] npc_dota_hero_pudge получил 87.691055297852 урона
+[VScript] npc_dota_hero_invoker получил 89.76197052002 урона
+[VScript] npc_dota_hero_invoker получил 89.76197052002 урона
+[VScript] npc_dota_hero_invoker получил 170.5 урона
+[VScript] npc_dota_hero_invoker получил 170.5 урона
+[VScript] Stacks: 	60	 Max Health: 	6110
+[VScript] npc_dota_hero_pudge получил 73.461753845215 урона
+[VScript] npc_dota_hero_pudge получил 3.0973448753357 урона
+[VScript] npc_dota_hero_pudge получил 87.438415527344 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] npc_dota_hero_pudge получил 68.727127075195 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[PanoramaScript] DebugPanel_hidden
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[VScript] Script Runtime Error: ...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: Can't call CBaseEntity:GetAbsOrigin on an object of type [none]
+stack traceback:
+	[C]: in function 'GetAbsOrigin'
+	...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: in function <...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:19>
+[VScript] Script Runtime Error: ...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: Can't call CBaseEntity:GetAbsOrigin on an object of type [none]
+stack traceback:
+	[C]: in function 'GetAbsOrigin'
+	...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: in function <...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:19>
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.60
+[VScript] Script Runtime Error: ...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: Can't call CBaseEntity:GetAbsOrigin on an object of type [none]
+stack traceback:
+	[C]: in function 'GetAbsOrigin'
+	...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: in function <...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:19>
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] Script Runtime Error: ...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: Can't call CBaseEntity:GetAbsOrigin on an object of type [none]
+stack traceback:
+	[C]: in function 'GetAbsOrigin'
+	...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:25: in function <...cripts\vscripts\abilities\matvey\matvey_petard_blink.lua:19>
+[VScript] Message count limit of 10 hit. Subsequent duplicate messages will be squelched.
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[Server] Client (account 1208532594) tried to execute invalid order (19). Target NPC is dead.
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] Stacks: 	61	 Max Health: 	6230
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 424
+[PanoramaScript] index: 424
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] Stacks: 	62	 Max Health: 	6240
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.90
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] Removed invulnerability from fountain #1
+[VScript] Removed invulnerability from fountain #2
+[VScript] Removed invulnerability from fountain #3
+[VScript] Removed invulnerability from fountain #4
+[VScript] Removed invulnerability from fountain #5
+[VScript] Removed invulnerability from fountain #6
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 424
+[PanoramaScript] index: 424
+--- Sent CMsgGameServerInfo to GC
+server_public_ip_addr: 1435472110
+server_private_ip_addr: 2886971393
+server_port: 27015
+server_tv_port: 0
+server_key: ""
+server_hibernation: false
+server_type: GAME
+server_region: 0
+server_loadavg: 0.187514141
+server_tv_broadcast_time: -120
+server_game_time: 600.133362
+relay_slots_max: 0
+relays_connected: 0
+relay_clients_connected: 0
+tv_secret_code: 2048004306102069940
+server_version: 6385
+server_cluster: 0
+assigned_server_tv_port: 27020
+allow_custom_games: BOTH
+build_version: 6385
+is_recording_match_training_data: false
+
+---
+[GCClient] Send msg 4508 (k_EMsgGCGameServerInfo), 85 bytes
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 424
+[PanoramaScript] index: 424
+ {
+  ent npc_dota_hero_invoker
+}
+[VScript] hero: npc_dota_hero_invoker
+[VScript] index: 424
+[PanoramaScript] index: 424
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 18.30
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] Stacks: 	63	 Max Health: 	6250
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[PanoramaScript] DebugPanel_hidden
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[InputSystem] Processing SDL events took 5.7ms
+[PanoramaScript] DebugPanel_hidden
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[InputSystem] Processing SDL events took 5.2ms
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] Stacks: 	64	 Max Health: 	6260
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/invoker_kid/invoker_kid.vmdl" for entity "npc_dota_hero_invoker"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/pudge/pudge.vmdl" for entity "npc_dota_hero_pudge"
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.90
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_pudge получил 112.16892242432 урона
+[VScript] npc_dota_hero_pudge получил 9.2271299362183 урона
+[VScript] npc_dota_hero_pudge получил 130.20684814453 урона
+[VScript] npc_dota_hero_invoker получил 91.358749389648 урона
+[VScript] npc_dota_hero_invoker получил 91.358749389648 урона
+[VScript] npc_dota_hero_pudge получил 121.77810668945 урона
+[VScript] npc_dota_hero_pudge получил 2.9574134349823 урона
+[VScript] npc_dota_hero_pudge получил 83.20189666748 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] npc_dota_hero_pudge получил 110.23594665527 урона
+[VScript] npc_dota_hero_pudge получил 9.266562461853 урона
+[VScript] npc_dota_hero_pudge получил 82.018936157227 урона
+[VScript] npc_dota_hero_pudge получил 129.83929443359 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[PanoramaScript] DebugPanel_hidden
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 776.933350
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.10
+[VScript] Stacks: 	65	 Max Health: 	6270
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 4.00
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] -- Fountain Upgraded	Current Fountain Level: 13
+[VScript] -- Fountain Upgraded	Current Fountain Level: 13
+[VScript] -- Fountain Upgraded	Current Fountain Level: 13
+[VScript] -- Fountain Upgraded	Current Fountain Level: 13
+[VScript] -- Fountain Upgraded	Current Fountain Level: 13
+[VScript] -- Fountain Upgraded	Current Fountain Level: 13
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x0041b360
+[VScript] table: 0x00303b10
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] Stacks: 	66	 Max Health: 	7182
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[InputSystem] Processing SDL events took 5.4ms
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] Stacks: 	67	 Max Health: 	7192
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.10
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] Stacks: 	68	 Max Health: 	7202
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/invoker_kid/invoker_kid.vmdl" for entity "npc_dota_hero_invoker"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/pudge/pudge.vmdl" for entity "npc_dota_hero_pudge"
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[VScript] npc_dota_hero_invoker получил 113.48421478271 урона
+[VScript] npc_dota_hero_invoker получил 113.48421478271 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] npc_dota_hero_pudge получил 102.81352233887 урона
+[VScript] npc_dota_hero_pudge получил 6.036678314209 урона
+[VScript] npc_dota_hero_pudge получил 102.23000335693 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] npc_dota_hero_pudge получил 111.79579162598 урона
+[VScript] npc_dota_hero_pudge получил 6.036678314209 урона
+[VScript] npc_dota_hero_pudge получил 53.74426651001 урона
+[VScript] npc_dota_hero_pudge получил 129.64367675781 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[InputSystem] Processing SDL events took 7.0ms
+[PanoramaScript] DebugPanel_hidden
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 814.400024
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.90
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] DebugPanel_hidden
+[VScript] Stacks: 	69	 Max Health: 	7212
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[InputSystem] Processing SDL events took 5.4ms
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] DebugPanel_hidden
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] Stacks: 	70	 Max Health: 	7222
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/invoker_kid/invoker_kid.vmdl" for entity "npc_dota_hero_invoker"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/pudge/pudge.vmdl" for entity "npc_dota_hero_pudge"
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] npc_dota_hero_pudge получил 152.44398498535 урона
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 3.00
+[VScript] npc_dota_hero_pudge получил 111.67517089844 урона
+[VScript] npc_dota_hero_pudge получил 1.9103412628174 урона
+[VScript] npc_dota_hero_pudge получил 54.437564849854 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] npc_dota_hero_pudge получил 112.24133300781 урона
+[VScript] npc_dota_hero_pudge получил 6.1145510673523 урона
+[VScript] npc_dota_hero_pudge получил 55.469554901123 урона
+[VScript] npc_dota_hero_pudge получил 133.82711791992 урона
+[VScript] npc_dota_hero_pudge получил 101.80763244629 урона
+[VScript] npc_dota_hero_pudge получил 2.0639834403992 урона
+[VScript] npc_dota_hero_pudge получил 54.953559875488 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] npc_dota_hero_pudge получил 92.383644104004 урона
+[VScript] npc_dota_hero_pudge получил 6.2177500724792 урона
+[VScript] npc_dota_hero_pudge получил 55.211555480957 урона
+[VScript] npc_dota_hero_pudge получил 133.82711791992 урона
+[VScript] npc_dota_hero_pudge получил 77.518409729004 урона
+[VScript] npc_dota_hero_pudge получил 2.0639834403992 урона
+[VScript] npc_dota_hero_pudge получил 40.368003845215 урона
+[VScript] npc_dota_hero_pudge получил 104.63607025146 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 3.90
+[VScript] npc_dota_hero_pudge получил 68.789184570313 урона
+[VScript] npc_dota_hero_pudge получил 6.3251442909241 урона
+[VScript] npc_dota_hero_pudge получил 40.368003845215 урона
+[VScript] npc_dota_hero_pudge получил 58.285419464111 урона
+[VScript] npc_dota_hero_pudge получил 185.69281005859 урона
+[VScript] npc_dota_hero_pudge получил 157.83889770508 урона
+[VScript] npc_dota_hero_pudge получил 72.023376464844 урона
+[VScript] npc_dota_hero_pudge получил 2.5548877716064 урона
+[VScript] npc_dota_hero_pudge получил 46.423202514648 урона
+[VScript] npc_dota_hero_pudge получил 106.72702789307 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] npc_dota_hero_pudge получил 65.58911895752 урона
+[VScript] npc_dota_hero_pudge получил 2.4647154808044 урона
+[VScript] npc_dota_hero_pudge получил 46.423202514648 урона
+[VScript] npc_dota_hero_pudge получил 56.71720123291 урона
+[VScript] npc_dota_hero_pudge получил 157.83889770508 урона
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[InputSystem] Processing SDL events took 6.2ms
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] DebugPanel_hidden
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.90
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] Stacks: 	71	 Max Health: 	7232
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] DebugPanel_hidden
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] -- Fountain Upgraded	Current Fountain Level: 14
+[VScript] -- Fountain Upgraded	Current Fountain Level: 14
+[VScript] -- Fountain Upgraded	Current Fountain Level: 14
+[VScript] -- Fountain Upgraded	Current Fountain Level: 14
+[VScript] -- Fountain Upgraded	Current Fountain Level: 14
+[VScript] -- Fountain Upgraded	Current Fountain Level: 14
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.70
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] Stacks: 	72	 Max Health: 	7242
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/invoker_kid/invoker_kid.vmdl" for entity "npc_dota_hero_invoker"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/pudge/pudge.vmdl" for entity "npc_dota_hero_pudge"
+[VScript] Stacks: 	73	 Max Health: 	7252
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] npc_dota_hero_invoker получил 113.16544342041 урона
+[VScript] npc_dota_hero_invoker получил 113.16544342041 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_pudge получил 152.44398498535 урона
+[VScript] npc_dota_hero_invoker получил 122.38300323486 урона
+[VScript] npc_dota_hero_invoker получил 122.38300323486 урона
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] npc_dota_hero_invoker получил 178.25 урона
+[VScript] npc_dota_hero_invoker получил 178.25 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] npc_dota_hero_invoker получил 178.25 урона
+[VScript] npc_dota_hero_invoker получил 178.25 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] npc_dota_hero_invoker получил 178.25 урона
+[VScript] npc_dota_hero_invoker получил 178.25 урона
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] Stacks: 	74	 Max Health: 	7262
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x004afe58
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x00490538
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x0021ccd8
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 3.50
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[VScript] table: 0x001e7588
+[VScript] table: 0x004a6460
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 14.40
+[VScript] Stacks: 	75	 Max Health: 	6282
+[InputSystem] Processing SDL events took 12.4ms
+[InputSystem] Processing SDL events took 11.5ms
+[VScript] Stacks: 	76	 Max Health: 	6292
+[VScript] accumulated 0
+[VScript] total_chance 100
+[VScript] roll 34.346508026123
+[VScript] 70
+[VScript] 70
+[VScript] Получено 30 золота!
+[VScript] Stacks: 	77	 Max Health: 	6302
+[VScript] -- Fountain Upgraded	Current Fountain Level: 15
+[VScript] -- Fountain Upgraded	Current Fountain Level: 15
+[VScript] -- Fountain Upgraded	Current Fountain Level: 15
+[VScript] -- Fountain Upgraded	Current Fountain Level: 15
+[VScript] -- Fountain Upgraded	Current Fountain Level: 15
+[VScript] -- Fountain Upgraded	Current Fountain Level: 15
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 907.733398
+[VScript] Stacks: 	78	 Max Health: 	6312
+[Server] PR:NotePlayerCommsTime 1:[U:1:1208532594] communicated at 908.366699
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 30.20
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+WARNING : Trying to create Projectile From npc_dota_building Missing Attachment attach_attack1 on model maps/scenes/crownfall/classical_fountain001_fishing.vmdl!!
+[VScript] Stacks: 	79	 Max Health: 	6212
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+[SndOperators] opvar_get_float operator import_random_entry_start::get_no_repeat_opvar in dota_battleend failed to get field dota_change_this_opvar_name
+[Server] Client (account 1208532594) tried to execute invalid order (20). Unit is dead.
+ {
+  id int( 1 = 0x1 )
+}
+Attempted to create unknown modifier type modifier_seva_phone!
+Attempted to create unknown modifier type modifier_seva_phone!
+[VScript] Admin Panel: Refresh All Heroes
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 5.80
+[VScript] Stacks: 	80	 Max Health: 	6332
+[InputSystem] Processing SDL events took 5.2ms
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[VScript] Stacks: 	81	 Max Health: 	6342
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+[VScript] Script Runtime Error: ...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: attempt to call method 'CalculateStatBonus' (a nil value)
+stack traceback:
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:158>
+	[C]: in function 'AddNewModifier'
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:63: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:25>
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.30
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/invoker_kid/invoker_kid.vmdl" for entity "npc_dota_hero_invoker"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/pudge/pudge.vmdl" for entity "npc_dota_hero_pudge"
+[VScript] npc_dota_hero_pudge получил 83.848739624023 урона
+[VScript] npc_dota_hero_pudge получил 14.169684410095 урона
+[VScript] npc_dota_hero_pudge получил 174.17991638184 урона
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+[VScript] Script Runtime Error: ...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: attempt to call method 'CalculateStatBonus' (a nil value)
+stack traceback:
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:160: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:158>
+	[C]: in function 'AddNewModifier'
+	...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:63: in function <...k:scripts\vscripts\abilities\matvey\matvey_poxititel.lua:25>
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "attach_hitloc" on model "maps/scenes/crownfall/classical_fountain001_fishing.vmdl" for entity "npc_dota_building"
+[VScript] npc_dota_hero_pudge получил 97.899879455566 урона
+[VScript] npc_dota_hero_pudge получил 5.5555553436279 урона
+[VScript] npc_dota_hero_pudge получил 185.76275634766 урона
+[VScript] npc_dota_hero_pudge получил 141.03935241699 урона
+[VScript] npc_dota_hero_pudge получил 70.07666015625 урона
+[VScript] npc_dota_hero_pudge получил 5.4347820281982 урона
+[VScript] npc_dota_hero_pudge получил 40.06799697876 урона
+[VScript] npc_dota_hero_pudge получил 183.95114135742 урона
+[VScript] npc_dota_hero_pudge получил 63.794002532959 урона
+[VScript] npc_dota_hero_pudge получил 15.03623008728 урона
+[VScript] npc_dota_hero_pudge получил 40.368003845215 урона
+[VScript] npc_dota_hero_pudge получил 140.099609375 урона
+[VScript] npc_dota_hero_pudge получил 142.09538269043 урона
+[VScript] npc_dota_hero_pudge получил 50.029823303223 урона
+[VScript] npc_dota_hero_pudge получил 15.815689086914 урона
+[VScript] npc_dota_hero_pudge получил 40.368003845215 урона
+[VScript] npc_dota_hero_pudge получил 142.59027099609 урона
+[VScript] npc_dota_hero_pudge получил 41.326484680176 урона
+[VScript] npc_dota_hero_pudge получил 5.7285180091858 урона
+[VScript] npc_dota_hero_pudge получил 40.368003845215 урона
+[VScript] npc_dota_hero_pudge получил 140.72227478027 урона
+[VScript] npc_dota_hero_pudge получил 185.69281005859 урона
+[VScript] npc_dota_hero_pudge получил 43.430927276611 урона
+[VScript] npc_dota_hero_pudge получил 18.188041687012 урона
+[VScript] npc_dota_hero_pudge получил 46.423202514648 урона
+[VScript] npc_dota_hero_pudge получил 141.34494018555 урона
+[VScript] npc_dota_hero_pudge получил 163.40968322754 урона
+[VScript] npc_dota_hero_pudge получил 39.726356506348 урона
+[VScript] npc_dota_hero_pudge получил 18.11643409729 урона
+[VScript] npc_dota_hero_pudge получил 46.423202514648 урона
+[VScript] npc_dota_hero_pudge получил 140.099609375 урона
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 3.70
+[VScript] npc_dota_hero_pudge получил 36.411739349365 урона
+[VScript] npc_dota_hero_pudge получил 6.4445819854736 урона
+[VScript] npc_dota_hero_pudge получил 46.423202514648 урона
+[VScript] npc_dota_hero_pudge получил 190.40921020508 урона
+[VScript] npc_dota_hero_invoker получил 79.510696411133 урона
+[VScript] npc_dota_hero_invoker получил 79.510696411133 урона
+[VScript] npc_dota_hero_pudge получил 163.40968322754 урона
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 4.10
+[VScript] Stacks: 	82	 Max Health: 	6352
+[PanoramaScript] DebugPanel_hidden
+[Server] PR:NotePlayerCommsTime 0:[U:1:1091831679] communicated at 949.700073
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] solidsolidsolidsolid/ 2.0px 2.0px 2.0px 2.0px / #FFFFFFFF #FFFFFFFF #FFFFFFFF #FFFFFFFF 
+ {
+}
+[VScript] Admin Panel: WTF Mode: OFF
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] solidsolidsolidsolid/ 2.0px 2.0px 2.0px 2.0px / #000000FF #000000FF #000000FF #000000FF 
+ {
+}
+[VScript] Admin Panel: Refresh All Heroes
+Attempted to create unknown modifier type wtfModifier!
+Attempted to create unknown modifier type wtfModifier!
+[VScript] Admin Panel: WTF Mode: ON
+[PanoramaScript] solidsolidsolidsolid/ 2.0px 2.0px 2.0px 2.0px / #FFFFFFFF #FFFFFFFF #FFFFFFFF #FFFFFFFF 
+ {
+}
+[VScript] Admin Panel: WTF Mode: OFF
+[PanoramaScript] solidsolidsolidsolid/ 2.0px 2.0px 2.0px 2.0px / #000000FF #000000FF #000000FF #000000FF 
+ {
+}
+[VScript] Admin Panel: Refresh All Heroes
+Attempted to create unknown modifier type wtfModifier!
+Attempted to create unknown modifier type wtfModifier!
+[VScript] Admin Panel: WTF Mode: ON
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] solidsolidsolidsolid/ 2.0px 2.0px 2.0px 2.0px / #FFFFFFFF #FFFFFFFF #FFFFFFFF #FFFFFFFF 
+ {
+}
+[VScript] Admin Panel: WTF Mode: OFF
+[PanoramaScript] solidsolidsolidsolid/ 2.0px 2.0px 2.0px 2.0px / #000000FF #000000FF #000000FF #000000FF 
+ {
+}
+[VScript] Admin Panel: Refresh All Heroes
+Attempted to create unknown modifier type wtfModifier!
+Attempted to create unknown modifier type wtfModifier!
+[VScript] Admin Panel: WTF Mode: ON
+[PanoramaScript] DebugPanel_show
+[InputSystem] Processing SDL events took 5.4ms
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 7.00
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[VScript] Stacks: 	83	 Max Health: 	6362
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.00
+[VScript] ....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: Can't call CBaseEntity:GetHealth on an object of type [none]
+stack traceback:
+	scripts\vscripts\utils\timers.lua:137: in function <scripts\vscripts\utils\timers.lua:136>
+	[C]: in function 'GetHealth'
+	....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:114: in function <....vpk:scripts\vscripts\abilities\matvey\matvey_petard.lua:112>
+	[C]: in function 'xpcall'
+	scripts\vscripts\utils\timers.lua:136: in function <scripts\vscripts\utils\timers.lua:94>
+
+[VScript] -- Fountain Upgraded	Current Fountain Level: 16
+[VScript] -- Fountain Upgraded	Current Fountain Level: 16
+[VScript] -- Fountain Upgraded	Current Fountain Level: 16
+[VScript] -- Fountain Upgraded	Current Fountain Level: 16
+[VScript] -- Fountain Upgraded	Current Fountain Level: 16
+[VScript] -- Fountain Upgraded	Current Fountain Level: 16
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/invoker_kid/invoker_kid.vmdl" for entity "npc_dota_hero_invoker"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/pudge/pudge.vmdl" for entity "npc_dota_hero_pudge"
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] Stacks: 	84	 Max Health: 	6372
+[VScript] npc_dota_hero_invoker получил 83.739601135254 урона
+[VScript] npc_dota_hero_invoker получил 83.739601135254 урона
+[Server] Client (account 1091831679) tried to execute invalid order (75). Unit can't use items, unit is muted.
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_pudge получил 115.4626083374 урона
+[VScript] npc_dota_hero_pudge получил 14.613525390625 урона
+[VScript] npc_dota_hero_pudge получил 135.74095153809 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[PanoramaScript] DebugPanel_hidden
+[VScript] npc_dota_hero_pudge получил 126.36801147461 урона
+[VScript] npc_dota_hero_pudge получил 4.7945203781128 урона
+[VScript] npc_dota_hero_pudge получил 182.9372253418 урона
+[VScript] npc_dota_hero_invoker получил 83.452827453613 урона
+[VScript] npc_dota_hero_invoker получил 83.452827453613 урона
+[VScript] npc_dota_hero_pudge получил 114.21723937988 урона
+[VScript] npc_dota_hero_pudge получил 5.1681184768677 урона
+[VScript] npc_dota_hero_pudge получил 132.62762451172 урона
+[VScript] npc_dota_hero_pudge получил 134.82913208008 урона
+[PanoramaScript] DebugPanel_show
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[InputSystem] Processing SDL events took 6.3ms
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.30
+[PanoramaScript] DebugPanel_hidden
+[VScript] Stacks: 	85	 Max Health: 	6382
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 2.20
+[InputSystem] Processing SDL events took 6.6ms
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[InputSystem] Processing SDL events took 5.2ms
+[VScript] Stacks: 	86	 Max Health: 	6392
+[InputSystem] Processing SDL events took 6.1ms
+[InputSystem] Processing SDL events took 5.3ms
+[InputSystem] Processing SDL events took 5.7ms
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/invoker_kid/invoker_kid.vmdl" for entity "npc_dota_hero_invoker"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/pudge/pudge.vmdl" for entity "npc_dota_hero_pudge"
+[VScript] Stacks: 	87	 Max Health: 	6402
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 4.70
+[VScript] npc_dota_hero_pudge получил 91.06120300293 урона
+[VScript] npc_dota_hero_pudge получил 14.070046424866 урона
+[VScript] npc_dota_hero_pudge получил 176.70477294922 урона
+[VScript] npc_dota_hero_pudge получил 184.3127746582 урона
+[VScript] npc_dota_hero_pudge получил 113.8592300415 урона
+[VScript] npc_dota_hero_pudge получил 5.2083325386047 урона
+[VScript] npc_dota_hero_pudge получил 181.69189453125 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_pudge получил 155.05349731445 урона
+[PanoramaScript] DebugPanel_hidden
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 30.10
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 3.20
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/invoker_kid/invoker_kid.vmdl" for entity "npc_dota_hero_invoker"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/pudge/pudge.vmdl" for entity "npc_dota_hero_pudge"
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[PanoramaScript] DebugPanel_hidden
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] Requested refresh for player 0
+ {
+  id int( 0 = 0x0 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 2.10
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/invoker_kid/invoker_kid.vmdl" for entity "npc_dota_hero_invoker"
+CGameParticleManager::SetParticleControlEnt: Unable to lookup attachment "follow_origin" on model "models/heroes/pudge/pudge.vmdl" for entity "npc_dota_hero_pudge"
+[VScript] Stacks: 	88	 Max Health: 	8412
+[VScript] npc_dota_hero_invoker получил 183.14810180664 урона
+[VScript] npc_dota_hero_invoker получил 183.14810180664 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_pudge получил 112.9850769043 урона
+[VScript] npc_dota_hero_pudge получил 2.9342722892761 урона
+[VScript] npc_dota_hero_pudge получил 83.724571228027 урона
+[VScript] npc_dota_hero_pudge получил 122.68019104004 урона
+[VScript] npc_dota_hero_pudge получил 2.973396062851 урона
+[VScript] npc_dota_hero_pudge получил 130.63244628906 урона
+[VScript] npc_dota_hero_invoker получил 182.56619262695 урона
+[VScript] npc_dota_hero_invoker получил 182.56619262695 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_invoker получил 155 урона
+[VScript] npc_dota_hero_pudge получил 110.95630645752 урона
+[VScript] npc_dota_hero_pudge получил 2.8560247421265 урона
+[VScript] npc_dota_hero_pudge получил 82.942092895508 урона
+[VScript] npc_dota_hero_pudge получил 130.62167358398 урона
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[Server] Client (account 1091831679) tried to execute invalid order (20). Unit is dead.
+[VScript] Script Runtime Error: ...0903779.vpk:scripts\vscripts\abilities\seva\seva_ult.lua:63: attempt to call global 'StopGlobalSound' (a nil value)
+stack traceback:
+	...0903779.vpk:scripts\vscripts\abilities\seva\seva_ult.lua:63: in function <...0903779.vpk:scripts\vscripts\abilities\seva\seva_ult.lua:62>
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[PanoramaScript] DebugPanel_show
+[PanoramaScript] DebugPanel_hidden
+[VScript] Stacks: 	89	 Max Health: 	8587
+[PanoramaScript] DebugPanel_show
+[InputSystem] Processing SDL events took 5.2ms
+ {
+  id int( 1 = 0x1 )
+}
+[VScript] Admin Panel: Refresh All Heroes
+[Server] PR:IncrementIdleTime 0:[U:1:1091831679] 10.50
+[Server] PR:IncrementIdleTime 1:[U:1:1208532594] 3.10
+[VScript] -- Fountain Upgraded	Current Fountain Level: 17
+[VScript] -- Fountain Upgraded	Current Fountain Level: 17
+[VScript] -- Fountain Upgraded	Current Fountain Level: 17
+[VScript] -- Fountain Upgraded	Current Fountain Level: 17
+[VScript] -- Fountain Upgraded	Current Fountain Level: 17
+[VScript] -- Fountain Upgraded	Current Fountain Level: 17
