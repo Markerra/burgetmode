@@ -14,6 +14,8 @@ function modifier_arena_boss_sleep:CheckState()
 end
 
 function modifier_arena_boss_sleep:OnCreated( kv )
+	_G.boss_stage = true
+
 	if not IsServer() then return end
 	local parent = self:GetParent()
 	local fx = "particles/units/heroes/hero_riki/riki_shard_sleep.vpcf"

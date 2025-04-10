@@ -22,6 +22,7 @@ require("utils/timers")
 require("utils/funcs")
 
 function GameMode:Init()
+	local mode = GameRules:GetGameModeEntity()
 	
 	current_player_count = PlayerResource:GetPlayerCount()
 
@@ -47,8 +48,6 @@ function GameMode:Init()
 		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
 		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_7, 1 )
 		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_8, 1 )
-		
-		local mode = GameRules:GetGameModeEntity()
 
 		mode:SetCustomScanMaxCharges(1)
 		mode:SetAnnouncerDisabled(true)
@@ -116,6 +115,8 @@ function GameMode:SetupColors()
     self.m_TeamColors[DOTA_TEAM_CUSTOM_6] = { 242, 242, 242 } --  "Сергеп Про"
     self.m_TeamColors[DOTA_TEAM_CUSTOM_7] = { 0, 204, 102 } --  "Миша Бургер"
     self.m_TeamColors[DOTA_TEAM_CUSTOM_8] = { 0, 0, 0 } --  "Антон Яйцо"
+
+	local mode = GameRules:GetGameModeEntity()
 
     for team = 0, (DOTA_TEAM_COUNT-1) do
       color = self.m_TeamColors[ team ]
@@ -205,7 +206,6 @@ end
 
 function GameMode:OnStateChange()
 	local state = GameRules:State_Get()
-	local mode = GameRules:GetGameModeEntity()
 
 	if CUSTOM_DEBUG_MODE then
 		print("GameMode StateChange:", state)
@@ -218,15 +218,21 @@ function GameMode:OnStateChange()
 	end
 end
 
-function GameMode:OnPreGame() 
+function GameMode:OnPreGame()
+	Timers:CreateTimer(3.0, function()
+
     if CUSTOM_DEBUG_MODE then
 		for id=0, PlayerResource:GetPlayerCount() - 1 do
 			GetPlayerInfo(id)
 		end
 	end
+
+	end)
 end
 
 function GameMode:OnGameInProgress() -- запускается при начале игры (0:00 на таймере)
+	local mode = GameRules:GetGameModeEntity()
+
 	GameRules:SetTimeOfDay(0.251) -- игра начинается со дня
 
 	for t=DOTA_TEAM_CUSTOM_1, DOTA_TEAM_CUSTOM_8 do
@@ -243,11 +249,9 @@ function GameMode:OnGameInProgress() -- запускается при начал
 
 	GameRules:SpawnNeutralCreeps() -- спавн нейтральных крипов во всех кемпах
 
-	require("game-mode/functions/fountain_invul")
 	ActivateFountainInvul() -- активирует неуязвимость фонтана
 	DeactivateFountainsInvul(CUSTOM_FOUNTAIN_VUL_DELAY)
 
-	require("game-mode/functions/give_tpscroll")
 	GiveTPScroll()
 
 	local shopkeepers = Entities:FindAllByName("npc_custom_shopkeeper")
@@ -364,7 +368,7 @@ local gtimer = timer
 
 function waves_think()
 	if enable_waves == false then return end
-	if game_end == true then return end
+	if game_end then return end
 	max_timer = MaxTime(GameMode.current_wave)
 	boss_wave = BossTime(GameMode.current_wave)
 	--print("Next wave in: "..max_timer-timer.."s")

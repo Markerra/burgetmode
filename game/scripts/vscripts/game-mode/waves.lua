@@ -210,10 +210,12 @@ function GameMode:SpawnWave( team, number, level, give_lownet )
 
     if player and player:GetTeamNumber() == team and player.defeated == true then
         local name = PlayerResource:GetPlayerName(player_id)
-        print("SpawnWave() - player <"..name.."> is defeated") return
+        if CUSTOM_DEBUG_MODE then print("SpawnWave() - player <"..name.."> is defeated") end
+          return
     end
     if not player or not PlayerResource:IsValidPlayerID(player_id) or not player:GetAssignedHero() then
-        print("SpawnWave() - player in #"..team.." team does not exist") return
+      if CUSTOM_DEBUG_MODE then print("SpawnWave() - player in #"..team.." team does not exist") end
+        return
     end
 
     local portal = Entities:FindByName(nil, "custom".. team-5 .."_wave_portal")
@@ -264,10 +266,12 @@ function GameMode:SpawnBoss( type )
 
     if player and player:GetTeamNumber() == team and player.defeated == true then
         local name = PlayerResource:GetPlayerName(player_id)
-        print("SpawnBoss() - player <"..name.."> is defeated") return
+        if CUSTOM_DEBUG_MODE then print("SpawnBoss() - player <"..name.."> is defeated") end
+        return
     end
     if not player or not PlayerResource:IsValidPlayerID(player_id) or not player:GetAssignedHero() then
-        print("SpawnBoss() - player in #"..team.." team does not exist") return
+      if CUSTOM_DEBUG_MODE then print("SpawnBoss() - player in #"..team.." team does not exist") end
+        return
     end
 
     hero = player:GetAssignedHero()

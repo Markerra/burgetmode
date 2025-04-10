@@ -39,16 +39,47 @@ end
 
 function GetPlayerInfo(pid)
 	local player = PlayerResource:GetPlayer(pid)
-	  print("\n============INFO============")
-	  print("Team:", team)
+	  print("\n=====================INFO=====================")
 	  print("Player:", player)
 	  print("Player name:", PlayerResource:GetPlayerName(pid))
 	  print("Valid:", PlayerResource:IsValidPlayerID(pid))
-	  if not player or not PlayerResource:IsValidPlayerID(pid) then
-		print("============================\n")
+	  if not player or not player:GetAssignedHero() then
+		print("==============================================\n")
 		return
-	  end
+	end
+	print("Team:", player:GetAssignedHero():GetTeam())
 	  print("Hero:", player:GetAssignedHero())
 	  print("Hero Name:", player:GetAssignedHero():GetUnitName())
-	  print("============================\n")
+	  print("==============================================\n")
+end
+
+function ActivateFountainInvul()
+	for index=1, DOTA_MAX_PLAYERS do
+		local fountain = Entities:FindByName(nil, "dota_custom"..index.."_fountain")
+		while fountain do
+			fountain:AddNewModifier(nil, nil, "modifier_invulnerable", nil)
+			print("Added invulnerability to fountain #"..index)
+			fountain = Entities:FindByClassname(fountain, "ent_dota_fountain")
+		end
+	end
+end
+
+function DeactivateFountainsInvul(delay)
+	Timers:CreateTimer(delay, function()
+		for index=1, DOTA_MAX_PLAYERS do
+			local fountain = Entities:FindByName(nil, "dota_custom"..index.."_fountain")
+			while fountain do
+			    fountain:RemoveModifierByName("modifier_invulnerable")
+			    print("Removed invulnerability from fountain #"..index)
+			    fountain = Entities:FindByClassname(fountain, "ent_dota_fountain")
+			end
+		end
+	end)
+end
+
+function GiveTPScroll()
+	for i=1, HeroList:GetHeroCount() do
+		local hero = HeroList:GetHero(i-1)
+		hero:AddItemByName("item_tpscroll_custom")
+	end
 end

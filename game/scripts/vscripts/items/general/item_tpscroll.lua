@@ -19,6 +19,18 @@ function item_tpscroll_custom:GetCooldown(level)
     return self.BaseClass.GetCooldown( self, level )
 end
 
+function item_tpscroll_custom:CastFilterResult()
+	if _G.boss_stage then
+		return UF_FAIL_CUSTOM
+	else
+		return UF_SUCCESS 
+	end
+end
+
+function item_tpscroll_custom:GetCustomCastError()
+	return "Телепорт не может быть использован во время сражения с боссом"
+end
+
 function item_tpscroll_custom:IsHiddenAbilityCastable()
     return true
 end
