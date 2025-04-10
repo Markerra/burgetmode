@@ -31,7 +31,7 @@ function maxim_isaac:OnSpellStart()
 		GiveItemWithLevel(caster, "item_maxim_godhead",    level)
 	end
 
-	EmitSoundOn("maxim_isaac_cast", caster)
+	caster:EmitSound("maxim_isaac_cast")
 end 
 
 maxim_isaac_modif = {}

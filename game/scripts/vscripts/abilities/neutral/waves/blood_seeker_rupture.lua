@@ -6,12 +6,13 @@ function blood_seeker_rupture:OnSpellStart()
 	local hTarget = self:GetCursorTarget()
 	local caster = self:GetCaster()
 
-	if not IsServer() then return end
-
-	if hTarget:TriggerSpellAbsorb(self) then return end
-	hTarget:AddNewModifier(caster, self, "modifier_blood_seeker_rupture_debuff", {duration = self:GetSpecialValueFor("duration")})
-	EmitSoundOn("Hero_Bloodseeker.Rupture.Cast", caster)
-	EmitSoundOn("Hero_Bloodseeker.Rupture", hTarget)
+	if IsServer() then
+		if hTarget:TriggerSpellAbsorb(self) then return end
+		hTarget:AddNewModifier(caster, self, "modifier_blood_seeker_rupture_debuff", {duration = self:GetSpecialValueFor("duration")})
+	end
+	
+	caster:EmitSound("Hero_Bloodseeker.Rupture.Cast")
+	hTarget:EmitSound("Hero_Bloodseeker.Rupture")
 end
 
 modifier_blood_seeker_rupture_debuff = class({})

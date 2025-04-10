@@ -11,6 +11,8 @@ function satyr_purge:OnAbilityPhaseInterrupted()
 end
 
 function satyr_purge:OnSpellStart()
+    if not IsServer() then return end
+    
     local caster = self:GetCaster()
     local target = self:GetCursorTarget()
     local damage = self:GetSpecialValueFor("damage")
@@ -29,7 +31,7 @@ function satyr_purge:OnSpellStart()
     local particle = "particles/generic_gameplay/generic_purge.vpcf"
 	self.effect = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN_FOLLOW, target)
 	ParticleManager:ReleaseParticleIndex(self.effect)
-	EmitSoundOn("n_creep_SatyrTrickster.Cast", target)
+	target:EmitSound("n_creep_SatyrTrickster.Cast")
 
     target:AddNewModifier(caster, self, "modifier_satyr_purge_debuff", {duration = duration})
 end

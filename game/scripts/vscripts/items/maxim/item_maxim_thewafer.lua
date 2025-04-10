@@ -11,7 +11,7 @@ function item_maxim_thewafer:OnSpellStart()
 
 	caster:AddNewModifier(caster, self, "the_wafer_modif", {duration = duration})
 
-	EmitSoundOn("item_maxim_thewafer_cast", caster)
+	caster:EmitSound("item_maxim_thewafer_cast")
 
 	local removed_item = caster:TakeItem(self)
 	if removed_item then

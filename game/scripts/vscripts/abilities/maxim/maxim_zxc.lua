@@ -13,20 +13,14 @@ function maxim_zxc:GetChannelTime()
 end
 
 function maxim_zxc:OnAbilityPhaseStart()
-    if not IsServer() then return end
-
     local caster = self:GetCaster()
-
-    EmitSoundOn("maxim_zxc_pre", caster)
-    
+    caster:EmitSound("maxim_zxc_pre")
     return true 
 end
 
 function maxim_zxc:OnAbilityPhaseInterrupted()
-    if not IsServer() then return end
-
     local caster = self:GetCaster()
-    StopSoundOn("maxim_zxc_pre", caster)
+    caster:StopSound("maxim_zxc_pre")
 end
 
 function maxim_zxc:GetChannelAnimation() return ACT_DOTA_TAUNT end
@@ -42,7 +36,7 @@ function maxim_zxc:OnSpellStart()
 	if shard then
 		caster:AddNewModifier(caster, self, "modifier_black_king_bar_immune", {duration = self:GetChannelTime()})
 	end
-    EmitSoundOn("maxim_zxc_cast", caster)
+    caster:EmitSound("maxim_zxc_cast")
 end
 
 function maxim_zxc:OnChannelFinish(bInterrupted)
@@ -77,23 +71,22 @@ function modifier_maxim_zxc:OnIntervalThink()
 end
 
 function modifier_maxim_zxc:ShadowRaze(radius_offset, angle_offset)
-	if not IsServer() then return end
-
 	local caster  = self:GetCaster()
 	local ability = self:GetAbility()
 	local radius  = self.radius + (radius_offset or 0)
 	local damage  = self.damage
-
+	
 	local angle    = angle_offset or 0
 	local position = caster:GetAbsOrigin() + Vector(math.cos(angle), math.sin(angle), 0) * radius
 
 	local stacks   = self:GetStackCount()
-
+	
 	local particle = ParticleManager:CreateParticle("particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_shadowraze.vpcf", PATTACH_WORLDORIGIN, nil)
 	ParticleManager:SetParticleControl(particle, 0, position)
 	ParticleManager:ReleaseParticleIndex(particle)
-	EmitSoundOn("Hero_Nevermore.ShadowRaze", caster)
-	
+
+	if IsServer() then
+
 	local enemies = FindUnitsInRadius(
 	    caster:GetTeamNumber(),
 	    position,
@@ -135,16 +128,19 @@ function modifier_maxim_zxc:ShadowRaze(radius_offset, angle_offset)
 	    local sf_fire_hit = "particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_shadowraze_ember.vpcf"
 	    local sf_fire = ParticleManager:CreateParticle(sf_fire_hit, PATTACH_ABSORIGIN_FOLLOW, caster)
 	    		ParticleManager:SetParticleControl(sf_fire, 0, caster:GetAbsOrigin())
-	    print("стаки: "..stacks)
-	    print("доп урон: "..stacks*self.dmg_raze)
-	    
+	    --print("стаки: "..stacks)
+	    --print("доп урон: "..stacks*self.dmg_raze)
+		
+	end
+	end
+
 	    if caster:HasScepter() then
 	    	local raze_amout  = 10
 	    	
 	    	if stacks == 1 then
 	    		local sf_fire2 = ParticleManager:CreateParticle("particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_shadowraze_double.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	    		ParticleManager:SetParticleControl(sf_fire2, 0, caster:GetAbsOrigin())
-	    		EmitSoundOn("maxim_zxc_raze_double", caster)
+	    		caster:EmitSound("maxim_zxc_raze_double")
 	    	end
 
 	    	if stacks == 2 then
@@ -153,11 +149,12 @@ function modifier_maxim_zxc:ShadowRaze(radius_offset, angle_offset)
 	    		end
 	    		local sf_fire3 = ParticleManager:CreateParticle("particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_shadowraze_triple.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	    		ParticleManager:SetParticleControl(sf_fire3, 0, caster:GetAbsOrigin())
-	    		EmitSoundOn("maxim_zxc_raze_triple", caster)
+	    		caster:EmitSound("maxim_zxc_raze_triple")
 	    		
 	    	end
 	    end
-	end
+
+	caster:EmitSound("Hero_Nevermore.ShadowRaze")
 end
 
 function modifier_maxim_zxc:OnDestroy()

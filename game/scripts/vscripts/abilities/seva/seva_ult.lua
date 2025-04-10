@@ -7,8 +7,8 @@ function seva_ult:OnAbilityPhaseStart()
 
     local caster = self:GetCaster()
 
-    EmitSoundOn("seva_ult_pre", caster)
-    EmitSoundOn("onsight_pre", caster)
+    caster:EmitSound("seva_ult_pre")
+    caster:EmitSound("onsight_pre")
     
     return true 
 end
@@ -17,36 +17,33 @@ function seva_ult:OnAbilityPhaseInterrupted()
     if not IsServer() then return end
 
     local caster = self:GetCaster()
-    StopSoundOn("seva_ult_pre", caster)
-    StopSoundOn("onsight_pre", caster)
+    caster:StopSound("seva_ult_pre")
+    caster:StopSound("onsight_pre")
 end
 
 function seva_ult:OnSpellStart()
 
-    if not IsServer() then return end
-
-    local caster    =    self:GetCaster()
+    local caster    = self:GetCaster()
     local duration  = self:GetSpecialValueFor("duration")
     local model_amp = self:GetSpecialValueFor("modelscale_amp")
     local lvl       = self:GetLevel()
     local smodel    = caster:GetModelScale()
     local nmodel    = smodel * model_amp
+
+    if IsServer() then
+
     caster:AddNewModifier(caster, self, "seva_ult_modif", {duration = duration, ms=smodel})
     caster:SetModelScale(nmodel)
+    
+    caster:StopSound("seva_tether_cast1")
+    caster:StopSound("seva_tether_cast2")
+    caster:StopSound("seva_tether_cast3")
+    caster:StopSound("seva_tether_cast4")
+    caster:EmitSound("seva_ult_cast")
 
-    StopSoundOn("seva_tether_cast1", caster)
-    StopSoundOn("seva_tether_cast2", caster)
-    StopSoundOn("seva_tether_cast3", caster)
-    StopSoundOn("seva_tether_cast4", caster)
-    EmitSoundOn("seva_ult_cast", caster)
-
-    if lvl == 1 then
-        EmitGlobalSound("onsight_cast1")
-    elseif lvl == 2 then 
-        EmitGlobalSound("onsight_cast2")
-    elseif lvl == 3 then
-        EmitGlobalSound("onsight_cast3")
     end
+
+    EmitSoundOnClient("onsight_cast"..lvl, caster)
 
     --caster:CreateModifierThinker(caster, self, "seva_ult_modif", {duration = duration}, caster:GetAbsOrigin(), caster:GetTeamNumber(), false)
 end
@@ -65,7 +62,6 @@ function seva_ult_modif:OnDestroy()
     StopSoundOn("onsight_cast2", caster)
     StopSoundOn("onsight_cast3", caster)
     caster:SetModelScale(self.ms)
-
 end
 
 function seva_ult_modif:DeclareFunctions()

@@ -100,7 +100,7 @@ function matvey_petard:InitialiseRocket(velocity, acceleration, detonationRadius
 		missile:SetModelScale(1.30)
 	end
 
-    EmitSoundOn("Hero_Gyrocopter.HomingMissile", missile)
+    missile:EmitSound("Hero_Gyrocopter.HomingMissile")
 
 	if #_G.ActiveHomingMissiles ~= nil then
 		for i = 1, #_G.ActiveHomingMissiles, 1 do
@@ -137,8 +137,8 @@ function matvey_petard:InitialiseRocket(velocity, acceleration, detonationRadius
                 local exp = ParticleManager:CreateParticle( "particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_explosion.vpcf", PATTACH_POINT, missile )
                 ParticleManager:SetParticleControl(exp, 3, missile:GetAbsOrigin())
                 ParticleManager:ReleaseParticleIndex(exp)
-                EmitSoundOn("Hero_Rattletrap.Rocket_Flare.Explode", missile)
-                StopSoundOn("Hero_Gyrocopter.HomingMissile", missile)
+                missile:EmitSound("Hero_Rattletrap.Rocket_Flare.Explode")
+                missile:StopSound("Hero_Gyrocopter.HomingMissile")
                 missile:Destroy()
             end
 
@@ -177,7 +177,7 @@ function matvey_petard:InitialiseRocket(velocity, acceleration, detonationRadius
 
                 end
 				
-				StopSoundOn("Hero_Gyrocopter.HomingMissile", missile)
+				missile:StopSound("Hero_Gyrocopter.HomingMissile")
 
                 local missile_hp = missile:GetHealth()
                 local missile_maxhp = missile:GetMaxHealth()
@@ -201,8 +201,8 @@ function matvey_petard:InitialiseRocket(velocity, acceleration, detonationRadius
 					local exp = ParticleManager:CreateParticle( "particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_explosion.vpcf", PATTACH_WORLDORIGIN, nil)
 					ParticleManager:SetParticleControl(exp, 3, rocket.location)
 					ParticleManager:ReleaseParticleIndex(exp)
-					EmitSoundOn("Hero_Rattletrap.Rocket_Flare.Explode", missile)
-					StopSoundOn("Hero_Gyrocopter.HomingMissile", missile)
+					missile:EmitSound("Hero_Rattletrap.Rocket_Flare.Explode")
+					missile:StopSound("Hero_Gyrocopter.HomingMissile")
 				else
 					local new_caster = self.target
 					self.target = self:GetCaster()
@@ -281,7 +281,7 @@ function matvey_petard:InitialiseRocket2(caster, velocity, acceleration, detonat
     local p = ParticleManager:CreateParticle( "particles/custom/matvey/matvey_petard/rubick_spell_steal_default.vpcf", PATTACH_POINT, missile )
     ParticleManager:SetParticleControl(p, 0, caster:GetAbsOrigin())
     ParticleManager:SetParticleControl(p, 1, missile:GetAbsOrigin())
-    EmitSoundOn("Hero_Rubick.SpellSteal.Target", self.target)
+    self.target:EmitSound("Hero_Rubick.SpellSteal.Target")
 
 	if #_G.ActiveHomingMissiles ~= nil then
 		for i = 1, #_G.ActiveHomingMissiles, 1 do
@@ -318,8 +318,8 @@ function matvey_petard:InitialiseRocket2(caster, velocity, acceleration, detonat
 				local exp = ParticleManager:CreateParticle( "particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_explosion.vpcf", PATTACH_POINT, rocket.target )
 				ParticleManager:SetParticleControl(exp, 3, missile:GetAbsOrigin())
 				ParticleManager:ReleaseParticleIndex(exp)
-				EmitSoundOn("Hero_Rattletrap.Rocket_Flare.Explode", missile)
-				StopSoundOn("Hero_Gyrocopter.HomingMissile", missile)
+				missile:EmitSound("Hero_Rattletrap.Rocket_Flare.Explode")
+				missile:StopSound("Hero_Gyrocopter.HomingMissile")
                 local modif = caster:HasModifier("modifier_matvey_petard_debuff")
                 if modif then caster:RemoveModifierByName("modifier_matvey_petard_debuff") end
                 missile:Destroy()
@@ -351,7 +351,7 @@ function matvey_petard:InitialiseRocket2(caster, velocity, acceleration, detonat
                         local duration = modif:GetRemainingTime()
                         local mana = modif.mana
                         enemy:AddNewModifier(self.target, self, "modifier_matvey_petard_buff", {duration = duration, mana = mana})
-                        EmitSoundOn("Hero_Rubick.SpellSteal.Complete", self.target)
+                        self.target:EmitSound("Hero_Rubick.SpellSteal.Complete")
                         local p2 = ParticleManager:CreateParticle( "particles/custom/matvey/matvey_petard/rubick_spell_steal_default.vpcf", PATTACH_POINT, missile )
                         ParticleManager:SetParticleControl(p2, 0, self.target:GetAbsOrigin())
                         ParticleManager:SetParticleControl(p2, 1, missile:GetAbsOrigin())

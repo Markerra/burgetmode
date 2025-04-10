@@ -27,7 +27,7 @@ function boss_roshan_clap:OnSpellStart()
     ParticleManager:SetParticleControl(particle, 0, caster:GetAbsOrigin())
     ParticleManager:ReleaseParticleIndex(particle)
 
-    EmitSoundOn("Roshan.Slam", caster)
+    caster:EmitSound("Roshan.Slam")
 
     ScreenShake(caster:GetAbsOrigin(), 800, 1.1, 0.3, 4000, 0, true)
 
@@ -63,7 +63,7 @@ function boss_roshan_clap:OnSpellStart()
 
     -- play effects
     local sound_cast = "Hero_Magnataur.ShockWave.Particle"
-    EmitSoundOn(sound_cast, caster)
+    caster:EmitSound(sound_cast)
 end
 
 --------------------------------------------------------------------------------
@@ -138,7 +138,7 @@ function boss_roshan_clap:PlayEffects2( target, mod )
 	)
 
 	-- Create Sound
-	EmitSoundOn( sound_cast, target )
+	target:EmitSound(sound_cast)
 end
 
 function boss_roshan_clap:PlayEffects1()
@@ -162,7 +162,7 @@ function boss_roshan_clap:PlayEffects1()
 
 	caster:StartGesture(ACT_DOTA_CAST_ABILITY_3)
 
-	EmitSoundOn( sound_cast, caster )
+	caster:EmitSound( sound_cast )
 end
 
 function boss_roshan_clap:StopEffects1( bInterrupted )
@@ -170,7 +170,7 @@ function boss_roshan_clap:StopEffects1( bInterrupted )
 	ParticleManager:ReleaseParticleIndex( self.effect_cast )
 	self:GetCaster():FadeGesture(ACT_DOTA_CAST_ABILITY_3)
 	local sound_cast = "Hero_Magnataur.ShockWave.Cast"
-	StopSoundOn( sound_cast, self:GetCaster() )
+	self:GetCaster():StopSound( sound_cast )
 end
 
 modifier_boss_roshan_clap = class({})

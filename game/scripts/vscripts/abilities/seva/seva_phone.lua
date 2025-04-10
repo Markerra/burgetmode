@@ -31,7 +31,7 @@ function seva_phone:OnSpellStart()
     ParticleManager:SetParticleControl(fx, 4, Vector(1, 1, 1))
     ParticleManager:SetParticleControl(fx, 15, point)
       
-    EmitSoundOn("Hero_Disruptor.KineticField", caster)
+    caster:EmitSound("Hero_Disruptor.KineticField")
     
     CreateModifierThinker(caster, self, "modifier_ability_disruptor_kinetic_field_thinker", {duration=duration, fx=fx}, point, caster:GetTeam(), false)
     CreateModifierThinker(caster, self, "th_modifier_seva_phone", {duration = duration}, point, caster:GetTeamNumber(), false)

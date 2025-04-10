@@ -48,7 +48,7 @@ function modifier_item_maxim_photo:OnDeath(params)
         if ability and ability:GetCurrentCharges() then
             ability:SetCurrentCharges(ability:GetCurrentCharges() + 1)
             self:SetStackCount(ability:GetCurrentCharges() * bonus)
-            EmitSoundOn("item_maxim_photo_cast", parent)
+            parent:EmitSound("item_maxim_photo_cast")
         end
     end
 end

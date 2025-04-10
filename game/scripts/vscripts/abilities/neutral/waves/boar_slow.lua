@@ -38,7 +38,7 @@ function modifier_boar_slow:OnAttackLanded( event )
 			local particle = "particles/generic_gameplay/generic_purge.vpcf"
 			self.effect = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN_FOLLOW, target)
 			ParticleManager:ReleaseParticleIndex(self.effect)
-			EmitSoundOn("n_creep_SatyrTrickster.Cast", target)
+			target:EmitSound("n_creep_SatyrTrickster.Cast")
 		end
 	end
 end

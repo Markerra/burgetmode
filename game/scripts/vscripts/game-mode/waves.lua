@@ -206,10 +206,12 @@ function GameMode:SpawnWave( team, number, level, give_lownet )
     for player_id = 0, PlayerResource:GetPlayerCount() - 1 do
         player = PlayerResource:GetPlayer(player_id)
         if player and player:GetTeamNumber() == team then
-            if player.defeated == true or not PlayerResource:IsValidPlayerID(player_id) or not player:GetAssignedHero() then
-              local name = PlayerResource:GetPlayerName(player_id)
-            	print("SpawnWave() - player <"..name.."> is defeated or does not exist") 
-            	return end
+            if player.defeated == true then
+            local name = PlayerResource:GetPlayerName(player_id)
+            print("SpawnWave() - player <"..name.."> is defeated") return end
+        end
+        if player or not PlayerResource:IsValidPlayerID(player_id) or not player:GetAssignedHero() then
+            print("SpawnWave() - player in <"..team.."> team does not exist") return
         end
     end
 
@@ -259,15 +261,17 @@ function GameMode:SpawnBoss( type )
     for player_id = 0, PlayerResource:GetPlayerCount() - 1 do
         player = PlayerResource:GetPlayer(player_id)
         if player and player:GetTeamNumber() == team then
-          if player.defeated == true or not PlayerResource:IsValidPlayerID(player_id) or not player:GetAssignedHero() then
+            if player.defeated == true then
             local name = PlayerResource:GetPlayerName(player_id)
-            print("SpawnBoss() - player <"..name.."> is defeated or does not exist") 
-            return end
+            print("SpawnWave() - player <"..name.."> is defeated") return end
+        end
+        if player or not PlayerResource:IsValidPlayerID(player_id) or not player:GetAssignedHero() then
+            print("SpawnWave() - player in <"..team.."> team does not exist") return
         end
     end
 
     hero = player:GetAssignedHero()
-
+    print("BOSS_ROSHAN_TELEPORT FOR ", hero:GetUnitName())
     if not hero:IsAlive() then
       hero:RespawnHero(false, false)
       hero:RemoveModifierByName("modifier_fountain_invulnerability")

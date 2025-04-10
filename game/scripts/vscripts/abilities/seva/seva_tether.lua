@@ -15,7 +15,7 @@ function seva_tether:OnSpellStart()
     if target:TriggerSpellAbsorb(self) then return end
 
     Timers:CreateTimer(0.05, function()
-        EmitSoundOn("DOTA_Item.BlinkDagger.Activate", caster)
+        caster:EmitSound("DOTA_Item.BlinkDagger.Activate")
         caster:AddNewModifier(target, self, "modifier_seva_tether", {target_entindex = target:entindex(), duration = duration})
         Timers:CreateTimer(0.01, function()
             target:AddNewModifier(caster, self, "modifier_seva_tether", {target_entindex = caster:entindex(), duration = duration})
@@ -111,7 +111,7 @@ function modifier_seva_tether:OnTakeDamage(params)
     local damage_amp = self:GetAbility():GetSpecialValueFor("dmg_percent") / 100
 
     if params.unit == ability_target then -- если цель способности получила урон
-        print(params.unit:GetUnitName().." получил "..params.damage.." урона")
+        --print(params.unit:GetUnitName().." получил "..params.damage.." урона")
         ApplyDamage({
             victim = self:GetCaster(),
             attacker = params.unit,
@@ -129,7 +129,7 @@ function modifier_seva_tether:OnTakeDamage(params)
             damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
             ability = self:GetAbility(),
             })
-        print(params.unit:GetUnitName().." получил "..params.damage.." урона")
+        --print(params.unit:GetUnitName().." получил "..params.damage.." урона")
     end
 end
 

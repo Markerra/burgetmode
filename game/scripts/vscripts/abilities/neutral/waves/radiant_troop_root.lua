@@ -38,8 +38,8 @@ function modifier_radiant_troop_root:OnAttackLanded( event )
 				ability, 
 				"modifier_radiant_troop_root_debuff", 
 				{duration = duration})
-			EmitSoundOn("Hero_Treant.NaturesGrasp.Cast", caster)
-			EmitSoundOn("Hero_Treant.NaturesGrasp.Spawn", target)
+			caster:EmitSound("Hero_Treant.NaturesGrasp.Cast")
+			target:EmitSound("Hero_Treant.NaturesGrasp.Spawn")
 		end
 	end
 end
@@ -89,7 +89,7 @@ function modifier_radiant_troop_root_debuff:OnIntervalThink()
 		ability=ability
 	})
 
-	EmitSoundOn("Hero_Treant.NaturesGrasp.Damage", parent)
+	parent:EmitSound("Hero_Treant.NaturesGrasp.Damage")
 	--SendOverheadEventMessage(nil, 6, caster, damage, nil)
 end
 
@@ -97,8 +97,8 @@ function modifier_radiant_troop_root_debuff:OnDestroy()
 	if not IsServer() then return end
 
 	local parent = self:GetParent()
-	StopSoundOn("Hero_Treant.NaturesGrasp.Damage", parent)
-	EmitSoundOn("Hero_Treant.NaturesGrasp.Destroy", parent)
+	parent:StopSound("Hero_Treant.NaturesGrasp.Damage")
+	parent:EmitSound("Hero_Treant.NaturesGrasp.Destroy")
 
 	ParticleManager:DestroyParticle(self.effect_cast, false)
 	ParticleManager:DestroyParticle(self.effect_cast2, false)

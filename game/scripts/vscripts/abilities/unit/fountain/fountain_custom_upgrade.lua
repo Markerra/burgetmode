@@ -1,5 +1,7 @@
 LinkLuaModifier("modifier_fountain_custom_upgrade", "abilities/unit/fountain/fountain_custom_upgrade", LUA_MODIFIER_MOTION_NONE)
 
+require("game-mode/custom_params")
+
 fountain_custom_upgrade = class({})
 
 function fountain_custom_upgrade:GetIntrinsicModifierName()
@@ -67,7 +69,9 @@ function modifier_fountain_custom_upgrade:OnIntervalThink()
     local caster = self:GetParent()
     if not caster or caster:IsNull() then return end
     self:IncrementStackCount()
+    if CUSTOM_DEBUG_MODE then
     print("-- Fountain Upgraded", "Current Fountain Level: "..stacks)
+    end
     caster:SetMaxHealth(caster:GetMaxHealth() + (self.hp))
     caster:Heal(self.hp, self:GetAbility())
     return self.interval

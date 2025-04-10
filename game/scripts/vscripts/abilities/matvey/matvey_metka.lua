@@ -15,8 +15,7 @@ end
 
 function matvey_metka:OnAbilityPhaseInterrupted()
 	if not IsServer() then return end
-
-	StopSoundOn(self.sound_effect, self.target)
+	self.target:StopSound(self.sound_effect)
 end
 
 function matvey_metka:OnSpellStart()
@@ -40,19 +39,16 @@ function matvey_metka_modifier_debuff:IsHidden() return false end
 function matvey_metka_modifier_debuff:IsPurgable() return true end
 
 function matvey_metka_modifier_debuff:OnCreated( kv )
-	local sound1 = "Hero_Kez.GrapplingClaw.Katana.Slow"
+	local sound1    = "Hero_Kez.GrapplingClaw.Katana.Slow"
 	self.sound_loop = "Hero_Oracle.PurifyingFlames"
-	EmitSoundOn(sound1, self:GetParent())
-	EmitSoundOn(self.sound_loop, self:GetParent())
+	self:GetParent():EmitSound(sound1)
+	self:GetParent():EmitSound(self.sound_loop)
 
 	self.effect = kv.effect
 end
 
 function matvey_metka_modifier_debuff:OnRefresh()
 	if not IsServer() then return end
-
-	print("refresh")
-
 	ParticleManager:DestroyParticle(self.effect, true)
 	ParticleManager:ReleaseParticleIndex(self.effect)
 end

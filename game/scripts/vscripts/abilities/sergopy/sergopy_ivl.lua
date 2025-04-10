@@ -15,7 +15,7 @@ function sergopy_ivl:OnSpellStart()
     ParticleManager:SetParticleControl(particle, 0, caster:GetAbsOrigin())
     ParticleManager:SetParticleControl(particle, 1, Vector(radius-10, 0, 0))
     ParticleManager:ReleaseParticleIndex(particle)
-    EmitSoundOn("Hero_Disruptor.ThunderStrike.Cast", caster)
+    caster:EmitSound("Hero_Disruptor.ThunderStrike.Cast")
 
     -- Find enemies in radius
     local enemies = FindUnitsInRadius(
@@ -79,7 +79,7 @@ function modifier_sergopy_ivl_debuff:OnCreated()
     self.particle = ParticleManager:CreateParticle("particles/econ/events/fall_2022/regen/fountain_regen_fall2022_lvl2.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
     ParticleManager:SetParticleControl(self.particle, 1, Vector(radius, 0, 0))
 
-    EmitSoundOn("Hero_Disruptor.StaticStorm.End", self:GetParent())
+    self:GetParent():EmitSound("Hero_Disruptor.StaticStorm.End")
     
     self:SendBuffRefreshToClients()
 end
@@ -114,7 +114,7 @@ function modifier_sergopy_ivl_debuff:OnRefresh()
     local particle2 = ParticleManager:CreateParticle("particles/units/heroes/hero_phantom_assassin_persona/pa_persona_crit_impact_travel_spray.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
     ParticleManager:SetParticleControl(particle2, 3, self:GetParent():GetAbsOrigin())
     ParticleManager:ReleaseParticleIndex(particle2)
-    EmitSoundOn("Hero_Disruptor.Attack", self:GetParent())
+    self:GetParent():EmitSound("Hero_Disruptor.Attack")
 end
 
 function modifier_sergopy_ivl_debuff:OnIntervalThink()

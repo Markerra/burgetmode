@@ -50,20 +50,32 @@ function marker_hammer:OnProjectileHit(target)
 
 	if not target then
         local facet = caster:GetHeroFacetID()
-        if facet == 4 then -- marker_hammer Facet
+        if facet == 5 then -- marker_hammer Facet
             local manacost = self:GetManaCost(self:GetLevel() - 1)
             local mana = manacost * (self:GetSpecialValueFor("mana_restore") / 100)
             local cooldown = self:GetCooldown(self:GetLevel())
              * (self:GetSpecialValueFor("cooldown_reduction") / 100)
-
             self:StartCooldown(cooldown)
-            print(self:GetLevel())
-
+            
             caster:GiveMana(mana)
             SendOverheadEventMessage(nil, 11, caster, mana, nil)
+            
+    	    for i = 0, caster:GetAbilityCount() - 1 do
+		        local ability = caster:GetAbilityByIndex(i)
+		        if ability and ability:GetCooldown(-1) > 0 then
+		        	if ability:GetAbilityName() ~= self:GetAbilityName() then 
+		            	ability:EndCooldown()
+		        	end
+		        end
+		    end
+
+		    -- партикл рефрешера
+		    local particle = ParticleManager:CreateParticle("particles/items2_fx/refresher_d.vpcf", 13, caster)
+		    ParticleManager:ReleaseParticleIndex(particle)
+		    caster:EmitSoundParams("Hero_Rattletrap.Overclock.Cast", 0, 0.5, 0)
         end
 
-        StopSoundOn("Hero_Dawnbreaker.Celestial_Hammer.Projectile", caster)
+        caster:StopSound("Hero_Dawnbreaker.Celestial_Hammer.Projectile")
         ParticleManager:DestroyParticle(self.hammer_particle, false)
         ParticleManager:ReleaseParticleIndex(self.hammer_particle)
 
@@ -73,7 +85,7 @@ function marker_hammer:OnProjectileHit(target)
         ParticleManager:ReleaseParticleIndex(exp_effect)
     	EmitSoundOnLocationWithCaster(self.target_position, "Hero_Dawnbreaker.Celestial_Hammer.Impact", self:GetCaster())
 		self:SetActivated(true)
-        if not facet == 4 then self:StartCooldown(self:GetCooldown(self:GetLevel())) end
+        if facet ~= 5 then self:StartCooldown(self:GetCooldown(self:GetLevel())) end
         return 
 	end
 
@@ -108,11 +120,11 @@ function marker_hammer:OnProjectileHit(target)
     self:SetActivated(true)
     self:StartCooldown(self:GetCooldown(self:GetLevel()))
 
-    StopSoundOn("Hero_Dawnbreaker.Celestial_Hammer.Projectile", self:GetCaster())
+    self:GetCaster():StopSound("Hero_Dawnbreaker.Celestial_Hammer.Projectile")
     ParticleManager:DestroyParticle(self.hammer_particle, false)
     ParticleManager:ReleaseParticleIndex(self.hammer_particle)
 
-    EmitSoundOn("Hero_Dawnbreaker.Solar_Guardian.Stun", target)
+    target:EmitSound("Hero_Dawnbreaker.Solar_Guardian.Stun")
 
     return true
 end
@@ -151,8 +163,8 @@ function marker_hammer:PlayEffects1( start, distance, velocity, speed )
     ParticleManager:SetParticleControl(effect_cast, 1, vDir * speed)
     ParticleManager:SetParticleControl(effect_cast, 4, Vector(3, 0, 0))
 
-	EmitSoundOn( sound_cast, self:GetCaster() )
-	EmitSoundOn("Hero_Dawnbreaker.Celestial_Hammer.Projectile", self:GetCaster())
+	hCaster:EmitSound(sound_cast)
+	hCaster:EmitSound("Hero_Dawnbreaker.Celestial_Hammer.Projectile")
 
 	return effect_cast
 end
@@ -173,7 +185,7 @@ function marker_hammer_debuff:OnCreated()
 	self.particle = ParticleManager:CreateParticle(effect1, PATTACH_ABSORIGIN, parent)
 	self.particle2 = ParticleManager:CreateParticle(effect2, PATTACH_ABSORIGIN, parent)
 
-	EmitSoundOn( "Hero_AbyssalUnderlord.Pit.TargetHero", parent )
+	parent:EmitSound("Hero_AbyssalUnderlord.Pit.TargetHero")
 end
 
 function marker_hammer_debuff:OnDestroy()

@@ -46,11 +46,11 @@ end
 
 function wraith_creep_stun_red:PlayEffects1()
 	local sound_cast = "Hero_SkeletonKing.Hellfire_Blast"
-	EmitSoundOn( sound_cast, self:GetCaster() )
+	self:GetCaster():EmitSound( sound_cast )
 end
 function wraith_creep_stun_red:PlayEffects2( target )
 	local sound_impact = "Hero_SkeletonKing.Hellfire_BlastImpact"
-	EmitSoundOn( sound_impact, target )
+	target:EmitSound( sound_impact )
 end
 
 

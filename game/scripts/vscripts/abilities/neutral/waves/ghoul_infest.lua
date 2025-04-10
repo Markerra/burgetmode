@@ -71,7 +71,7 @@ end
 
 function ghoul_infest:GetCustomCastErrorTarget(hTarget)
 	if hTarget == self:GetCaster() then
-		print("Способность не может быть использована на себя")
+		--print("Способность не может быть использована на себя")
 		return "Способность не может быть использована на себя"
 	--elseif hTarget:HasAbility(self:GetAbilityName()) then
 	--	print("Способность не может быть использована на это существо")
@@ -92,15 +92,16 @@ function ghoul_infest:OnSpellStart()
 	else
 		if self.target:GetTeamNumber() == caster:GetTeamNumber() then
 			self.mod2 = self.target:AddNewModifier(caster, self, "modifier_ghoul_infest_ally", {})
-			EmitSoundOn("Hero_LifeStealer.Infest", self.target)
+			self.targetEmitSound("Hero_LifeStealer.Infest")
 			self.mod2:SetStackCount(1)
 		end
 	end
+
     local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_infest_cast.vpcf", PATTACH_POINT, self.target)
     ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
     ParticleManager:SetParticleControl(fx, 1, self.target:GetAbsOrigin())
-	
-	self.mod1 = caster:AddNewModifier(caster, self, "modifier_ghoul_infest", {})
+
+	if IsServer() then self.mod1 = caster:AddNewModifier(caster, self, "modifier_ghoul_infest", {}) end
 end
 
 modifier_ghoul_infest = class({})
@@ -149,10 +150,10 @@ function modifier_ghoul_infest:OnRemoved()
         	})
         end
         ability.target:RemoveModifierByName("modifier_ghoul_infest_ally")
-        EmitSoundOn("Hero_LifeStealer.Consume", self:GetCaster())
-        ScreenShake(parentPos, 300, 1.1, 0.7, 1200, 0, true)
         self:GetCaster():ForceKill( false )
     end
+	self:GetCaster():EmitSound("Hero_LifeStealer.Consume")
+	ScreenShake(parentPos, 300, 1.1, 0.7, 1200, 0, true)
 end
 
 function modifier_ghoul_infest:OnIntervalThink()

@@ -8,7 +8,7 @@ function item_maxim_polyphemus:OnSpellStart()
 	local duration = self:GetSpecialValueFor("duration")
 	local caster = self:GetCaster()
 	caster:AddNewModifier(caster, self, "modifier_item_maxim_polyphemus", {duration = duration})
-	EmitSoundOn("item_maxim_polyphemus_cast", caster)
+	caster:EmitSound("item_maxim_polyphemus_cast")
 	local removed_item = caster:TakeItem(self)
 	if removed_item then
         UTIL_Remove(removed_item)

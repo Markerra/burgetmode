@@ -25,9 +25,6 @@ particles = {
 	"particles/units/heroes/hero_phantom_assassin_persona/pa_persona_crit_impact_travel_spray.vpcf",
 	"particles/units/heroes/hero_batrider/batrider_stickynapalm_stack.vpcf",
 	"particles/units/heroes/hero_disruptor/disruptor_kineticfield.vpcf",
-	"particles/items2_fx/refresher.vpcf",
-	"particles/items2_fx/refresher_b.vpcf",
-	"particles/items2_fx/refresher_c.vpcf",
 	"particles/units/heroes/hero_queenofpain/queen_scream_of_pain_owner.vpcf",
 	"particles/econ/events/spring_2021/teleport_start_spring_2021.vpcf", -- item_tpscroll
 	"particles/econ/events/spring_2021/teleport_end_spring_2021.vpcf", -- item_tpscroll
@@ -174,11 +171,11 @@ model_folders = {
 	"models/heroes/bristleback/",
 	"models/heroes/huskar/",
 	"models/heroes/invoker/",
-
 }
 
 particle_folders = {
 	"particles/items_fx",
+	"particles/items2_fx",
 	"particles/units/heroes/hero_pudge",
 	"particles/units/heroes/hero_nevermore",
 	"particles/units/heroes/hero_bristleback",

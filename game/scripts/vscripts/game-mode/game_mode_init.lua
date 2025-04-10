@@ -3,7 +3,7 @@ _G.max_timer = 0
 
 _G.game_end = false
 
-_G.start_wave = 4
+_G.start_wave = 1
 _G.test_waves = false
 _G.low_net_waves = { 6, 10, 15 }
 
@@ -129,7 +129,7 @@ end
 function GameMode:InitFast()
 	local mode = GameRules:GetGameModeEntity()
 
-	mode:SetCustomGameForceHero("npc_dota_hero_invoker")
+	mode:SetCustomGameForceHero("npc_dota_hero_"..CUSTOM_FORCE_HERO)
 
 	PlayerResource:SetCustomTeamAssignment(0, DOTA_TEAM_CUSTOM_1)
 
@@ -288,14 +288,14 @@ end
 
 function MaxTime(n)
 	local t = 70
-	if n >= 1  then t = 25  end
-	if n >= 2  then t = 45  end 
-	if n >= 3  then t = 65  end 
-	if n >= 11 then t = 85  end
-	if n >= 15 then t = 90  end
+	if n >= 1  then t = 30  end
+	if n >= 2  then t = 45  end
+	if n >= 3  then t = 80  end
+	if n >= 8  then t = 85  end
+	if n >= 16 then t = 95  end
 	if n >= 25 then t = 120 end
 	if BossTime(n) then 
-	 t = 150 - portal_delay end
+	 t = 150 - portal_delay end -- 12:00
 	if test_waves then t = 20 end	
 	return t + portal_delay
 end

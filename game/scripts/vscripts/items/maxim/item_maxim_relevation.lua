@@ -14,7 +14,7 @@ function item_maxim_relevation:OnSpellStart()
 	local duration = self:GetSpecialValueFor("duration")
 	caster:AddNewModifier(caster, self, "modifier_item_maxim_relevation", {duration = duration})
 	caster:AddNewModifier(caster, self, "modifier_item_maxim_relevation_free_movement", {duration = duration})
-	EmitSoundOn("item_maxim_relevation_cast", caster)
+	caster:EmitSound("item_maxim_relevation_cast")
 
 	local removed_item = caster:TakeItem(self)
 	if removed_item then

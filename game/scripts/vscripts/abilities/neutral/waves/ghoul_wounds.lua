@@ -19,8 +19,8 @@ function ghoul_wounds:OnSpellStart()
 
 	local sound_cast = "Hero_LifeStealer.OpenWounds.Cast"
 	local sound_target = "Hero_LifeStealer.OpenWounds"
-	EmitSoundOn( sound_cast, caster )
-	EmitSoundOn( sound_target, target )
+	caster:EmitSound( sound_cast )
+	target:EmitSound( sound_target )
 end
 
 modifier_ghoul_wounds_debuff = class({})

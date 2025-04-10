@@ -208,7 +208,7 @@ function Spawn( entityKeyValues )
     if not IsServer() then
         return
     end
-    if not IsValidEntity(thisEntity) then print("not valid") return end
+    if not IsValidEntity(thisEntity) then return end
 
     thisEntity.init = false
     thisEntity.tower = nil

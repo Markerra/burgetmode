@@ -82,7 +82,7 @@ function modifier_boss_roshan_lotus_active:GetAbsorbSpell(params)
 	end
 
 	if params.ability then
-		print("Ability absorbed:", params.ability:GetAbilityName())
+		--print("Ability absorbed:", params.ability:GetAbilityName())
 	end
 
 	if params.ability:GetCaster():GetTeamNumber() == self:GetParent():GetTeamNumber() then

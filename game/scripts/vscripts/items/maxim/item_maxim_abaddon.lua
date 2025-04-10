@@ -17,7 +17,7 @@ function item_maxim_abaddon:OnSpellStart()
 	self:GetCaster():AddNewModifier(caster, self, "modifier_item_maxim_abaddon", 	  {duration = duration})
 	self:GetParent():AddNewModifier(caster, self, "modifier_fear_item_maxim_abaddon", {duration = duration})
 
-	EmitSoundOn("item_maxim_abaddon_cast", caster)
+	caster:EmitSound("item_maxim_abaddon_cast")
 
 	local removed_item = caster:TakeItem(self)
 	if removed_item then
@@ -139,7 +139,7 @@ function modifier_feardebuff_item_maxim_abaddon:OnCreated()
 
 	self:GetParent():MoveToPosition( targetTower[1]:GetOrigin() )
 
-	EmitSoundOn("Hero_DarkWillow.Fear.Target", self:GetParent())
+	self:GetParent():EmitSound("Hero_DarkWillow.Fear.Target")
 end
 
 function modifier_feardebuff_item_maxim_abaddon:OnDestroy()

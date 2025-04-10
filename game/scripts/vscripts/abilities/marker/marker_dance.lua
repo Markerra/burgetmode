@@ -19,8 +19,8 @@ function marker_dance:OnSpellStart()
     local totem_health = self:GetSpecialValueFor("totem_health") 
     local radius = self:GetSpecialValueFor("radius")
 
-    EmitSoundOn("Hero_Visage.SummonFamiliars.Cast", caster)
-    EmitSoundOn("Hero_Chen.PenitenceImpact", caster)
+    caster:EmitSound("Hero_Visage.SummonFamiliars.Cast")
+    caster:EmitSound("Hero_Chen.PenitenceImpact")
 
     -- totem
     local totem = CreateUnitByName("npc_dota_marker_dance_totem", point, false, caster, caster, caster:GetTeamNumber())
@@ -86,7 +86,7 @@ function modifier_marker_dance_enemy:OnCreated(kv)
 
     local parent = self:GetParent()
 
-    EmitSoundOn("Hero_EmberSpirit.SearingChains.Target", parent)
+    parent:EmitSound("Hero_EmberSpirit.SearingChains.Target")
 
     self:SetHasCustomTransmitterData( true )
 
@@ -179,7 +179,7 @@ function modifier_marker_dance_tracker:OnCreated( kv )
 	local parent = self:GetParent()
 	local duration = self:GetAbility():GetSpecialValueFor("duration")
 
-	EmitSoundOn("marker_discoball_spawn", parent)
+	parent:EmitSound("marker_discoball_spawn")
 
 	self.effect1 = particle_aoe( parent, self.radius )
     self.effect2 = ParticleManager:CreateParticle("particles/units/heroes/hero_hoodwink/hoodwink_scurry_aura.vpcf",
@@ -207,7 +207,7 @@ function modifier_marker_dance_tracker:OnCreated( kv )
 					damage_type = 2,
 					ability = self:GetAbility()
 				})
-				if caster:GetHeroFacetID() == 5 then -- marker_stun Facet
+				if caster:GetHeroFacetID() == 6 then -- marker_stun Facet
 					local stun_interval = self:GetAbility():GetSpecialValueFor("stun_interval")
 					if i == stun_interval - 1 or i == stun_interval * 2 - 1 then
 						local stun_duration = self:GetAbility():GetSpecialValueFor("stun_duration")
@@ -223,7 +223,7 @@ function modifier_marker_dance_tracker:OnCreated( kv )
 			ParticleManager:SetParticleControl(self.effect3, 1, Vector( radius, radius, radius ))
 			ParticleManager:SetParticleControl(self.effect3, 3, parent:GetAbsOrigin())
 			ParticleManager:ReleaseParticleIndex(self.effect3)
-			EmitSoundOn("Hero_Muerta.Revenants.End", parent)
+			parent:EmitSound("Hero_Muerta.Revenants.End")
 
 			i = i + 1
 		else return end

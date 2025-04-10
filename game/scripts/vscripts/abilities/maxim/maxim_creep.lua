@@ -1,14 +1,13 @@
 maxim_creep = class({})
 
 function maxim_creep:OnAbilityPhaseStart()
-    print(self:GetSpecialValueFor("duration"))
     local caster = self:GetCaster()
-    EmitSoundOn("maxim_creep_pre", caster)
+    caster:EmitSound("maxim_creep_pre")
 end
 
 function maxim_creep:OnAbilityPhaseInterrupted()
     local caster = self:GetCaster()
-    StopSoundOn("maxim_creep_pre", caster)
+    caster:StopSound("maxim_creep_pre")
 end
 
 function maxim_creep:OnSpellStart()
@@ -35,15 +34,15 @@ function maxim_creep:OnSpellStart()
     local fx = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN, creep)
     ParticleManager:ReleaseParticleIndex(fx)
 
-    EmitSoundOn("maxim_creep_cast", caster)
+    caster:EmitSound("maxim_creep_cast")
 
     local rnd = RandomInt(1, 3)
     if rnd == 1 then
-        EmitSoundOn("maxim_creep_cast1", caster)
+        caster:EmitSound("maxim_creep_cast1")
     elseif rnd == 2 then
-        EmitSoundOn("maxim_creep_cast2", caster)
+        caster:EmitSound("maxim_creep_cast2")
     elseif rnd == 3 then
-        EmitSoundOn("maxim_creep_cast3", caster)
+        caster:EmitSound("maxim_creep_cast3")
     end
 
 

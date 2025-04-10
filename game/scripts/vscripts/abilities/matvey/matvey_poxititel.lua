@@ -39,7 +39,7 @@ function matvey_poxititel_modifier:OnAttackLanded( event )
 		chance = chance / 2
 	end
 
-	if attacker == caster and not attacker:IsIllusion() and not attacker:IsBuilding() then
+	if attacker == caster and not attacker:IsIllusion() and not target:IsBuilding() then
 		if RollPercentage(chance) then 
 			local name1 = "matvey_poxititel_buff"
 			local name2 = "matvey_poxititel_debuff"
@@ -87,7 +87,7 @@ function matvey_poxititel_modifier:PlayEffects( caster, target )
 	local sound = "Hero_Antimage.ManaBreak"
 	local effect = "particles/units/heroes/hero_antimage/antimage_manabreak_slow.vpcf"
 
-	EmitSoundOn(sound, target)
+	target:EmitSound(sound)
 
 	local particle = ParticleManager:CreateParticle(effect, PATTACH_ABSORIGIN_FOLLOW, target)
 	ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())

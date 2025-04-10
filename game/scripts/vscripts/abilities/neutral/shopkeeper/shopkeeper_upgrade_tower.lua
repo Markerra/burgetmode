@@ -23,7 +23,7 @@ function shopkeeper_upgrade_tower:OnSpellStart()
     local caster = self:GetCaster()
     local team = caster:GetTeam()
 
-    EmitSoundOn("DOTA_Item.HavocHammer.Cast", caster)
+    caster:EmitSound("DOTA_Item.HavocHammer.Cast")
 
 	local tower_main = GetTowerByTeam(caster:GetTeamNumber(), true)
     local modif_main = tower_main:FindModifierByName("modifier_shopkeeper_upgrade_tower")
@@ -40,7 +40,7 @@ function shopkeeper_upgrade_tower:OnSpellStart()
     ParticleManager:SetParticleControl(particle_main, 0, tower_main:GetAbsOrigin())
     ParticleManager:ReleaseParticleIndex(particle_main)
 
-    EmitSoundOn("Hero_Luna.LucentBeam.Cast", tower_main)    
+    tower_main:EmitSound("Hero_Luna.LucentBeam.Cast")    
 
     local tower_1 = GetTowerByTeam(caster:GetTeamNumber(), false)
     if not tower_1 then return end
@@ -57,7 +57,7 @@ function shopkeeper_upgrade_tower:OnSpellStart()
     local particle_1 = ParticleManager:CreateParticle(fx_1, PATTACH_WORLDORIGIN, tower_1)
     ParticleManager:SetParticleControl(particle_1, 0, tower_1:GetAbsOrigin())
     ParticleManager:ReleaseParticleIndex(particle_1)
-    EmitSoundOn("Hero_Luna.LucentBeam.Cast", tower_1)
+    tower_1:EmitSound("Hero_Luna.LucentBeam.Cast")
 end
 
 modifier_shopkeeper_upgrade_tower = class({})

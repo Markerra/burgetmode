@@ -47,8 +47,8 @@ function modifier_radiant_troop_blade_mail:OnDamageCalculated( event )
                 ability=self,
             })
             self:PlayEffects( target )
-            EmitSoundOn("Hero_Centaur.Retaliate.Target", caster)
-            EmitSoundOn("DOTA_Item.BladeMail.Damage", target)
+            caster:EmitSound("Hero_Centaur.Retaliate.Target")
+            target:EmitSound("DOTA_Item.BladeMail.Damage")
         end
     end
 end

@@ -132,7 +132,7 @@ function modifier_marker_chill_tracker:OnDestroy()
     ParticleManager:DestroyParticle(self.effect, false)
     ParticleManager:ReleaseParticleIndex(self.effect)
 
-    StopSoundOn("Hero_Huskar.BerserkersBlood.Cast", parent)
+    parent:StopSound("Hero_Huskar.BerserkersBlood.Cast")
 
     if not shard then
         parent:EmitSoundParams("DOTA_Item.Nullifier.Slow", 0, 0.5, 0)

@@ -30,7 +30,7 @@ function matvey_petard_blink:OnSpellStart()
 	local start_p = ParticleManager:CreateParticle(start_fx, PATTACH_WORLDORIGIN, caster)
 	ParticleManager:SetParticleControl(start_p, 0, caster:GetAbsOrigin())
 
-	EmitSoundOn("DOTA_Item.BlinkDagger.Activate", caster)
+	caster:EmitSound("DOTA_Item.BlinkDagger.Activate")
 
 	FindClearSpaceForUnit(caster, pos, true)
 
@@ -58,11 +58,11 @@ function matvey_petard_blink:OnSpellStart()
     local exp = ParticleManager:CreateParticle( "particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_explosion.vpcf", PATTACH_WORLDORIGIN, ability.missile )
     ParticleManager:SetParticleControl(exp, 3, ability.missile:GetAbsOrigin())
     ParticleManager:ReleaseParticleIndex(exp)
-    EmitSoundOn("Hero_Rattletrap.Rocket_Flare.Explode", ability.missile)
+    ability.missile:EmitSound("Hero_Rattletrap.Rocket_Flare.Explode")
 
 ------------------------------------------------------------------------------------------------
 
-    StopSoundOn("Hero_Gyrocopter.HomingMissile", ability.missile)
+    ability.missile:StopSound("Hero_Gyrocopter.HomingMissile")
 	ability.missile:Destroy()
 
     if ability.target:GetUnitName() == "npc_dota_companion" then

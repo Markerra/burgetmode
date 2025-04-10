@@ -144,7 +144,7 @@ function modifier_wraith_creep_reincarnate_red:PlayEffects()
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 
 	-- play sound
-	EmitSoundOn( sound_cast, self:GetParent() )
+	self:GetParent():EmitSound( sound_cast )
 end
 
 

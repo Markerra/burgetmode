@@ -7,10 +7,10 @@ LinkLuaModifier("modifier_boss_roshan_rocks_stun", "abilities/neutral/boss/boss_
 boss_roshan_rocks = class({})
 
 function boss_roshan_rocks:OnAbilityPhaseInterrupted()
+	if not IsServer() then end
 	local caster = self:GetCaster()
-	if IsServer() then
-	FadeGesture(ACT_DOTA_CAST_ABILITY_1) end
-	StopSoundOn("Roshan.RevengeRoar.Local", caster)
+	FadeGesture(ACT_DOTA_CAST_ABILITY_1)
+	caster:StopSound("Roshan.RevengeRoar.Local")
 end
 
 function boss_roshan_rocks:OnSpellStart()
@@ -26,7 +26,7 @@ function modifier_boss_roshan_rocks:IsDebuff() return false end
 function modifier_boss_roshan_rocks:IsPurgable() return false end
 
 function modifier_boss_roshan_rocks:OnCreated()
-    if not IsServer() then return end
+    if IsServer() then
 
     self.ability  = self:GetAbility()
     self.caster   = self:GetCaster()
@@ -58,9 +58,10 @@ function modifier_boss_roshan_rocks:OnCreated()
 			return end
 		return self.interval
 	end)
+	end
     Timers:CreateTimer(0.3, function()
     	ScreenShake(self.caster:GetAbsOrigin(), 250, 1.3, self.ability:GetCastPoint(), 4100, 0, true)
-		EmitSoundOn("Roshan.RevengeRoar.Local", self.caster)
+		self.caster:EmitSound("Roshan.RevengeRoar.Local")
 	end)
 end
 
@@ -100,7 +101,7 @@ function modifier_boss_roshan_rocks:CreateRock(radius_offset, angle_offset, rtyp
 		ParticleManager:ReleaseParticleIndex(self.ground_particle)
 		end
 
-		EmitSoundOn("Hero_PrimalBeast.RockThrow.Impact", caster)
+		caster:EmitSound("Hero_PrimalBeast.RockThrow.Impact")
 
 		local enemies = FindUnitsInRadius(
 		    caster:GetTeamNumber(),
@@ -129,7 +130,7 @@ function modifier_boss_roshan_rocks:CreateRock(radius_offset, angle_offset, rtyp
 				enemy:AddNewModifier(caster, ability, "modifier_boss_roshan_rocks_debuff", {duration = self.slow_duration})
 			end
 
-			EmitSoundOn("Hero_PrimalBeast.RockThrow.Stun", enemy)
+			enemy:EmitSound("Hero_PrimalBeast.RockThrow.Stun")
 
 			if IsServer() then
 			local hp = (damage * enemy:GetBaseMagicalResistanceValue() / 100) * (self.ability:GetSpecialValueFor("heal_pct") / 100)

@@ -15,7 +15,7 @@ function item_maxim_godhead:OnSpellStart()
 	caster:AddNewModifier(caster, self, "modifier_item_maxim_godhead", {duration = duration})
 	caster:AddNewModifier(caster, self, "modifier_item_maxim_godhead_debuff", {duration = duration})
 
-	EmitSoundOn("item_maxim_godhead_cast", caster)
+	caster:EmitSound("item_maxim_godhead_cast")
 
 	local removed_item = caster:TakeItem(self)
 	if removed_item then
@@ -151,9 +151,9 @@ function modifier_item_maxim_godhead_debuff:GetModifierTotalDamageOutgoing_Perce
 		}
 		ApplyDamage( damageTable )
 
-		EmitSoundOn( "Hero_Muerta.PierceTheVeil.ProjectileImpact", params.target )
+		params.target:EmitSound( "Hero_Muerta.PierceTheVeil.ProjectileImpact" )
 	else
-		EmitSoundOn( "Hero_Muerta.PierceTheVeil.ProjectileImpact.MagicImmune", params.target )
+		params.target:EmitSound( "Hero_Muerta.PierceTheVeil.ProjectileImpact.MagicImmune" )
 	end
 
 	return -200

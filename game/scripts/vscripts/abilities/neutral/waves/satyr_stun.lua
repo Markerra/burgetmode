@@ -63,7 +63,7 @@ function satyr_stun:PlayEffects( caster )
 	local particle = "particles/units/heroes/hero_centaur/centaur_warstomp.vpcf"
 	self.effect = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN, caster)
 	ParticleManager:SetParticleControl(self.effect, 0, caster:GetAbsOrigin())
-	EmitSoundOn("Hero_Centaur.HoofStomp", caster)
+	caster:EmitSound("Hero_Centaur.HoofStomp")
 end
 
 modifier_satyr_stun_slow = class({})

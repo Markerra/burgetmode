@@ -31,11 +31,6 @@ function seva_box:Roll()
     -- Случайное число
     local roll = RandomFloat(0, total_chance)
     local accumulated = 0
-    print("accumulated ".. accumulated)
-    print("total_chance ".. total_chance)
-    print("roll ".. roll)
-    print(chances.gold)
-    print(cgld)
     -- 1. Золото
     accumulated = accumulated + chances.gold
     if roll <= accumulated then
@@ -46,7 +41,7 @@ function seva_box:Roll()
         SendOverheadEventMessage(nil, 0, caster, 30, nil)
         ParticleManager:SetParticleControl(overhead_particle, 0, caster:GetAbsOrigin() + offset)
         ParticleManager:ReleaseParticleIndex(overhead_particle)
-        print("Получено 30 золота!")
+        --print("Получено 30 золота!")
         return
     end
 
@@ -58,8 +53,8 @@ function seva_box:Roll()
         caster:ModifyStrength(10)
         ParticleManager:SetParticleControl(overhead_particle, 0, caster:GetAbsOrigin())
         ParticleManager:ReleaseParticleIndex(overhead_particle)
-        EmitSoundOn("DOTA_Item.Armlet.Activate", caster)
-        print("Получено 10 силы!")
+        caster:EmitSound("DOTA_Item.Armlet.Activate")
+        --print("Получено 10 силы!")
         return
     end
 
@@ -67,7 +62,7 @@ function seva_box:Roll()
     accumulated = accumulated + chances.level
     if roll <= accumulated then
         caster:HeroLevelUp(true)
-        print("Получен 1 уровень!")
+        --print("Получен 1 уровень!")
         return
     end
 
@@ -85,7 +80,7 @@ function seva_box:Roll()
         for i = 1, 7 do
             caster:HeroLevelUp(true)
         end
-        print("Получено 7 уровней!")
+        --print("Получено 7 уровней!")
         return
     end
 

@@ -40,7 +40,7 @@ function modifier_xp_creep_bounty:OnDeath( event )
 	if target == parent and attacker and attacker:IsHero() then
 		attacker:AddExperience(xp, DOTA_ModifyXP_HeroKill, false, false)
 		SendOverheadEventMessage(nil, 3, attacker, xp, nil)
-		EmitSoundOn("Rune.XP", parent)
+		parent:EmitSound("Rune.XP")
 
 		local particle = "particles/base_static/experience_shrine_crack_glow_burst_flare.vpcf"
 		local effect = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN, parent)

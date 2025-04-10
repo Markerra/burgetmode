@@ -76,5 +76,5 @@ function modifier_wraith_creep_crit:PlayEffects( target )
 	ParticleManager:ReleaseParticleIndex( effect_impact )
 
 	-- play sound
-	EmitSoundOn( sound_impact, target )
+	target:EmitSound( sound_impact )
 end

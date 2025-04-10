@@ -17,10 +17,10 @@ function ursa_red_clap:OnAbilityPhaseStart()
 end
 
 function ursa_red_clap:OnAbilityPhaseInterrupted()
+	if not IsServer() then return end
 	local caster = self:GetCaster()
 	caster:FadeGesture(ACT_DOTA_IDLE)
-	StopSoundOn("n_creep_Ursa.Clap", caster)
-	if not IsServer() then return end
+	caster:StopSound("n_creep_Ursa.Clap")
 	ParticleManager:DestroyParticle(self.effect, false)
 	ParticleManager:ReleaseParticleIndex(self.effect)
 end

@@ -1,11 +1,11 @@
 brood_spider = class({})
 
 function brood_spider:OnAbilityPhaseStart()
-	EmitSoundOn("SpawnSpiderlingsCast", self:GetCaster())
+	self:GetCaster():EmitSound("SpawnSpiderlingsCast")
 end
 
 function brood_spider:OnAbilityPhaseInterrupted()
-	StopSoundOn("SpawnSpiderlingsCast", self:GetCaster())
+	self:GetCaster():StopSound("SpawnSpiderlingsCast")
 end
 
 function brood_spider:OnSpellStart()
@@ -46,7 +46,7 @@ function brood_spider:OnSpellStart()
     local particle_path = "particles/econ/items/dazzle/dazzle_ti9/dazzle_shadow_wave_ti9_crimson_impact_damage.vpcf"
     ParticleManager:CreateParticle(particle_path, PATTACH_ABSORIGIN, creep)
 
-    EmitSoundOn("Hero_Broodmother.SpawnSpiderlings", caster)
+    caster:EmitSound("Hero_Broodmother.SpawnSpiderlings")
 
     local dmg = self:GetSpecialValueFor("dmg")
     local max_hp  = self:GetSpecialValueFor("max_hp")

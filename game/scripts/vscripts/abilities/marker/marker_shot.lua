@@ -20,7 +20,7 @@ function marker_shot:OnSpellStart()
 	ParticleManager:SetParticleControl(self.effect, 3, caster:GetAbsOrigin())
 
 	self.sound_cast = "Hero_Visage.GraveChill.Cast"
-	EmitSoundOn( self.sound_cast, caster )
+	caster:EmitSound(self.sound_cast)
 end
 
 
@@ -44,8 +44,8 @@ function marker_shot:OnChannelFinish( bInterrupted )
 	local sound_cast = "Ability.MKG_AssassinateLoad"
 	
 	if bInterrupted then
-		StopSoundOn( self.sound_cast, caster )
-		EmitSoundOn( "Hero_StormSpirit.ElectricRave", caster )
+		caster:StopSound( self.sound_cast )
+		caster:EmitSound( "Hero_StormSpirit.ElectricRave" )
 		ParticleManager:DestroyParticle(self.effect, true)
 	end
 
@@ -53,7 +53,7 @@ function marker_shot:OnChannelFinish( bInterrupted )
 	ParticleManager:ReleaseParticleIndex(self.effect)
 
 	caster:FadeGesture(ACT_DOTA_TELEPORT)
-	EmitSoundOn( sound_cast, caster )
+	caster:EmitSound( sound_cast )
 end
 
 marker_shot_modifier = class({})
@@ -135,10 +135,10 @@ function marker_shot_modifier:OnAttackLanded( event )
 			PATTACH_ABSORIGIN_FOLLOW, event.target)
 			ParticleManager:SetParticleControl(effect2, 1, event.target:GetOrigin())
 			ParticleManager:ReleaseParticleIndex(effect2)
-			EmitSoundOn("Hero_Luna.Eclipse.Target", event.target)
+			event.target:EmitSound("Hero_Luna.Eclipse.Target")
 			ScreenShake(event.target:GetAbsOrigin(), 100, 1.1, 0.5, 1200, 0, true)
 		else
-			EmitSoundOn("Hero_Luna.Eclipse.NoTarget", event.target)
+			event.target:EmitSound("Hero_Luna.Eclipse.NoTarget")
 			ScreenShake(event.target:GetAbsOrigin(), 5, 1.1, 0.3, 1200, 0, true)
 		end
 

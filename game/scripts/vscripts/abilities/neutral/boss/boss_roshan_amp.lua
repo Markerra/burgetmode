@@ -24,9 +24,9 @@ function boss_roshan_amp:GetChannelAnimation() return ACT_DOTA_GENERIC_CHANNEL_1
 function boss_roshan_amp:OnSpellStart()
 	local caster = self:GetCaster()
 	local duration = self:GetSpecialValueFor("delay")
-	EmitSoundOn("Hero_OgreMagi.Bloodlust.Cast", caster)
-	EmitSoundOn("Hero_Juggernaut.HealingWard.Cast", caster)
-	EmitSoundOn("Hero_Juggernaut.HealingWard.Loop", caster)
+	caster:EmitSound("Hero_OgreMagi.Bloodlust.Cast")
+	caster:EmitSound("Hero_Juggernaut.HealingWard.Cast")
+	caster:EmitSound("Hero_Juggernaut.HealingWard.Loop")
 	self.fx = ParticleManager:CreateParticle("particles/items_fx/healing_flask.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	caster:AddNewModifier(caster, self, "modifier_boss_roshan_amp_heal", {duration = duration})
 end
@@ -36,8 +36,8 @@ function boss_roshan_amp:OnChannelFinish(bInterrupted)
 	if not IsServer() then return end
     local caster = self:GetCaster()
     caster:FadeGesture(ACT_DOTA_GENERIC_CHANNEL_1)
-    StopSoundOn("Hero_Juggernaut.HealingWard.Loop", caster)
-    EmitSoundOn("Hero_Juggernaut.HealingWard.Stop", caster)
+    caster:StopSound("Hero_Juggernaut.HealingWard.Loop")
+    caster:EmitSound("Hero_Juggernaut.HealingWard.Stop")
    ParticleManager:DestroyParticle(self.fx, false)
     if caster:HasModifier("modifier_boss_roshan_amp_heal") then
         caster:RemoveModifierByName("modifier_boss_roshan_amp_heal")
@@ -61,7 +61,7 @@ function boss_roshan_amp:OnChannelFinish(bInterrupted)
 	
 		for k, unit in pairs(units) do
     		unit:AddNewModifier(caster, self, "modifier_boss_roshan_amp_fear", {duration = fear_duration})
-			EmitSoundOn("Hero_DarkWillow.Fear.Location", caster)
+			caster:EmitSound("Hero_DarkWillow.Fear.Location")
 		end
 
     	for i = 0, caster:GetAbilityCount() - 1 do
@@ -94,8 +94,8 @@ function modifier_boss_roshan_amp:DeclareFunctions()
 end
 
 function modifier_boss_roshan_amp:OnCreated()
-	EmitSoundOn("Hero_OgreMagi.Bloodlust.Target", self:GetParent())
-	EmitSoundOn("Hero_OgreMagi.Bloodlust.Target.FP", self:GetParent())
+	self:GetParent():EmitSound("Hero_OgreMagi.Bloodlust.Target")
+	self:GetParent():EmitSound("Hero_OgreMagi.Bloodlust.Target.FP")
 end
 
 function modifier_boss_roshan_amp:GetEffectName()
@@ -149,7 +149,7 @@ function modifier_boss_roshan_amp_fear:OnCreated()
 	if not targetTower then return end
 	self:GetParent():MoveToPosition( targetTower[1]:GetOrigin() )
 
-	EmitSoundOn("Hero_DarkWillow.Fear.Target", self:GetParent())
+	self:GetParent():EmitSound("Hero_DarkWillow.Fear.Target")
 end
 
 function modifier_boss_roshan_amp_fear:OnDestroy()
