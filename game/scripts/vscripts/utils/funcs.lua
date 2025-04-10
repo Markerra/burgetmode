@@ -36,3 +36,19 @@ function HasTalent(unit, talent_name)
     end
     return false
 end
+
+function GetPlayerInfo(pid)
+	local player = PlayerResource:GetPlayer(pid)
+	  print("\n============INFO============")
+	  print("Team:", team)
+	  print("Player:", player)
+	  print("Player name:", PlayerResource:GetPlayerName(pid))
+	  print("Valid:", PlayerResource:IsValidPlayerID(pid))
+	  if not player or not PlayerResource:IsValidPlayerID(pid) then
+		print("============================\n")
+		return
+	  end
+	  print("Hero:", player:GetAssignedHero())
+	  print("Hero Name:", player:GetAssignedHero():GetUnitName())
+	  print("============================\n")
+end

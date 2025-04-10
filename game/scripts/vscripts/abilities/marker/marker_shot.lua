@@ -113,7 +113,7 @@ end
 
 function marker_shot_modifier:OnAttackLanded( event )
 	local caster = self:GetAbility():GetCaster()
-	if event.attacker == caster then
+	if event.attacker == caster and not event.target:IsBuilding() then
 		if self.aghanim then
 			local stacks = self:GetStackCount()
 

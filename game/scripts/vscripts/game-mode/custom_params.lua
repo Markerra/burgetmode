@@ -2,7 +2,7 @@ CUSTOM_FOUNTAIN_VUL_DELAY 	= 600 -- время до деактивации не�
 
 NORMAL_START_GOLD		  	= 600
 CUSTOM_BUYBACK_COST_ENABLED = false
-MAXIMUM_ATTACK_SPEED		= 900
+MAXIMUM_ATTACK_SPEED		= 800
 COURIER_MAX 				= true
 
 CUSTOM_FOUNTAIN_AURA_RADIUS    = 675 -- радиус действия ауры лечения у фонтана 

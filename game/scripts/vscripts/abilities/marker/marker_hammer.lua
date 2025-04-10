@@ -59,15 +59,6 @@ function marker_hammer:OnProjectileHit(target)
             
             caster:GiveMana(mana)
             SendOverheadEventMessage(nil, 11, caster, mana, nil)
-            
-    	    for i = 0, caster:GetAbilityCount() - 1 do
-		        local ability = caster:GetAbilityByIndex(i)
-		        if ability and ability:GetCooldown(-1) > 0 then
-		        	if ability:GetAbilityName() ~= self:GetAbilityName() then 
-		            	ability:EndCooldown()
-		        	end
-		        end
-		    end
 
 		    -- партикл рефрешера
 		    local particle = ParticleManager:CreateParticle("particles/items2_fx/refresher_d.vpcf", 13, caster)

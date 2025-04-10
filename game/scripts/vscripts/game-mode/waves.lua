@@ -1,5 +1,6 @@
 require("game-mode/custom_params")
 require("utils/timers")
+require("utils/funcs")
 
 LinkLuaModifier( "modifier_wave_upgrade", "modifiers/modifier_wave_upgrade", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_wave_mkb", "modifiers/modifier_wave_mkb", LUA_MODIFIER_MOTION_NONE )
@@ -203,16 +204,16 @@ end
 function GameMode:SpawnWave( team, number, level, give_lownet )
     local player = nil
 
-    for player_id = 0, PlayerResource:GetPlayerCount() - 1 do
-        player = PlayerResource:GetPlayer(player_id)
-        if player and player:GetTeamNumber() == team then
-            if player.defeated == true then
-            local name = PlayerResource:GetPlayerName(player_id)
-            print("SpawnWave() - player <"..name.."> is defeated") return end
-        end
-        if player or not PlayerResource:IsValidPlayerID(player_id) or not player:GetAssignedHero() then
-            print("SpawnWave() - player in <"..team.."> team does not exist") return
-        end
+    local player_id = (team - 5) - 1
+
+    player = PlayerResource:GetPlayer(player_id)
+
+    if player and player:GetTeamNumber() == team and player.defeated == true then
+        local name = PlayerResource:GetPlayerName(player_id)
+        print("SpawnWave() - player <"..name.."> is defeated") return
+    end
+    if not player or not PlayerResource:IsValidPlayerID(player_id) or not player:GetAssignedHero() then
+        print("SpawnWave() - player in #"..team.." team does not exist") return
     end
 
     local portal = Entities:FindByName(nil, "custom".. team-5 .."_wave_portal")
@@ -258,16 +259,15 @@ function GameMode:SpawnBoss( type )
     local player = nil
     local hero   = nil
 
-    for player_id = 0, PlayerResource:GetPlayerCount() - 1 do
-        player = PlayerResource:GetPlayer(player_id)
-        if player and player:GetTeamNumber() == team then
-            if player.defeated == true then
-            local name = PlayerResource:GetPlayerName(player_id)
-            print("SpawnWave() - player <"..name.."> is defeated") return end
-        end
-        if player or not PlayerResource:IsValidPlayerID(player_id) or not player:GetAssignedHero() then
-            print("SpawnWave() - player in <"..team.."> team does not exist") return
-        end
+    local player_id = (team - 5) - 1
+    player = PlayerResource:GetPlayer(player_id)
+
+    if player and player:GetTeamNumber() == team and player.defeated == true then
+        local name = PlayerResource:GetPlayerName(player_id)
+        print("SpawnBoss() - player <"..name.."> is defeated") return
+    end
+    if not player or not PlayerResource:IsValidPlayerID(player_id) or not player:GetAssignedHero() then
+        print("SpawnBoss() - player in #"..team.." team does not exist") return
     end
 
     hero = player:GetAssignedHero()

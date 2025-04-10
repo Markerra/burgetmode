@@ -203,6 +203,13 @@ function matvey_petard:InitialiseRocket(velocity, acceleration, detonationRadius
 					ParticleManager:ReleaseParticleIndex(exp)
 					missile:EmitSound("Hero_Rattletrap.Rocket_Flare.Explode")
 					missile:StopSound("Hero_Gyrocopter.HomingMissile")
+
+					self:StartCooldown(self:GetCooldown(self:GetLevel()) / 2)
+		
+					-- партикл рефрешера
+					local particle = ParticleManager:CreateParticle("particles/items2_fx/refresher_e.vpcf", 13, self:GetCaster())
+					ParticleManager:ReleaseParticleIndex(particle)
+					self:GetCaster():EmitSoundParams("Hero_Rattletrap.Overclock.Cast", 0, 0.5, 0)
 				else
 					local new_caster = self.target
 					self.target = self:GetCaster()
@@ -216,7 +223,10 @@ function matvey_petard:InitialiseRocket(velocity, acceleration, detonationRadius
 				blink:SetActivated(false)
 
 				self:SetActivated(true)
-				self:StartCooldown(self:GetCooldown(self:GetLevel()))
+
+				if self:IsCooldownReady() then
+					 self:StartCooldown(self:GetCooldown(self:GetLevel()))
+				end
 
 				for i = 1, #_G.ActiveHomingMissiles, 1 do
 					if _G.ActiveHomingMissiles[i].Rocket == self then

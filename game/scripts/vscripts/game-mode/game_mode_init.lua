@@ -207,40 +207,61 @@ function GameMode:OnStateChange()
 	local state = GameRules:State_Get()
 	local mode = GameRules:GetGameModeEntity()
 
-	if state == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then -- запускается при начале игры (0:00 на таймере)
-		GameRules:SetTimeOfDay(0.251) -- игра начинается со дня
-
-		for t=DOTA_TEAM_CUSTOM_1, DOTA_TEAM_CUSTOM_8 do
-			local couriers = Entities:FindAllByName("npc_dota_courier")
-			if COURIER_MAX then
-				for key,courier in pairs(couriers) do
-					courier:UpgradeCourier(12)
-				end
-			end
-		end
-
-		GameRules:SpawnNeutralCreeps() -- спавн нейтральных крипов во всех кемпах
-
-		require("game-mode/functions/fountain_invul")
-		ActivateFountainInvul() -- активирует неуязвимость фонтана
-		DeactivateFountainsInvul(CUSTOM_FOUNTAIN_VUL_DELAY)
-
-		require("game-mode/functions/give_tpscroll")
-		GiveTPScroll()
-
-		local shopkeepers = Entities:FindAllByName("npc_custom_shopkeeper")
-		for _, unit in pairs(shopkeepers) do
-			if not IsServer() then return end
-			local player = GetPlayerByTeam(unit:GetTeam())
-			if player then
-				unit:SetControllableByPlayer(player:GetPlayerID(), false)
-				unit:SetOwner(player:GetAssignedHero())
-			end
-			unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})		
-		end
-
-		mode:SetThink( waves_think, "", 1 )
+	if CUSTOM_DEBUG_MODE then
+		print("GameMode StateChange:", state)
 	end
+
+	if state == DOTA_GAMERULES_STATE_PRE_GAME then
+		GameMode:OnPreGame()
+	elseif state == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+		GameMode:OnGameInProgress()
+	end
+end
+
+function GameMode:OnPreGame() 
+    if CUSTOM_DEBUG_MODE then
+		for id=0, PlayerResource:GetPlayerCount() - 1 do
+			GetPlayerInfo(id)
+		end
+	end
+end
+
+function GameMode:OnGameInProgress() -- запускается при начале игры (0:00 на таймере)
+	GameRules:SetTimeOfDay(0.251) -- игра начинается со дня
+
+	for t=DOTA_TEAM_CUSTOM_1, DOTA_TEAM_CUSTOM_8 do
+		local couriers = Entities:FindAllByName("npc_dota_courier")
+		if COURIER_MAX then
+			for key,courier in pairs(couriers) do
+				courier:UpgradeCourier(30)
+				courier:AddNewModifier(nil, nil, "modifier_turbo_courier_haste", {})
+				courier:AddNewModifier(nil, nil, "modifier_courier_autodeliver", {})
+				courier:AddNewModifier(nil, nil, "modifier_turbo_courier_invulnerable", {})
+			end
+		end
+	end
+
+	GameRules:SpawnNeutralCreeps() -- спавн нейтральных крипов во всех кемпах
+
+	require("game-mode/functions/fountain_invul")
+	ActivateFountainInvul() -- активирует неуязвимость фонтана
+	DeactivateFountainsInvul(CUSTOM_FOUNTAIN_VUL_DELAY)
+
+	require("game-mode/functions/give_tpscroll")
+	GiveTPScroll()
+
+	local shopkeepers = Entities:FindAllByName("npc_custom_shopkeeper")
+	for _, unit in pairs(shopkeepers) do
+		if not IsServer() then return end
+		local player = GetPlayerByTeam(unit:GetTeam())
+		if player then
+			unit:SetControllableByPlayer(player:GetPlayerID(), false)
+			unit:SetOwner(player:GetAssignedHero())
+		end
+		unit:AddNewModifier(unit, nil, "modifier_invulnerable", {})		
+	end
+
+	mode:SetThink( waves_think, "", 1 )
 end
 
 function GameMode:DefeatTeam( unit )

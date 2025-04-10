@@ -61,8 +61,8 @@ function matvey_poxititel_modifier:OnAttackLanded( event )
 	
 				modif1 = caster:AddNewModifier(caster, ability, name1, {duration = dur})
 				modif2 = target:AddNewModifier(caster, ability, name2, {duration = dur})
-
-				if caster:GetHeroFacetID() == 3 then -- matvey_manasteal Facet
+				print(caster:GetHeroFacetID())
+				if caster:GetHeroFacetID() == 6 then -- matvey_manasteal Facet
 					local mana = ability:GetSpecialValueFor("mana_steal")
 
 					target:SpendMana(mana, ability)
