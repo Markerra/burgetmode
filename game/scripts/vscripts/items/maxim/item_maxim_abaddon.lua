@@ -2,6 +2,8 @@ LinkLuaModifier("modifier_item_maxim_abaddon", "items/maxim/item_maxim_abaddon",
 LinkLuaModifier("modifier_fear_item_maxim_abaddon", "items/maxim/item_maxim_abaddon", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_feardebuff_item_maxim_abaddon", "items/maxim/item_maxim_abaddon", LUA_MODIFIER_MOTION_NONE)
 
+require("utils/funcs")
+
 item_maxim_abaddon = {}
 
 function item_maxim_abaddon:OnSpellStart()
@@ -33,23 +35,30 @@ function modifier_item_maxim_abaddon:IsDebuff()   return false end
 function modifier_item_maxim_abaddon:IsPurgable() return true end 
 
 function modifier_item_maxim_abaddon:OnCreated()
+	self:SetHasCustomTransmitterData(true)
+
 	if not IsServer() then return end
+	
+	self.dmg_bonus = self:GetAbility():GetSpecialValueFor("dmg_bonus")
+	self.ms_bonus = self:GetAbility():GetSpecialValueFor("ms_bonus")
+
+	self:SendBuffRefreshToClients()
 	self:StartIntervalThink(0.1)
 end
 
 function modifier_item_maxim_abaddon:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
 	}
 end
 
 function modifier_item_maxim_abaddon:GetModifierBaseAttack_BonusDamage()
-	return self:GetSpecialValueFor("dmg_bonus")
+	return self.dmg_bonus
 end
 
 function modifier_item_maxim_abaddon:GetModifierMoveSpeedBonus_Constant()
-	return self:GetSpecialValueFor("ms_bonus")
+	return self.ms_bonus
 end
 
 function modifier_item_maxim_abaddon:OnIntervalThink()
@@ -70,7 +79,7 @@ function modifier_item_maxim_abaddon:OnIntervalThink()
     	    })
     	end
     	caster:Purge(false, true, false, true, false)
-		EmitGlobalSound("Hero_Phoenix.SuperNova.Explode")
+		caster:EmitSound("Hero_Phoenix.SuperNova.Explode")
 		self.effect_cast = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf", PATTACH_WORLDORIGIN, nil)
    		ParticleManager:SetParticleControl(self.effect_cast, 0, self:GetParent():GetOrigin())
    		is_explosion = true
@@ -80,6 +89,21 @@ function modifier_item_maxim_abaddon:OnIntervalThink()
    			caster:FindModifierByName("modifier_fear_item_maxim_abaddon"):Destroy()
    		end
 	end
+	--self:SendBuffRefreshToClients()
+end
+
+function modifier_item_maxim_abaddon:AddCustomTransmitterData()
+	local data = {
+		dmg_bonus = self.dmg_bonus,
+		ms_bonus = self.ms_bonus,
+	}
+
+	return data
+end
+
+function modifier_item_maxim_abaddon:HandleCustomTransmitterData(data)
+	self.dmg_bonus = data.dmg_bonus
+	self.ms_bonus  = data.ms_bonus
 end
 
 
@@ -89,6 +113,17 @@ function modifier_fear_item_maxim_abaddon:IsHidden() return true end
 function modifier_fear_item_maxim_abaddon:IsDebuff() return true end
 function modifier_fear_item_maxim_abaddon:IsPurgable() return true end
 
+function modifier_fear_item_maxim_abaddon:OnCreated()
+	self:SetHasCustomTransmitterData(true)
+	
+	if not IsServer() then return end
+
+	self.chance = self:GetAbility():GetSpecialValueFor("fear_chance")
+	self.duration = self:GetAbility():GetSpecialValueFor("fear_duration")
+
+	self:SendBuffRefreshToClients()
+end
+
 function modifier_fear_item_maxim_abaddon:DeclareFunctions()
     return {
         MODIFIER_EVENT_ON_ATTACK_LANDED
@@ -96,14 +131,28 @@ function modifier_fear_item_maxim_abaddon:DeclareFunctions()
 end
 
 function modifier_fear_item_maxim_abaddon:OnAttackLanded(params)
-    if not IsServer() then return end
+	if not IsServer() then return end
     if params.attacker == self:GetParent() then
-    	local chance = self:GetAbility():GetSpecialValueFor("fear_chance")
-        if RollPercentage(chance) then
-        	local duration = self:GetAbility():GetSpecialValueFor("fear_duration")
-            params.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_feardebuff_item_maxim_abaddon", {duration = duration})
+        if RollPercentage(self.chance) then
+			print("FEAR!")
+            params.target:AddNewModifier(self:GetParent(), self:GetAbility(), 
+			"modifier_feardebuff_item_maxim_abaddon", {duration = self.duration})
         end
     end
+end
+
+function modifier_fear_item_maxim_abaddon:AddCustomTransmitterData()
+	local data = {
+		chance = self.chance,
+		duration = self.duration,
+	}
+
+	return data
+end
+
+function modifier_fear_item_maxim_abaddon:HandleCustomTransmitterData(data)
+	self.chance    = data.chance
+	self.duration  = data.duration
 end
 
 
@@ -119,26 +168,21 @@ function modifier_feardebuff_item_maxim_abaddon:OnCreated()
 
 	local hero = self:GetParent()
 
-	local alltowers = {}
-
-	local towerCount = 8 -- текущее кол-во таверов на карте
-
-	for i=1, towerCount do
-		local name = "dota_custom"..tostring(i).."_tower_main"
-    	local towers = Entities:FindAllByName(name)
-    	table.insert(alltowers, towers)
-	end
-
-	local targetTower = alltowers[hero:GetTeamNumber()-5]
+	local targetTower = GetTowerByTeam(hero:GetTeam(), true)
 
 	if not targetTower then return end
 
 	if self:GetParent():IsCreep() then
-		self:GetParent():SetForceAttackTargetAlly( targetTower[1] ) -- for creeps
+		self:GetParent():SetForceAttackTargetAlly( targetTower ) -- for creeps
 	end
 
-	self:GetParent():MoveToPosition( targetTower[1]:GetOrigin() )
+	self:GetParent():MoveToPosition( targetTower:GetOrigin() )
 
+	self:GetParent():EmitSound("Hero_DarkWillow.Fear.Target")
+end
+
+function modifier_feardebuff_item_maxim_abaddon:OnRefresh()
+	self:GetParent():StopSound("Hero_DarkWillow.Fear.Target")
 	self:GetParent():EmitSound("Hero_DarkWillow.Fear.Target")
 end
 
@@ -152,7 +196,7 @@ function modifier_feardebuff_item_maxim_abaddon:OnDestroy()
 	end
 end
 
-function modifier_feardebuff_item_maxim_abaddon:IsHidden() 	 return true end
+function modifier_feardebuff_item_maxim_abaddon:IsHidden() return true end
 function modifier_feardebuff_item_maxim_abaddon:IsPurgable() return true end
 
 function modifier_feardebuff_item_maxim_abaddon:GetEffectName()

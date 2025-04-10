@@ -149,4 +149,4 @@ end
 
 function modifier_custom_ability_teleport:GetOverrideAnimation()
 	return ACT_DOTA_TELEPORT
-end--
+end

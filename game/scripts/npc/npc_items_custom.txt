@@ -1,6 +1,6 @@
 "DOTAAbilities"
 {
-
+	"item_tpscroll"						"ITEM_REMOVE"
 	"item_refresher"					"ITEM_REMOVE"
 	"item_magic_wand"					"ITEM_REMOVE"
 	"item_gem"							"ITEM_REMOVE"
@@ -14,7 +14,6 @@
 	"item_recipe_dagon_3"               "ITEM_REMOVE"
 	"item_recipe_dagon_4"               "ITEM_REMOVE"
 	"item_recipe_dagon_5"               "ITEM_REMOVE"
-
 
 	"item_tpscroll_custom"
 	{
@@ -148,6 +147,7 @@
 
 		"AbilityValues"
 		{
+			"lvl"						"1 2 3"			// уровень
 			"duration"					"10 20 30"		// длительность модификатора
 			"fear_duration"				"0.3 0.6 0.8"	// длительность страха
 			"fear_chance"				"10 15 17"		// шанс страха

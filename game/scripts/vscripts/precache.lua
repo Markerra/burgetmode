@@ -171,6 +171,7 @@ model_folders = {
 	"models/heroes/bristleback/",
 	"models/heroes/huskar/",
 	"models/heroes/invoker/",
+	"models/heroes/legion_commander/",
 }
 
 particle_folders = {
@@ -181,6 +182,7 @@ particle_folders = {
 	"particles/units/heroes/hero_bristleback",
 	"particles/units/heroes/hero_huskar",
 	"particles/units/heroes/hero_invoker",
+	"particles/units/heroes/hero_legion_commander",
 	"particles/custom/neutral",
 	"particles/custom/neutral/boss",
 	"particles/units/heroes/hero_life_stealer",
