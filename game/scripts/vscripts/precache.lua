@@ -49,6 +49,7 @@ particles = {
 	"particles/generic_gameplay/generic_lifesteal.vpcf", -- blood_seeker_attack 
 	"particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf", -- ursa_red_clap 
 	"particles/custom/general/exclamation.vpcf", -- ursa_red_clap 
+	"particles/units/heroes/hero_beastmaster/beastmaster_boar_attack.vpcf",
 	"particles/neutral_fx/dark_troll_ensnare.vpcf", -- boar_roor
 	"particles/generic_gameplay/generic_purge.vpcf", -- boar_slow
 	"particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf", -- blood_seeker_rupture 
@@ -90,17 +91,17 @@ particles = {
 	"particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf",
 	"particles/econ/events/ti6/blink_dagger_start_ti6.vpcf",
 	"particles/econ/events/ti6/blink_dagger_end_ti6.vpcf",
-	"particles/units/heroes/hero_beastmaster/beastmaster_boar_attack.vpcf",
-	
+	"particles/econ/items/sven/sven_ti7_sword/sven_ti7_sword_spell_great_cleave.vpcf",
+	"particles/units/heroes/hero_demonartist/demonartist_engulf_disarm/items2_fx/heavens_halberd.vpcf",
+	"particles/econ/events/fall_2021/groundglow_fall_2021.vpcf",
+	"particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_mask_of_madness.vpcf",
 }
 
 soundfiles = {
 	"soundevents/game_sounds.vsndevts",
 	"soundevents/game_sounds_items.vsndevts",
 	"soundevents/game_sounds_creeps.vsndevts",
-	"soundevents/seva_sounds.vsndevts",
-	"soundevents/maxim_sounds.vsndevts",
-	"soundevents/marker_sounds.vsndevts",
+	"soundevents/custom_sounds.vsndevts",
 	"soundevents/voscripts/game_sounds_vo_announcer.vsndevts", -- announcer
 	"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts", -- item_maxim_abaddon
 	"soundevents/game_sounds_heroes/game_sounds_kez.vsndevts",
@@ -138,6 +139,8 @@ soundfiles = {
 	"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts", -- modifier_arena_boss_sleep
 	"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts", -- matvey_petard
 	"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts", -- matvey_petard
+	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts", -- matvey_bf
+	"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts", -- matvey_bf
 
 }
 
@@ -188,4 +191,5 @@ particle_folders = {
 	"particles/units/heroes/hero_life_stealer",
 	"particles/custom/matvey/matvey_metka",
 	"particles/custom/matvey/matvey_petard",
+	"particles/custom/matvey/matvey_bf",
 }

@@ -1055,7 +1055,7 @@
 				"value"					"50" // процент превращения урона с атаки в маг. урон (%)
 				"special_bonus_unique_matvey_magic_transform" "+40" // талант
 			}
-			"bonus_pct"					"7" // процент доп. урона с атаки от маны (%)
+			"bonus_pct"					"55" // процент доп. урона с атаки от маны (%)
 			"manacost_pct"				"10" // стоимость атаки в ед. маны от макс. маны (%)
 		}
 	}
@@ -1066,6 +1066,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
+
 
 	//=================================================================================================================
 	// Matvey: Метка Гея
@@ -1091,7 +1092,11 @@
 		"AbilityValues"
 		{
 			"slow"						"12 15 18 25" // замедление (%)
-			"resist_decrease"			"10 15 20 30" // уменьшение сопротивления к магии
+			"resist_decrease"
+			{
+				"value"					"10 15 20 30" // уменьшение сопротивления к магии
+				"special_bonus_unique_matvey_metka_resist" "+10" // талант
+			}
 			"kill_bonus_int"		 	"2"	// бонус к интеллекту при убийстве
 			"kill_bonus_ag"		 		"1"	// бонус к ловкости при убийстве
 			"duration"
@@ -1101,12 +1106,71 @@
 
 			}
 
-			"aghanim_str_debuff"		"2" // при смерти понижает силу врага (аганим)
+			"disarm_duration"			"2.8" // длительность дизарма (талант)
 
 		}
 	}
 
 	"special_bonus_unique_matvey_metka_duration"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	"special_bonus_unique_matvey_metka_resist"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	"special_bonus_unique_matvey_metka_disarm"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	//=================================================================================================================
+	// Matvey: Бфчик
+	//=================================================================================================================
+	"matvey_bf"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/matvey/matvey_bf"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"matvey/matvey_bf"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"AbilityCooldown"				"12 10 8 6"
+		//"AbilityManaCost"				"45 55 65 80"
+
+		"AbilityValues"
+		{
+			"cleave_mult"				"40 42 45 50"
+			"mana_restore"
+			{
+				"value"					"0.2 0.3 0.4 0.5" // замедление (%)
+				"special_bonus_unique_matvey_bf_mana_restore" "+0.1" // талант
+			}
+			"radius"					"300 320 340 360"
+			"duration"
+			{
+				"value"					"8 10 12 14" // замедление (%)
+				"special_bonus_unique_matvey_bf_duration" "+2" // талант
+			}
+		}
+	}
+
+	"special_bonus_unique_matvey_bf_duration"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+	"special_bonus_unique_matvey_bf_mana_restore"
 	{
 		"BaseClass"             		"special_bonus_base"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
@@ -1140,8 +1204,8 @@
 			"damage"				"140 170 200 230"
 			"mana_steal_pct"
 			{
-				"value"			"15 18 21 24" // 
-				"special_bonus_unique_matvey_petard_mana_steal_pct" "+6"
+				"value"			"15 18 21 24"
+				"special_bonus_unique_matvey_petard_mana_steal_pct" "+6" // талант
 			}
 			"petard_health"			"90 120 150 180"
 			"projectile_speed"		"230 240 245 250"
@@ -1186,14 +1250,31 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"IsBreakable"                   "1"
 
+		"HasShardUpgrade"				"1"
+
 		"AbilityValues"
 		{
-			"chance"					"25" // шанс активации (%)
+			"chance"
+			{
+				"value"					"25" // шанс активации (%)
+				"special_bonus_unique_matvey_poxititel_chance" "+10" // талант
+			}
 			"attribute_steal"			"2 3 5" // сколько аттрибутов украдет атака (%)
 			"mana_steal"				"10 25 40" // сколько маны украдет атака
 			"max_stacks"				"5"	// макс бонусов
 			"duration"					"5 7 9" // длительность бонусов (сек.)
+			"shard_chance_bonus"		"10"
+			"shard_attack_speed_bonus"  "60"
+			"shard_cooldown"			"22"
+			"shard_duration"			"7"
 		}
+	}
+
+	"special_bonus_unique_matvey_poxititel_chance"
+	{
+		"BaseClass"             		"special_bonus_base"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
 
 //----------------------------------------------------------------------------

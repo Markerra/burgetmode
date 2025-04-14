@@ -19,30 +19,24 @@ function matvey_magic_modifier:IsHidden() return true end
 function matvey_magic_modifier:IsDebuff() return false end
 function matvey_magic_modifier:IsPurgable() return false end
 
-function matvey_magic_modifier:GetOverrideAttackMagical() 
-	return 1 
-end
-
 function matvey_magic_modifier:DeclareFunctions()
 	return {
-		MODIFIER_PROPERTY_OVERRIDE_ATTACK_DAMAGE,
+		MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
 		MODIFIER_EVENT_ON_ATTACK,
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
 	}
 end
 
-function matvey_magic_modifier:GetModifierOverrideAttackDamage()
-	if not IsServer() then return end
-
+function matvey_magic_modifier:GetModifierBaseDamageOutgoing_Percentage()
 	local ability = self:GetAbility()
 	local caster = ability:GetCaster()
 
 	if caster:GetMana() < ability:GetManaCost(ability:GetLevel()) then
-		return 0
+		return -100
 	end
 
 	local transform_pct = ability:GetSpecialValueFor("transform_pct")
-	return caster:GetAttackDamage() * (transform_pct / 100)
+	return -transform_pct
 end
 
 function matvey_magic_modifier:OnAttack( event )
@@ -63,28 +57,49 @@ function matvey_magic_modifier:OnAttackLanded( event )
 	local ability = self:GetAbility()
 	local caster = ability:GetCaster()
 	local attacker = event.attacker
+	local target = event.target
 
 	if caster == attacker then
+
 		local bonus_pct = ability:GetSpecialValueFor("bonus_pct")
-		local dmg = caster:GetMana() * (bonus_pct / 100) 
+		local bonus_dmg = ability:GetManaCost(ability:GetLevel()) * (bonus_pct / 100) 
+
+		if event.cleave then 
+			bonus_dmg = bonus_dmg * event.cleave_mult
+		end
 
 		ApplyDamage({ -- bonus part of damage (magical)
-			victim = event.target,
+			victim = target,
 			attacker = attacker,
-			damage = dmg,
+			damage = bonus_dmg,
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = ability
 		})
 		
 		local transform_pct = ability:GetSpecialValueFor("transform_pct")
-		dmg = caster:GetAttackDamage() * (1 - (transform_pct / 100))
+		local avg = (attacker:GetBaseDamageMin() + attacker:GetBaseDamageMax()) / 2
+		local dmg = avg * (transform_pct / 100)
 
-		ApplyDamage({ -- other part of damage (physical)
-			victim = event.target,
+		if event.cleave then 
+			dmg = dmg * event.cleave_mult
+		end
+
+		ApplyDamage({ -- other part of damage (magical)
+			victim = target,
 			attacker = attacker,
 			damage = dmg,
-			damage_type = DAMAGE_TYPE_PHYSICAL,
+			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = ability
 		})
+
+		if event.cleave then
+			local modif = caster:FindModifierByName("modifier_matvey_bf")
+			if modif then modif:ManaRestore(dmg + bonus_dmg) end
+		end
+
+		--print("Damage: "..event.damage)
+		--print("Transform: "..transform_pct.."%")
+		--print("Magical Damage: "..dmg)
+		--print("Magical Bonus Damage: "..bonus_dmg)
 	end
 end

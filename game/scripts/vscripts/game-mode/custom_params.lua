@@ -1,9 +1,11 @@
 CUSTOM_FOUNTAIN_VUL_DELAY 	= 600 -- время до деактивации неуязвимости фонтанов (в секундах) // 10 мин
 
-NORMAL_START_GOLD		  	= 600
-CUSTOM_BUYBACK_COST_ENABLED = false
+CUSTOM_START_GOLD		  	= 600
+CUSTOM_WARD_STOCK_COUNT     = 8
 MAXIMUM_ATTACK_SPEED		= 800
 COURIER_MAX 				= true
+CUSTOM_BUYBACK_COST_ENABLED = false
+CUSTOM_BUYBACK_COST         = 0
 
 CUSTOM_FOUNTAIN_AURA_RADIUS    = 675 -- радиус действия ауры лечения у фонтана 
 CUSTOM_FOUNTAIN_PCT_HP_REGEN   = 2.5 -- регенерация здоровья около фонтана (%)
@@ -16,4 +18,4 @@ CUSTOM_ALLOWED_STEAMIDS = { -- стим айди разрешенные для �
 }
 
 CUSTOM_DEBUG_MODE = true
-CUSTOM_FORCE_HERO = "Huskar"
+CUSTOM_FORCE_HERO = "Invoker"

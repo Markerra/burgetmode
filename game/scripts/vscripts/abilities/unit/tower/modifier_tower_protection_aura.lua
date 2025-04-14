@@ -62,7 +62,7 @@ end
 
 function modifier_tower_protection:GetModifierDamageOutgoing_Percentage()
     local damage = self:GetAbility():GetSpecialValueFor("incoming_damage_percent")
-    return -    damage  -- Уменьшение урона на 50%
+    return -damage  -- Уменьшение урона на 50%
 end
 
     

@@ -4,8 +4,32 @@ LinkLuaModifier("matvey_poxititel_buff",
 	"abilities/matvey/matvey_poxititel", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("matvey_poxititel_debuff", 
 	"abilities/matvey/matvey_poxititel", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_matvey_poxititel_shard", 
+	"abilities/matvey/matvey_poxititel", LUA_MODIFIER_MOTION_NONE)
 
 matvey_poxititel = class({})
+
+function matvey_poxititel:GetBehavior()
+	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+		return DOTA_ABILITY_BEHAVIOR_NO_TARGET
+	else
+		return DOTA_ABILITY_BEHAVIOR_PASSIVE
+	end
+end
+
+function matvey_poxititel:GetCooldown(iLevel)
+	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+		return self:GetSpecialValueFor("shard_cooldown")
+	else
+		return 0
+	end
+end
+
+function matvey_poxititel:OnSpellStart()
+	local caster = self:GetCaster()
+	local duration = self:GetSpecialValueFor("shard_duration")
+	caster:AddNewModifier(caster, self, "modifier_matvey_poxititel_shard", {duration = duration})
+end
 
 function matvey_poxititel:GetIntrinsicModifierName()
 	return "matvey_poxititel_modifier"
@@ -40,6 +64,9 @@ function matvey_poxititel_modifier:OnAttackLanded( event )
 	end
 
 	if attacker == caster and not attacker:IsIllusion() and not target:IsBuilding() then
+		local shard_modif = caster:FindModifierByName("modifier_matvey_poxititel_shard")
+		local shard_chance_bonus = ability:GetSpecialValueFor("shard_chance_bonus")
+		if shard_modif then chance = chance + shard_chance_bonus end 
 		if RollPercentage(chance) then 
 			local name1 = "matvey_poxititel_buff"
 			local name2 = "matvey_poxititel_debuff"
@@ -201,4 +228,37 @@ function matvey_poxititel_debuff:GetModifierBonusStats_Intellect()
 	local ability = self:GetAbility()
 	local stacks = self:GetStackCount()
 	return -stacks 
+end
+
+modifier_matvey_poxititel_shard = class({})
+
+function modifier_matvey_poxititel_shard:IsPurgable() return true end
+function modifier_matvey_poxititel_shard:IsHidden() return false end
+function modifier_matvey_poxititel_shard:IsDebuff() return false end
+
+function modifier_matvey_poxititel_shard:GetEffectName()
+	return "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_mask_of_madness.vpcf"
+end
+
+function modifier_matvey_poxititel_shard:OnCreated(kv)
+	if not IsServer() then return end
+	local parent = self:GetParent()
+	parent:EmitSound("DOTA_Item.MaskOfMadness.Activate")
+end
+
+function modifier_matvey_poxititel_shard:CheckState() 
+	return {
+		[MODIFIER_STATE_SILENCED] = true
+	}
+end
+
+function modifier_matvey_poxititel_shard:DeclareFunctions() 
+	return {
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+	} 
+end
+
+function modifier_matvey_poxititel_shard:GetModifierAttackSpeedBonus_Constant()
+	local ability = self:GetAbility()
+	return ability:GetSpecialValueFor("shard_attack_speed_bonus")
 end

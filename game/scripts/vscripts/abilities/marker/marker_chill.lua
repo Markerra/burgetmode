@@ -2,6 +2,9 @@ LinkLuaModifier("modifier_marker_chill", "abilities/marker/marker_chill", LUA_MO
 LinkLuaModifier("modifier_marker_chill_tracker", "abilities/marker/marker_chill", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_marker_chill_shard", "abilities/marker/marker_chill", LUA_MODIFIER_MOTION_NONE)
 
+LinkLuaModifier("modifier_physical_resist", "modifiers/modifier_physical_resist", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_damage_tracker", "modifiers/modifier_damage_tracker", LUA_MODIFIER_MOTION_NONE)
+
 marker_chill = class({})
 
 function marker_chill:GetIntrinsicModifierName()

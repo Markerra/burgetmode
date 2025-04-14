@@ -35,7 +35,7 @@ function GameMode:Init()
 		GameRules:SetStrategyTime( 60.0 )
 		GameRules:SetPreGameTime(25)
 		GameRules:SetRuneSpawnTime(20)
-		GameRules:SetStartingGold(NORMAL_START_GOLD)
+		GameRules:SetStartingGold(CUSTOM_START_GOLD)
 		
 		-- Teams
 		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 0 )
@@ -48,6 +48,11 @@ function GameMode:Init()
 		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
 		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_7, 1 )
 		GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_8, 1 )
+
+		for t=DOTA_TEAM_CUSTOM_1, DOTA_TEAM_CUSTOM_8 do
+			GameRules:IncreaseItemStock(t, "item_ward_observer", CUSTOM_WARD_STOCK_COUNT-2, -1)
+			GameRules:IncreaseItemStock(t, "item_ward_sentry", 2*(CUSTOM_WARD_STOCK_COUNT-4), -1)
+		end
 
 		mode:SetCustomScanMaxCharges(1)
 		mode:SetAnnouncerDisabled(true)

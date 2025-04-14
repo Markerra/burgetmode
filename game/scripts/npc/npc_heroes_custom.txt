@@ -253,8 +253,8 @@
 
 		"MovementSpeed"					"360"
 
-		"Ability1"      				"generic_hidden"
-        "Ability2"      				"matvey_metka"
+		"Ability1"      				"matvey_metka"
+        "Ability2"      				"matvey_bf"
         "Ability3"      				"matvey_petard"
         "Ability4"      				"matvey_petard_blink"
         "Ability5"      				"matvey_magic"
@@ -271,13 +271,13 @@
         "Ability16"     				"generic_hidden"
         "Ability25"     				"generic_hidden"
 
-		"Ability17"    					"generic_hidden" // правый талант на 10 ур.
-		"Ability18"    					"generic_hidden" // левый талант на 10 ур.
+		"Ability17"    					"special_bonus_unique_matvey_metka_duration" // правый талант на 10 ур.
+		"Ability18"    					"special_bonus_unique_matvey_bf_duration" // левый талант на 10 ур.
 		"Ability19"    					"special_bonus_unique_matvey_petard_mana_steal_pct" // правый талант на 15 ур.
-		"Ability20"    					"special_bonus_unique_matvey_metka_duration" // левый талант на 15 ур.
-		"Ability21"    					"generic_hidden" // правый талант на 20 ур.
-		"Ability22"    					"generic_hidden" // левый талант на 20 ур.
-		"Ability23"    					"generic_hidden" // правый талант на 25 ур.
+		"Ability20"    					"special_bonus_unique_matvey_bf_mana_restore" // левый талант на 15 ур.
+		"Ability21"    					"special_bonus_unique_matvey_metka_resist" // правый талант на 20 ур.
+		"Ability22"    					"special_bonus_unique_matvey_poxititel_chance" // левый талант на 20 ур.
+		"Ability23"    					"special_bonus_unique_matvey_metka_disarm" // правый талант на 25 ур.
 		"Ability24"    					"special_bonus_unique_matvey_magic_transform" // левый талант на 25 ур.
 
 		"VisionNighttimeRange"			"1500"

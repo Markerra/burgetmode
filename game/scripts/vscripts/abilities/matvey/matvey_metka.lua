@@ -1,5 +1,8 @@
 LinkLuaModifier("matvey_metka_modifier", "abilities/matvey/matvey_metka", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("matvey_metka_modifier_debuff", "abilities/matvey/matvey_metka", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_matvey_metka_disarm", "abilities/matvey/matvey_metka", LUA_MODIFIER_MOTION_NONE)
+
+require("utils/funcs")
 
 matvey_metka = class({})
 
@@ -27,6 +30,11 @@ function matvey_metka:OnSpellStart()
 	local particle = "particles/custom/matvey/matvey_metka/matvey_metka_marker.vpcf"
 	local effect = ParticleManager:CreateParticle(particle, PATTACH_OVERHEAD_FOLLOW, self.target)
 
+	if HasTalent(caster, "special_bonus_unique_matvey_metka_disarm") then
+		local disarm_duration = self:GetSpecialValueFor("disarm_duration")
+		self.target:AddNewModifier(caster, self, "modifier_matvey_metka_disarm", {duration = disarm_duration})
+	end
+
 	self.target:AddNewModifier(caster, self, "matvey_metka_modifier_debuff", 
 	{duration = duration, effect = effect})
 end
@@ -39,6 +47,7 @@ function matvey_metka_modifier_debuff:IsHidden() return false end
 function matvey_metka_modifier_debuff:IsPurgable() return true end
 
 function matvey_metka_modifier_debuff:OnCreated( kv )
+	if not IsServer() then return end
 	local sound1    = "Hero_Kez.GrapplingClaw.Katana.Slow"
 	self.sound_loop = "Hero_Oracle.PurifyingFlames"
 	self:GetParent():EmitSound(sound1)
@@ -126,4 +135,20 @@ function matvey_metka_modifier:GetModifierBonusStats_Agility()
 	local ability = self:GetAbility()
 	local stacks = self:GetStackCount()
 	return ability:GetSpecialValueFor("kill_bonus_ag") * stacks
+end
+
+modifier_matvey_metka_disarm = class({})
+
+function modifier_matvey_metka_disarm:IsHidden() return true end
+function modifier_matvey_metka_disarm:IsDebuff() return true end
+function modifier_matvey_metka_disarm:IsPurgalbe() return true end
+
+function modifier_matvey_metka_disarm:GetEffectName()
+	return "particles/units/heroes/hero_demonartist/demonartist_engulf_disarm/items2_fx/heavens_halberd.vpcf"
+end
+
+function modifier_matvey_metka_disarm:CheckState()
+	return {
+        [MODIFIER_STATE_DISARMED] = true
+    }
 end
