@@ -159,7 +159,16 @@ end
 function GameMode:npcSpawned( event )
 	local unit = EntIndexToHScript(event.entindex)
 
-	if IsInToolsMode() and unit:IsHero() then
+	if unit:IsHero() and unit.bFirstSpawned ~= false then
+		if IsServer() then
+			local fx = "particles/prime/hero_spawn_hero_level_6_delay.vpcf"
+			local particle = ParticleManager:CreateParticle(fx, PATTACH_ABSORIGIN_FOLLOW, unit)
+			ParticleManager:SetParticleControl(particle, 0, unit:GetAbsOrigin())
+			ParticleManager:ReleaseParticleIndex(particle)
+		end
+	end
+	
+	if unit:IsHero() then
 		local isVerified = false
 		local playerSteamID = PlayerResource:GetSteamID(unit:GetPlayerID()):__tostring()
 		for _, allowedID in ipairs(CUSTOM_ALLOWED_STEAMIDS) do

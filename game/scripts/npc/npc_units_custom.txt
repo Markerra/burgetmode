@@ -1967,9 +1967,9 @@
 		"AttackDamageMin"			"52"		// Damage range min.
 		"AttackDamageMax"			"64"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"BaseAttackSpeed"			"60"
+		"BaseAttackSpeed"			"75"
 		"AttackRate"				"1"		// Speed of attack.
-		"AttackAnimationPoint"		"0.8"		// Normalized time in animation cycle to attack.
+		"AttackAnimationPoint"		"0.9"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
 		"AttackRange"				"900"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"		// Particle system model for projectile.
@@ -2029,7 +2029,10 @@
 		}
 	}	
 
-    "npc_matvey_petard_missile"                            
+//=================================================================================
+// ABILITIES UNITS
+//=================================================================================
+    "npc_matvey_petard_missile"
     {                                       
         // General
         //----------------------------------------------------------------
@@ -2090,6 +2093,68 @@
         // Team
         //----------------------------------------------------------------
         "TeamName"                  "DOTA_TEAM_NEUTRALS"
+    }
+
+    "npc_arsen_summon"
+    {                                       
+        // General
+        //----------------------------------------------------------------
+        "Model"                     "models/items/wraith_king/arcana/wk_arcana_skeleton.vmdl"  // Model.
+        "BaseClass"                 "npc_dota_creature"
+        "SoundSet"                  "Creep_Good_Melee"         // Name of sound set.
+        "Level"                     "1"
+        "ModelScale"                "1"
+
+        // Abilities
+        //----------------------------------------------------------------
+        "Ability1"                  ""          // Ability 1
+        "Ability2"                  ""          // Ability 2
+        "Ability3"                  ""          // Ability 3
+        "Ability4"                  ""          // Ability 4
+
+        // Armor
+        //----------------------------------------------------------------
+        "ArmorPhysical"             "2"         // Physical protection.
+
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"           "13"         // Damage range min.
+        "AttackDamageMax"           "17"         // Damage range max.    
+        "AttackRate"                "1.0"       // Speed of attack
+        "BaseAttackSpeed"           "115"
+        "AttackAnimationPoint"      "0.4"       // Normalized time in animation cycle to attack.
+        "AttackAcquisitionRange"    "1200"      // Range within a target can be acquired.
+        "AttackRange"               "120"       // Range within a target can be attacked.
+        "ProjectileModel"           ""          // Particle system model for projectile.
+        "ProjectileSpeed"           "0"         // Speed of projectile.        
+
+        // Bounds
+        //----------------------------------------------------------------
+        "BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"            // Hull type used for navigation/locomotion.
+        "HealthBarOffset"           "170"
+
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"         // Type of locomotion - ground, air
+        "MovementSpeed"             "280"       // Speed
+        "MovementTurnRate"          "0.7"       // Turning rate.
+
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyXP"                  "30"        // Experience earn.
+        "BountyGoldMin"             "20"        // Gold earned min.
+        "BountyGoldMax"             "23"        // Gold earned max.
+
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"              "120"     // Base health.
+        "StatusHealthRegen"         "1.2"       // Health regeneration rate.
+        
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"        "500"       // Range of vision during day light.
+        "VisionNighttimeRange"      "400"       // Range of vision at night time.
     }
 
 //=================================================================================

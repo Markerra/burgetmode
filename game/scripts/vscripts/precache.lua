@@ -95,6 +95,9 @@ particles = {
 	"particles/units/heroes/hero_demonartist/demonartist_engulf_disarm/items2_fx/heavens_halberd.vpcf",
 	"particles/econ/events/fall_2021/groundglow_fall_2021.vpcf",
 	"particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_mask_of_madness.vpcf",
+	"particles/units/heroes/hero_broodmother/broodmother_spiderlings_spawn.vpcf",
+	"particles/prime/hero_spawn_hero_level_6_delay.vpcf",
+	"particles/units/heroes/hero_broodmother/broodmother_hunger_buff.vpcf",
 }
 
 soundfiles = {
@@ -141,6 +144,7 @@ soundfiles = {
 	"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts", -- matvey_petard
 	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts", -- matvey_bf
 	"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts", -- matvey_bf
+	"soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts", -- arsen_summoner
 
 }
 
@@ -165,7 +169,7 @@ models = {
 	"models/creeps/lane_creeps/creep_bad_melee/creep_crystal_bad_melee.vmdl", -- npc_xp_creep
 	"models/creeps/roshan/roshan.vmdl", -- npc_boss_roshan
 	"models/heroes/gyro/gyro_missile.vmdl", --matvey_petard
-	
+	"models/items/wraith_king/arcana/wk_arcana_skeleton.vmdl", --arsen_summoner
 }
 
 model_folders = {

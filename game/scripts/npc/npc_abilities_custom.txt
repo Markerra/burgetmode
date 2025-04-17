@@ -1278,13 +1278,92 @@
 	}
 
 //----------------------------------------------------------------------------
+// ARSEN
+//----------------------------------------------------------------------------
+
+	//=================================================================================================================
+	// Arsen: Саммонер
+	//=================================================================================================================
+	"arsen_summoner"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/arsen/arsen_summoner"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"arsen/arsen_summoner"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"IsBreakable"                   "1"
+
+		"AbilityCooldown"				"3"
+
+		"AbilityValues"
+		{
+			"chance"					"39"
+			"chance_gain"				"1"
+			"damage"					"19"
+			"health"					"105"
+			"duration"					"50"
+			"hero_mult"					"2"
+		}
+	}
+
+	//=================================================================================================================
+	// Arsen: Квадробер
+	//=================================================================================================================
+	"arsen_quadrober"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/arsen/arsen_quadrober"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"arsen/arsen_quadrober"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"4"
+		"IsBreakable"                   "0"
+		"HasShardUpgrade"				"1"
+
+		"AbilityValues"
+		{
+			"hp_bonus"					"40 45 50 55 60"
+			"armor_bonus"				"0.7 0.9 1.1 1.3"
+			"dmg_bonus"					"3 5 7 9"
+			"ms_bonus"					"8 10 12 14"
+			"radius"					"900"
+			"duration"					"10 12 14 16"
+			"shard_health_pct"			"20" // (%)
+			"shard_duration"			"8"
+			"shard_cooldown"			"22"
+			"shard_manacost"			"90"
+		}
+	}
+
+	//=================================================================================================================
+	// Arsen: Квадробер (Aghanim's Shard)
+	//=================================================================================================================
+	"arsen_quadrober_shard_ability"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/arsen/arsen_quadrober"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"arsen/arsen_quadrober"
+		"AbilityCastPoint"				"0.2"
+		"MaxLevel"						"4"
+		"LinkedAbility"					"arsen_quadrober"
+
+		"AbilityValues"
+		{
+			"shard_health_pct"			"20" // (%)
+		}
+	}
+
+
+//----------------------------------------------------------------------------
 // UNIT ABILITIES
 //----------------------------------------------------------------------------
 	
 	//=================================================================================================================
 	// Tower: Защита Башни
 	//=================================================================================================================
-
 	"tower_protection_aura"
 	{
 		"BaseClass"						"ability_lua"
@@ -1305,7 +1384,6 @@
 	//=================================================================================================================
 	// Tower: Иссушение
 	//=================================================================================================================
-
 	"tower_soul_drain"
 	{
 		"BaseClass"						"ability_lua"
@@ -1539,7 +1617,7 @@
 
 		"AbilityValues"
 		{
-			"damage_per_stack"		"5 10 15 20"
+			"damage_per_stack"		"2 4 6 8"
 			"duration"				"5 8 10 12"
 		}
 	}

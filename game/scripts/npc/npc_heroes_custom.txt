@@ -13,12 +13,12 @@
 
 		"MovementSpeed"					"325"
 	
-		"Ability1"						"seva_phone"
-		"Ability2"						"seva_tether"
-		"Ability3"						"seva_trader"
-		"Ability4"						"seva_box"
-		"Ability5"						"seva_big"
-		"Ability6"						"seva_ult"
+		"Ability1"						"seva_phone" // q
+		"Ability2"						"seva_tether" // w
+		"Ability3"						"seva_trader" // e
+		"Ability4"						"seva_box" // d
+		"Ability5"						"seva_big" // f
+		"Ability6"						"seva_ult" // r
 		"Ability7"						"generic_hidden"
 	
 		"Ability10"						"special_bonus_unique_seva_ult_duration" // правый талант на 10 ур.
@@ -70,12 +70,12 @@
 	 	"AttackDamageMin"       		"22" // 16+n (доп. урон)
         "AttackDamageMax"       		"28" // 22+n (доп. урон)
 	
-		"Ability1"						"maxim_creep"
-		"Ability2"						"maxim_zxc"
-		"Ability3"						"maxim_herald"
-	 	"Ability4"						"maxim_photo"
-		"Ability5"						"generic_hidden"
-		"Ability6"						"maxim_isaac"
+		"Ability1"						"maxim_creep" // q
+		"Ability2"						"maxim_zxc" // w
+		"Ability3"						"maxim_herald" // e
+	 	"Ability4"						"maxim_photo" // d
+		"Ability5"						"generic_hidden" // f
+		"Ability6"						"maxim_isaac" // r
 		"Ability7"						"generic_hidden"
 	
 		"Ability10"						"special_bonus_unique_maxim_creep_duration" // правый талант на 10 ур.
@@ -130,14 +130,14 @@
 
 		"ArmorPhysical"					"5" // бонус
 
-		"MovementSpeed"					"365"
+		"MovementSpeed"					"370"
 
-		"Ability1"						"sergopy_voice"
-		"Ability2"						"sergopy_ivl"
-		"Ability3"						"sergopy_refresh"
-	 	"Ability4"						"sergopy_bristleback"
-		"Ability5"						"generic_hidden"
-		"Ability6"						"sergopy_hamster"
+		"Ability1"						"sergopy_voice" // q
+		"Ability2"						"sergopy_ivl" // w
+		"Ability3"						"sergopy_refresh" // e
+	 	"Ability4"						"sergopy_bristleback" // d
+		"Ability5"						"generic_hidden" // f
+		"Ability6"						"sergopy_hamster" // r
 		"Ability7"						"generic_hidden"
 
 		"Ability10"						"special_bonus_unique_sergopy_refresh_chance" // правый талант на 10 ур.
@@ -167,8 +167,8 @@
             }
 		}
 
-		"PickSound"						"bristleback_bristle_spawn_01"
-		"HeroSelectSoundEffect"			"Hero_Bristleback.Pick"
+		"PickSound"						"legion_commander_legcom_spawn_01"
+		"HeroSelectSoundEffect"			"Hero_LegionCommander.Pick"
 		"SimilarHeroes"					" "
 	}
 
@@ -180,14 +180,14 @@
 	 {
 	 	"override_hero"    				"npc_dota_hero_huskar"
 
-		"MovementSpeed"					"360"
+		"MovementSpeed"					"380"
 
-		"Ability1"						"marker_hammer"
-		"Ability2"						"marker_shot"
-		"Ability3"						"marker_chill"
-	 	"Ability4"						"marker_armlet"
-		"Ability5"						"generic_hidden"
-		"Ability6"						"marker_dance"
+		"Ability1"						"marker_hammer" // q
+		"Ability2"						"marker_shot" // w
+		"Ability3"						"marker_chill" // e
+	 	"Ability4"						"marker_armlet" // d
+		"Ability5"						"generic_hidden" // f
+		"Ability6"						"marker_dance" // r
 		"Ability7"						"generic_hidden"
 
 		"Ability10"						"special_bonus_unique_marker_hammer_dmg" // правый талант на 10 ур.
@@ -253,12 +253,12 @@
 
 		"MovementSpeed"					"360"
 
-		"Ability1"      				"matvey_metka"
-        "Ability2"      				"matvey_bf"
-        "Ability3"      				"matvey_petard"
-        "Ability4"      				"matvey_petard_blink"
-        "Ability5"      				"matvey_magic"
-        "Ability6"      				"matvey_poxititel"
+		"Ability1"      				"matvey_metka" // q
+        "Ability2"      				"matvey_bf" // w
+        "Ability3"      				"matvey_petard" // e
+        "Ability4"      				"matvey_petard_blink" // d
+        "Ability5"      				"matvey_magic" // f
+        "Ability6"      				"matvey_poxititel" // r
         "Ability7"      				"generic_hidden"
         "Ability8"      				"generic_hidden"
         "Ability9"      				"generic_hidden"
@@ -302,6 +302,61 @@
             "invoker_exort_focus"
             {
                 "Deprecated"			"1"
+            }
+        }
+
+		"PickSound"     				"invoker_invo_spawn_02"
+		"HeroSelectSoundEffect"     	"Hero_Invoker.Pick"
+		"SimilarHeroes"					" "
+	 }
+
+	//========================================================================================================
+	// MATVEY
+	//========================================================================================================
+
+	"npc_dota_hero_legion_commander"
+	 {
+	 	"override_hero"    				"npc_dota_hero_legion_commander"
+
+	 	"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"			"22"
+		"AttributeStrengthGain"			"3.000000"
+		"AttributeBaseAgility"			"15"
+		"AttributeAgilityGain"			"1.300000"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"2.000000"
+
+		"MovementSpeed"					"360"
+
+		"Ability1"      				"generic_hidden" // q
+        "Ability2"      				"arsen_quadrober" // w
+        "Ability3"      				"generic_hidden" // e
+        "Ability4"      				"arsen_summoner" // d
+        "Ability5"      				"generic_hidden" // f
+        "Ability6"      				"generic_hidden" // r
+        "Ability7"      				"arsen_quadrober_shard_ability"
+
+		"Ability17"    					"generic_hidden" // правый талант на 10 ур.
+		"Ability18"    					"generic_hidden" // левый талант на 10 ур.
+		"Ability19"    					"generic_hidden" // правый талант на 15 ур.
+		"Ability20"    					"generic_hidden" // левый талант на 15 ур.
+		"Ability21"    					"generic_hidden" // правый талант на 20 ур.
+		"Ability22"    					"generic_hidden" // левый талант на 20 ур.
+		"Ability23"    					"generic_hidden" // правый талант на 25 ур.
+		"Ability24"    					"generic_hidden" // левый талант на 25 ур.
+
+		"VisionNighttimeRange"			"1500"
+
+		"Facets"
+        {
+        	"legion_commander_stonehall_plate" 
+            {
+                "Deprecated"		"1"
+            }
+
+            "legion_commander_spoils_of_war" 
+            {
+                "Deprecated"		"1"
             }
         }
 

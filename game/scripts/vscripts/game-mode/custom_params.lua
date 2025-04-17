@@ -18,4 +18,4 @@ CUSTOM_ALLOWED_STEAMIDS = { -- стим айди разрешенные для �
 }
 
 CUSTOM_DEBUG_MODE = true
-CUSTOM_FORCE_HERO = "Invoker"
+CUSTOM_FORCE_HERO = "legion_commander"

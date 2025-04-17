@@ -39,19 +39,21 @@ end
 
 modifier_boar_amp = class({})
 
+function modifier_boar_amp:IsDebuff() return false end
 function modifier_boar_amp:IsPurgable() return true end
 
 function modifier_boar_amp:OnCreated()
-	parent:EmitSound("Hero_Lycan.Wolf.GeistForm")
 	if not IsServer() then return end
 	local parent = self:GetParent()
 	local particle = "particles/custom/neutral/amplify_damage.vpcf"
 	self.effect = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN, parent)
+	parent:EmitSound("Hero_Lycan.Wolf.GeistForm")
 end
 
 function modifier_boar_amp:OnRefresh()
 	local stacks = self:GetStackCount()
 	self:SetStackCount( stacks+1 )
+	if not IsServer() then return end
 	self:GetParent():EmitSound("Hero_Lycan.Wolf.GeistForm")
 end
 
