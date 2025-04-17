@@ -1,0 +1,25 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/achievement.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/achievement.js"/>
+	</scripts>
+    
+	<snippets>
+	    <Snippet name="AchievementPopup">
+	    	<Panel id="AchievementPopup" class="AchievementPopup Hidden">
+	    		<Panel id="AchievementImage" />
+	    		<Panel id="AchievementTextContainer">
+	    			<Label id="AchievementTitle" />
+	    			<Label id="AchievementDescription" />
+	    		</Panel>
+	    	</Panel>
+	    </Snippet>
+	</snippets>
+
+	<Panel class="root" hittest="false">
+		<Panel id="AchievementContainer" />
+	</Panel>
+
+</root>

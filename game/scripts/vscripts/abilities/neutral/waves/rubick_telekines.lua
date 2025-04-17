@@ -1,0 +1,1 @@
+rubick_telekines = class({})

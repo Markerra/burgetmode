@@ -33,11 +33,11 @@ function modifier_damage_tracker:DeclareFunctions()
 	}
 end
 
-function modifier_damage_tracker:OnDamageCalculated(params)
+function modifier_damage_tracker:OnDamageCalculated(event)
     if not IsServer() then return end
 
-    if params.target == self:GetParent() then
-        local attacker = params.attacker
+    if event.target == self:GetParent() then
+        local attacker = event.attacker
 
         if attacker:IsHero() then
             local hero_name = attacker:GetUnitName()
@@ -46,7 +46,7 @@ function modifier_damage_tracker:OnDamageCalculated(params)
                 self.damage_table[hero_name] = 0
             end
 
-            self.damage_table[hero_name] = self.damage_table[hero_name] + params.damage
+            self.damage_table[hero_name] = self.damage_table[hero_name] + event.damage
         end
     end
 end

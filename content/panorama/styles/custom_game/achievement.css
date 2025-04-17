@@ -1,0 +1,66 @@
+.root {
+    width: 100%;
+    height: 100%;
+}
+
+#AchievementContainer {
+    flow-children: up;
+    vertical-align: bottom;
+    horizontal-align: right;
+    /*margin-right: 20px;
+    margin-bottom: 20px;*/
+}
+
+#AchievementPopup {
+    min-width: 270px;
+    height: 72px;
+    background-image: url("file://{resources}/images/custom_game/achievement_background.png");
+    border-radius: 0px;
+    box-shadow: fill #00000088 0px 0px 6px 0px;
+
+    flow-children: right;
+    padding: 8px;
+
+    horizontal-align: right;
+    vertical-align: bottom;
+    margin-right: 0px;
+    margin-bottom: 0px;
+
+    opacity: 0.0;
+    transform: translateY(100px);
+    transition-property: opacity, transform;
+    transition-duration: 0.3s;
+
+    z-index: 100;
+}
+
+#AchievementPopup.Visible {
+    opacity: 1.0;
+    transform: translateY(0px);
+}
+
+#AchievementImage {
+    min-width: 56px;
+    min-height: 56px;
+    background-image: url("file://{resources}/images/custom_game/arsen_achievements_villain.png");
+    background-size: 10%;
+    margin-right: 10px;
+    border-radius: 0px;
+    z-index: 101;
+}
+
+#AchievementTextContainer {
+    flow-children: down;
+    vertical-align: center;
+
+}
+
+#AchievementTitle {
+    font-size: 18px;
+    color: white;
+}
+
+#AchievementDescription {
+    font-size: 15px;
+    color: #7d7d7d;
+}

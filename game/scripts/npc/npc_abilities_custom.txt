@@ -1301,8 +1301,8 @@
 		{
 			"chance"					"39"
 			"chance_gain"				"1"
-			"damage"					"19"
-			"health"					"105"
+			"damage"					"23"
+			"health"					"155"
 			"duration"					"50"
 			"hero_mult"					"2"
 		}
@@ -1355,6 +1355,48 @@
 			"shard_health_pct"			"20" // (%)
 		}
 	}
+
+	//=================================================================================================================
+	// Arsen: Гриндер
+	//=================================================================================================================
+	"arsen_achievments"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/arsen/arsen_achievments"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"arsen/arsen_achievments"
+		"MaxLevel"						"4"
+		"HasShardUpgrade"				"1"
+
+		"AbilityValues"
+		{
+			"hp_reward_1_pct"			"50" // (%)
+			"hp_reward_2_pct"			"100" // (%)
+			"hp_reward_3_pct"			"200" // (%)
+
+			"regen_reward_1_pct"		"50" // (%)
+			"regen_reward_2_pct"		"100" // (%)
+			"regen_reward_3_pct"		"200" // (%)
+
+			"dmg_reward_1"				"75" // (%)
+			"dmg_reward_2"				"150" // (%)
+			"dmg_reward_3"				"225" // (%)
+
+			"cdr_reward_1"				"10" // (%)
+			"cdr_reward_2"				"20" // (%)
+			"cdr_reward_3"				"30" // (%)
+
+			"gold_reward_1"				"750"
+			"gold_reward_2"				"1500"
+			"gold_reward_3"				"2500"
+
+			"xp_reward_1"				"750"
+			"xp_reward_2"				"1500"
+			"xp_reward_3"				"2000"
+			
+		}
+	}
+
 
 
 //----------------------------------------------------------------------------

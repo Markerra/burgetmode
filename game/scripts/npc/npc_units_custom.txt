@@ -2114,7 +2114,7 @@
 
         // Armor
         //----------------------------------------------------------------
-        "ArmorPhysical"             "2"         // Physical protection.
+        "ArmorPhysical"             "6"         // Physical protection.
 
         // Attack
         //----------------------------------------------------------------
@@ -2149,7 +2149,7 @@
         // Status
         //----------------------------------------------------------------
         "StatusHealth"              "120"     // Base health.
-        "StatusHealthRegen"         "1.2"       // Health regeneration rate.
+        "StatusHealthRegen"         "1.8"       // Health regeneration rate.
         
         // Vision
         //----------------------------------------------------------------

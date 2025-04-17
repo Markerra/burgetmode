@@ -1,8 +1,7 @@
 require("utils/timers")
 require("utils/particles_presets")
 
-LinkLuaModifier("ursa_red_clap_debuff", 
-	"abilities/neutral/waves/ursa_red_clap", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("ursa_red_clap_debuff", "abilities/neutral/waves/ursa_red_clap", LUA_MODIFIER_MOTION_NONE)
 
 ursa_red_clap = class({})
 
