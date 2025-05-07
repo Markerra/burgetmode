@@ -169,6 +169,9 @@ function GameMode:npcSpawned( event )
 	end
 	
 	if unit:IsHero() then
+		if IsServer() then for i=2, CUSTOM_START_LEVEL do
+			unit:HeroLevelUp(false)
+		end end
 		local isVerified = false
 		local playerSteamID = PlayerResource:GetSteamID(unit:GetPlayerID()):__tostring()
 		for _, allowedID in ipairs(CUSTOM_ALLOWED_STEAMIDS) do

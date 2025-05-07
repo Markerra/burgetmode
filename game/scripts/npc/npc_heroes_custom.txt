@@ -311,7 +311,7 @@
 	 }
 
 	//========================================================================================================
-	// MATVEY
+	// ARSEN
 	//========================================================================================================
 
 	"npc_dota_hero_legion_commander"
@@ -333,7 +333,7 @@
         "Ability3"      				"generic_hidden" // e
         "Ability4"      				"arsen_summoner" // d
         "Ability5"      				"generic_hidden" // f
-        "Ability6"      				"generic_hidden" // r
+        "Ability6"      				"arsen_achievements" // r
         "Ability7"      				"arsen_quadrober_shard_ability"
 
 		"Ability17"    					"generic_hidden" // правый талант на 10 ур.

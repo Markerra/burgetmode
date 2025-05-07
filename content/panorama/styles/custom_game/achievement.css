@@ -14,10 +14,9 @@
 #AchievementPopup {
     min-width: 270px;
     height: 72px;
-    background-image: url("file://{resources}/images/custom_game/achievement_background.png");
+    background-image: url("file://{resources}/images/custom_game/achievement/achievement_background.png");
     border-radius: 0px;
     box-shadow: fill #00000088 0px 0px 6px 0px;
-
     flow-children: right;
     padding: 8px;
 
@@ -39,10 +38,16 @@
     transform: translateY(0px);
 }
 
+#AchievementPopup.Hidden {
+    opacity: 0.0;
+    transform: translateY(100px);
+}
+
+
 #AchievementImage {
     min-width: 56px;
     min-height: 56px;
-    background-image: url("file://{resources}/images/custom_game/arsen_achievements_villain.png");
+    background-image: url("file://{resources}/images/custom_game/achievement/arsen_achievement_pianist.png");
     background-size: 10%;
     margin-right: 10px;
     border-radius: 0px;

@@ -7,19 +7,21 @@
 	</scripts>
     
 	<snippets>
-	    <Snippet name="AchievementPopup">
-	    	<Panel id="AchievementPopup" class="AchievementPopup Hidden">
+	    <snippet name="Achievement">
+	    	<Panel id="AchievementPopup">
 	    		<Panel id="AchievementImage" />
 	    		<Panel id="AchievementTextContainer">
 	    			<Label id="AchievementTitle" />
 	    			<Label id="AchievementDescription" />
 	    		</Panel>
 	    	</Panel>
-	    </Snippet>
+	    </snippet>
 	</snippets>
 
 	<Panel class="root" hittest="false">
-		<Panel id="AchievementContainer" />
+		<Panel id="AchievementContainer">
+
+		</Panel>
 	</Panel>
 
 </root>

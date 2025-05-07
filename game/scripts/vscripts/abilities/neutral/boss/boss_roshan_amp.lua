@@ -206,6 +206,6 @@ end
 function modifier_boss_roshan_amp_heal:OnIntervalThink()
     if not IsServer() then return end
     local caster = self:GetAbility():GetCaster()
-    caster:Heal(self.heal_per_interval, self)
+    caster:Heal(self.heal_per_interval, self:GetAbility())
     SendOverheadEventMessage(nil, 10, caster, self.heal_per_interval, nil)
 end

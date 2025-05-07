@@ -1,0 +1,26 @@
+.TeamSelectRoot {
+    width: 100%;
+    height: 100%;
+}
+
+#Background {
+    width: 100%;
+    height: 100%;
+    background-image: url("file://{resources}/images/custom_game/burgetmode_background.png");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+
+#TeamList {
+    flow-children: down;
+    vertical-align: center;
+    horizontal-align: center;
+    margin-top: 200px;
+}
+
+.AssignButton {
+    horizontal-align: center;
+    margin-top: 20px;
+}

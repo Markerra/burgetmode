@@ -1302,9 +1302,40 @@
 			"chance"					"39"
 			"chance_gain"				"1"
 			"damage"					"23"
-			"health"					"155"
+			"health"					"185"
 			"duration"					"50"
 			"hero_mult"					"2"
+		}
+	}
+
+	"arsen_summon_defense"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/arsen/arsen_summon_defense"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"arsen/arsen_summon_defense"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"IsBreakable"                   "0"
+
+		"AbilityValues"
+		{
+			"phys_resist"				"50" // (%)
+			"magic_resist"				"60" // (%)
+		}
+	}
+
+	"arsen_summon_lifesteal"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/arsen/arsen_summon_lifesteal"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"arsen/arsen_summon_lifesteal"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"IsBreakable"                   "0"
+
+		"AbilityValues"
+		{
+			"lifesteal_pct"				"40" // (%)
 		}
 	}
 
@@ -1359,14 +1390,15 @@
 	//=================================================================================================================
 	// Arsen: Гриндер
 	//=================================================================================================================
-	"arsen_achievments"
+	"arsen_achievements"
 	{
 		"BaseClass"						"ability_lua"
-		"ScriptFile"					"abilities/arsen/arsen_achievments"
+		"ScriptFile"					"abilities/arsen/arsen_achievements"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"arsen/arsen_achievments"
-		"MaxLevel"						"4"
-		"HasShardUpgrade"				"1"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"			"arsen/arsen_achievements"
+		"MaxLevel"						"3"
+		"IsBreakable"                   "0"
 
 		"AbilityValues"
 		{

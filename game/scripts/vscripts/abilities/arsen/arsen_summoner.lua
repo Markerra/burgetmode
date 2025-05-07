@@ -10,7 +10,6 @@ function modifier_arsen_summoner:IsHidden() return true end
 function modifier_arsen_summoner:IsDebuff() return false end
 function modifier_arsen_summoner:IsPurgable() return false end
 
-
 function modifier_arsen_summoner:DeclareFunctions()
     return {
         MODIFIER_EVENT_ON_DEATH,
@@ -67,6 +66,8 @@ function modifier_arsen_summoner:Summon(point, level, duration, data)
     creep:SetMaxHealth(data.health)
     creep:SetBaseDamageMin(data.damage - 3)
     creep:SetBaseDamageMax(data.damage + 3)
+    creep:AddAbility("arsen_summon_defense"):SetLevel(1)
+    creep:AddAbility("arsen_summon_lifesteal"):SetLevel(1)
     --creep:CreatureLevelUp( (creep:GetLevel() - level) * (-1) )
 end
 

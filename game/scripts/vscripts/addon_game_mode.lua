@@ -47,8 +47,8 @@ function Activate()
 	GameMode:Init()
 	GameMode:SetupColors()
 
-	if IsInToolsMode() then
-		GameMode:InitFast() -- быстрый пик героев (для тестов)
+	if IsInToolsMode() or IsCheatMode() then
 		GameMode:GiveAdminItems() -- выдать админ-предметы
 	end
+	if IsInToolsMode() then GameMode:InitFast() end
 end

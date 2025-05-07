@@ -2122,8 +2122,8 @@
         "AttackDamageMin"           "13"         // Damage range min.
         "AttackDamageMax"           "17"         // Damage range max.    
         "AttackRate"                "1.0"       // Speed of attack
-        "BaseAttackSpeed"           "115"
-        "AttackAnimationPoint"      "0.4"       // Normalized time in animation cycle to attack.
+        "BaseAttackSpeed"           "105"
+        "AttackAnimationPoint"      "0.55"       // Normalized time in animation cycle to attack.
         "AttackAcquisitionRange"    "1200"      // Range within a target can be acquired.
         "AttackRange"               "120"       // Range within a target can be attacked.
         "ProjectileModel"           ""          // Particle system model for projectile.

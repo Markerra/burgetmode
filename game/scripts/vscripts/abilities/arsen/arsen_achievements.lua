@@ -12,6 +12,7 @@ LinkLuaModifier("modifier_arsen_achievements_arseniy", "abilities/arsen/arsen_ac
 arsen_achievements = class({})
 
 function arsen_achievements:Spawn()
+    if not IsServer() then return end
     local caster = self:GetCaster()
 
     caster:AddNewModifier(caster, self, "modifier_arsen_achievements_farmer", {})
@@ -51,36 +52,33 @@ function modifier_arsen_achievements_farmer:OnCreated()
             progress = 0
         }
     }
+
+    self:StartIntervalThink(0.9)
 end
 
-function modifier_arsen_achievements_farmer:DeclareFunctions()
-    return {
-        MODIFIER_EVENT_ON_DEATH
-    }
-end
+function modifier_arsen_achievements_farmer:OnIntervalThink()
+    if not IsServer() then return end
 
-function modifier_arsen_achievements_farmer:OnDeath(event)
     local caster = self:GetCaster()
+    local player = caster:GetPlayerOwner()
     local ability = self:GetAbility()
-    local attacker = event.attacker
-    local unit = event.unit
 
-    if attacker == caster then
-        local lhs = caster:GetLastHits()
-        if lhs >= self.stages.tier1.req then self.stages.tier1.completed = true end
-        if lhs >= self.stages.tier2.req then self.stages.tier2.completed = true end
-        if lhs >= self.stages.tier3.req then self.stages.tier3.completed = true end
+    local lhs = caster:GetLastHits()
+    if lhs >= self.stages.tier1.req then self.stages.tier1.completed = true end
+    if lhs >= self.stages.tier2.req then self.stages.tier2.completed = true end
+    if lhs >= self.stages.tier3.req then self.stages.tier3.completed = true end
 
-        if ability:GetLevel() == 1 and self.stages.tier1.completed and not self.stages.tier1.given then
-            self.stages.tier1.given = true
-        end
-        if ability:GetLevel() == 2 and self.stages.tier2.completed and not self.stages.tier2.given then
-            self.stages.tier2.given = true
-        end
-        if ability:GetLevel() == 3 and self.stages.tier3.completed and not self.stages.tier3.given then
-            self.stages.tier3.given = true
-        end
-
+    if ability:GetLevel() == 1 and self.stages.tier1.completed and not self.stages.tier1.given then
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_farmer", tier = 1})
+        self.stages.tier1.given = true
+    end
+    if ability:GetLevel() == 2 and self.stages.tier2.completed and not self.stages.tier2.given then
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_farmer", tier = 2})
+        self.stages.tier2.given = true
+    end
+    if ability:GetLevel() == 3 and self.stages.tier3.completed and not self.stages.tier3.given then
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_farmer", tier = 3})
+        self.stages.tier3.given = true
     end
 end
 
@@ -123,6 +121,8 @@ function modifier_arsen_achievements_damagedealer:OnDamageCalculated(event)
     if not IsServer() then return end
 
     local caster = self:GetCaster()
+    local player = caster:GetPlayerOwner()
+    local ability = self:GetAbility()
     local attacker = event.attacker
     local damage = event.damage
 
@@ -134,13 +134,16 @@ function modifier_arsen_achievements_damagedealer:OnDamageCalculated(event)
         if self.total_damage >= self.stages.tier3.req then self.stages.tier3.completed = true end
 
         if ability:GetLevel() == 1 and self.stages.tier1.completed and not self.stages.tier1.given then
-            self.stages.tier1.given = true
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_damagedealer", tier = 1})
+        self.stages.tier1.given = true
         end
         if ability:GetLevel() == 2 and self.stages.tier2.completed and not self.stages.tier2.given then
-            self.stages.tier2.given = true
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_damagedealer", tier = 2})
+        self.stages.tier2.given = true
         end
         if ability:GetLevel() == 3 and self.stages.tier3.completed and not self.stages.tier3.given then
-            self.stages.tier3.given = true
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_damagedealer", tier = 3})
+        self.stages.tier3.given = true
         end
 
     end
@@ -173,37 +176,32 @@ function modifier_arsen_achievements_killer:OnCreated()
             progress = 0
         }
     }
+
+    self:StartIntervalThink(1.4)
 end
 
-function modifier_arsen_achievements_killer:DeclareFunctions()
-    return {
-        MODIFIER_EVENT_ON_DEATH
-    }
-end
-
-function modifier_arsen_achievements_killer:OnDeath()
+function modifier_arsen_achievements_killer:OnIntervalThink()
+    if not IsServer() then return end
     local caster = self:GetCaster()
+    local player = caster:GetPlayerOwner()
     local ability = self:GetAbility()
-    local attacker = event.attacker
-    local unit = event.unit
 
-    if attacker == caster then
-        local kills = caster:GetKills()
+    local kills = caster:GetKills()
+    if kills >= self.stages.tier1.req then self.stages.tier1.completed = true end
+    if kills >= self.stages.tier2.req then self.stages.tier2.completed = true end
+    if kills >= self.stages.tier3.req then self.stages.tier3.completed = true end
 
-        if kills >= self.stages.tier1.req then self.stages.tier1.completed = true end
-        if kills >= self.stages.tier2.req then self.stages.tier2.completed = true end
-        if kills >= self.stages.tier3.req then self.stages.tier3.completed = true end
-
-        if ability:GetLevel() == 1 and self.stages.tier1.completed and not self.stages.tier1.given then
-            self.stages.tier1.given = true
-        end
-        if ability:GetLevel() == 2 and self.stages.tier2.completed and not self.stages.tier2.given then
-            self.stages.tier2.given = true
-        end
-        if ability:GetLevel() == 3 and self.stages.tier3.completed and not self.stages.tier3.given then
-            self.stages.tier3.given = true
-        end
-
+    if ability:GetLevel() == 1 and self.stages.tier1.completed and not self.stages.tier1.given then
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_killer", tier = 1})
+        self.stages.tier1.given = true
+    end
+    if ability:GetLevel() == 2 and self.stages.tier2.completed and not self.stages.tier2.given then
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_killer", tier = 2})
+        self.stages.tier2.given = true
+    end
+    if ability:GetLevel() == 3 and self.stages.tier3.completed and not self.stages.tier3.given then
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_killer", tier = 3})
+        self.stages.tier3.given = true
     end
 end
 
@@ -243,26 +241,33 @@ function modifier_arsen_achievements_pianist:DeclareFunctions()
 end
 
 function modifier_arsen_achievements_pianist:OnAbilityExecuted(event)
+    if not IsServer() then return end
     local caster = self:GetCaster()
-    local ability = event.ability
+    local player = caster:GetPlayerOwner()
+    local ability = self:GetAbility()
+    local casted_ability = event.ability
 
-    if ability and ability:GetCaster() == caster then
-        print("ABILITY EXECUTED!")
+    if casted_ability and casted_ability:GetCaster() == caster then
+        if casted_ability:GetBehavior() == DOTA_ABILITY_BEHAVIOR_PASSIVE then return end
         if not self.total_abilities then self.total_abilities = 0 end
         self.total_abilities = self.total_abilities + 1
+        print("ABILITY EXECUTED! TOTAL NUMBER OF EXECUTED ABILITIES: ", self.total_abilities)
 
         if self.total_abilities >= self.stages.tier1.req then self.stages.tier1.completed = true end
         if self.total_abilities >= self.stages.tier2.req then self.stages.tier2.completed = true end
         if self.total_abilities >= self.stages.tier3.req then self.stages.tier3.completed = true end
 
         if ability:GetLevel() == 1 and self.stages.tier1.completed and not self.stages.tier1.given then
-            self.stages.tier1.given = true
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_pianist", tier = 1})
+        self.stages.tier1.given = true
         end
         if ability:GetLevel() == 2 and self.stages.tier2.completed and not self.stages.tier2.given then
-            self.stages.tier2.given = true
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_pianist", tier = 2})
+        self.stages.tier2.given = true
         end
         if ability:GetLevel() == 3 and self.stages.tier3.completed and not self.stages.tier3.given then
-            self.stages.tier3.given = true
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_pianist", tier = 3})
+        self.stages.tier3.given = true
         end
         
     end
@@ -301,21 +306,27 @@ end
 
 
 function modifier_arsen_achievements_businessman:OnIntervalThink()
-    self caster = self:GetCaster
-    local gold = caster:GetGold
+    if not IsServer() then return end
+    local caster = self:GetCaster()
+    local player = caster:GetPlayerOwner()
+    local ability = self:GetAbility()
+    local gold = caster:GetGold()
 
     if gold >= self.stages.tier1.req then self.stages.tier1.completed = true end
     if gold >= self.stages.tier2.req then self.stages.tier2.completed = true end
     if gold >= self.stages.tier3.req then self.stages.tier3.completed = true end
 
     if ability:GetLevel() == 1 and self.stages.tier1.completed and not self.stages.tier1.given then
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_businessman", tier = 1})
         self.stages.tier1.given = true
     end
     if ability:GetLevel() == 2 and self.stages.tier2.completed and not self.stages.tier2.given then
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_businessman", tier = 2})
         self.stages.tier2.given = true
     end
     if ability:GetLevel() == 3 and self.stages.tier3.completed and not self.stages.tier3.given then
         self.stages.tier3.given = true
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_businessman", tier = 3})
         self:StartIntervalThink(-1)
     end
 end
@@ -384,20 +395,22 @@ function modifier_arsen_achievements_buyback:DeclareFunctions()
 end
 
 function modifier_arsen_achievements_buyback:OnDeath(event)
+    if not IsServer() then return end
     local caster = self:GetCaster()
-    local ability = self:GetAbility()
     local attacker = event.attacker
     local unit = event.unit
 
     if attacker == caster then
-        caster:AddNewModifier(caster, ability, "modifier_arsen_achievements_buyback_2", {duration = 4})
+        --caster:AddNewModifier(caster, ability, "modifier_arsen_achievements_buyback_2", {duration = 4})
     end
 end
 
 
 modifier_arsen_achievements_buyback_2 = class({})
 
-function modifier_arsen_achievements_buyback_2:DeclareFunctions
+function modifier_arsen_achievements_buyback_2:DeclareFunctions()
+    return {}
+end
 
 modifier_arsen_achievements_villain = class({})
 
@@ -411,6 +424,17 @@ function modifier_arsen_achievements_villain:OnCreated()
             given = false
         }
     }
+
+    self:StartIntervalThink(5.0)
+end
+
+function modifier_arsen_achievements_villain:OnIntervalThink()
+    if not IsServer() then return end
+    local ability = self:GetAbility()
+    if ability:GetLevel() >= 1 and self.stages.tier1.completed and not self.stages.tier1.given then
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_villain", tier = 1})
+        self.stages.tier1.given = true 
+    end
 end
 
 function modifier_arsen_achievements_villain:DeclareFunctions()
@@ -420,7 +444,9 @@ function modifier_arsen_achievements_villain:DeclareFunctions()
 end
 
 function modifier_arsen_achievements_villain:OnDeath(event)
+    if not IsServer() then return end
     local caster = self:GetCaster()
+    local player = caster:GetPlayerOwner()
     local ability = self:GetAbility()
     local attacker = event.attacker
     local unit = event.unit
@@ -428,10 +454,7 @@ function modifier_arsen_achievements_villain:OnDeath(event)
     if attacker == caster and unit:GetUnitName() == "npc_dota_custom_tower_main" then
         self.stages.tier1.completed = true
 
-        if ability:GetLevel() >= 1 and self.stages.tier1.completed and not self.stages.tier1.given then
-            self.stages.tier1.given = true
-        end
-
+        self:OnIntervalThink()
     end
 end
 
@@ -450,11 +473,13 @@ function modifier_arsen_achievements_arseniy:OnCreated()
         }
     }
 
-    self:StartIntervalThink(1.0)
+    self:StartIntervalThink(1.1)
 end
 
 function modifier_arsen_achievements_arseniy:OnIntervalThink()
+    if not IsServer() then return end
     local caster = self:GetCaster()
+    local player = caster:GetPlayerOwner()
 
     local modifiers = {
         "modifier_arsen_achievements_farmer",
@@ -470,14 +495,13 @@ function modifier_arsen_achievements_arseniy:OnIntervalThink()
     for i=0, #modifiers - 1 do
         local modif = caster:FindModifierByName(modifiers[i])
         if not modif then return end
-        if not modif.stages.tier1.completed 
-        or not stages.tier2.completed 
-        or not stages.tier3.completed then return end
+        if not stages.tier3.completed then return end
     end
 
     self.stages.tier1.completed = true
 
     if ability:GetLevel() >= 1 and self.stages.tier1.completed and not self.stages.tier1.given then
+        CustomGameEventManager:Send_ServerToPlayer(player, "arsen_achievement_popup", {name = "arsen_achievement_arseniy", tier = 1})
         self.stages.tier1.given = true
     end
 

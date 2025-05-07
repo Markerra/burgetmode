@@ -1,0 +1,24 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/custom_team_select.css" />
+    </styles>
+
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/custom_team_select.js"/>
+    </scripts>
+
+    <Panel class="TeamSelectRoot">
+        <!-- Фон -->
+        <Panel id="Background" />
+
+        <!-- Контейнер команд -->
+        <Panel id="TeamList">
+            <!-- Команды будут добавлены здесь -->
+        </Panel>
+
+        <!-- Кнопка авто-назначения -->
+        <Button id="AutoAssignButton" class="AssignButton">
+            <Label text="Auto Assign" />
+        </Button>
+    </Panel>
+</root>
