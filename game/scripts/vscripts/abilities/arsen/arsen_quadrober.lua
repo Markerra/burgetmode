@@ -142,6 +142,10 @@ function modifier_arsen_quadrober:OnIntervalThink()
         local modif = parent:AddNewModifier(parent, ability, "modifier_arsen_quadrober_bonus", {duration = duration})
         modif:SetStackCount(stacks)
     end
+
+    if stacks <= 0 and duration <= 0 then
+        parent:RemoveModifierByName("modifier_arsen_quadrober_bonus")
+    end
 end
 
 modifier_arsen_quadrober_bonus = class({})
@@ -161,6 +165,7 @@ function modifier_arsen_quadrober_bonus:OnCreated()
     self.ms_bonus = ability:GetSpecialValueFor("ms_bonus") * stacks
     
     self:SetHasCustomTransmitterData(true)
+    self:GetCaster():CalculateStatBonus(true)
     self:SendBuffRefreshToClients()
 end
 
@@ -173,7 +178,8 @@ function modifier_arsen_quadrober_bonus:OnRefresh()
     self.armor_bonus = ability:GetSpecialValueFor("armor_bonus") * stacks
     self.dmg_bonus = ability:GetSpecialValueFor("dmg_bonus") * stacks
     self.ms_bonus = ability:GetSpecialValueFor("ms_bonus") * stacks
-
+    
+    self:GetCaster():CalculateStatBonus(true)
     self:SendBuffRefreshToClients()
 end
 

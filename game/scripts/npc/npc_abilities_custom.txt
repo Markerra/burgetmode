@@ -1319,8 +1319,8 @@
 
 		"AbilityValues"
 		{
-			"phys_resist"				"50" // (%)
-			"magic_resist"				"60" // (%)
+			"phys_resist"				"25" // (%)
+			"magic_resist"				"55" // (%)
 		}
 	}
 
@@ -1360,7 +1360,7 @@
 			"dmg_bonus"					"3 5 7 9"
 			"ms_bonus"					"8 10 12 14"
 			"radius"					"900"
-			"duration"					"10 12 14 16"
+			"duration"					"3 5 7 9"
 			"shard_health_pct"			"20" // (%)
 			"shard_duration"			"8"
 			"shard_cooldown"			"22"

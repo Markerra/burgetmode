@@ -1,4 +1,5 @@
 LinkLuaModifier("modifier_matvey_bf", "abilities/matvey/matvey_bf", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier( "modifier_unselect", "modifiers/modifier_unselect", LUA_MODIFIER_MOTION_NONE )
 
 require("utils/funcs")
 

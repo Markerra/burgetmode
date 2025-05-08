@@ -28,11 +28,9 @@ function modifier_arsen_summon_defense:OnDamageCalculated(event)
     if target == caster and (attacker:IsCreep() or attacker:IsNeutralUnitType()) then
         if dmg_type == DAMAGE_TYPE_PHYSICAL then
             caster:Heal(damage - (damage * phys_resist), nil)
-            print(damage * phys_resist)
         end
         if dmg_type == DAMAGE_TYPE_MAGICAL then
             caster:Heal(damage - (damage * magic_resist), nil)
-            print(damage * magic_resist)
         end
     end
 end

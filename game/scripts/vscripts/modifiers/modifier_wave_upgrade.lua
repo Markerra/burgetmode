@@ -1,13 +1,13 @@
 modifier_wave_upgrade = class({})
 
-function modifier_wave_upgrade:IsHidden() return true end
+function modifier_wave_upgrade:IsHidden() return false end
 function modifier_wave_upgrade:IsPurgable() return false end
 
 function modifier_wave_upgrade:DeclareFunctions()
    return   {
     MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
     MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-    MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS,
+    MODIFIER_PROPERTY_HEALTH_BONUS,
     MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
     MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
     MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
@@ -142,7 +142,7 @@ function modifier_wave_upgrade:GetModifierBaseAttack_BonusDamage()
 	return self.change_damage
 end
 
-function modifier_wave_upgrade:GetModifierExtraHealthBonus()
+function modifier_wave_upgrade:GetModifierHealthBonus()
 	return self.change_health
 end
 

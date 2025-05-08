@@ -203,7 +203,7 @@ end
 function modifier_ghoul_infest_ally:DeclareFunctions()
 	return {
 		MODIFIER_EVENT_ON_DEATH,
-		MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS,
+		MODIFIER_PROPERTY_HEALTH_BONUS,
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 	}
@@ -215,7 +215,7 @@ function modifier_ghoul_infest_ally:OnDeath( params )
 	end
 end
 
-function modifier_ghoul_infest_ally:GetModifierExtraHealthBonus()
+function modifier_ghoul_infest_ally:GetModifierHealthBonus()
 	return self:GetAbility():GetCaster():GetHealth() * (self:GetAbility():GetSpecialValueFor("bonus_health") / 100)
 end
 

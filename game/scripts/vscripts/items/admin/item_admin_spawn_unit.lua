@@ -9,9 +9,9 @@ function item_admin_spawn_unit:OnSpellStart()
 	require("game-mode/waves")
 
 	local units = {
-		"npc_boss_roshan"
+		"npc_arsen_summon"
 	}
-	local unit_team = caster:GetTeamNumber() + 1
+	local unit_team = caster:GetTeamNumber()
 	local level = 1
 
 	for i=1, #units do

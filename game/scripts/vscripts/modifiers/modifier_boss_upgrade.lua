@@ -7,7 +7,7 @@ function modifier_boss_upgrade:IsPurgeException() return false end
 function modifier_boss_upgrade:DeclareFunctions()
    return   {
     MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-    MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS,
+    MODIFIER_PROPERTY_HEALTH_BONUS,
     MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
     MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
     MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
@@ -83,7 +83,7 @@ function modifier_boss_upgrade:GetModifierBaseAttack_BonusDamage()
 	return self.change_damage
 end
 
-function modifier_boss_upgrade:GetModifierExtraHealthBonus()
+function modifier_boss_upgrade:GetModifierHealthBonus()
 	return self.change_health
 end
 
